@@ -1,5 +1,7 @@
 import { useState } from "react";
 import {
+	Button,
+	ModalHeaderLine,
 	PostProfileImg,
 	RollingMessageModalBackground,
 	RollingMessageModalWrapper,
@@ -35,16 +37,23 @@ const RollingMessageModal = ({ rollingMessageData = SAMPLE_DATA }) => {
 				<header>
 					<section>
 						<PostProfileImg backgroundImg={profileImageURL} />
-						<p>
-							From. <span>김동훈</span>
-						</p>
-						<p>동료</p>
+						<section>
+							<p>
+								From.<span>김동훈</span>
+							</p>
+							<div>동료</div>
+						</section>
 					</section>
 					<p>2023.07.08</p>
-					<div></div> {/* 밑줄 표시 예정*/}
 				</header>
+				<ModalHeaderLine />
 				<textarea></textarea>
-				<button onClick={() => setMessageModalOpen(!messageModalOpen)}></button>
+				<Button
+					width={"120"}
+					onClick={() => setMessageModalOpen(!messageModalOpen)}
+				>
+					확인
+				</Button>
 			</RollingMessageModalWrapper>
 		</RollingMessageModalBackground>
 	);
