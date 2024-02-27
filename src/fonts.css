@@ -1,0 +1,13 @@
+@font-face {
+  font-family: "Pretend";
+  src: url("../public/assets/fonts/Pretendard-Regular.woff") format("woff");
+  font-style: normal;
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: "Pretend";
+  src: url("../public/assets/fonts/Pretendard-Bold.woff") format("woff");
+  font-style: normal;
+  font-weight: 700;
+}
