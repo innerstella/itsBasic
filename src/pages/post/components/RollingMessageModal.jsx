@@ -1,7 +1,6 @@
 import { useState } from "react";
 import {
 	PrimaryButton,
-	ModalHeaderLine,
 	ModalMessageTextArea,
 	PostProfileImg,
 	RelationBadge,
@@ -27,7 +26,7 @@ const convertRelationColor = (relation) => {
 const SAMPLE_DATA = {
 	sender: "김동훈",
 	profileImageURL: "logo192.png",
-	relationship: "동료",
+	relationship: "친구",
 	createdAt: "2023.07.28",
 	content: "코로나가기승을부리는중입니다.",
 	font: "notoSans",
@@ -50,14 +49,17 @@ const RollingMessageModal = ({ rollingMessageData = SAMPLE_DATA }) => {
 							<p className={styled["rolling-message-modal-sender"]}>
 								From.<span>{sender}</span>
 							</p>
-							<p className={styled["rolling-message-modal-relationship"]}>
+							<RelationBadge
+								color={relationColor}
+								className={styled["rolling-message-modal-relationship"]}
+							>
 								{relationship}
-							</p>
+							</RelationBadge>
 						</section>
 					</section>
 					<p>{createdAt}</p>
 				</header>
-				<ModalHeaderLine />
+				<div className={styled["modal-header-line"]} />
 				<ModalMessageTextArea font={font}>{content}</ModalMessageTextArea>
 				<PrimaryButton
 					width={"120"}

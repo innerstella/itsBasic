@@ -42,11 +42,9 @@ const ModalMessageTextArea = styled.textarea`
 	}
 `;
 
-const ModalHeaderLine = styled.div`
-	background-color: var(--color-grayscale-200);
-	width: 100%;
-	height: 1px;
-	margin-bottom: 16px;
+const RelationBadge = styled.p`
+	background-color: var(--color-${(prop) => prop.color}-100);
+	color: var(--color-${(prop) => prop.color}-500);
 `;
 
 const PrimaryButton = styled.button`
@@ -74,4 +72,4 @@ const PrimaryButton = styled.button`
 	background: var(--Purple-600, #9935ff);
 `;
 
-export { PostProfileImg, ModalHeaderLine, PrimaryButton, ModalMessageTextArea };
+export { PostProfileImg, PrimaryButton, ModalMessageTextArea, RelationBadge };

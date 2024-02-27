@@ -9,6 +9,13 @@
 	z-index: 99;
 }
 
+.modal-header-line {
+	background-color: var(--color-grayscale-200);
+	width: 100%;
+	height: 1px;
+	margin-bottom: 16px;
+}
+
 .rolling-message-modal-wrapper {
 	position: absolute;
 	background-color: var(--color-white);
