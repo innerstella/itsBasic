@@ -11,3 +11,143 @@
   font-style: normal;
   font-weight: 700;
 }
+
+.font-28-bold {
+  /* Font/28 Bold */
+  font-family: Pretendard;
+  font-size: 2.8rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 4.2rem; /* 150% */
+  letter-spacing: -0.028rem;
+}
+
+.font-24-bold {
+  /* Font/24 Bold */
+  font-family: Pretendard;
+  font-size: 2.4rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 3.6rem; /* 150% */
+  letter-spacing: -0.024rem;
+}
+
+.font-24-regular {
+  /* Font/24 Regular */
+  font-family: Pretendard;
+  font-size: 2.4rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 3.6rem; /* 150% */
+  letter-spacing: -0.024rem;
+}
+
+.font-20-bold {
+  /* Font/20 Bold */
+  font-family: Pretendard;
+  font-size: 2rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 3rem; /* 150% */
+  letter-spacing: -0.02rem;
+}
+
+.font-20-regular {
+  /* Font/20 Regular */
+  font-family: Pretendard;
+  font-size: 2rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 3rem; /* 150% */
+  letter-spacing: -0.02rem;
+}
+
+.font-18-bold {
+  /* Font/18 Bold */
+  font-family: Pretendard;
+  font-size: 1.8rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 2.8rem; /* 155.556% */
+  letter-spacing: -0.018rem;
+}
+
+.font-18-regular {
+  /* Font/18 Regular */
+  font-family: Pretendard;
+  font-size: 1.8rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 2.8rem; /* 155.556% */
+  letter-spacing: -0.018rem;
+}
+
+.font-16-bold {
+  /* Font/16 Bold */
+  font-family: Pretendard;
+  font-size: 1.6rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 2.6rem; /* 162.5% */
+  letter-spacing: -0.016rem;
+}
+
+.font-16-regular {
+  /* Font/16 Regular */
+  font-family: Pretendard;
+  font-size: 1.6rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 2.6rem; /* 162.5% */
+  letter-spacing: -0.016rem;
+}
+
+.font-15-regular {
+  /* Font/15 Regular */
+  font-family: Pretendard;
+  font-size: 1.5rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 2.2rem; /* 146.667% */
+  letter-spacing: -0.015rem;
+}
+
+.font-15-bold {
+  /* Font/15 Bold */
+  font-family: Pretendard;
+  font-size: 1.5rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 2.2rem; /* 146.667% */
+  letter-spacing: -0.015rem;
+}
+
+.font-14-regular {
+  /* Font/14 Regular */
+  font-family: Pretendard;
+  font-size: 1.4rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 2rem; /* 142.857% */
+  letter-spacing: -0.007rem;
+}
+
+.font-14-bold {
+  /* Font/14 Bold */
+  font-family: Pretendard;
+  font-size: 1.4rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 2rem; /* 142.857% */
+  letter-spacing: -0.007rem;
+}
+
+.font-12-regular {
+  /* Font/12 Regular */
+  font-family: Pretendard;
+  font-size: 1.2rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.8rem; /* 150% */
+  letter-spacing: -0.006rem;
+}
