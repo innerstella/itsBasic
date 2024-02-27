@@ -1,15 +1,30 @@
 import { useState } from "react";
 import {
-	Button,
+	PrimaryButton,
 	ModalHeaderLine,
+	ModalMessageTextArea,
 	PostProfileImg,
-	RollingMessageModalBackground,
-	RollingMessageModalWrapper,
+	RelationBadge,
 } from "./RollingMessageModal.style";
 
+import styled from "./RollingMessageModal.module.css";
+
+const convertRelationColor = (relation) => {
+	switch (relation) {
+		case "지인":
+			return "orange";
+		case "동료":
+			return "purple";
+		case "가족":
+			return "green";
+		case "친구":
+			return "blue";
+		default:
+			return "error";
+	}
+};
+
 const SAMPLE_DATA = {
-	id: 0,
-	recipientId: 0,
 	sender: "김동훈",
 	profileImageURL: "logo192.png",
 	relationship: "동료",
@@ -20,42 +35,38 @@ const SAMPLE_DATA = {
 
 const RollingMessageModal = ({ rollingMessageData = SAMPLE_DATA }) => {
 	const [messageModalOpen, setMessageModalOpen] = useState(false);
-	const {
-		id,
-		recipientId,
-		sender,
-		profileImageURL,
-		relationship,
-		createdAt,
-		content,
-		font,
-	} = rollingMessageData;
+	const { sender, profileImageURL, relationship, createdAt, content, font } =
+		rollingMessageData;
+
+	const relationColor = convertRelationColor(relationship);
 
 	return (
-		<RollingMessageModalBackground>
-			<RollingMessageModalWrapper>
+		<div className={styled["rolling-message-modal-background"]}>
+			<div className={styled["rolling-message-modal-wrapper"]}>
 				<header>
 					<section>
 						<PostProfileImg backgroundImg={profileImageURL} />
 						<section>
-							<p>
-								From.<span>김동훈</span>
+							<p className={styled["rolling-message-modal-sender"]}>
+								From.<span>{sender}</span>
 							</p>
-							<div>동료</div>
+							<p className={styled["rolling-message-modal-relationship"]}>
+								{relationship}
+							</p>
 						</section>
 					</section>
-					<p>2023.07.08</p>
+					<p>{createdAt}</p>
 				</header>
 				<ModalHeaderLine />
-				<textarea></textarea>
-				<Button
+				<ModalMessageTextArea font={font}>{content}</ModalMessageTextArea>
+				<PrimaryButton
 					width={"120"}
 					onClick={() => setMessageModalOpen(!messageModalOpen)}
 				>
 					확인
-				</Button>
-			</RollingMessageModalWrapper>
-		</RollingMessageModalBackground>
+				</PrimaryButton>
+			</div>
+		</div>
 	);
 };
 
