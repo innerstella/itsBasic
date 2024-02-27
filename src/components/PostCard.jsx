@@ -34,6 +34,7 @@ const dummyData = {
 const PostCardBackgroud = styled.div`
   background: var(--color-orange-200, #ffe2 ad);
   padding-top: 120px;
+  padding-bottom: 24.6rem;
 `;
 const CardGrid = styled.div`
   margin: 0 auto;
@@ -118,6 +119,7 @@ const From = styled.p`
   line-height: 24px; /* 120% */
 `;
 const Name = styled.p`
+  width: 12rem;
   color: #000;
   font-family: Pretendard;
   font-size: 20px;
@@ -153,6 +155,11 @@ const Data = styled.p`
   line-height: 18px; /* 150% */
   letter-spacing: -0.06px;
 `;
+const DeleteButton = styled.button`
+  border-radius: 6px;
+  border: 1px solid var(--gray-300, #ccc);
+  background: var(--white, #fff);
+`;
 function PostCard() {
   return (
     <PostCardBackgroud>
@@ -172,6 +179,9 @@ function PostCard() {
               </CardHeaderName>
               <CardHeaderTag>가족</CardHeaderTag>
             </CardHeaderContainer>
+            <DeleteButton>
+              <img alt="삭제휴지통"></img>
+            </DeleteButton>
           </CardHeader>
           <Horizon />
           <Content>
@@ -180,6 +190,10 @@ function PostCard() {
           </Content>
           <Data>2023.02.02</Data>
         </CardItem>
+        <CardItem className="rolling-card">other1</CardItem>
+        <CardItem className="rolling-card">other1</CardItem>
+        <CardItem className="rolling-card">other1</CardItem>
+        <CardItem className="rolling-card">other1</CardItem>
         <CardItem className="rolling-card">other1</CardItem>
         <CardItem className="rolling-card">other1</CardItem>
       </CardGrid>
