@@ -20,7 +20,7 @@ const ModalMessageTextArea = styled.textarea`
 
 	/* Font/18 Regular */
 	font-family: ${(prop) => prop.font || "pretendard"};
-	font-size: 18px;
+	font-size: 1.8rem;
 	font-style: normal;
 	font-weight: 400;
 	line-height: 28px; /* 155.556% */
@@ -57,7 +57,7 @@ const PrimaryButton = styled.button`
 	text-align: center;
 	/* Font/16 Regular */
 	font-family: Pretendard;
-	font-size: 16px;
+	font-size: 1.6rem;
 	font-style: normal;
 	font-weight: 400;
 	line-height: 26px; /* 162.5% */
