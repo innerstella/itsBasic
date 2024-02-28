@@ -1,6 +1,7 @@
 [
   {
     "userId": 1,
+    "bg": "purple",
     "userName": "Sowon",
     "writers": [
       {
@@ -25,6 +26,24 @@
       },
       {
         "id": 6,
+        "imgUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTyd_HKnpRzuhWVcg_N8XC_MOLpQ2L21thjcA&usqp=CAU"
+      }
+    ],
+    "emoji1": 20,
+    "emoji2": 12,
+    "emoji3": 7
+  },
+  {
+    "userId": 1,
+    "bg": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRILm6iutpSWgsRHY_AvmlQ9y_QMwNfH5ILlw&usqp=CAU",
+    "userName": "Sowon",
+    "writers": [
+      {
+        "id": 1,
+        "imgUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTuRpzkV2o82nBH2WMtLQAVQpAhIF5rYGahMw&usqp=CAU"
+      },
+      {
+        "id": 2,
         "imgUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTyd_HKnpRzuhWVcg_N8XC_MOLpQ2L21thjcA&usqp=CAU"
       }
     ],

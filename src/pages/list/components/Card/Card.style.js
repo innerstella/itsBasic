@@ -11,7 +11,24 @@ export const Container = styled.div`
 
   border-radius: 1.6rem;
   border: 1px solid rgba(0, 0, 0, 0.1);
-  background: ${({ color }) => `var(--color-${color}-100, #ecd9ff)`};
+  background: ${({ color }) => {
+    if (["purple", "green", "blue", "orange"].includes(color)) {
+      return `var(--color-${color}-100, #ecd9ff)`;
+    } else {
+      return `linear-gradient(180deg, rgba(0, 0, 0, 0.54) 0%, rgba(0, 0, 0, 0.54) 100%), url(
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRILm6iutpSWgsRHY_AvmlQ9y_QMwNfH5ILlw&usqp=CAU"
+      )`;
+    }
+  }};
+  color: ${({ color }) => {
+    if (["purple", "green", "blue", "orange"].includes(color)) {
+      //   return `var(--color-grayscale-700)`;
+      return "black";
+    } else {
+      return `var(--color-white)`;
+    }
+  }};
+  background-size: cover;
   box-shadow: 0px 2px 12px 0px rgba(0, 0, 0, 0.08);
 
   .svg {

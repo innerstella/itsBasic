@@ -3,25 +3,28 @@ import * as S from "./Card.style";
 
 /**
  *
- * @param {color} string purple | orange | blue | green | custom
  * @param {data} object 롤링 페이퍼 카드 정보
  * @returns
  */
-const Card = ({ color, data }) => {
+const Card = ({ data }) => {
+  const [bgColor, setBgColor] = useState("purple");
   const [svgLink, setSvgLink] = useState("purple");
+  const colorList = ["purple", "orange", "blue", "green"];
 
   // 카드 색상 설정
   useEffect(() => {
-    if (color !== "custom") {
-      setSvgLink(`/assets/link/${color}.svg`);
+    if (colorList.includes(data.bg)) {
+      setBgColor(data.bg);
+      setSvgLink(`/assets/link/${data.bg}.svg`);
     } else {
-      setSvgLink("추후 설정");
+      setBgColor(data.bg);
+      setSvgLink("");
     }
   }, []);
 
   return (
-    <S.Container color={color}>
-      <img className="svg" src={svgLink} alt="purple" />
+    <S.Container color={bgColor}>
+      {svgLink && <img className="svg" src={svgLink} alt="purple" />}
       <S.ContentContainer>
         <S.InfoContainer>
           <p className="font-24-bold">To. {data.userName}</p>
