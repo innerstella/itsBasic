@@ -1,0 +1,32 @@
+.image-flex-box {
+  display: flex;
+}
+
+.image-container {
+  width: 2.8rem;
+  height: 2.8rem;
+  border-radius: 500rem;
+  overflow: hidden;
+  border: 0.2rem solid #fff;
+  background-image: url("/public/assets/demo_people_image.jpg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  margin-left: -1.3rem;
+}
+
+.writer-count-number {
+  width: 2.8rem;
+  height: 2.8rem;
+  border-radius: 500rem;
+  background-color: var(--color-white);
+  border: 0.2rem solid #e3e3e3;
+  margin-left: -1.3rem;
+}
+
+.writer-count-number p {
+  font-weight: 500;
+  color: #484848;
+  margin-left: 0.4rem;
+  margin-top: 0.3rem;
+}

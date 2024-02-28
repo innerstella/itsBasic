@@ -1,0 +1,10 @@
+.main-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 1.1rem;
+  color: var(--color-grayscale-900);
+  margin-right: 5.7rem;
+}
+
+.writer-counter-box {
+}

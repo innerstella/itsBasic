@@ -1,0 +1,19 @@
+.main-wrapper {
+  padding: 1.3rem 0rem;
+  width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  @media (max-width: 1200px) {
+    padding: 1.3rem 2.4rem;
+  }
+
+  @media (max-width: 576px) {
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    align-items: start;
+  }
+}

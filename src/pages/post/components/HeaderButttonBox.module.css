@@ -1,0 +1,5 @@
+.button-box-wrapper {
+  display: flex;
+  margin-left: 0.8rem;
+  gap: 2.7rem;
+}

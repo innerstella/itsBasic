@@ -1,0 +1,35 @@
+.main-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.most-emoji-box {
+  display: flex;
+  align-items: center;
+  border-radius: 32px;
+  background: rgba(0, 0, 0, 0.54);
+  padding: 8px 12px;
+  gap: 0.2rem;
+}
+
+.most-emoji-box p {
+  line-height: 2rem;
+  color: #fff;
+  font-size: 1.6rem;
+}
+
+.most-emoji {
+  padding: 0rem 0.2rem;
+  line-height: 2.1rem;
+}
+
+.emoji-picker-dropdown-button {
+  padding: 0.6rem;
+  background: none;
+  border: none;
+}
+
+.emoji-picker-dropdown-button img {
+  cursor: pointer;
+}

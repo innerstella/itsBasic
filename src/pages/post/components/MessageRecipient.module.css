@@ -1,0 +1,13 @@
+.recipient-wrapper {
+  @media (max-width: 576px) {
+    padding: 1.2rem 2rem;
+  }
+}
+
+.recipient-wrapper p {
+  color: var(--color-grayscale-800);
+
+  @media (max-width: 576px) {
+    font-size: 1.8rem;
+  }
+}
