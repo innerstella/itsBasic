@@ -1,0 +1,31 @@
+.main-wrapper {
+  padding: 1.1rem 0rem;
+  width: 1200px;
+  margin: 0 auto;
+
+  @media (max-width: 1200px) {
+    padding: 1.1rem 2.4rem;
+  }
+
+  @media (max-width: 480px) {
+    display: none;
+  }
+}
+
+.header-logo-box {
+  padding: 0.6rem 0rem;
+  display: flex;
+  gap: 0.8rem;
+  align-items: center;
+}
+
+.header-logo-box p {
+  color: var(#4a494f);
+  font-family: Poppins;
+  font-size: 1.9971rem;
+  font-weight: 700;
+}
+
+.header-logo-box img {
+  cursor: pointer;
+}

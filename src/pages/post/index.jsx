@@ -1,5 +1,11 @@
+import PostPageHeader from "./components/PostPageHeader";
+
 const PostPage = () => {
-  return <div>Post</div>;
+  return (
+    <>
+      <PostPageHeader />
+    </>
+  );
 };
 
 export default PostPage;
