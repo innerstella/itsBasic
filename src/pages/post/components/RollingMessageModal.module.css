@@ -53,6 +53,10 @@
 	}
 }
 
+.rolling-message-modal-confirm-design {
+	width: 120px;
+}
+
 .rolling-message-modal-relationship {
 	display: flex;
 	margin-bottom: 0;
