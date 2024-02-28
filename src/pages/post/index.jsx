@@ -5,7 +5,7 @@ const PostPage = () => {
   return (
     <div className={styles["post-page-wrapper"]}>
       <PostPageHeader />
-      {/* <PostPageMain /> */}
+      <PostPageMain />
     </div>
   );
 };
