@@ -1,4 +1,5 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
+import "react-toastify/dist/ReactToastify.css";
 import MainPage from "./pages/main";
 import GlobalStyles from "./GlobalStyles";
 import "./fonts.css";

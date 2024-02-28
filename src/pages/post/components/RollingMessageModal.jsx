@@ -8,9 +8,7 @@ import PrimaryButton40 from "../../../components/PrimaryButton40";
 
 import styled from "./RollingMessageModal.module.css";
 import { StyleSheetManager } from "styled-components";
-
-import { Bounce, ToastContainer, toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
+import { toastNotify } from "../../../utils/callToastNotify";
 
 const SAMPLE_DATA = {
 	sender: "김동훈",
@@ -35,19 +33,6 @@ const convertRelationColor = (relation) => {
 			return "error";
 	}
 };
-
-const toastNotify = (toastMessage = "default Message") =>
-	toast.success(toastMessage, {
-		position: "bottom-center",
-		autoClose: 5000,
-		hideProgressBar: true,
-		closeOnClick: true,
-		pauseOnHover: true,
-		draggable: true,
-		progress: undefined,
-		theme: "dark",
-		transition: Bounce,
-	});
 
 const RollingMessageModal = ({ rollingMessageData = SAMPLE_DATA }) => {
 	const [messageModalOpen, setMessageModalOpen] = useState(false);
