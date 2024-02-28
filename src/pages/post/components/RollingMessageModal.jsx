@@ -9,6 +9,9 @@ import PrimaryButton40 from "../../../components/PrimaryButton40";
 import styled from "./RollingMessageModal.module.css";
 import { StyleSheetManager } from "styled-components";
 
+import { Bounce, ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
 const SAMPLE_DATA = {
 	sender: "김동훈",
 	profileImageURL: "logo192.png",
@@ -32,6 +35,19 @@ const convertRelationColor = (relation) => {
 			return "error";
 	}
 };
+
+const toastNotify = (toastMessage = "default Message") =>
+	toast.success(toastMessage, {
+		position: "bottom-center",
+		autoClose: 5000,
+		hideProgressBar: true,
+		closeOnClick: true,
+		pauseOnHover: true,
+		draggable: true,
+		progress: undefined,
+		theme: "dark",
+		transition: Bounce,
+	});
 
 const RollingMessageModal = ({ rollingMessageData = SAMPLE_DATA }) => {
 	const [messageModalOpen, setMessageModalOpen] = useState(false);
@@ -73,7 +89,11 @@ const RollingMessageModal = ({ rollingMessageData = SAMPLE_DATA }) => {
 					fontFamily={font}
 					defaultValue={content}
 				/>
-				<PrimaryButton40 disabled={isButtonDisabled} width={"120px"}>
+				<PrimaryButton40
+					className={styled["rolling-message-modal-confirm-design"]}
+					disabled={isButtonDisabled}
+					onClick={() => toastNotify()}
+				>
 					확인
 				</PrimaryButton40>
 			</div>
