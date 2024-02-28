@@ -1,0 +1,25 @@
+.post-page-wrapper {
+  position: relative;
+}
+
+.post-page-wrapper::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 65px;
+  height: 1.2px;
+  width: 100vw;
+  background: #ededed;
+}
+
+@media (max-width: 767.5px) {
+  .post-page-wrapper::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 55px;
+    height: 1.2px;
+    width: 100vw;
+    background: #ededed;
+  }
+}

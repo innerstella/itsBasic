@@ -10,6 +10,7 @@ const HeaderLogoBox = () => {
         />
         <p>Rolling</p>
       </div>
+      <div className={styles["line"]}></div>
     </div>
   );
 };

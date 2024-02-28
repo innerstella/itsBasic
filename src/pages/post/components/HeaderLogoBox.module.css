@@ -2,6 +2,7 @@
   padding: 1.1rem 0rem;
   width: 120rem;
   margin: 0 auto;
+  position: relative;
 
   @media (max-width: 1247.5px) {
     width: 100%;
@@ -35,3 +36,4 @@
   width: 2.7818rem;
   height: 2.7658rem;
 }
+
