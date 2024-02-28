@@ -2,7 +2,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import MainPage from "./pages/main";
 import GlobalStyles from "./GlobalStyles";
 import "./fonts.css";
-
+import "./components/RollingToastCustom.css";
 import ListPage from "./pages/list";
 import RollingMessageModal from "./pages/post/components/RollingMessageModal";
 import { ToastContainer } from "react-toastify";
