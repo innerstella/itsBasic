@@ -17,6 +17,9 @@
 }
 
 .rolling-message-modal-wrapper {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
 	position: absolute;
 	background-color: var(--color-white);
 	transform: translateX(-50%) translateY(-50%);
@@ -32,6 +35,7 @@
 		justify-content: space-between;
 		align-items: center;
 		margin-bottom: 19px;
+		width: 100%;
 
 		color: var(--gray-400, #999);
 

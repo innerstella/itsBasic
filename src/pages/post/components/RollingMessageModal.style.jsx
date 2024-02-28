@@ -42,22 +42,4 @@ const RelationBadge = styled.p`
 	color: var(--color-${(prop) => prop.color}-500);
 `;
 
-const PrimaryButton = styled.button`
-	margin: auto;
-	width: ${(prop) => prop.width}px;
-	border: none;
-
-	cursor: pointer;
-	color: var(--color-white);
-	text-align: center;
-
-	display: flex;
-	padding: 7px 16px;
-	justify-content: center;
-	align-items: center;
-	gap: 10px;
-	border-radius: 6px;
-	background: var(--color-purple-600);
-`;
-
-export { PostProfileImg, PrimaryButton, ModalMessageTextArea, RelationBadge };
+export { PostProfileImg, ModalMessageTextArea, RelationBadge };

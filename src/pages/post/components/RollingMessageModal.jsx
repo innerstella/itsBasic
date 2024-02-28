@@ -1,10 +1,10 @@
 import { useState } from "react";
 import {
-	PrimaryButton,
 	ModalMessageTextArea,
 	PostProfileImg,
 	RelationBadge,
 } from "./RollingMessageModal.style";
+import PrimaryButton40 from "../../../components/PrimaryButton40";
 
 import styled from "./RollingMessageModal.module.css";
 import { StyleSheetManager } from "styled-components";
@@ -37,6 +37,7 @@ const RollingMessageModal = ({ rollingMessageData = SAMPLE_DATA }) => {
 	const [messageModalOpen, setMessageModalOpen] = useState(false);
 	const { sender, profileImageURL, relationship, createdAt, content, font } =
 		rollingMessageData;
+	const [isButtonDisabled, setIsButtonDisabled] = useState(false);
 
 	const relationColor = convertRelationColor(relationship);
 
@@ -72,13 +73,9 @@ const RollingMessageModal = ({ rollingMessageData = SAMPLE_DATA }) => {
 					fontFamily={font}
 					defaultValue={content}
 				/>
-				<PrimaryButton
-					className="font-16-regular"
-					width={"120"}
-					onClick={() => setMessageModalOpen(!messageModalOpen)}
-				>
+				<PrimaryButton40 disabled={isButtonDisabled} width={"120px"}>
 					확인
-				</PrimaryButton>
+				</PrimaryButton40>
 			</div>
 		</div>
 	);
