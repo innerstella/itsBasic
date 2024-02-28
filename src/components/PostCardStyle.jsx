@@ -2,44 +2,50 @@ import styled from "styled-components";
 import createGlobalStyle from "styled-components";
 
 export const PostCardBackgroud = styled.div`
+  display: flex;
+  justify-content: center;
   background: var(--color-orange-200, #ffe2 ad);
   padding-top: 12rem;
   padding-bottom: 24.6rem;
+  @media (max-width: 1247px) {
+    padding: 6rem 2.4rem;
+  }
 `;
 export const CardGrid = styled.div`
-  margin: 0 auto;
-  width: 100rem;
   display: grid;
   grid-template-columns: repeat(3, 38.4rem);
   grid-auto-rows: 28rem;
-  gap:24px;
-}
+  gap: 24px;
+  @media (max-width: 1247px) {
+    max-width: 120rem;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2.4rem;
+  }
+  @media (max-width: 767px) {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 2.4rem;
+  }
 `;
 export const CardPlus = styled.div`
   display: flex;
-  width: 38.4rem;
   height: 28rem;
   justify-content: center;
   align-items: center;
   flex-shrink: 0;
-
   border-radius: 1.6rem;
   background: var(--white, #fff);
   box-shadow: 0px 2px 12px 0px rgba(0, 0, 0, 0.08);
 `;
 export const CardItem = styled.div`
+  position: relative;
   padding: 2.4rem;
   display: flex;
   flex-direction: column;
   border-radius: 1.6rem;
   background: var(--color-white, #fff);
   box-shadow: 0px 2px 12px 0px rgba(0, 0, 0, 0.08);
-  gap: 1.5rem;
-`;
-export const Horizon = styled.div`
-  width: 33.6rem;
-  height: 1px;
-  background: var(--color-grayscale-200, #eee);
 `;
 export const CardHeader = styled.div`
   display: flex;
@@ -96,7 +102,7 @@ export const From = styled.p`
   line-height: 24px; /* 120% */
 `;
 export const Name = styled.p`
-  width: 14rem;
+  width: 100%;
   color: #000;
   font-family: Pretendard;
   font-size: 20px;
@@ -105,21 +111,24 @@ export const Name = styled.p`
   line-height: 24px; /* 120% */
 `;
 export const Content = styled.p`
-  width: 33.6rem;
-  height: 10.6rem;
-  flex-shrink: 0;
-  overflow: hidden;
+  margin: 1.6rem auto;
+  padding-top: 1.6rem;
+  width: 100%;
+  height: 11.6rem;
   color: var(--gray-600, #4a4a4a);
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
   text-overflow: ellipsis;
-  white-space: nowrap;
-
-  /* Font/18 Regular */
-  font-family: Pretendard;
-  font-size: 1.6rem;
-  font-style: normal;
+  white-space: normal;
+  align-items: center;
+  font-family: "Noto Sans KR";
+  font-size: 1.8rem;
   font-weight: 400;
-  line-height: 28px; /* 155.556% */
-  letter-spacing: -0.18px;
+  line-height: 2.8rem;
+  letter-spacing: -0.018rem;
+  border-top: 0.1rem solid var(--gray-200, #eee);
 `;
 export const Data = styled.p`
   color: var(--gray-400, #999);
@@ -133,6 +142,9 @@ export const Data = styled.p`
   letter-spacing: -0.06px;
 `;
 export const DeleteButton = styled.button`
+  position: absolute;
+  right: 2.8rem;
+  top: 2.8rem;
   display: inline-flex;
   padding: 8px;
   justify-content: center;
