@@ -7,6 +7,16 @@ import {
 } from "./RollingMessageModal.style";
 
 import styled from "./RollingMessageModal.module.css";
+import { StyleSheetManager } from "styled-components";
+
+const SAMPLE_DATA = {
+	sender: "김동훈",
+	profileImageURL: "logo192.png",
+	relationship: "가족",
+	createdAt: "2023.07.28",
+	content: "코로나가기승을부리는중입니다.",
+	font: "notoSans",
+};
 
 const convertRelationColor = (relation) => {
 	switch (relation) {
@@ -23,15 +33,6 @@ const convertRelationColor = (relation) => {
 	}
 };
 
-const SAMPLE_DATA = {
-	sender: "김동훈",
-	profileImageURL: "logo192.png",
-	relationship: "친구",
-	createdAt: "2023.07.28",
-	content: "코로나가기승을부리는중입니다.",
-	font: "notoSans",
-};
-
 const RollingMessageModal = ({ rollingMessageData = SAMPLE_DATA }) => {
 	const [messageModalOpen, setMessageModalOpen] = useState(false);
 	const { sender, profileImageURL, relationship, createdAt, content, font } =
@@ -41,17 +42,23 @@ const RollingMessageModal = ({ rollingMessageData = SAMPLE_DATA }) => {
 
 	return (
 		<div className={styled["rolling-message-modal-background"]}>
-			<div className={styled["rolling-message-modal-wrapper"]}>
+			<div
+				className={`${styled["rolling-message-modal-wrapper"]} font-14-regular`}
+			>
 				<header>
 					<section>
-						<PostProfileImg backgroundImg={profileImageURL} />
+						<StyleSheetManager shouldForwardProp={() => true}>
+							<PostProfileImg image={profileImageURL} />
+						</StyleSheetManager>
 						<section>
-							<p className={styled["rolling-message-modal-sender"]}>
+							<p
+								className={`${styled["rolling-message-modal-sender"]} font-20-regular`}
+							>
 								From.<span>{sender}</span>
 							</p>
 							<RelationBadge
 								color={relationColor}
-								className={styled["rolling-message-modal-relationship"]}
+								className={`${styled["rolling-message-modal-relationship"]} font-14-regular`}
 							>
 								{relationship}
 							</RelationBadge>
@@ -60,8 +67,13 @@ const RollingMessageModal = ({ rollingMessageData = SAMPLE_DATA }) => {
 					<p>{createdAt}</p>
 				</header>
 				<div className={styled["modal-header-line"]} />
-				<ModalMessageTextArea font={font}>{content}</ModalMessageTextArea>
+				<ModalMessageTextArea
+					className="font-18-regular"
+					fontFamily={font}
+					defaultValue={content}
+				/>
 				<PrimaryButton
+					className="font-16-regular"
 					width={"120"}
 					onClick={() => setMessageModalOpen(!messageModalOpen)}
 				>
