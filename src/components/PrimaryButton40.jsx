@@ -3,7 +3,6 @@ import styled from "styled-components";
 const PrimaryButton40 = styled.button`
 	background-color: ${(prop) =>
 		prop.disabled ? "var(--color-grayscale-300)" : "var(--color-purple-600)"};
-	width: ${(prop) => prop.width || "100%"};
 	cursor: ${(prop) => (prop.disabled ? "default" : "pointer")};
 
 	display: flex;
