@@ -16,10 +16,10 @@ const MostEmojiBox = () => {
           <p className={styles["most-emoji"]}>🎉</p>
           <p className='font-16-regular'>10</p>
         </div>
+        <button className={styles["emoji-picker-dropdown-button"]}>
+          <img src='/assets/emoji_picker_dropdown_icon.svg' />
+        </button>
       </div>
-      <button className={styles["emoji-picker-dropdown-button"]}>
-        <img src='/assets/emoji_picker_dropdown_icon.svg' />
-      </button>
     </>
   );
 };

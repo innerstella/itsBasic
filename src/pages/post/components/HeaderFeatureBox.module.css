@@ -6,11 +6,12 @@
   justify-content: space-between;
   align-items: center;
 
-  @media (max-width: 1200px) {
+  @media (max-width: 1247.5px) {
+    width: 100%;
     padding: 1.3rem 2.4rem;
   }
 
-  @media (max-width: 576px) {
+  @media (max-width: 767.5px) {
     display: flex;
     flex-direction: column;
     padding: 0;

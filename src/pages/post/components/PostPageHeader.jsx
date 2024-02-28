@@ -4,7 +4,7 @@ const PostPageHeader = () => {
   return (
     <>
       <HeaderLogoBox />
-      {/* <HeaderFeatureBox /> */}
+      <HeaderFeatureBox />
     </>
   );
 };

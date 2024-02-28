@@ -4,7 +4,7 @@ const PostPage = () => {
   return (
     <>
       <PostPageHeader />
-      <PostPageMain />
+      {/* <PostPageMain /> */}
     </>
   );
 };

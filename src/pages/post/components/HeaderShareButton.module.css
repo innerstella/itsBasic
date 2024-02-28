@@ -7,4 +7,18 @@
   align-items: center;
   gap: 0.4rem;
   cursor: pointer;
+
+  @media (max-width: 767.5px) {
+    padding: 0.6rem 0.8rem;
+  }
+}
+
+.share-button img {
+  width: 2.4rem;
+  height: 2.4rem;
+
+  @media (max-width: 767.5px) {
+    width: 2rem;
+    height: 2rem;
+  }
 }
