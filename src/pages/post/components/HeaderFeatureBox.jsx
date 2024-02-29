@@ -1,12 +1,12 @@
-import styles from "./HeaderFeatureBox.module.css";
 import MessageRecipient from "./MessageRecipient";
 import HeaderServiceBox from "./HeaderServiceBox";
+import * as S from "./HeaderFeatureBox.style";
 const HeaderFeatureBox = () => {
   return (
-    <div className={styles["main-wrapper"]}>
+    <S.Contaner>
       <MessageRecipient />
       <HeaderServiceBox />
-    </div>
+    </S.Contaner>
   );
 };
 

@@ -1,4 +1,6 @@
-.main-wrapper {
+import styled from "styled-components";
+
+export const Contaner = styled.div`
   padding: 1.3rem 0rem;
   width: 1200px;
   margin: 0 auto;
@@ -17,4 +19,4 @@
     padding: 0;
     align-items: start;
   }
-}
+`;

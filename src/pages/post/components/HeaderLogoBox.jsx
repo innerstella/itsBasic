@@ -1,17 +1,16 @@
-import styles from "./HeaderLogoBox.module.css";
-
+import * as S from "./HeaderLogoBox.style";
 const HeaderLogoBox = () => {
   return (
-    <div className={styles["main-wrapper"]}>
-      <div className={styles["header-logo-box"]}>
+    <S.Container>
+      <S.Box>
         <img
           src='/assets/rolling_logo_image.svg'
-          className={styles["header-logo-image"]}
+          className='header-logo-image'
+          alt='rolling-logo'
         />
         <p>Rolling</p>
-      </div>
-      <div className={styles["line"]}></div>
-    </div>
+      </S.Box>
+    </S.Container>
   );
 };
 

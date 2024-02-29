@@ -1,13 +1,15 @@
-import PostPageHeader from "./components/PostPageHeader";
+import * as S from "./index.style";
 import PostPageMain from "./components/PostPageMain";
-import styles from "./components/PostPage.module.css";
+import HeaderLogoBox from "./components/HeaderLogoBox";
+import HeaderFeatureBox from "./components/HeaderFeatureBox";
 
 const PostPage = () => {
   return (
-    <div className={styles["post-page-wrapper"]}>
-      <PostPageHeader />
+    <S.Layout>
+      <HeaderLogoBox />
+      <HeaderFeatureBox />
       <PostPageMain />
-    </div>
+    </S.Layout>
   );
 };
 
