@@ -52,3 +52,16 @@
 	background-color: var(--color-white);
 	grid-template-columns: repeat(4, 1fr);
 }
+
+@media (max-width: 1024px) {
+	.emoji-dropdown-container {
+		grid-template-columns: repeat(3, 1fr);
+		grid-template-rows: repeat(2, 1fr);
+	}
+}
+
+@media (max-width: 768px) {
+	.emoji-dropdown-container {
+		padding: 16px;
+	}
+}
