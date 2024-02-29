@@ -34,67 +34,20 @@ export const Container = styled.div`
     border-radius: 0 0 1.6rem 0;
 
     position: relative;
-    /* margin-top: -13rem; */
-    /* top: 25rem;
-    left: 13.5rem;
-    margin-top: -13rem; */
-  }
-
-  .content-container {
-    min-width: 27.5rem;
-    padding: 2.4rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    gap: 4.3rem;
-    z-index: 10;
-  }
-
-  .info-container {
-    display: flex;
-    flex-direction: column;
-    gap: 1.2rem;
-  }
-  .profile-container {
-    display: flex;
-    flex-direction: row;
-    align-items: flex-start;
-
-    .profile-icon {
-      width: 2.8rem;
-      height: 2.8rem;
-      margin-right: -1.2rem;
-
-      display: flex;
-      padding: 0.2rem;
-      flex-direction: column;
-      align-items: flex-start;
-      gap: 1rem;
-
-      border-radius: 3rem;
-      background: #fff;
-    }
-    .nums {
-      display: flex;
-      padding: 0.5rem 0.6rem;
-      flex-direction: column;
-      align-items: flex-start;
-      gap: 1rem;
-      border-radius: 3rem;
-      background: #fff;
-      color: var(--gray-500, #555);
-    }
+    left: 11rem;
+    top: -16rem;
   }
 `;
 
 export const ContentContainer = styled.div`
-  position: absolute;
   min-width: 27.5rem;
   padding: 2.4rem;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   gap: 4.3rem;
+  z-index: 10;
+  overflow: hidden;
 `;
 
 export const InfoContainer = styled.div`
@@ -140,6 +93,7 @@ export const BadgeContainer = styled.div`
   gap: 0.8rem;
   border-top: 0.1rem solid rgba(0, 0, 0, 0.12);
   padding-top: 1.6rem;
+  z-index: 10;
 `;
 
 export const Badge = styled.div`

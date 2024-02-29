@@ -28,9 +28,8 @@ const Card = ({ data }) => {
 
   return (
     <S.Container color={bgColor}>
-      {/* {svgLink && <img className="svg" src={svgLink} alt="purple" />} */}
-      <div className="content-container">
-        <div className="info-container">
+      <S.ContentContainer>
+        <S.InfoContainer>
           <p className="font-24-bold">To. {data.userName}</p>
           <S.ProfileContainer>
             {data?.writers.slice(MIN_CARD_NUM, MAX_CARD_NUM).map((writer) => {
@@ -54,7 +53,7 @@ const Card = ({ data }) => {
             <span className="font-16-bold">{data.writers.length}</span>명이
             작성했어요!
           </p>
-        </div>
+        </S.InfoContainer>
         <S.BadgeContainer>
           <S.Badge>
             <span className="number">👍 {data.emoji1}</span>
@@ -66,7 +65,8 @@ const Card = ({ data }) => {
             <span className="number">😢 {data.emoji3}</span>
           </S.Badge>
         </S.BadgeContainer>
-      </div>
+        {svgLink && <img className="svg" src={svgLink} alt="purple" />}
+      </S.ContentContainer>
     </S.Container>
   );
 };
