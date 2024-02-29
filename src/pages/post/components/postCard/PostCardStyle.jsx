@@ -69,7 +69,7 @@ export const CardHeaderContainer = styled.div`
   align-items: flex-start;
   gap: 0.6rem;
 `;
-export const CardHeaderTag = styled.div`
+export const Relationship = styled.div`
   display: flex;
   padding: 0px 0.8rem;
   justify-content: center;

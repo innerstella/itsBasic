@@ -1,0 +1,27 @@
+{
+  "count": 2,
+  "next": null,
+  "previous": null,
+  "results": [
+    {
+      "id": 5335,
+      "recipientId": 1024,
+      "sender": "김하은",
+      "profileImageURL": "https://fastly.picsum.photos/id/311/200/200.jpg?hmac=CHiYGYQ3Xpesshw5eYWH7U0Kyl9zMTZLQuRDU4OtyH8",
+      "relationship": "가족",
+      "content": "열심히 일하는 모습 멋있습니다.",
+      "font": "Pretendard",
+      "createdAt": "2024-02-29T10:07:47.675036Z"
+    },
+    {
+      "id": 5126,
+      "recipientId": 1024,
+      "sender": "김하은222",
+      "profileImageURL": "https://fastly.picsum.photos/id/311/200/200.jpg?hmac=CHiYGYQ3Xpesshw5eYWH7U0Kyl9zMTZLQuRDU4OtyH8",
+      "relationship": "가족",
+      "content": "열심히 일하는 모습 멋있습니다열심히 일하는 모습 멋있습니다.열심히 일하는 모습 멋있습니다..",
+      "font": "Pretendard",
+      "createdAt": "2024-02-28T11:21:42.993251Z"
+    }
+  ]
+}
