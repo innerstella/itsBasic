@@ -1,10 +1,10 @@
-import styles from "./MessageRecipient.module.css";
+import * as S from "./MessageRecipient.style";
 
 const MessageRecipient = () => {
   return (
-    <div className={styles["recipient-wrapper"]}>
+    <S.Container>
       <p className='font-28-bold'>To. Ashley Kim</p>
-    </div>
+    </S.Container>
   );
 };
 

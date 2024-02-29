@@ -1,10 +1,13 @@
-import styles from "./HeaderShareButton.module.css";
-
+import * as S from "./HeaderShareButton.style";
 const HeaderShareButton = () => {
   return (
-    <button className={styles["share-button"]}>
-      <img src='/assets/header_share_button_icon.svg' />
-    </button>
+    <S.Button>
+      <img
+        src='/assets/header_share_button_icon.svg'
+        className='share-button-image'
+        alt='share-button'
+      />
+    </S.Button>
   );
 };
 

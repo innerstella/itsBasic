@@ -8,6 +8,7 @@ import PrimaryButton40 from "../../../components/PrimaryButton40";
 
 import styled from "./RollingMessageModal.module.css";
 import { StyleSheetManager } from "styled-components";
+import { toastNotify } from "../../../utils/callToastNotify";
 
 const SAMPLE_DATA = {
 	sender: "김동훈",
@@ -73,7 +74,11 @@ const RollingMessageModal = ({ rollingMessageData = SAMPLE_DATA }) => {
 					fontFamily={font}
 					defaultValue={content}
 				/>
-				<PrimaryButton40 disabled={isButtonDisabled} width={"120px"}>
+				<PrimaryButton40
+					className={styled["rolling-message-modal-confirm-design"]}
+					disabled={isButtonDisabled}
+					onClick={() => toastNotify()}
+				>
 					확인
 				</PrimaryButton40>
 			</div>

@@ -1,4 +1,6 @@
-.main-wrapper {
+import styled from "styled-components";
+
+export const Container = styled.div`
   display: flex;
   align-items: center;
   gap: 1.1rem;
@@ -8,8 +10,8 @@
   @media (max-width: 1023.5px) {
     display: none;
   }
-}
 
-.writer-counter-box {
-  color: var(--color-grayscale-900);
-}
+  p {
+    color: var(--color-grayscale-900);
+  }
+`;
