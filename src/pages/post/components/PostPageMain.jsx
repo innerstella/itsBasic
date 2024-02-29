@@ -1,5 +1,6 @@
 import styles from "./PostPageMain.module.css";
 import DummyPostCard from "./DummyPostCard";
+
 const PostPageMain = () => {
   return (
     <div className={styles["post-main-wrapper"]}>
