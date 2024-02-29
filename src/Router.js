@@ -7,7 +7,7 @@ import "./components/RollingToastCustom.css";
 import ListPage from "./pages/list";
 import PostPage from "./pages/post";
 import { ToastContainer } from "react-toastify";
-
+import TestDeleteButton from "./pages/post/components/postCard/TestDeleteButton";
 const AppRouter = () => {
   return (
     <BrowserRouter>
@@ -16,7 +16,9 @@ const AppRouter = () => {
         <Route path='/' element={<MainPage />} />
         <Route path='/list' element={<ListPage />} />
         <Route path='post'>
-          <Route path=':recipientId' element={<PostPage />} />
+          <Route path=':recipientId' element={<PostPage />}>
+            <Route path='edit' element={<TestDeleteButton />} />
+          </Route>
         </Route>
       </Routes>
       <ToastContainer
