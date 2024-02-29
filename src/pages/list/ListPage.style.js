@@ -12,6 +12,7 @@ export const Container = styled.div`
   .main-container {
     display: flex;
     flex-direction: column;
+    align-items: center;
     width: 100%;
     margin-top: 5rem;
     margin-bottom: 4rem;

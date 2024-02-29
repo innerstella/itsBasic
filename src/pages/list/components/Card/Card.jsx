@@ -3,24 +3,28 @@ import * as S from "./Card.style";
 
 /**
  *
+ * @description 리스트 페이지 카드 컴포넌트
  * @param {data} object 롤링 페이퍼 카드 정보
- * @returns
  */
+
+const MIN_CARD_NUM = 0;
+const MAX_CARD_NUM = 3;
+const COLORS = ["purple", "orange", "blue", "green"];
+
 const Card = ({ data }) => {
   const [bgColor, setBgColor] = useState("purple");
   const [svgLink, setSvgLink] = useState("purple");
-  const colorList = ["purple", "orange", "blue", "green"];
 
   // 카드 색상 설정
   useEffect(() => {
-    if (colorList.includes(data.bg)) {
+    if (COLORS.includes(data.bg)) {
       setBgColor(data.bg);
       setSvgLink(`/assets/link/${data.bg}.svg`);
     } else {
       setBgColor(data.bg);
       setSvgLink("");
     }
-  }, []);
+  }, [data.bg]);
 
   return (
     <S.Container color={bgColor}>
@@ -29,7 +33,7 @@ const Card = ({ data }) => {
         <S.InfoContainer>
           <p className="font-24-bold">To. {data.userName}</p>
           <S.ProfileContainer>
-            {data?.writers.slice(0, 3).map((writer) => {
+            {data?.writers.slice(MIN_CARD_NUM, MAX_CARD_NUM).map((writer) => {
               return (
                 <div key={writer.id}>
                   <img
