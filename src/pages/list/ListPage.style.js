@@ -15,7 +15,7 @@ export const Container = styled.div`
   .main-container {
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
+    align-items: center;
     gap: 5rem;
     margin: 5rem 2.4rem 4rem 2.4rem;
     padding: 0 2.4rem;
@@ -25,6 +25,7 @@ export const Container = styled.div`
     display: flex;
     flex-direction: column;
     gap: 1.6rem;
+    width: 120rem;
   }
 
   @media screen and (min-width: 375px) and (max-width: 1024px) {
@@ -78,5 +79,9 @@ export const EmptyCardList = styled.div`
     .svg {
       width: 10rem;
     }
+  }
+
+  @media screen and (min-width: 375px) and (max-width: 1024px) {
+    margin: 0 2.4rem;
   }
 `;
