@@ -7,7 +7,7 @@ import { useEffect, useState } from "react";
 
 const ListPage = () => {
   const [popularData, setPopularData] = useState();
-  const [recentData, setRecentData] = useState([]);
+  const [recentData, setRecentData] = useState();
 
   useEffect(() => {
     getRecipientList();
@@ -17,9 +17,25 @@ const ListPage = () => {
     fetch("https://rolling-api.vercel.app/4-2/recipients/")
       .then((res) => res.json())
       .then((data) => {
-        setPopularData(data.results);
+        // sortPopularData(data.results);
+        sortRecentData(data.results);
       });
   };
+
+  const sortPopularData = (data) => {
+    const sortedData = [...data].sort(
+      (a, b) => b.messageCount - a.messageCount
+    );
+    setPopularData(sortedData);
+  };
+
+  const sortRecentData = (data) => {
+    const sortedData = [...data].sort((a, b) => {
+      return new Date(b.createdAt) - new Date(a.createdAt);
+    });
+    setRecentData(sortedData);
+  };
+
   return (
     <S.Container>
       <div className="gnb-container">
@@ -28,11 +44,11 @@ const ListPage = () => {
       <div className="main-container">
         <div className="list-container">
           <p className="font-24-bold title">인기 롤링 페이퍼 🔥</p>
-          {popularData?.length > 0 && <CardList data={popularData} />}
+          {popularData?.length && <CardList data={popularData} />}
         </div>
         <div className="list-container">
           <p className="font-24-bold title">최근에 만든 롤링 페이퍼 ⭐️</p>
-          <CardList data={dummyData} />
+          {recentData && <CardList data={recentData} />}
         </div>
       </div>
       <S.Button>

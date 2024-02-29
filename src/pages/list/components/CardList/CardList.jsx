@@ -34,7 +34,6 @@ const CardList = ({ data }) => {
 
   // 화살표 버튼 노출 여부
   useEffect(() => {
-    console.log(data.length);
     if (data.length < 4) {
       setIsRightOn(false);
     } else {
@@ -65,6 +64,10 @@ const CardList = ({ data }) => {
       window.removeEventListener("resize", handleResize);
     };
   }, []);
+
+  if (data.length === 0) {
+    return <div>로딩중...</div>;
+  }
 
   if (isDesktop) {
     return (
