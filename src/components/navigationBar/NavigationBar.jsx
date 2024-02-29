@@ -1,9 +1,9 @@
 import { Link } from "react-router-dom";
 import NavContainer from "./NavigationBar.styles";
 
-const NavigationBar = () => {
+const NavigationBar = ({ show }) => {
   return (
-    <NavContainer>
+    <NavContainer show={show}>
       <div className="nav-container">
         <Link to="/" className="logo-container">
           <img

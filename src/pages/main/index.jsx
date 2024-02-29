@@ -5,7 +5,7 @@ import MainPageStyle from "./MainPage.styles";
 const MainPage = () => {
   return (
     <>
-      <NavigationBar />
+      <NavigationBar show="show" />
       <MainPageStyle>
         <div className="box-container">
           <div className="text-container">
@@ -42,7 +42,9 @@ const MainPage = () => {
           </div>
         </div>
       </MainPageStyle>
-      <Button link="/list">구경해보기</Button>
+      <Button link="/list" width="short" show="none">
+        구경해보기
+      </Button>
     </>
   );
 };

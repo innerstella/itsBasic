@@ -1,6 +1,8 @@
 import styled from "styled-components";
 
 const NavContainer = styled.div`
+  display: flex;
+  justify-content: center;
   width: 100vw;
   border-bottom: 0.1rem solid #ededed;
 
@@ -10,7 +12,7 @@ const NavContainer = styled.div`
     align-items: center;
     width: 120.7rem;
     height: 6.2rem;
-    margin: 0 auto;
+    margin: 0 2.4rem;
   }
 
   .logo-container {
@@ -30,6 +32,10 @@ const NavContainer = styled.div`
     cursor: pointer;
   }
 
+  .button {
+    display: ${({ show }) => (show === "none" ? "none" : "flex")};
+  }
+
   button {
     color: var(--color-grayscale-900);
     border-radius: 0.6rem;
@@ -37,14 +43,7 @@ const NavContainer = styled.div`
     background: var(--color-white);
   }
 
-  @media screen and (max-width: 1248px) {
-    .nav-container {
-      width: auto;
-      padding: 0 2.4rem;
-    }
-  }
-
-  @media screen and (min-width: 360px) and (max-width: 767px) {
+  @media screen and (max-width: 768px) {
     .button,
     button {
       width: 14.2rem;

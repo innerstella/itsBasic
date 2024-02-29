@@ -11,6 +11,7 @@ const MainPageStyle = styled.div`
   .box-container {
     display: flex;
     justify-content: space-between;
+    max-width: 120rem;
     width: 100%;
     height: 32.4rem;
     padding: 6rem 0 6rem 6rem;
@@ -50,13 +51,14 @@ const MainPageStyle = styled.div`
   }
 
   .emoji-image {
-    width: 47rem;
+    width: 47.1rem;
     height: 20.4rem;
   }
 
-  @media screen and (max-width: 1248px) {
+  @media screen and (max-width: 1024px) {
     margin: 4.9rem 2.4rem 7.2rem;
     .box-container {
+      width: 100%;
       flex-direction: column;
       align-items: start;
       height: auto;
@@ -83,10 +85,11 @@ const MainPageStyle = styled.div`
       height: auto;
       padding: 0 12.5rem;
       order: 1;
+      margin-bottom: 2rem;
     }
   }
 
-  @media screen and (max-width: 767px) {
+  @media screen and (max-width: 768px) {
     margin: 4.2rem 2.4rem 6.1rem;
 
     .box-container {
@@ -138,7 +141,10 @@ const MainPageStyle = styled.div`
     }
 
     .emoji-image {
-      margin-bottom: 5.1rem;
+      width: 100%;
+      max-width: 47rem;
+      min-width: 26rem;
+      margin: 0 auto 5.1rem auto;
       padding: 0 2.98rem;
     }
   }

@@ -1,8 +1,8 @@
 import ButtonStyle from "./Button.styles";
 
-const Button = ({ link, children }) => {
+const Button = ({ link, children, width }) => {
   return (
-    <ButtonStyle to={link} className="font-18-bold">
+    <ButtonStyle to={link} className="font-18-bold" width={width}>
       {children}
     </ButtonStyle>
   );
