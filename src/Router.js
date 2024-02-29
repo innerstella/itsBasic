@@ -5,7 +5,6 @@ import GlobalStyles from "./GlobalStyles";
 import "./fonts.css";
 import "./components/RollingToastCustom.css";
 import ListPage from "./pages/list";
-import RollingMessageModal from "./pages/post/components/RollingMessageModal";
 import { ToastContainer } from "react-toastify";
 const AppRouter = () => {
 	return (
@@ -14,7 +13,6 @@ const AppRouter = () => {
 			<Routes>
 				<Route path="/" element={<MainPage />} />
 				<Route path="/list" element={<ListPage />} />
-				<Route path="/modalTest" element={<RollingMessageModal />} />
 			</Routes>
 			<ToastContainer
 				className="font-16-regular"
