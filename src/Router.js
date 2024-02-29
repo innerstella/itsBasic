@@ -5,6 +5,7 @@ import "./fonts.css";
 import ListPage from "./pages/list";
 import PostPage from "./pages/post";
 import RollingMessageModal from "./pages/post/components/RollingMessageModal";
+
 const AppRouter = () => {
   return (
     <BrowserRouter>
