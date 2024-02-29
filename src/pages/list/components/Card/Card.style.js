@@ -1,13 +1,11 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-  width: 27.5rem;
+  min-width: 27.5rem;
   height: 26rem;
 
   display: flex;
   flex-direction: column;
-  justify-content: flex-end;
-  align-items: flex-end;
 
   border-radius: 1.6rem;
   border: 1px solid rgba(0, 0, 0, 0.1);
@@ -22,8 +20,7 @@ export const Container = styled.div`
   }};
   color: ${({ color }) => {
     if (["purple", "green", "blue", "orange"].includes(color)) {
-      //   return `var(--color-grayscale-700)`;
-      return "black";
+      return `var(--color-grayscale-700)`;
     } else {
       return `var(--color-white)`;
     }
@@ -35,20 +32,22 @@ export const Container = styled.div`
     width: 14.2rem;
     height: 14.2rem;
     border-radius: 0 0 1.6rem 0;
+
+    position: relative;
+    left: 11rem;
+    top: -16rem;
   }
 `;
 
 export const ContentContainer = styled.div`
-  position: absolute;
-
-  width: 27.5rem;
-  height: 26rem;
+  min-width: 27.5rem;
   padding: 2.4rem;
-
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   gap: 4.3rem;
+  z-index: 10;
+  overflow: hidden;
 `;
 
 export const InfoContainer = styled.div`
@@ -94,6 +93,7 @@ export const BadgeContainer = styled.div`
   gap: 0.8rem;
   border-top: 0.1rem solid rgba(0, 0, 0, 0.12);
   padding-top: 1.6rem;
+  z-index: 10;
 `;
 
 export const Badge = styled.div`
