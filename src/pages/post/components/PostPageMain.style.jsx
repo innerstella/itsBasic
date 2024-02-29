@@ -19,6 +19,22 @@ export const Layout = styled.div`
     padding-top: 2.4rem;
     padding-bottom: 3.8rem;
   }
+
+  .post-delete-button {
+    position: relative;
+    top: -10px;
+    left: 135rem;
+    padding: 1rem 2rem;
+    background: #fff;
+    border: none;
+    border-radius: 2rem;
+    cursor: pointer;
+
+    &:hover {
+      background: gray;
+      color: #fff;
+    }
+  }
 `;
 
 export const Container = styled.div`

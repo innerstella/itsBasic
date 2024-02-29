@@ -16,7 +16,9 @@ const AppRouter = () => {
         <Route path='/' element={<MainPage />} />
         <Route path='/list' element={<ListPage />} />
         <Route path='post'>
-          <Route path=':recipientId' element={<PostPage />} />
+          <Route path=':recipientId' element={<PostPage />}>
+            <Route path='edit' element={<button>Test</button>} />
+          </Route>
         </Route>
       </Routes>
       <ToastContainer

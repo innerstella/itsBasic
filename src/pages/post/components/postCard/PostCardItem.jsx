@@ -4,8 +4,6 @@ import { formatDate } from "./formatData";
 import getRecipientMessages from "./api";
 import { useParams } from "react-router-dom";
 export function PostCardItem() {
-
-
   const [cardData, setCardData] = useState([]);
   const { recipientId } = useParams();
 
@@ -21,7 +19,6 @@ export function PostCardItem() {
 
   return (
     <>
-      {console.log(cardData)}
       {cardData.map((el) => (
         <S.CardItem key={el.id}>
           <S.CardHeader>
