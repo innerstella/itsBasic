@@ -14,7 +14,7 @@ const ButtonStyle = styled(Link)`
 
   color: var(--color-white);
 
-  @media screen and (max-width: 1248px) {
+  @media screen and (max-width: 1024px) {
     width: auto;
     margin: 0 2.4rem;
   }
