@@ -37,13 +37,11 @@ function PostCard() {
   return (
     <S.PostCardBackgroud>
       <S.CardGrid>
-
         <S.CardPlus>
           <S.PlusButton href='https://www.google.com/' as='a'>
             <img alt='플러스이미지' src={`/assets/post/plus.svg`}></img>
           </S.PlusButton>
         </S.CardPlus>
-
         <S.CardItem>
           <S.CardHeader>
             <S.ProfileImage
@@ -67,8 +65,6 @@ function PostCard() {
           </S.Content>
           <S.Data>2023.02.02</S.Data>
         </S.CardItem>
-
-        
         <S.CardItem className='rolling-card'>other1</S.CardItem>
         <S.CardItem className='rolling-card'>other1</S.CardItem>
       </S.CardGrid>
