@@ -30,7 +30,10 @@ export function PostCardItem() {
                 <S.From>From.</S.From>
                 <S.Name>{el.sender}</S.Name>
               </S.CardHeaderName>
-              <S.Relationship>가족</S.Relationship>
+
+              <S.Relationship state={el.relationship}>
+                {el.relationship}
+              </S.Relationship>
             </S.CardHeaderContainer>
             <S.DeleteButton>
               <img src={`/assets/post/deleted.svg`} alt="삭제휴지통"></img>
