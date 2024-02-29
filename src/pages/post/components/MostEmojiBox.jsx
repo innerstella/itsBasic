@@ -1,3 +1,4 @@
+import { useState } from "react";
 import styles from "./MostEmojiBox.module.css";
 
 const reactionEmojiListAll = [
@@ -12,7 +13,23 @@ const reactionEmojiListAll = [
 	{ emoji: "🤐", count: 9 },
 ];
 
+const EmojiDropDown = (emojiList) => {
+	return (
+		<>
+			<div className={styles["emoji-dropdown-container"]}>
+				{emojiList.map((item) => (
+					<div key={item.emoji} className={styles["most-emoji-box"]}>
+						<p className={styles["most-emoji"]}>{item.emoji}</p>
+						<p className='font-16-regular'>{item.count}</p>
+					</div>
+				))}
+			</div>
+		</>
+	);
+};
+
 const MostEmojiBox = () => {
+	const [isEmojiDropDownOpen, setIsEmojiDropDownOpen] = useState(false);
 	const reactionEmojiList = reactionEmojiListAll
 		.sort((a, b) => b.count - a.count)
 		.filter((item, i) => i < 8);
@@ -27,9 +44,13 @@ const MostEmojiBox = () => {
 						<p className='font-16-regular'>{item.count}</p>
 					</div>
 				))}
-				<button className={styles["emoji-picker-dropdown-button"]}>
+				<button
+					onClick={() => setIsEmojiDropDownOpen(!isEmojiDropDownOpen)}
+					className={styles["emoji-picker-dropdown-button"]}
+				>
 					<img src='/assets/emoji_picker_dropdown_icon.svg' />
 				</button>
+				{isEmojiDropDownOpen && EmojiDropDown(reactionEmojiList)}
 			</div>
 		</>
 	);
