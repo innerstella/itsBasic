@@ -61,7 +61,7 @@ function PostCard() {
           </S.CardHeader>
           <S.Content>
             코로나가 또다시 기승을 부리는 요즘이네요. 건강, 체력 모두 조심
-            또하세요!
+            또하세요
           </S.Content>
           <S.Data>2023.02.02</S.Data>
         </S.CardItem>
