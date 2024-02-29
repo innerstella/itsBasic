@@ -38,7 +38,7 @@ function PostCard() {
     <S.PostCardBackgroud>
       <S.CardGrid>
         <S.CardPlus>
-          <S.PlusButton>
+          <S.PlusButton href="https://www.google.com/" as="a">
             <img alt="플러스이미지" src={`/assets/post/plus.svg`}></img>
           </S.PlusButton>
         </S.CardPlus>

@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import createGlobalStyle from "styled-components";
 
 export const PostCardBackgroud = styled.div`
   display: flex;
@@ -29,6 +28,7 @@ export const CardGrid = styled.div`
   }
 `;
 export const CardPlus = styled.div`
+  cursor: pointer;
   display: flex;
   height: 28rem;
   justify-content: center;
@@ -142,6 +142,7 @@ export const Data = styled.p`
   letter-spacing: -0.06px;
 `;
 export const DeleteButton = styled.button`
+  cursor: pointer;
   position: absolute;
   right: 2.8rem;
   top: 2.8rem;
