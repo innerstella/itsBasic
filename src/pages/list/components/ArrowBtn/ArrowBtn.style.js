@@ -18,8 +18,8 @@ export const Container = styled.div`
   align-items: center;
 
   z-index: 10;
-  margin-left: ${({ type }) => (type === "right" ? "-2rem" : "auto")};
-  margin-right: ${({ type }) => (type === "left" ? "-2rem" : "auto")};
+  margin-left: ${({ type }) => (type === "right" ? "-2rem" : "0")};
+  margin-right: ${({ type }) => (type === "left" ? "-2rem" : "0")};
 
   /* tablet & mobile */
   @media screen and (min-width: 375px) and (max-width: 1024px) {

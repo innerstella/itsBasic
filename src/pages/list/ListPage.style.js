@@ -2,6 +2,8 @@ import styled from "styled-components";
 
 export const Container = styled.div`
   width: 100vw;
+  overflow: hidden;
+
   .gnb-container {
     display: flex;
     flex-direction: column;
@@ -13,15 +15,13 @@ export const Container = styled.div`
   .main-container {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    width: 100%;
-    margin-top: 5rem;
-    margin-bottom: 4rem;
+    justify-content: flex-start;
     gap: 5rem;
+    margin: 5rem 2.4rem 4rem 2.4rem;
+    padding: 0 2.4rem;
   }
 
   .list-container {
-    overflow-x: scroll;
     display: flex;
     flex-direction: column;
     gap: 1.6rem;
