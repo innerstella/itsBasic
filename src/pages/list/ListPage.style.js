@@ -56,6 +56,13 @@ export const Button = styled.div`
 
     color: var(--color-white, #fff);
   }
+
+  @media screen and (min-width: 375px) and (max-width: 1024px) {
+    .btn {
+      margin: 0 2.4rem;
+      width: 100%;
+    }
+  }
 `;
 
 export const EmptyCardList = styled.div`
