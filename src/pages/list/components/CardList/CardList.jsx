@@ -1,8 +1,14 @@
 import { useEffect, useState } from "react";
+
 import * as S from "./CardList.style";
 import ArrowBtn from "../ArrowBtn/ArrowBtn";
 import Card from "../Card/Card";
 
+/**
+ *
+ * @description CardList 컴포넌트는 Card 컴포넌트를 리스트로 보여주는 컴포넌트입니다.
+ * @param {data} object 롤링페이퍼 데이터
+ */
 const CardList = ({ data }) => {
   const [isLeftOn, setIsLeftOn] = useState(false);
   const [isRightOn, setIsRightOn] = useState(false);

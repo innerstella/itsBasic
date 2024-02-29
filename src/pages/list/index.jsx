@@ -17,7 +17,7 @@ const ListPage = () => {
     fetch("https://rolling-api.vercel.app/4-2/recipients/")
       .then((res) => res.json())
       .then((data) => {
-        // sortPopularData(data.results);
+        sortPopularData(data.results);
         sortRecentData(data.results);
       });
   };

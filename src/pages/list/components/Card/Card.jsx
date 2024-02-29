@@ -5,8 +5,8 @@ const COLORS = ["purple", "orange", "blue", "green"];
 
 /**
  *
- * @description 리스트 페이지 카드 컴포넌트
- * @param {data} object 롤링 페이퍼 카드 정보
+ * @description 리스트 페이지 내 카드 컴포넌트
+ * @param {data} object 롤링 페이퍼 카드 개별 정보
  */
 const Card = ({ data }) => {
   const [bgColor, setBgColor] = useState("purple");
@@ -52,7 +52,6 @@ const Card = ({ data }) => {
               <div className="nums font-12-regular">+ 0</div>
             )}
           </S.ProfileContainer>
-
           <p className="font-16-regular">
             <span className="font-16-bold">{data.messageCount}</span>명이
             작성했어요!
