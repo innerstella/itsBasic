@@ -40,6 +40,6 @@ export const TabletContainer = styled.div`
     display: flex;
     flex-direction: row;
     gap: 2rem;
-    padding: -2.4rem;
+    margin-right: 5rem;
   }
 `;
