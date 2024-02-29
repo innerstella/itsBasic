@@ -1,5 +1,5 @@
 import styled from "styled-components";
-
+//리팩토링 예정
 export const PostCardBackgroud = styled.div`
   display: flex;
   justify-content: center;

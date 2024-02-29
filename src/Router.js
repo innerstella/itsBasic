@@ -9,7 +9,7 @@ const AppRouter = () => {
       <GlobalStyles />
       <Routes>
         <Route path="/" element={<MainPage />} />
-        {/* <Route path="/test" element={<PostCard />} /> */}
+        <Route path="/test" element={<PostCard />} />
       </Routes>
     </BrowserRouter>
   );
