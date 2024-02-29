@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import * as S from "./PostCardStyle";
 import { getUserPaper } from "./api";
+import { formatDate } from "./formatData";
 export function PostCardItem() {
   const [cardData, setCardData] = useState([]);
 
@@ -36,7 +37,7 @@ export function PostCardItem() {
             </S.DeleteButton>
           </S.CardHeader>
           <S.Content fontFamily={el.font}>{el.content}</S.Content>
-          <S.Data>2023.02.02</S.Data>
+          <S.Data>{formatDate(el.createdAt)}</S.Data>
         </S.CardItem>
       ))}
     </>
