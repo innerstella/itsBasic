@@ -1,4 +1,6 @@
-.share-button {
+import styled from "styled-components";
+
+export const Button = styled.button`
   padding: 0.6rem 1.6rem;
   border-radius: 0.6rem;
   border: 1px solid var(--color-grayscale-300);
@@ -11,14 +13,14 @@
   @media (max-width: 767.5px) {
     padding: 0.6rem 0.8rem;
   }
-}
 
-.share-button img {
-  width: 2.4rem;
-  height: 2.4rem;
+  .share-button-image {
+    width: 2.4rem;
+    height: 2.4rem;
 
-  @media (max-width: 767.5px) {
-    width: 2rem;
-    height: 2rem;
+    @media (max-width: 767.5px) {
+      width: 2rem;
+      height: 2rem;
+    }
   }
-}
+`;

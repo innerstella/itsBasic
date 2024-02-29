@@ -1,11 +1,15 @@
-import styles from "./HeaderAddEmojiButton.module.css";
+import * as S from "./HeaderAddEmojiButton.style";
 
 const HeaderAddEmojiButton = () => {
   return (
-    <button className={styles["add-emoji-button"]}>
-      <img src='/assets/add_emoji_button_icon.svg' />
+    <S.Button>
+      <img
+        src='/assets/add_emoji_button_icon.svg'
+        className='add-emoji-button-icon'
+        alt='add-emoji-button-icon'
+      />
       <p className='font-16-regular'>추가</p>
-    </button>
+    </S.Button>
   );
 };
 

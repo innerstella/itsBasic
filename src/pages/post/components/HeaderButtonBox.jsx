@@ -1,12 +1,12 @@
-import styles from "./HeaderButttonBox.module.css";
 import HeaderAddEmojiButton from "./HeaderAddEmojiButton";
 import HeaderShareButton from "./HeaderShareButton";
+import * as S from "./HeaderButtonBox.style";
 const HeaderButtonBox = () => {
   return (
-    <div className={styles["button-box-wrapper"]}>
+    <S.Box>
       <HeaderAddEmojiButton />
       <HeaderShareButton />
-    </div>
+    </S.Box>
   );
 };
 

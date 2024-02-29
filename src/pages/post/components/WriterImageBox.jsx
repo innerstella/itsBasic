@@ -1,15 +1,15 @@
-import styles from "./WriterImageBox.module.css";
+import * as S from "./WriterImageBox.style";
 
 const WriterImageBox = () => {
   return (
-    <div className={styles["image-flex-box"]}>
-      <div className={styles["image-container"]}></div>
-      <div className={styles["image-container"]}></div>
-      <div className={styles["image-container"]}></div>
-      <div className={styles["writer-count-number"]}>
+    <S.Container>
+      <S.Box></S.Box>
+      <S.Box></S.Box>
+      <S.Box></S.Box>
+      <S.NumberBox>
         <p className='font-12-regular'>+6</p>
-      </div>
-    </div>
+      </S.NumberBox>
+    </S.Container>
   );
 };
 

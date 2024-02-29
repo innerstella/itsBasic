@@ -1,18 +1,10 @@
-import styles from "./PostPageMain.module.css";
-import DummyPostCard from "./DummyPostCard";
+import * as S from "./PostPageMain.style";
 
 const PostPageMain = () => {
   return (
-    <div className={styles["post-main-wrapper"]}>
-      <div className={styles["post-card-grid-container"]}>
-        <DummyPostCard />
-        <DummyPostCard />
-        <DummyPostCard />
-        <DummyPostCard />
-        <DummyPostCard />
-        <DummyPostCard />
-      </div>
-    </div>
+    <S.Layout>
+      <S.Container>{/* 카드 컴포넌트 담길곳 */}</S.Container>
+    </S.Layout>
   );
 };
 
