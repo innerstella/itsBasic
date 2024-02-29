@@ -35,7 +35,7 @@ export function PostCardItem() {
               <img src={`/assets/post/deleted.svg`} alt="삭제휴지통"></img>
             </S.DeleteButton>
           </S.CardHeader>
-          <S.Content>{el.content}</S.Content>
+          <S.Content fontFamily={el.font}>{el.content}</S.Content>
           <S.Data>2023.02.02</S.Data>
         </S.CardItem>
       ))}

@@ -110,13 +110,16 @@ export const From = styled.p`
   line-height: 24px; /* 120% */
 `;
 export const Name = styled.p`
-  width: 100%;
+  width: 14rem;
   color: #000;
   font-family: Pretendard;
   font-size: 20px;
   font-style: normal;
   font-weight: 70rem;
   line-height: 24px; /* 120% */
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 `;
 export const Content = styled.p`
   margin: 1.6rem auto;
@@ -131,7 +134,7 @@ export const Content = styled.p`
   text-overflow: ellipsis;
   white-space: normal;
   align-items: center;
-  font-family: "Noto Sans KR";
+  font-family: ${(props) => props.fontFamily};
   font-size: 1.8rem;
   font-weight: 400;
   line-height: 2.8rem;
