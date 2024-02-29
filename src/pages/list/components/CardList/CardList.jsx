@@ -46,24 +46,52 @@ const CardList = ({ title, data }) => {
     }
   }, [currHeadIdx, data.length]);
 
-  return (
-    <S.Container isLeftOn={isLeftOn}>
-      <h1 className="font-24-bold">{title}</h1>
-      <div className="list-with-btn">
-        {isLeftOn && (
-          <ArrowBtn type="left" onClick={() => changeRange("left")} />
-        )}
-        <div className="paper-list">
-          {displayData.map((data) => {
-            return <Card key={data.userId} data={data} />;
-          })}
+  //  반응형 렌더링
+  const [isDesktop, setIsDesktop] = useState(window.innerWidth > 1024);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsDesktop(window.innerWidth > 1024);
+    };
+
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+
+  if (isDesktop) {
+    return (
+      <S.DesktopContainer isLeftOn={isLeftOn}>
+        <div className="list-with-btn">
+          {isLeftOn && (
+            <ArrowBtn type="left" onClick={() => changeRange("left")} />
+          )}
+          <div className="paper-list">
+            {displayData.map((data) => {
+              return <Card key={data.userId} data={data} />;
+            })}
+          </div>
+          {isRightOn && (
+            <ArrowBtn type="right" onClick={() => changeRange("right")} />
+          )}
         </div>
-        {isRightOn && (
-          <ArrowBtn type="right" onClick={() => changeRange("right")} />
-        )}
-      </div>
-    </S.Container>
-  );
+      </S.DesktopContainer>
+    );
+  } else {
+    return (
+      <S.TabletContainer>
+        <div className="list-with-btn">
+          <div className="paper-list">
+            {displayData.map((data) => {
+              return <Card key={data.userId} data={data} />;
+            })}
+          </div>
+        </div>
+      </S.TabletContainer>
+    );
+  }
 };
 
 export default CardList;

@@ -20,4 +20,9 @@ export const Container = styled.div`
   z-index: 10;
   margin-left: ${({ type }) => (type === "right" ? "-2rem" : "auto")};
   margin-right: ${({ type }) => (type === "left" ? "-2rem" : "auto")};
+
+  /* tablet & mobile */
+  @media screen and (min-width: 375px) and (max-width: 1024px) {
+    display: none;
+  }
 `;
