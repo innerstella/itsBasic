@@ -4,6 +4,7 @@ import HeaderLogoBox from "./components/HeaderLogoBox";
 import HeaderFeatureBox from "./components/HeaderFeatureBox";
 
 const PostPage = () => {
+  console.log(window.location.href.slice(0, 4));
   return (
     <S.Layout>
       <HeaderLogoBox />

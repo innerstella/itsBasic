@@ -21,9 +21,9 @@ export const Layout = styled.div`
   }
 
   .post-delete-button {
-    position: relative;
-    top: -10px;
-    left: 135rem;
+    position: absolute;
+    top: 200px;
+    right: 25rem;
     padding: 1rem 2rem;
     background: #fff;
     border: none;
