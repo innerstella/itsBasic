@@ -1,16 +1,13 @@
 import styles from "./PostPageMain.module.css";
-import DummyPostCard from "./DummyPostCard";
+import { PostCardAdd } from "./postCard/PostCardAdd";
+import { PostCardItem } from "./postCard/PostCardItem";
 
 const PostPageMain = () => {
   return (
     <div className={styles["post-main-wrapper"]}>
       <div className={styles["post-card-grid-container"]}>
-        <DummyPostCard />
-        <DummyPostCard />
-        <DummyPostCard />
-        <DummyPostCard />
-        <DummyPostCard />
-        <DummyPostCard />
+        <PostCardAdd />
+        <PostCardItem />
       </div>
     </div>
   );

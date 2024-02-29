@@ -1,33 +1,34 @@
 import styled from "styled-components";
 
-export const PostCardBackgroud = styled.div`
-  display: flex;
-  justify-content: center;
-  background: var(--color-orange-200, #ffe2 ad);
-  padding-top: 12rem;
-  padding-bottom: 24.6rem;
-  @media (max-width: 1247px) {
-    padding: 6rem 2.4rem;
-  }
-`;
-export const CardGrid = styled.div`
-  display: grid;
-  grid-template-columns: repeat(3, 38.4rem);
-  grid-auto-rows: 28rem;
-  gap: 24px;
-  @media (max-width: 1247px) {
-    max-width: 120rem;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 2.4rem;
-  }
-  @media (max-width: 767px) {
-    display: grid;
-    grid-template-columns: repeat(1, 1fr);
-    gap: 2.4rem;
-  }
-`;
+// export const PostCardBackgroud = styled.div`
+//   display: flex;
+//   justify-content: center;
+//   background: var(--color-orange-200, #ffe2 ad);
+//   padding-top: 12rem;
+//   padding-bottom: 24.6rem;
+//   @media (max-width: 1247px) {
+//     padding: 6rem 2.4rem;
+//   }
+// `;
+// export const CardGrid = styled.div`
+//   display: grid;
+//   grid-template-columns: repeat(3, 38.4rem);
+//   grid-auto-rows: 28rem;
+//   gap: 24px;
+//   @media (max-width: 1247px) {
+//     max-width: 120rem;
+//     display: grid;
+//     grid-template-columns: repeat(2, 1fr);
+//     gap: 2.4rem;
+//   }
+//   @media (max-width: 767px) {
+//     display: grid;
+//     grid-template-columns: repeat(1, 1fr);
+//     gap: 2.4rem;
+//   }
+// `;
 export const CardPlus = styled.div`
+  width: 43rem;
   cursor: pointer;
   display: flex;
   height: 28rem;
@@ -37,14 +38,21 @@ export const CardPlus = styled.div`
   border-radius: 1.6rem;
   background: var(--white, #fff);
   box-shadow: 0px 2px 12px 0px rgba(0, 0, 0, 0.08);
+  @media (max-width: 1023.5px) {
+    width: 100%;
+  }
+
+  /* @media (max-width: 767.5px) {
+  } */
 `;
 export const CardItem = styled.div`
+  /* width: 38.4rem; */
   position: relative;
   padding: 2.4rem;
   display: flex;
   flex-direction: column;
   border-radius: 1.6rem;
-  background: var(--color-white, #fff);
+  background: var(--white, #fff);
   box-shadow: 0px 2px 12px 0px rgba(0, 0, 0, 0.08);
 `;
 export const CardHeader = styled.div`
