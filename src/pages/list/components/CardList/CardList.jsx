@@ -3,10 +3,10 @@ import * as S from "./CardList.style";
 import ArrowBtn from "../ArrowBtn/ArrowBtn";
 import Card from "../Card/Card";
 
-const CardList = ({ title, data }) => {
+const CardList = ({ data }) => {
   const [isLeftOn, setIsLeftOn] = useState(false);
   const [isRightOn, setIsRightOn] = useState(false);
-  const [displayData, setDisplayData] = useState(data.slice(0, 4));
+  const [displayData, setDisplayData] = useState();
   const [currHeadIdx, setCurrHeadIdx] = useState(0);
 
   // 보여줄 데이터 세팅
@@ -34,15 +34,20 @@ const CardList = ({ title, data }) => {
 
   // 화살표 버튼 노출 여부
   useEffect(() => {
-    if (currHeadIdx === 0) {
-      setIsLeftOn(false);
-    } else {
-      setIsLeftOn(true);
-    }
-    if (currHeadIdx === data.length - 4) {
+    console.log(data.length);
+    if (data.length < 4) {
       setIsRightOn(false);
     } else {
-      setIsRightOn(true);
+      if (currHeadIdx === 0) {
+        setIsLeftOn(false);
+      } else {
+        setIsLeftOn(true);
+      }
+      if (currHeadIdx === data.length - 4) {
+        setIsRightOn(false);
+      } else {
+        setIsRightOn(true);
+      }
     }
   }, [currHeadIdx, data.length]);
 
@@ -69,8 +74,8 @@ const CardList = ({ title, data }) => {
             <ArrowBtn type="left" onClick={() => changeRange("left")} />
           )}
           <div className="paper-list">
-            {displayData.map((data) => {
-              return <Card key={data.userId} data={data} />;
+            {displayData?.map((data) => {
+              return <Card key={data.id} data={data} />;
             })}
           </div>
           {isRightOn && (
@@ -84,8 +89,8 @@ const CardList = ({ title, data }) => {
       <S.TabletContainer>
         <div className="list-with-btn">
           <div className="paper-list">
-            {displayData.map((data) => {
-              return <Card key={data.userId} data={data} />;
+            {displayData?.map((data) => {
+              return <Card key={data.id} data={data} />;
             })}
           </div>
         </div>

@@ -14,7 +14,7 @@ export const Container = styled.div`
       return `var(--color-${color}-100, #ecd9ff)`;
     } else {
       return `linear-gradient(180deg, rgba(0, 0, 0, 0.54) 0%, rgba(0, 0, 0, 0.54) 100%), url(
-        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRILm6iutpSWgsRHY_AvmlQ9y_QMwNfH5ILlw&usqp=CAU"
+        ${color}
       )`;
     }
   }};
@@ -94,6 +94,10 @@ export const BadgeContainer = styled.div`
   border-top: 0.1rem solid rgba(0, 0, 0, 0.12);
   padding-top: 1.6rem;
   z-index: 10;
+`;
+
+export const EmptyBadgeContainer = styled.div`
+  margin-top: 5.3rem;
 `;
 
 export const Badge = styled.div`
