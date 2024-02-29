@@ -9,7 +9,7 @@ export const Layout = styled.div`
     left: 0;
     top: 6.1rem;
     height: 1.2px;
-    width: 100vw;
+    width: 100%;
     background: #ededed;
 
     @media (max-width: 1023.5px) {

@@ -1,18 +1,15 @@
 import * as S from "./PostPageMain.style";
 import { PostCardAdd } from "./postCard/PostCardAdd";
 import { PostCardItem } from "./postCard/PostCardItem";
-
+import DummyPostCard from "./DummyPostCard";
 const PostPageMain = () => {
   return (
-  
-     <S.Layout>
+    <S.Layout>
       <S.Container>
-      <PostCardAdd />
+        <PostCardAdd />
         <PostCardItem />
-    </S.Container>
-    </S.Layout    
-    
-   
+      </S.Container>
+    </S.Layout>
   );
 };
 

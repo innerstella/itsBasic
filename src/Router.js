@@ -9,29 +9,31 @@ import PostPage from "./pages/post";
 import { ToastContainer } from "react-toastify";
 
 const AppRouter = () => {
-	return (
-		<BrowserRouter>
-			<GlobalStyles />
-			<Routes>
-				<Route path="/" element={<MainPage />} />
-				<Route path="/list" element={<ListPage />} />
-				<Route path="/post" element={<PostPage />} />
-			</Routes>
-			<ToastContainer
-				className="font-16-regular"
-				position="bottom-center"
-				autoClose={5000}
-				hideProgressBar={true}
-				newestOnTop={false}
-				closeOnClick
-				rtl={false}
-				pauseOnFocusLoss
-				draggable
-				pauseOnHover
-				theme="light"
-			/>
-		</BrowserRouter>
-	);
+  return (
+    <BrowserRouter>
+      <GlobalStyles />
+      <Routes>
+        <Route path='/' element={<MainPage />} />
+        <Route path='/list' element={<ListPage />} />
+        <Route path='post'>
+          <Route path=':recipientId' element={<PostPage />} />
+        </Route>
+      </Routes>
+      <ToastContainer
+        className='font-16-regular'
+        position='bottom-center'
+        autoClose={5000}
+        hideProgressBar={true}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme='light'
+      />
+    </BrowserRouter>
+  );
 };
 
 export default AppRouter;

@@ -28,7 +28,6 @@ import styled from "styled-components";
 //   }
 // `;
 export const CardPlus = styled.div`
-  width: 43rem;
   cursor: pointer;
   display: flex;
   height: 28rem;
@@ -46,7 +45,6 @@ export const CardPlus = styled.div`
   } */
 `;
 export const CardItem = styled.div`
-  /* width: 38.4rem; */
   position: relative;
   padding: 2.4rem;
   display: flex;
@@ -57,7 +55,6 @@ export const CardItem = styled.div`
 `;
 export const CardHeader = styled.div`
   display: flex;
-  width: 38.4rem;
   padding: 1rem 1rem 0 1rem;
   justify-content: flex-start;
   align-items: flex-start;
