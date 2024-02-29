@@ -1,12 +1,34 @@
-import styles from "./HeaderAddEmojiButton.module.css";
+import EmojiPicker from "emoji-picker-react";
+import { useState } from "react";
+import styled from "./HeaderAddEmojiButton.module.css";
 
-const HeaderAddEmojiButton = () => {
-  return (
-    <button className={styles["add-emoji-button"]}>
-      <img src='/assets/add_emoji_button_icon.svg' />
-      <p className='font-16-regular'>추가</p>
-    </button>
-  );
-};
+function HeaderAddEmojiButton() {
+	const [isEmojiOpen, setIsEmojiOpen] = useState(false);
+
+	return (
+		<div className={styled["emoji-toggle-btn-container"]}>
+			<button
+				className={styled["emoji-picker-toggle-btn-in-post"]}
+				onClick={() => setIsEmojiOpen(!isEmojiOpen)}
+			>
+				<img
+					src='assets/post/icons/add-24.svg'
+					alt='meaninglessDumbIcons'
+					className={styled["emoji-picker-toggle-btn-in-post-icon"]}
+				/>
+				추가
+			</button>
+			<section className={styled["emoji-picker-position-container"]}>
+				{isEmojiOpen && <EmojiPicker emojiStyle='twitter' />}
+			</section>
+			{isEmojiOpen && (
+				<button
+					className={styled["catch-click-not-valid-btn"]}
+					onClick={() => setIsEmojiOpen(false)}
+				/>
+			)}
+		</div>
+	);
+}
 
 export default HeaderAddEmojiButton;
