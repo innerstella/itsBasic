@@ -1,6 +1,7 @@
 import EmojiPicker from "emoji-picker-react";
 import { useState } from "react";
 import styled from "./HeaderAddEmojiButton.module.css";
+import DropdownClickCancel from ".//DropdownClickCancel";
 
 function HeaderAddEmojiButton() {
 	const [isEmojiOpen, setIsEmojiOpen] = useState(false);
@@ -21,12 +22,7 @@ function HeaderAddEmojiButton() {
 			<section className={styled["emoji-picker-position-container"]}>
 				{isEmojiOpen && <EmojiPicker emojiStyle='twitter' />}
 			</section>
-			{isEmojiOpen && (
-				<button
-					className={styled["catch-click-not-valid-btn"]}
-					onClick={() => setIsEmojiOpen(false)}
-				/>
-			)}
+			<DropdownClickCancel isOpen={isEmojiOpen} setIsOpen={setIsEmojiOpen} />
 		</div>
 	);
 }
