@@ -1,4 +1,6 @@
-.post-main-wrapper {
+import styled from "styled-components";
+
+export const Layout = styled.div`
   background-color: var(--color-orange-300);
   padding-top: 11.4rem;
   padding-bottom: 24.6rem;
@@ -16,9 +18,9 @@
     padding-top: 2.4rem;
     padding-bottom: 3.8rem;
   }
-}
+`;
 
-.post-card-grid-container {
+export const Container = styled.div`
   display: grid;
   width: 120rem;
   margin: 0 auto;
@@ -37,4 +39,4 @@
     display: flex;
     flex-direction: column;
   }
-}
+`;

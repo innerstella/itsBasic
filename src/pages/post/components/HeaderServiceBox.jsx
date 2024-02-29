@@ -1,15 +1,15 @@
-import styles from "./HeaderServiceBox.module.css";
+import * as S from "./HeaderServiceBox.style";
 import MessageWriterBox from "./MessageWriterBox";
 import MostEmojiBox from "./MostEmojiBox";
 import HeaderButtonBox from "./HeaderButtonBox";
-import EmojiPicker from "emoji-picker-react";
+
 const HeaderServiceBox = () => {
   return (
-    <div className={styles["wrapper"]}>
+    <S.Container>
       <MessageWriterBox />
       <MostEmojiBox />
       <HeaderButtonBox />
-    </div>
+    </S.Container>
   );
 };
 

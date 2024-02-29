@@ -1,4 +1,6 @@
-.main-wrapper {
+import styled from "styled-components";
+
+export const Container = styled.div`
   padding: 1.1rem 0rem;
   width: 120rem;
   margin: 0 auto;
@@ -11,9 +13,9 @@
   @media (max-width: 767.5px) {
     display: none;
   }
-}
+`;
 
-.header-logo-box {
+export const Box = styled.div`
   padding: 0.6rem 0rem;
   display: flex;
   gap: 0.8rem;
@@ -23,16 +25,18 @@
   @media (max-width: 1247.5px) {
     margin-left: 2.4rem;
   }
-}
 
-.header-logo-box p {
-  color: #4a494f;
-  font-family: Poppins;
-  font-size: 1.9971rem;
-  font-weight: 700;
-}
+  .header-logo-image {
+    color: #4a494f;
+    font-family: Poppins;
+    font-size: 1.9971rem;
+    font-weight: 700;
+  }
 
-.header-logo-box img {
-  width: 2.7818rem;
-  height: 2.7658rem;
-}
+  p {
+    color: #4a494f;
+    font-family: Poppins;
+    font-size: 1.9971rem;
+    font-weight: 700;
+  }
+`;
