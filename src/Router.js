@@ -5,7 +5,9 @@ import GlobalStyles from "./GlobalStyles";
 import "./fonts.css";
 import "./components/RollingToastCustom.css";
 import ListPage from "./pages/list";
+import PostPage from "./pages/post";
 import { ToastContainer } from "react-toastify";
+
 const AppRouter = () => {
 	return (
 		<BrowserRouter>
@@ -13,6 +15,7 @@ const AppRouter = () => {
 			<Routes>
 				<Route path="/" element={<MainPage />} />
 				<Route path="/list" element={<ListPage />} />
+				<Route path="/post" element={<PostPage />} />
 			</Routes>
 			<ToastContainer
 				className="font-16-regular"
