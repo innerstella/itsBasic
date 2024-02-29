@@ -65,10 +65,6 @@ const CardList = ({ data }) => {
     };
   }, []);
 
-  if (data.length === 0) {
-    return <div>로딩중...</div>;
-  }
-
   if (isDesktop) {
     return (
       <S.DesktopContainer isLeftOn={isLeftOn}>

@@ -56,3 +56,27 @@ export const Button = styled.div`
     color: var(--color-white, #fff);
   }
 `;
+
+export const EmptyCardList = styled.div`
+  width: 27.5rem;
+  height: 26rem;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 2.4rem;
+
+  border-radius: 1.6rem;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  background: var(--color-surface);
+  color: var(--color-black);
+  box-shadow: 0px 2px 12px 0px rgba(0, 0, 0, 0.08);
+
+  .svg-container {
+    display: flex;
+    justify-content: flex-end;
+    .svg {
+      width: 10rem;
+    }
+  }
+`;
