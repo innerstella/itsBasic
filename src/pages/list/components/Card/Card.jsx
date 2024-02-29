@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import * as S from "./Card.style";
+import { useNavigate } from "react-router-dom";
 
 const COLORS = ["purple", "orange", "blue", "green"];
 
@@ -9,6 +10,8 @@ const COLORS = ["purple", "orange", "blue", "green"];
  * @param {data} object 롤링 페이퍼 카드 개별 정보
  */
 const Card = ({ data }) => {
+  const navigate = useNavigate();
+
   const [bgColor, setBgColor] = useState("purple");
   const [svgLink, setSvgLink] = useState("purple");
 
@@ -27,7 +30,10 @@ const Card = ({ data }) => {
   }, [data.backgroundColor]);
 
   return (
-    <S.Container color={bgColor.length > 0 ? bgColor : data.backgroundImageURL}>
+    <S.Container
+      color={bgColor.length > 0 ? bgColor : data.backgroundImageURL}
+      onClick={() => navigate(`/post/${data.id}`)}
+    >
       <S.ContentContainer>
         <S.InfoContainer>
           <p className="font-24-bold">To. {data.name}</p>
