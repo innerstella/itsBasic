@@ -1,5 +1,6 @@
 import { useState } from "react";
 import styles from "./MostEmojiBox.module.css";
+import DropdownClickCancel from "./DropdownClickCancel";
 
 const reactionEmojiListAll = [
 	{ emoji: "👍", count: 24 },
@@ -51,6 +52,10 @@ const MostEmojiBox = () => {
 					<img src='/assets/emoji_picker_dropdown_icon.svg' />
 				</button>
 				{isEmojiDropDownOpen && EmojiDropDown(reactionEmojiList)}
+				<DropdownClickCancel
+					isOpen={isEmojiDropDownOpen}
+					setIsOpen={setIsEmojiDropDownOpen}
+				/>
 			</div>
 		</>
 	);
