@@ -42,7 +42,9 @@ const MainPage = () => {
           </div>
         </div>
       </MainPageStyle>
-      <Button link="/list">구경해보기</Button>
+      <Button link="/list" width="short">
+        구경해보기
+      </Button>
     </>
   );
 };

@@ -5,7 +5,7 @@ const ButtonStyle = styled(Link)`
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 28rem;
+  width: ${({ width }) => (width === "short" ? "28rem" : "72rem")};
   height: 5.6rem;
   margin: 0 auto;
 
