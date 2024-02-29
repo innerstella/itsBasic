@@ -32,6 +32,10 @@ const NavContainer = styled.div`
     cursor: pointer;
   }
 
+  .button {
+    display: ${({ show }) => (show === "none" ? "none" : "flex")};
+  }
+
   button {
     color: var(--color-grayscale-900);
     border-radius: 0.6rem;
