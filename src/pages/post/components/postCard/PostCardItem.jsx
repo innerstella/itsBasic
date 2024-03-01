@@ -4,22 +4,22 @@ import { formatDate } from "./formatData";
 import getRecipientMessages from "./api";
 import { useParams } from "react-router-dom";
 export function PostCardItem() {
-  const [cardData, setCardData] = useState([]);
-  const { recipientId } = useParams();
+	const [cardData, setCardData] = useState([]);
+	const { recipientId } = useParams();
 
-  async function handleCardData() {
-    const jsonData = await getRecipientMessages(recipientId);
-    const paperData = jsonData.results;
-    setCardData(paperData);
-  }
+	async function handleCardData() {
+		const jsonData = await getRecipientMessages(recipientId);
+		const paperData = jsonData.results;
+		setCardData(paperData);
+	}
 
-  useEffect(() => {
-    handleCardData();
-  }, []);
+	useEffect(() => {
+		handleCardData();
+	}, []);
 
-  return (
-    <>
-      {cardData.map((el) => (
+	return (
+		<>
+			{/* {cardData.map((el) => (
         <S.CardItem key={el.id}>
           <S.CardHeader>
             <S.ProfileImage
@@ -40,7 +40,7 @@ export function PostCardItem() {
           <S.Content fontFamily={el.font}>{el.content}</S.Content>
           <S.Data>{formatDate(el.createdAt)}</S.Data>
         </S.CardItem>
-      ))}
-    </>
-  );
+      ))} */}
+		</>
+	);
 }
