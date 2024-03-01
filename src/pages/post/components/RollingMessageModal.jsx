@@ -31,7 +31,6 @@ const RollingMessageModal = ({ rollingMessageData = SAMPLE_DATA }) => {
 	const [messageModalOpen, setMessageModalOpen] = useState(false);
 	const { sender, profileImageURL, relationship, createdAt, content, font } =
 		rollingMessageData;
-	const [isButtonDisabled, setIsButtonDisabled] = useState(false);
 
 	const relationColor = convertRelationColor(relationship);
 
@@ -64,8 +63,7 @@ const RollingMessageModal = ({ rollingMessageData = SAMPLE_DATA }) => {
 					defaultValue={content}
 				/>
 				<S.RollingPrimaryButton
-					disabled={isButtonDisabled}
-					onClick={() => toastNotify()}
+					onClick={() => toastNotify("이 기능 추가해야 해요")}
 				>
 					확인
 				</S.RollingPrimaryButton>
