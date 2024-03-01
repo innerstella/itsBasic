@@ -1,18 +1,11 @@
 import { useState } from "react";
-import {
-	ModalMessageTextArea,
-	PostProfileImg,
-	RelationBadge,
-} from "./RollingMessageModal.style";
-import PrimaryButton40 from "../../../components/PrimaryButton40";
-
-import styled from "./RollingMessageModal.module.css";
+import * as S from "./RollingMessageModal.style.jsx";
 import { StyleSheetManager } from "styled-components";
 import { toastNotify } from "../../../utils/callToastNotify";
 
 const SAMPLE_DATA = {
 	sender: "김동훈",
-	profileImageURL: "logo192.png",
+	profileImageURL: "/logo192.png",
 	relationship: "가족",
 	createdAt: "2023.07.28",
 	content: "코로나가기승을부리는중입니다.",
@@ -43,46 +36,41 @@ const RollingMessageModal = ({ rollingMessageData = SAMPLE_DATA }) => {
 	const relationColor = convertRelationColor(relationship);
 
 	return (
-		<div className={styled["rolling-message-modal-background"]}>
-			<div
-				className={`${styled["rolling-message-modal-wrapper"]} font-14-regular`}
-			>
+		<S.RollingMessageModalBackground>
+			<S.RollingMessageModalWrapper className='font-14-regular'>
 				<header>
 					<section>
 						<StyleSheetManager shouldForwardProp={() => true}>
-							<PostProfileImg image={profileImageURL} />
+							<S.PostProfileImg image={profileImageURL} />
 						</StyleSheetManager>
 						<section>
-							<p
-								className={`${styled["rolling-message-modal-sender"]} font-20-regular`}
-							>
+							<S.RollingMessageSender className='font-20-regular'>
 								From.<span>{sender}</span>
-							</p>
-							<RelationBadge
+							</S.RollingMessageSender>
+							<S.RelationBadge
 								color={relationColor}
-								className={`${styled["rolling-message-modal-relationship"]} font-14-regular`}
+								className='font-14-regular'
 							>
 								{relationship}
-							</RelationBadge>
+							</S.RelationBadge>
 						</section>
 					</section>
 					<p>{createdAt}</p>
 				</header>
-				<div className={styled["modal-header-line"]} />
-				<ModalMessageTextArea
-					className="font-18-regular"
+				<S.RollingMessageModalSeparator />
+				<S.ModalMessageTextArea
+					className='font-18-regular'
 					fontFamily={font}
 					defaultValue={content}
 				/>
-				<PrimaryButton40
-					className={styled["rolling-message-modal-confirm-design"]}
+				<S.RollingPrimaryButton
 					disabled={isButtonDisabled}
 					onClick={() => toastNotify()}
 				>
 					확인
-				</PrimaryButton40>
-			</div>
-		</div>
+				</S.RollingPrimaryButton>
+			</S.RollingMessageModalWrapper>
+		</S.RollingMessageModalBackground>
 	);
 };
 
