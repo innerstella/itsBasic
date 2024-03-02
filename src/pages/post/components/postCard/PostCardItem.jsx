@@ -4,6 +4,7 @@ import Relationship from "./CardRelationship";
 import { formatDate } from "./formatData";
 import getRecipientMessages from "./api";
 import { useParams } from "react-router-dom";
+import TrashButton from "./TrashButton";
 
 const BASE_URL = "https://rolling-api.vercel.app/4-2";
 export function PostCardItem() {
@@ -15,7 +16,6 @@ export function PostCardItem() {
   async function handleCardData() {
     const jsonData = await getRecipientMessages(dataUrl);
     const paperData = jsonData.results;
-    console.log(paperData);
 
     setCardData(paperData);
   }
@@ -31,21 +31,20 @@ export function PostCardItem() {
           <S.CardHeader>
             <S.ProfileImage
               src={el.profileImageURL}
-              alt='이미지'
+              alt="이미지"
             ></S.ProfileImage>
             <S.CardHeaderContainer>
               <S.CardHeaderName>
                 <S.From>From.</S.From>
                 <S.Name>{el.sender}</S.Name>
               </S.CardHeaderName>
-
               <Relationship state={el.relationship}>
                 {el.relationship}
               </Relationship>
             </S.CardHeaderContainer>
-            <S.DeleteButton>
-              <img src={`/assets/post/deleted.svg`} alt='삭제휴지통'></img>
-            </S.DeleteButton>
+            <TrashButton>
+              <img src={`/assets/post/deleted.svg`} alt="삭제휴지통"></img>
+            </TrashButton>
           </S.CardHeader>
           <S.Content fontFamily={el.font}>{el.content}</S.Content>
           <S.Data>{formatDate(el.createdAt)}</S.Data>

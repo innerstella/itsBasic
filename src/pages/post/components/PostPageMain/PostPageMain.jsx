@@ -5,11 +5,11 @@ import { Outlet, Link, useParams } from "react-router-dom";
 
 const PostPageMain = () => {
   const { recipientId } = useParams();
-  console.log(recipientId);
+
   return (
     <S.Layout>
-      <Link to='edit'>
-        <button className='post-delete-button'>삭제하기</button>
+      <Link to="edit">
+        <button className="post-delete-button">삭제하기</button>
       </Link>
       <Outlet />
       <S.Container>

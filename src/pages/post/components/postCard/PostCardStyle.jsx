@@ -103,20 +103,7 @@ export const Data = styled.p`
   line-height: 18px; /* 150% */
   letter-spacing: -0.06px;
 `;
-export const DeleteButton = styled.button`
-  cursor: pointer;
-  position: absolute;
-  right: 2.8rem;
-  top: 2.8rem;
-  display: inline-flex;
-  padding: 8px;
-  justify-content: center;
-  align-items: center;
-  gap: 10px;
-  border-radius: 6px;
-  border: 1px solid var(--gray-300, #ccc);
-  background: var(--white, #fff);
-`;
+
 export const PlusButton = styled.div`
   display: flex;
   padding: 16px;
