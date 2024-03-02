@@ -1,5 +1,6 @@
 import * as S from "./RollingMessageModal.style.jsx";
 import { StyleSheetManager } from "styled-components";
+import { formatDate } from "./postCard/formatData.js";
 
 const SAMPLE_DATA = {
 	sender: "김동훈",
@@ -54,7 +55,7 @@ const RollingMessageModal = ({
 							</S.RelationBadge>
 						</section>
 					</section>
-					<p>{createdAt}</p>
+					<p>{formatDate(createdAt)}</p>
 				</header>
 				<S.RollingMessageModalSeparator />
 				<S.ModalMessageTextArea
