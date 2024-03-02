@@ -1,7 +1,5 @@
-import { useState } from "react";
 import * as S from "./RollingMessageModal.style.jsx";
 import { StyleSheetManager } from "styled-components";
-import { toastNotify } from "../../../utils/callToastNotify";
 
 const SAMPLE_DATA = {
 	sender: "김동훈",
@@ -27,8 +25,10 @@ const convertRelationColor = (relation) => {
 	}
 };
 
-const RollingMessageModal = ({ rollingMessageData = SAMPLE_DATA }) => {
-	const [messageModalOpen, setMessageModalOpen] = useState(false);
+const RollingMessageModal = ({
+	rollingMessageData = SAMPLE_DATA,
+	setIsOpen,
+}) => {
 	const { sender, profileImageURL, relationship, createdAt, content, font } =
 		rollingMessageData;
 
@@ -62,9 +62,7 @@ const RollingMessageModal = ({ rollingMessageData = SAMPLE_DATA }) => {
 					fontFamily={font}
 					defaultValue={content}
 				/>
-				<S.RollingPrimaryButton
-					onClick={() => toastNotify("이 기능 추가해야 해요")}
-				>
+				<S.RollingPrimaryButton onClick={() => setIsOpen(false)}>
 					확인
 				</S.RollingPrimaryButton>
 			</S.RollingMessageModalWrapper>

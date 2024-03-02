@@ -3,14 +3,22 @@ import * as S from "./PostCardStyle";
 import { formatDate } from "./formatData";
 import getRecipientMessages from "./api";
 import { useParams } from "react-router-dom";
+import RollingMessageModal from "../RollingMessageModal";
 export function PostCardItem() {
 	const [cardData, setCardData] = useState([]);
+	const [modalCardData, setModalCardData] = useState({});
+	const [isMessageOpen, setIsMessageOpen] = useState(false);
+
 	const { recipientId } = useParams();
 
 	async function handleCardData() {
 		const jsonData = await getRecipientMessages(recipientId);
 		const paperData = jsonData.results;
 		setCardData(paperData);
+	}
+	function handleMessageModalOpen(el) {
+		setModalCardData(el);
+		setIsMessageOpen(true);
 	}
 
 	useEffect(() => {
@@ -19,9 +27,15 @@ export function PostCardItem() {
 
 	return (
 		<>
+			{isMessageOpen && (
+				<RollingMessageModal
+					rollingMessageData={modalCardData}
+					setIsOpen={setIsMessageOpen}
+				/>
+			)}
 			{cardData &&
 				cardData.map((el) => (
-					<S.CardItem key={el.id}>
+					<S.CardItem key={el.id} onClick={() => handleMessageModalOpen(el)}>
 						<S.CardHeader>
 							<S.ProfileImage
 								src={el.profileImageURL}
