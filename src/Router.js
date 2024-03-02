@@ -18,7 +18,6 @@ const AppRouter = () => {
         <Route path='/post'>
           <Route path=':recipientId' element={<PostPage />}>
             <Route path='edit' element={<TestDeleteButton />} />
-            <Route path='message' element={<div>메세지 페이지</div>} />
           </Route>
         </Route>
       </Routes>
