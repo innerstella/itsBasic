@@ -1,32 +1,5 @@
 import styled from "styled-components";
 
-// export const PostCardBackgroud = styled.div`
-//   display: flex;
-//   justify-content: center;
-//   background: var(--color-orange-200, #ffe2 ad);
-//   padding-top: 12rem;
-//   padding-bottom: 24.6rem;
-//   @media (max-width: 1247px) {
-//     padding: 6rem 2.4rem;
-//   }
-// `;
-// export const CardGrid = styled.div`
-//   display: grid;
-//   grid-template-columns: repeat(3, 38.4rem);
-//   grid-auto-rows: 28rem;
-//   gap: 24px;
-//   @media (max-width: 1247px) {
-//     max-width: 120rem;
-//     display: grid;
-//     grid-template-columns: repeat(2, 1fr);
-//     gap: 2.4rem;
-//   }
-//   @media (max-width: 767px) {
-//     display: grid;
-//     grid-template-columns: repeat(1, 1fr);
-//     gap: 2.4rem;
-//   }
-// `;
 export const CardPlus = styled.div`
   cursor: pointer;
   display: flex;
@@ -40,9 +13,6 @@ export const CardPlus = styled.div`
   @media (max-width: 1023.5px) {
     width: 100%;
   }
-
-  /* @media (max-width: 767.5px) {
-  } */
 `;
 export const CardItem = styled.div`
   position: relative;
@@ -66,23 +36,26 @@ export const CardHeaderContainer = styled.div`
   align-items: flex-start;
   gap: 0.6rem;
 `;
-export const Relationship = styled.div`
-  display: flex;
-  padding: 0px 0.8rem;
-  justify-content: center;
-  align-items: center;
-  gap: 1rem;
-  border-radius: 4px;
-  background: var(--color-green-100, #e4fbdc);
-  color: var(--color-green-500, #2ba600);
 
-  /* Font/14 Regular */
-  font-family: Pretendard;
-  font-size: 1.4rem;
-  font-style: normal;
+export const Content = styled.p`
+  margin: 1.6rem auto;
+  padding-top: 1.6rem;
+  width: 100%;
+  height: 11.6rem;
+  color: var(--gray-600, #4a4a4a);
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: normal;
+  align-items: center;
+  font-family: ${(props) => props.fontFamily};
+  font-size: 1.8rem;
   font-weight: 400;
-  line-height: 2rem; /* 142.857% */
-  letter-spacing: -0.07px;
+  line-height: 2.8rem;
+  letter-spacing: -0.018rem;
+  border-top: 0.1rem solid var(--gray-200, #eee);
 `;
 export const CardHeaderName = styled.div`
   display: flex;
@@ -118,26 +91,7 @@ export const Name = styled.p`
   white-space: nowrap;
   text-overflow: ellipsis;
 `;
-export const Content = styled.p`
-  margin: 1.6rem auto;
-  padding-top: 1.6rem;
-  width: 100%;
-  height: 11.6rem;
-  color: var(--gray-600, #4a4a4a);
-  display: -webkit-box;
-  -webkit-line-clamp: 3;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: normal;
-  align-items: center;
-  font-family: ${(props) => props.fontFamily};
-  font-size: 1.8rem;
-  font-weight: 400;
-  line-height: 2.8rem;
-  letter-spacing: -0.018rem;
-  border-top: 0.1rem solid var(--gray-200, #eee);
-`;
+
 export const Data = styled.p`
   color: var(--gray-400, #999);
 
