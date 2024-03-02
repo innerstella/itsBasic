@@ -8,6 +8,9 @@ import ListPage from "./pages/list";
 import PostPage from "./pages/post";
 import { ToastContainer } from "react-toastify";
 import TestDeleteButton from "./pages/post/components/postCard/TestDeleteButton";
+import PostToPage from "./pages/post-to";
+
+
 const AppRouter = () => {
   return (
     <BrowserRouter>
@@ -20,6 +23,7 @@ const AppRouter = () => {
             <Route path='edit' element={<TestDeleteButton />} />
           </Route>
         </Route>
+        <Route path="/post" element={<PostToPage />} />
       </Routes>
       <ToastContainer
         className='font-16-regular'
