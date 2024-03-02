@@ -12,6 +12,25 @@
   font-weight: 700;
 }
 
+@font-face {
+  font-family: "Noto Sans";
+  src: url("/public/assets/fonts/NotoSansKR-Medium.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 400;
+}
+@font-face {
+  font-family: "나눔손글씨 손편지체";
+  src: url("/public/assets/fonts/NanumSonPyeonJiCe.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 400;
+}
+@font-face {
+  font-family: "나눔명조";
+  src: url("/public/assets/fonts/NanumMyeongjo.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 400;
+}
+
 .font-28-bold {
   /* Font/28 Bold */
   font-family: "Pretend";
