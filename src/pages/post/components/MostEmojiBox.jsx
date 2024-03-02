@@ -18,12 +18,18 @@ const EmojiDropDown = (emojiList) => {
 	return (
 		<>
 			<S.EmojiListContainer>
-				{emojiList.map((item) => (
-					<S.EmojiUsedWrapper key={item.emoji} className='font-16-regular'>
-						<span>{item.emoji}</span>
-						{item.count}
-					</S.EmojiUsedWrapper>
-				))}
+				{emojiList.length === 0 ? (
+					<span className='font-16-regular'>
+						이모지를 선택하여 이 글에 반응해보세요!
+					</span>
+				) : (
+					emojiList.map((item) => (
+						<S.EmojiUsedWrapper key={item.emoji} className='font-16-regular'>
+							<span>{item.emoji}</span>
+							{item.count}
+						</S.EmojiUsedWrapper>
+					))
+				)}
 			</S.EmojiListContainer>
 		</>
 	);
@@ -39,12 +45,21 @@ const MostEmojiBox = () => {
 	return (
 		<>
 			<S.DropdownFuncBtnContainer>
-				{mostUsedEmoji.map((item) => (
-					<S.EmojiMostUsedWrapper key={item.emoji} className='font-16-regular'>
-						<span>{item.emoji}</span>
-						{item.count}
+				{mostUsedEmoji.length === 0 ? (
+					<S.EmojiMostUsedWrapper className='font-16-regular'>
+						아직 글에 반응이 없어요.
 					</S.EmojiMostUsedWrapper>
-				))}
+				) : (
+					mostUsedEmoji.map((item) => (
+						<S.EmojiMostUsedWrapper
+							key={item.emoji}
+							className='font-16-regular'
+						>
+							<span>{item.emoji}</span>
+							{item.count}
+						</S.EmojiMostUsedWrapper>
+					))
+				)}
 				<S.DropdownButton
 					onClick={() => setIsEmojiDropDownOpen(!isEmojiDropDownOpen)}
 				>
