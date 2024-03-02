@@ -1,9 +1,18 @@
-// const BASE_URL = "https://rolling-api.vercel.app/4-2";
+/**
+ *
+ * @returns
+ * @desc recipients 전체 데이터를 가져오는 함수입니다 파라미터로 useParams를 받아 recipientId에 맞는 메세지 전체를 불러옵니다
+ *
+ */
 
-export async function getUserPaper() {
-  const response = await fetch(
-    "https://rolling-api.vercel.app/4-2/recipients/1024/messages/" //fixme: id값을 받아와서 1024를 대상의id값으로 변경
-  ); //BASE_URL이후 id받아오는 로직입력
-  const body = await response.json();
-  return body;
-}
+const BASE_URL = "https://rolling-api.vercel.app/4-2";
+
+export const getRecipientMessages = async (recipientId) => {
+  const json = await (
+    await fetch(`${BASE_URL}/recipients/${recipientId}/messages/`)
+  ).json();
+
+  return json;
+};
+
+export default getRecipientMessages;

@@ -1,12 +1,14 @@
 import { useEffect, useState } from "react";
 import * as S from "./PostCardStyle";
-import { getUserPaper } from "./api";
 import { formatDate } from "./formatData";
+import getRecipientMessages from "./api";
+import { useParams } from "react-router-dom";
 export function PostCardItem() {
   const [cardData, setCardData] = useState([]);
+  const { recipientId } = useParams();
 
   async function handleCardData() {
-    const jsonData = await getUserPaper();
+    const jsonData = await getRecipientMessages(recipientId);
     const paperData = jsonData.results;
     setCardData(paperData);
   }
