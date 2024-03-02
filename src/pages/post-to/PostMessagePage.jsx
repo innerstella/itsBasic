@@ -4,6 +4,7 @@ import NavigationBar from "../../components/navigationBar/NavigationBar";
 import Button from "../../components/button/Button";
 import Profile from "./components/profile/Proifle";
 import Dropdown from "./components/dropdown/Dropdown";
+import TextEditor from "./components/text-editor/TextEditor";
 
 /**
  *
@@ -34,6 +35,7 @@ const PostMessagePage = () => {
         </div>
         <div className="section-container">
           <p className="text-title font-24-bold">내용을 입력해 주세요</p>
+          <TextEditor />
         </div>
         <div className="section-container">
           <p className="text-title font-24-bold">폰트 선택</p>
