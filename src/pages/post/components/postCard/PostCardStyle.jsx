@@ -128,3 +128,8 @@ export const PlusButton = styled.div`
 	border-radius: 100px;
 	background: var(--gray-500, #555);
 `;
+
+export const ContentEndPoint = styled.div`
+  position: absolute;
+  bottom: 0rem;
+`;
