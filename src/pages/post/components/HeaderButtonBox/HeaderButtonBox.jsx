@@ -1,5 +1,5 @@
-import HeaderAddEmojiButton from "./HeaderAddEmojiButton";
-import HeaderShareButton from "./HeaderShareButton";
+import HeaderAddEmojiButton from "../HeaderAddEmojiButton/HeaderAddEmojiButton";
+import HeaderShareButton from "../HeaderShareButton/HeaderShareButton";
 import * as S from "./HeaderButtonBox.style";
 const HeaderButtonBox = () => {
   return (

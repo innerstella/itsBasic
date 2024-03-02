@@ -1,6 +1,6 @@
 import { useState } from "react";
 import * as S from "./HeaderShareButton.style";
-import ShareDropDownModal from "./ShareDropdownModal";
+import ShareDropDownModal from "../ShareDropdownModal/ShareDropdownModal";
 const HeaderShareButton = () => {
   const [isShowModal, setIsShowModal] = useState(false);
 
