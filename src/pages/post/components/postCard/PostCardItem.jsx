@@ -1,11 +1,11 @@
 import { useEffect, useState } from "react";
 import * as S from "./PostCardStyle";
 import Relationship from "./CardRelationship";
+import RollingMessageModal from "../RollingMessageModal/RollingMessageModal.jsx";
 import { formatDate } from "./formatData";
 import getRecipientMessages from "./api";
 import { useParams } from "react-router-dom";
 import { useInView } from "react-intersection-observer";
-import RollingMessageModal from "../RollingMessageModal/RollingMessageModal.jsx";
 
 const BASE_URL = "https://rolling-api.vercel.app/4-2";
 export function PostCardItem() {
