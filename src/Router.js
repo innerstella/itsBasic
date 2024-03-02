@@ -13,24 +13,26 @@ import ListPage from "./pages/list";
 import PostPage from "./pages/post";
 import TestDeleteButton from "./pages/post/components/postCard/TestDeleteButton";
 import PostToPage from "./pages/post-to";
+import PostMessagePage from "./pages/post-to/PostMessagePage";
 
 const AppRouter = () => {
   return (
     <BrowserRouter>
       <GlobalStyles />
       <Routes>
-        <Route path='/' element={<MainPage />} />
-        <Route path='/list' element={<ListPage />} />
-        <Route path='/post' element={<PostToPage />} />
-        <Route path='/post'>
-          <Route path=':recipientId' element={<PostPage />}>
-            <Route path='edit' element={<TestDeleteButton />} />
+        <Route path="/" element={<MainPage />} />
+        <Route path="/list" element={<ListPage />} />
+        <Route path="/post" element={<PostToPage />} />
+        <Route path="/post">
+          <Route path=":id/message" element={<PostMessagePage />} />
+          <Route path=":recipientId" element={<PostPage />}>
+            <Route path="edit" element={<TestDeleteButton />} />
           </Route>
         </Route>
       </Routes>
       <ToastContainer
-        className='font-16-regular'
-        position='bottom-center'
+        className="font-16-regular"
+        position="bottom-center"
         autoClose={5000}
         hideProgressBar={true}
         newestOnTop={false}
@@ -39,7 +41,7 @@ const AppRouter = () => {
         pauseOnFocusLoss
         draggable
         pauseOnHover
-        theme='light'
+        theme="light"
       />
     </BrowserRouter>
   );
