@@ -87,9 +87,9 @@ export const Container = styled.div`
     width: auto;
     margin: 5rem auto 8.2rem auto;
 
-    .container {
+    .section-container {
       width: 100%;
-      margin: 0 2.4rem;
+      padding: 0 2.4rem;
     }
 
     .recipient-title {
