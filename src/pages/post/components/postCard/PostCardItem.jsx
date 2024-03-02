@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import * as S from "./PostCardStyle";
+import Relationship from "./CardRelationship";
 import { formatDate } from "./formatData";
 import getRecipientMessages from "./api";
 import { useParams } from "react-router-dom";
@@ -15,6 +16,7 @@ export function PostCardItem() {
     const jsonData = await getRecipientMessages(dataUrl);
     const paperData = jsonData.results;
     console.log(paperData);
+
     setCardData(paperData);
   }
 
@@ -36,7 +38,10 @@ export function PostCardItem() {
                 <S.From>From.</S.From>
                 <S.Name>{el.sender}</S.Name>
               </S.CardHeaderName>
-              <S.Relationship>가족</S.Relationship>
+
+              <Relationship state={el.relationship}>
+                {el.relationship}
+              </Relationship>
             </S.CardHeaderContainer>
             <S.DeleteButton>
               <img src={`/assets/post/deleted.svg`} alt='삭제휴지통'></img>
