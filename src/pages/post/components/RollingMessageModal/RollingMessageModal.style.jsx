@@ -1,5 +1,5 @@
 import { styled } from "styled-components";
-import PrimaryButton40 from "../../../components/PrimaryButton40";
+import PrimaryButton40 from "../../../../components/PrimaryButton40";
 
 export const RollingPrimaryButton = styled(PrimaryButton40)`
 	width: 12rem;

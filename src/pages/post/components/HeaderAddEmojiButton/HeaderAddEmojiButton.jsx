@@ -1,7 +1,7 @@
 import * as S from "./HeaderAddEmojiButton.style";
 import EmojiPicker from "emoji-picker-react";
 import { useState } from "react";
-import DropdownClickCancel from ".//DropdownClickCancel";
+import DropdownClickCancel from "../DropdownClickCancel/DropdownClickCancel";
 import { useParams } from "react-router";
 
 function HeaderAddEmojiButton() {

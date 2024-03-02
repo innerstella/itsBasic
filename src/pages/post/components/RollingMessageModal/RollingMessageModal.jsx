@@ -1,15 +1,6 @@
 import * as S from "./RollingMessageModal.style.jsx";
 import { StyleSheetManager } from "styled-components";
-import { formatDate } from "./postCard/formatData.js";
-
-const SAMPLE_DATA = {
-	sender: "김동훈",
-	profileImageURL: "/logo192.png",
-	relationship: "가족",
-	createdAt: "2023.07.28",
-	content: "코로나가기승을부리는중입니다.",
-	font: "notoSans",
-};
+import { formatDate } from "../postCard/formatData.js";
 
 const convertRelationColor = (relation) => {
 	switch (relation) {
@@ -26,10 +17,7 @@ const convertRelationColor = (relation) => {
 	}
 };
 
-const RollingMessageModal = ({
-	rollingMessageData = SAMPLE_DATA,
-	setIsOpen,
-}) => {
+const RollingMessageModal = ({ rollingMessageData, setIsOpen }) => {
 	const { sender, profileImageURL, relationship, createdAt, content, font } =
 		rollingMessageData;
 

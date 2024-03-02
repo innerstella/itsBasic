@@ -7,11 +7,10 @@
 
 const BASE_URL = "https://rolling-api.vercel.app/4-2";
 
-export const getRecipientMessages = async (recipientId) => {
-  const json = await (
-    await fetch(`${BASE_URL}/recipients/${recipientId}/messages/`)
-  ).json();
+export const getRecipientMessages = async (url) => {
+  const json = await (await fetch(url)).json();
 
+  console.log(json);
   return json;
 };
 
