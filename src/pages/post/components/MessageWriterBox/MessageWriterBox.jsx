@@ -1,4 +1,4 @@
-import WriterImageBox from "./WriterImageBox";
+import WriterImageBox from "../WriterImageBox/WriterImageBox";
 import * as S from "./MessageWriterBox.style";
 const MessageWriterBox = () => {
   return (

@@ -1,6 +1,6 @@
 import * as S from "./PostPageMain.style";
-import { PostCardAdd } from "./postCard/PostCardAdd";
-import { PostCardItem } from "./postCard/PostCardItem";
+import { PostCardAdd } from "../postCard/PostCardAdd";
+import { PostCardItem } from "../postCard/PostCardItem";
 import { Outlet, Link, useParams } from "react-router-dom";
 
 const PostPageMain = () => {
