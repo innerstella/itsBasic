@@ -4,25 +4,30 @@ import Relationship from "./CardRelationship";
 import { formatDate } from "./formatData";
 import getRecipientMessages from "./api";
 import { useParams } from "react-router-dom";
-
+import { useInView } from "react-intersection-observer";
 const BASE_URL = "https://rolling-api.vercel.app/4-2";
 export function PostCardItem() {
+  const [firstDataCount, setFirstDataCount] = useState(8);
+  const [ref, inView] = useInView();
+  const [page, setPage] = useState(0);
   const [cardData, setCardData] = useState([]);
   const { recipientId } = useParams();
 
-  const dataUrl = `${BASE_URL}/recipients/${recipientId}/messages/`;
+  const dataUrl = `${BASE_URL}/recipients/${recipientId}/messages/?limit=${firstDataCount}&offset=${page}`;
 
-  async function handleCardData() {
+  async function fetchData() {
+    setFirstDataCount(9);
+    setPage((prev) => prev + 8);
     const jsonData = await getRecipientMessages(dataUrl);
     const paperData = jsonData.results;
-    console.log(paperData);
-
-    setCardData(paperData);
+    setCardData([...cardData, ...paperData]);
   }
 
   useEffect(() => {
-    handleCardData();
-  }, []);
+    if (inView) {
+      fetchData();
+    }
+  }, [inView]);
 
   return (
     <>
@@ -51,6 +56,7 @@ export function PostCardItem() {
           <S.Data>{formatDate(el.createdAt)}</S.Data>
         </S.CardItem>
       ))}
+      <S.ContentEndPoint ref={ref}></S.ContentEndPoint>
     </>
   );
 }
