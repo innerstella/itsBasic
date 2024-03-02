@@ -11,13 +11,13 @@ export const RollingMessageModalBackground = styled.div`
 	height: 100vh;
 	width: 100vw;
 	position: fixed;
-	top: 0px;
-	left: 0px;
+	top: 0;
+	left: 0;
 	z-index: 99;
 `;
 
 export const RollingMessageSender = styled.p`
-	margin-bottom: 6px;
+	margin-bottom: 0.6rem;
 	color: #000;
 	& span {
 		font-weight: 700;
@@ -31,10 +31,10 @@ export const RollingMessageModalWrapper = styled.div`
 	position: absolute;
 	background-color: var(--color-white);
 	transform: translateX(-50%) translateY(-50%);
-	border-radius: 16px;
-	padding: 40px;
-	width: 600px;
-	height: 476px;
+	border-radius: 1.6rem;
+	padding: 4rem;
+	width: 60rem;
+	height: 47.6rem;
 	top: 50%;
 	left: 50%;
 
@@ -42,7 +42,7 @@ export const RollingMessageModalWrapper = styled.div`
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
-		margin-bottom: 19px;
+		margin-bottom: 1.9rem;
 		width: 100%;
 
 		color: var(--gray-400, #999);
@@ -50,7 +50,7 @@ export const RollingMessageModalWrapper = styled.div`
 		& section {
 			display: flex;
 			align-items: center;
-			column-gap: 16px;
+			column-gap: 1.6rem;
 
 			& section {
 				display: flex;
@@ -63,21 +63,23 @@ export const RollingMessageModalWrapper = styled.div`
 
 export const PostProfileImg = styled.div`
 	background-image: url(${(props) => `${props.image}`});
-	background-size: cover;
+	background-size: contain;
+	background-position: center;
 	border-radius: 50%;
-	height: 56px;
-	width: 56px;
+	height: 5.6rem;
+	min-width: 5.6rem;
+	width: 5.6rem;
 `;
 
 export const ModalMessageTextArea = styled.textarea`
 	font-family: ${(prop) => prop.fontFamily || "pretendard"};
 
-	padding-right: 20px;
+	padding-right: 2rem;
 	border: none;
 	resize: none;
 	width: 100%;
-	height: 240px;
-	margin-bottom: 24px;
+	height: 24rem;
+	margin-bottom: 2rem;
 	color: #5a5a5a;
 
 	&:focus {
@@ -85,7 +87,7 @@ export const ModalMessageTextArea = styled.textarea`
 	}
 
 	&::-webkit-scrollbar {
-		width: 5px;
+		width: 0.5rem;
 	}
 
 	&::-webkit-scrollbar-thumb {
@@ -104,11 +106,11 @@ export const RelationBadge = styled.p`
 	display: flex;
 	margin-bottom: 0;
 	width: max-content;
-	padding: 0px 8px;
+	padding: 0 0.8rem;
 	justify-content: center;
 	align-items: center;
-	gap: 10px;
-	border-radius: 4px;
+	gap: 1rem;
+	border-radius: 0.4rem;
 `;
 
 export const RollingMessageModalSeparator = styled.div`
