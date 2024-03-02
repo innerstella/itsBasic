@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 const HeaderLogoBox = () => {
   return (
     <S.Container>
-      <Link to='/gq'>
+      <Link to='/'>
         <S.Box>
           <img
             src='/assets/rolling_logo_image.svg'
