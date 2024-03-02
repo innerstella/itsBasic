@@ -10,10 +10,11 @@ export function PostCardItem() {
   const { recipientId } = useParams();
 
   const dataUrl = `${BASE_URL}/recipients/${recipientId}/messages/`;
- 
+
   async function handleCardData() {
     const jsonData = await getRecipientMessages(dataUrl);
     const paperData = jsonData.results;
+    console.log(paperData);
     setCardData(paperData);
   }
 
