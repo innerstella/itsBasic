@@ -1,8 +1,11 @@
 import * as S from "./PostPageMain.style";
 import { PostCardAdd } from "./postCard/PostCardAdd";
 import { PostCardItem } from "./postCard/PostCardItem";
-import { Outlet, Link } from "react-router-dom";
+import { Outlet, Link, useParams } from "react-router-dom";
+
 const PostPageMain = () => {
+  const { recipientId } = useParams();
+  console.log(recipientId);
   return (
     <S.Layout>
       <Link to='edit'>
