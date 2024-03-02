@@ -1,35 +1,49 @@
 import { useEffect, useState } from "react";
 import * as S from "./PostCardStyle";
 import Relationship from "./CardRelationship";
+import RollingMessageModal from "../RollingMessageModal/RollingMessageModal.jsx";
 import { formatDate } from "./formatData";
 import getRecipientMessages from "./api";
 import { useParams } from "react-router-dom";
 import { useInView } from "react-intersection-observer";
-import RollingMessageModal from "../RollingMessageModal/RollingMessageModal.jsx";
 
 const BASE_URL = "https://rolling-api.vercel.app/4-2";
 export function PostCardItem() {
-  const [firstDataCount, setFirstDataCount] = useState(8);
   const [ref, inView] = useInView();
-  const [page, setPage] = useState(0);
+  const [page, setPage] = useState(8);
   const [cardData, setCardData] = useState([]);
   const { recipientId } = useParams();
   const [modalCardData, setModalCardData] = useState({});
   const [isMessageOpen, setIsMessageOpen] = useState(false);
+  const [amountDataCount, setAmountDataCount] = useState();
+  const dataUrl = `${BASE_URL}/recipients/${recipientId}/messages/?limit=9&offset=${page}`;
 
-  const dataUrl = `${BASE_URL}/recipients/${recipientId}/messages/?limit=${firstDataCount}&offset=${page}`;
+  async function fetchFirstData() {
+    const fisrtData = await getRecipientMessages(
+      `${BASE_URL}/recipients/${recipientId}/messages/`
+    );
+    setAmountDataCount(fisrtData.count);
+    const paperData = fisrtData.results;
+
+    setCardData(paperData);
+  }
 
   async function fetchData() {
-    setFirstDataCount(9);
-    setPage((prev) => prev + 8);
+    setPage((prev) => prev + 9);
     const jsonData = await getRecipientMessages(dataUrl);
     const paperData = jsonData.results;
     setCardData([...cardData, ...paperData]);
   }
 
   useEffect(() => {
+    fetchFirstData();
+  }, []);
+
+  useEffect(() => {
     if (inView) {
-      fetchData();
+      if (cardData.length > 5 && cardData.length < amountDataCount) {
+        fetchData();
+      }
     }
   }, [inView]);
 
