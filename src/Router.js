@@ -23,8 +23,8 @@ const AppRouter = () => {
         <Route path="/" element={<MainPage />} />
         <Route path="/list" element={<ListPage />} />
         <Route path="/post" element={<PostToPage />} />
-        <Route path="/post/:id/message" element={<PostMessagePage />} />
         <Route path="/post">
+          <Route path=":id/message" element={<PostMessagePage />} />
           <Route path=":recipientId" element={<PostPage />}>
             <Route path="edit" element={<TestDeleteButton />} />
           </Route>
