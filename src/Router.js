@@ -4,6 +4,7 @@ import GlobalStyles from "./GlobalStyles";
 import "./fonts.css";
 import ListPage from "./pages/list";
 import PostToPage from "./pages/post-to";
+import PostMessagePage from "./pages/post-to/PostMessagePage";
 
 const AppRouter = () => {
   return (
@@ -13,6 +14,7 @@ const AppRouter = () => {
         <Route path="/" element={<MainPage />} />
         <Route path="/list" element={<ListPage />} />
         <Route path="/post" element={<PostToPage />} />
+        <Route path="/post/:id/message" element={<PostMessagePage />} />
       </Routes>
     </BrowserRouter>
   );
