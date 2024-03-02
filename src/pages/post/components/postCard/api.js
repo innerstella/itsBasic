@@ -8,10 +8,9 @@
 const BASE_URL = "https://rolling-api.vercel.app/4-2";
 
 export const getRecipientMessages = async (url) => {
-	const json = await (await fetch(url)).json();
+  const json = await (await fetch(url)).json();
 
-	console.log(json);
-	return json;
+  return json;
 };
 
 export default getRecipientMessages;
