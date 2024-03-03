@@ -22,6 +22,10 @@ export const CardItem = styled.div`
   border-radius: 1.6rem;
   background: var(--white, #fff);
   box-shadow: 0px 2px 12px 0px rgba(0, 0, 0, 0.08);
+
+  &:hover {
+    cursor: pointer;
+  }
 `;
 export const CardHeader = styled.div`
   display: flex;
@@ -91,7 +95,6 @@ export const Name = styled.p`
   white-space: nowrap;
   text-overflow: ellipsis;
 `;
-
 export const Data = styled.p`
   color: var(--gray-400, #999);
 
@@ -103,7 +106,6 @@ export const Data = styled.p`
   line-height: 18px; /* 150% */
   letter-spacing: -0.06px;
 `;
-
 export const PlusButton = styled.div`
   display: flex;
   padding: 16px;
@@ -111,4 +113,9 @@ export const PlusButton = styled.div`
   gap: 10px;
   border-radius: 100px;
   background: var(--gray-500, #555);
+`;
+
+export const ContentEndPoint = styled.div`
+  position: absolute;
+  bottom: 0rem;
 `;
