@@ -80,10 +80,8 @@ export function PostCardItem() {
                   {el.relationship}
                 </Relationship>
               </S.CardHeaderContainer>
-
               {currentURL.includes("edit") && (
                 <TrashButton>
-                  {console.log(currentURL)}
                   <img src={`/assets/post/deleted.svg`} alt="삭제휴지통"></img>
                 </TrashButton>
               )}
