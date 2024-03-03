@@ -14,7 +14,7 @@ const DeleteButton = () => {
       setTimeout(function () {
         //list페이지가 재 렌더링 할 수 있는 시간을 벌기 위함
         navigate("/list");
-      }, 1000);
+      }, 300);
     }
   }
 

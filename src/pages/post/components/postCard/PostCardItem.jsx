@@ -4,7 +4,7 @@ import Relationship from "./CardRelationship";
 import RollingMessageModal from "../RollingMessageModal/RollingMessageModal.jsx";
 import { formatDate } from "./formatData";
 import getRecipientMessages from "./api";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import TrashButton from "./TrashButton";
 import { useInView } from "react-intersection-observer";
 
@@ -53,20 +53,19 @@ export function PostCardItem() {
     setIsMessageOpen(true);
   }
   const currentURL = window.location.href;
-
+  const navigate = useNavigate();
   //휴지통버튼 함수
   function onDeleteItem(e) {
-    console.log(e.target.id);
-    // const navigate = useNavigate();
+    e.stopPropagation();
 
-    // function onDelete() {
-    //   const deleteUrl = `https://rolling-api.vercel.app/4-2/messages//`;//해당아이디
-    //   if (window.confirm("해당 항목을 정말 삭제하시겠습니까?")) {
-    //     fetch(deleteUrl, { method: "DELETE" });
-    //     setTimeout(function () {
-    //       navigate(`/post/${recipientId}`);
-    //     }, 1000);
-    //   }
+    const deleteUrl = `https://rolling-api.vercel.app/4-2/messages/${e.target.id}/`;
+    if (window.confirm("해당 항목을 정말 삭제하시겠습니까?")) {
+      fetch(deleteUrl, { method: "DELETE" });
+      setTimeout(function () {
+        navigate(`/post/${recipientId}`);
+        fetchFirstData();
+      }, 300);
+    }
   }
 
   return (
@@ -95,9 +94,7 @@ export function PostCardItem() {
                 </Relationship>
               </S.CardHeaderContainer>
               {currentURL.includes("edit") && (
-                <TrashButton onClick={onDeleteItem}>
-                  <img src={`/assets/post/deleted.svg`} alt="삭제휴지통"></img>
-                </TrashButton>
+                <TrashButton onDeleteItem={onDeleteItem} id={el.id} />
               )}
             </S.CardHeader>
             <S.Content fontFamily={el.font}>{el.content}</S.Content>
