@@ -1,6 +1,6 @@
 import Button from "../../components/button/Button";
 import NavigationBar from "../../components/navigationBar/NavigationBar";
-import MainPageStyle from "./MainPage.styles";
+import MainPageStyle from "./MainPage.style";
 
 const MainPage = () => {
   return (
@@ -42,7 +42,7 @@ const MainPage = () => {
           </div>
         </div>
       </MainPageStyle>
-      <Button link="/list" width="short" show="none">
+      <Button link="/list" width="short" show="none" className="btn">
         구경해보기
       </Button>
     </>

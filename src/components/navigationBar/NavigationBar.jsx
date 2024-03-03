@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import NavContainer from "./NavigationBar.styles";
+import NavContainer from "./NavigationBar.style";
 
 const NavigationBar = ({ show }) => {
   return (

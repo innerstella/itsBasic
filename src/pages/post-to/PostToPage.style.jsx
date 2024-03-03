@@ -4,7 +4,7 @@ const PostToPageStyle = styled.div`
   display: flex;
   justify-content: center;
   width: auto;
-  margin: 5.7rem auto 6.9rem auto;
+  margin: 5.7rem auto 4.5rem auto;
 
   .container {
     width: 72rem;
@@ -61,6 +61,24 @@ const PostToPageStyle = styled.div`
   .card {
     width: 16.8rem;
     height: 16.8rem;
+  }
+
+  .error {
+    border-color: var(--color-error);
+  }
+
+  .error:focus {
+    outline: var(--color-error);
+  }
+
+  .error-message-container {
+    position: relative;
+  }
+
+  .error-message {
+    position: absolute;
+    margin-top: 0.4rem;
+    color: var(--color-error);
   }
 
   @media screen and (max-width: 1024px) {
