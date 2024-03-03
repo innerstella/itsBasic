@@ -8,6 +8,7 @@ import { useParams } from "react-router-dom";
 import { useInView } from "react-intersection-observer";
 
 const BASE_URL = "https://rolling-api.vercel.app/4-2";
+
 export function PostCardItem() {
   const [ref, inView] = useInView();
   const [page, setPage] = useState(8);
