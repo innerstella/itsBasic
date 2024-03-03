@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
 export const Layout = styled.div`
+  position: relative;
   background-color: var(--color-orange-300);
   padding-top: 11.4rem;
   padding-bottom: 24.6rem;
@@ -18,22 +19,6 @@ export const Layout = styled.div`
   @media (max-width: 767.5px) {
     padding-top: 2.4rem;
     padding-bottom: 3.8rem;
-  }
-
-  .post-delete-button {
-    position: absolute;
-    top: 200px;
-    right: 25rem;
-    padding: 1rem 2rem;
-    background: #fff;
-    border: none;
-    border-radius: 2rem;
-    cursor: pointer;
-
-    &:hover {
-      background: gray;
-      color: #fff;
-    }
   }
 `;
 
