@@ -4,7 +4,7 @@ import Relationship from "./CardRelationship";
 import RollingMessageModal from "../RollingMessageModal/RollingMessageModal.jsx";
 import { formatDate } from "./formatData";
 import getRecipientMessages from "./api";
-import { useParams } from "react-router-dom";
+import { NavLink, useParams } from "react-router-dom";
 import TrashButton from "./TrashButton";
 import { useInView } from "react-intersection-observer";
 
@@ -52,7 +52,9 @@ export function PostCardItem() {
     setModalCardData(el);
     setIsMessageOpen(true);
   }
+  const currentURL = window.location.href;
 
+  const editOnOff = `/post/${recipientId}/edit`;
   return (
     <>
       {isMessageOpen && (
@@ -78,9 +80,13 @@ export function PostCardItem() {
                   {el.relationship}
                 </Relationship>
               </S.CardHeaderContainer>
-              <TrashButton>
-                <img src={`/assets/post/deleted.svg`} alt="삭제휴지통"></img>
-              </TrashButton>
+
+              {currentURL.includes("edit") && (
+                <TrashButton>
+                  {console.log(currentURL)}
+                  <img src={`/assets/post/deleted.svg`} alt="삭제휴지통"></img>
+                </TrashButton>
+              )}
             </S.CardHeader>
             <S.Content fontFamily={el.font}>{el.content}</S.Content>
             <S.Data>{formatDate(el.createdAt)}</S.Data>

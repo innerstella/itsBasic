@@ -5,7 +5,6 @@ import { Outlet, Link, useParams } from "react-router-dom";
 
 const PostPageMain = () => {
   const { recipientId } = useParams();
-
   return (
     <S.Layout>
       <Link to="edit">

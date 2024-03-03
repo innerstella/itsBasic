@@ -1,13 +1,11 @@
 import { Link, useNavigate, useParams } from "react-router-dom";
 import styles from "./TestDeleButton.module.css";
-import { useState } from "react";
+import TrashButton from "./TrashButton";
 const BASE_URL = "https://rolling-api.vercel.app/4-2/recipients/";
 
 const TestDeleteButton = () => {
   const toId = useParams();
   const navigate = useNavigate();
-  console.log(toId); //removeMe
-  const [deleteData, setDeleteData] = useState("");
 
   function onDelete() {
     const deleteId = BASE_URL + toId.recipientId + "/";
