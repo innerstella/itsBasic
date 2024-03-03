@@ -95,7 +95,7 @@ export const Name = styled.p`
   white-space: nowrap;
   text-overflow: ellipsis;
 `;
-export const Data = styled.p`
+export const Date = styled.p`
   color: var(--gray-400, #999);
 
   /* Font/12 Regular */

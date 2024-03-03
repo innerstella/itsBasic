@@ -1,4 +1,5 @@
 import styled from "styled-components";
+
 const TrashButtonStyle = styled.button`
   cursor: pointer;
   position: absolute;
@@ -13,6 +14,7 @@ const TrashButtonStyle = styled.button`
   border: 1px solid var(--gray-300, #ccc);
   background: var(--white, #fff);
 `;
+
 function TrashButton() {
   return (
     <TrashButtonStyle>

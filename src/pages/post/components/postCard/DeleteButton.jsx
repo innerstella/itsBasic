@@ -1,11 +1,11 @@
 import { Link, useNavigate, useParams } from "react-router-dom";
-import styles from "./TestDeleButton.module.css";
-import TrashButton from "./TrashButton";
+import styles from "./DeleButton.module.css";
 const BASE_URL = "https://rolling-api.vercel.app/4-2/recipients/";
 
-const TestDeleteButton = () => {
+const DeleteButton = () => {
   const toId = useParams();
   const navigate = useNavigate();
+  const { recipientId } = useParams();
 
   function onDelete() {
     const deleteId = BASE_URL + toId.recipientId + "/";
@@ -18,7 +18,6 @@ const TestDeleteButton = () => {
     }
   }
 
-  const { recipientId } = useParams();
   return (
     <div className={styles["button-box"]}>
       <button onClick={onDelete} className={styles["btn"]}>
@@ -31,4 +30,4 @@ const TestDeleteButton = () => {
   );
 };
 
-export default TestDeleteButton;
+export default DeleteButton;

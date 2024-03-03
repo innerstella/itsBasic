@@ -11,7 +11,7 @@ import { ToastContainer } from "react-toastify";
 import MainPage from "./pages/main";
 import ListPage from "./pages/list";
 import PostPage from "./pages/post";
-import TestDeleteButton from "./pages/post/components/postCard/TestDeleteButton";
+import DeleteButton from "./pages/post/components/postCard/DeleteButton";
 import PostToPage from "./pages/post-to";
 import PostMessagePage from "./pages/post-to/PostMessagePage";
 
@@ -26,7 +26,7 @@ const AppRouter = () => {
         <Route path="/post">
           <Route path=":id/message" element={<PostMessagePage />} />
           <Route path=":recipientId" element={<PostPage />}>
-            <Route path="edit" element={<TestDeleteButton />} />
+            <Route path="edit" element={<DeleteButton />} />
           </Route>
         </Route>
       </Routes>
