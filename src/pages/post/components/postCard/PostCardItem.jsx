@@ -4,7 +4,8 @@ import Relationship from "./CardRelationship";
 import RollingMessageModal from "../RollingMessageModal/RollingMessageModal.jsx";
 import { formatDate } from "./formatData";
 import getRecipientMessages from "./api";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
+import TrashButton from "./TrashButton";
 import { useInView } from "react-intersection-observer";
 
 const BASE_URL = "https://rolling-api.vercel.app/4-2";
@@ -51,6 +52,21 @@ export function PostCardItem() {
     setModalCardData(el);
     setIsMessageOpen(true);
   }
+  const currentURL = window.location.href;
+  const navigate = useNavigate();
+  //휴지통버튼 함수
+  function onDeleteItem(e) {
+    e.stopPropagation();
+
+    const deleteUrl = `https://rolling-api.vercel.app/4-2/messages/${e.target.id}/`;
+    if (window.confirm("해당 항목을 정말 삭제하시겠습니까?")) {
+      fetch(deleteUrl, { method: "DELETE" });
+      setTimeout(function () {
+        navigate(`/post/${recipientId}`);
+        fetchFirstData();
+      }, 300);
+    }
+  }
 
   return (
     <>
@@ -66,7 +82,7 @@ export function PostCardItem() {
             <S.CardHeader>
               <S.ProfileImage
                 src={el.profileImageURL}
-                alt='이미지'
+                alt="이미지"
               ></S.ProfileImage>
               <S.CardHeaderContainer>
                 <S.CardHeaderName>
@@ -77,12 +93,12 @@ export function PostCardItem() {
                   {el.relationship}
                 </Relationship>
               </S.CardHeaderContainer>
-              <S.DeleteButton>
-                <img src={`/assets/post/deleted.svg`} alt='삭제휴지통'></img>
-              </S.DeleteButton>
+              {currentURL.includes("edit") && (
+                <TrashButton onDeleteItem={onDeleteItem} id={el.id} />
+              )}
             </S.CardHeader>
             <S.Content fontFamily={el.font}>{el.content}</S.Content>
-            <S.Data>{formatDate(el.createdAt)}</S.Data>
+            <S.Date>{formatDate(el.createdAt)}</S.Date>
           </S.CardItem>
         ))}
       <S.ContentEndPoint ref={ref}></S.ContentEndPoint>
