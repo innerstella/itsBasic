@@ -20,12 +20,13 @@
 }
 @media (max-width: 1247.5px) {
   .button-box {
-    width: 90%;
+    width: 100%;
   }
 }
 @media (max-width: 767.5px) {
   .button-box {
-    z-index: 1;
+    width: 90%;
+    z-index: 2;
     position: fixed;
     bottom: 25px;
     right: 25px;
