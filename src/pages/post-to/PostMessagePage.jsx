@@ -1,5 +1,6 @@
 import * as S from "./PostMessagePage.style";
 import { createContext, useEffect, useState } from "react";
+import { useNavigate, useParams } from "react-router-dom";
 
 import NavigationBar from "../../components/navigationBar/NavigationBar";
 import Profile from "./components/profile/Proifle";
@@ -7,7 +8,6 @@ import Dropdown from "./components/dropdown/Dropdown";
 import TextEditor from "./components/text-editor/TextEditor";
 import TextInput from "./components/text-input/TextInput";
 import WideButton from "./components/wide-button/WideButton";
-import { useNavigate } from "react-router-dom";
 
 export const FromContext = createContext();
 export const ProfileContext = createContext();
@@ -15,14 +15,20 @@ export const RelationshipContext = createContext();
 export const ContentContext = createContext();
 export const FontContext = createContext();
 
+// 기본 프로필 이미지
+const defaultProfileImage =
+  "https://fastly.picsum.photos/id/311/200/200.jpg?hmac=CHiYGYQ3Xpesshw5eYWH7U0Kyl9zMTZLQuRDU4OtyH8";
+
 /**
  *
  * @description 롤링 페이퍼에 메시지 보내기 페이지 (/post/{id}/message)
- * @todo 기능 구현
  */
+
 const PostMessagePage = () => {
+  const { recipientId } = useParams();
+
   const [fromInput, setFromInput] = useState("");
-  const [profileInput, setProfileInput] = useState("");
+  const [profileInput, setProfileInput] = useState(defaultProfileImage);
   const [relationshipInput, setRelationshipInput] = useState("지인");
   const [contentInput, setContentInput] = useState("");
   const [fontInput, setFontInput] = useState("Noto Sans");
@@ -34,7 +40,6 @@ const PostMessagePage = () => {
   const moveTo = () => {
     if (isActive) {
       createPaper();
-      navigate("/post/1/preview");
     }
   };
 
@@ -46,27 +51,29 @@ const PostMessagePage = () => {
 
   // 롤링 페이퍼 생성
   const createPaper = () => {
-    fetch("https://rolling-api.vercel.app/4-2/recipients/1024/messages", {
-      method: "POST",
-      headers: {
-        accept: "application/json",
-        "Content-Type": "application/json",
-        "X-CSRFToken":
-          "DKImggmgrFWzXm5BRnmvDHUwtXfwhuK5AFAzBXVVRCYvNt5NKtrHDuOL6I69w4nZ",
-      },
-      body: JSON.stringify({
-        team: "string",
-        recipientId: 1024,
-        sender: "string",
-        profileImageURL:
-          "https://fastly.picsum.photos/id/311/200/200.jpg?hmac=CHiYGYQ3Xpesshw5eYWH7U0Kyl9zMTZLQuRDU4OtyH8",
-        relationship: "친구",
-        content: "string",
-        font: "Noto Sans",
-      }),
-    })
-      .then((res) => {
-        console.log(res);
+    fetch(
+      `https://rolling-api.vercel.app/4-2/recipients/${recipientId}/messages/`,
+      {
+        method: "POST",
+        headers: {
+          accept: "application/json",
+          "Content-Type": "application/json",
+          "X-CSRFToken":
+            "DKImggmgrFWzXm5BRnmvDHUwtXfwhuK5AFAzBXVVRCYvNt5NKtrHDuOL6I69w4nZ",
+        },
+        body: JSON.stringify({
+          team: "4-2",
+          recipientId: recipientId,
+          sender: fromInput,
+          profileImageURL: profileInput,
+          relationship: relationshipInput,
+          content: contentInput,
+          font: fontInput,
+        }),
+      }
+    )
+      .then(() => {
+        navigate(`/post/${recipientId}`);
       })
       .catch((err) => console.error(err));
   };
