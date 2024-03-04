@@ -17,10 +17,10 @@ const MessageWriterBox = ({ recipientId }) => {
   useEffect(() => {
     fetchData();
   }, []);
-
+ 
   return (
     <S.Container>
-      <WriterImageBox />
+      <WriterImageBox data={data} />
       {data.messageCount === 0 ? (
         <p className='font-18-regular'>아직 메세지가 없어요!</p>
       ) : (
