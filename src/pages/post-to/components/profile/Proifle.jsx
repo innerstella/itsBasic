@@ -11,7 +11,7 @@ const dummyProfile =
  * @todo 프로필 이미지를 선택하고, 선택한 이미지를 보여주는 기능을 구현해야 합니다.
  */
 const Profile = () => {
-  const ProfileContextData = useContext(ProfileContext);
+  const { profileInput, setProfileInput } = useContext(ProfileContext);
 
   return (
     <S.Container>

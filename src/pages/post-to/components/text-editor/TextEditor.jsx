@@ -9,7 +9,7 @@ import { ContentContext } from "../../PostMessagePage";
  * @todo 에디터 기능 연결
  */
 const TextEditor = () => {
-  const TextContextData = useContext(ContentContext);
+  const { contentInput, setContentInput } = useContext(ContentContext);
   const [quillValue, setQuillValue] = useState("");
 
   const handleQuillChange = (content, delta, source, editor) => {
@@ -18,10 +18,9 @@ const TextEditor = () => {
 
   useEffect(() => {
     if (quillValue) {
-      TextContextData.setContentInput(quillValue?.ops[0]?.insert);
-      console.log(quillValue?.ops[0]?.insert);
+      setContentInput(quillValue?.ops[0]?.insert);
     }
-  }, [quillValue]);
+  }, [quillValue, setContentInput]);
 
   return (
     <>
