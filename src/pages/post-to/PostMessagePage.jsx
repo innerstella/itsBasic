@@ -1,12 +1,13 @@
 import * as S from "./PostMessagePage.style";
-import { createContext, useState } from "react";
+import { createContext, useEffect, useState } from "react";
 
 import NavigationBar from "../../components/navigationBar/NavigationBar";
-import Button from "../../components/button/Button";
 import Profile from "./components/profile/Proifle";
 import Dropdown from "./components/dropdown/Dropdown";
 import TextEditor from "./components/text-editor/TextEditor";
 import TextInput from "./components/text-input/TextInput";
+import WideButton from "./components/wide-button/WideButton";
+import { useNavigate } from "react-router-dom";
 
 export const FromContext = createContext();
 export const ProfileContext = createContext();
@@ -23,8 +24,22 @@ const PostMessagePage = () => {
   const [fromInput, setFromInput] = useState("");
   const [profileInput, setProfileInput] = useState("");
   const [relationshipInput, setRelationshipInput] = useState("지인");
-  const [contentInput, setContentInput] = useState();
+  const [contentInput, setContentInput] = useState("");
   const [fontInput, setFontInput] = useState("Noto Sans");
+
+  // '생성하기' 버튼은 비활성화 상태에 있다가 받는 사람 이름과 카드 내용이 있는 경우 활성화 됩니다.
+  const [isActive, setIsActive] = useState(false);
+  const navigate = useNavigate();
+
+  const moveTo = () => {
+    isActive && navigate("/post/1/preview");
+  };
+
+  useEffect(() => {
+    if (fromInput.length > 0 && contentInput.length > 0) {
+      setIsActive(true);
+    }
+  }, [fromInput, contentInput]);
 
   return (
     <>
@@ -62,8 +77,10 @@ const PostMessagePage = () => {
             <Dropdown type="select-font" />
           </div>
         </FontContext.Provider>
+        <WideButton isActive={isActive} onClick={moveTo}>
+          생성하기
+        </WideButton>
       </S.Container>
-      <Button>생성하기</Button>
     </>
   );
 };
