@@ -1,4 +1,4 @@
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import * as S from "./Dropdown.style";
 import { FontContext, RelationshipContext } from "../../PostMessagePage";
 
@@ -9,9 +9,9 @@ import { FontContext, RelationshipContext } from "../../PostMessagePage";
  * @todo 폰트 종류 논의해서 정하기
  */
 const Dropdown = ({ type }) => {
-  const [selectedVal, setSelectedVal] = useState("");
   const relationshipContextData = useContext(RelationshipContext);
   const fontContextData = useContext(FontContext);
+  const [selectedVal, setSelectedVal] = useState("");
 
   const changeHandler = (e) => {
     setSelectedVal(e.target.value);
@@ -22,6 +22,15 @@ const Dropdown = ({ type }) => {
       fontContextData.setFontInput(e.target.value);
     }
   };
+
+  // 초기값 설정
+  useEffect(() => {
+    if (type === "select-reltaionship") {
+      setSelectedVal(relationshipContextData.relationshipInput);
+    } else if (type === "select-font") {
+      setSelectedVal(fontContextData.fontInput);
+    }
+  }, []);
 
   return (
     <S.Container>

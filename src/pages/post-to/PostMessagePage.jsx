@@ -21,10 +21,10 @@ export const FontContext = createContext();
  */
 const PostMessagePage = () => {
   const [fromInput, setFromInput] = useState("");
-  const [profileInput, setProfileInput] = useState("친구");
-  const [relationshipInput, setRelationshipInput] = useState();
+  const [profileInput, setProfileInput] = useState("");
+  const [relationshipInput, setRelationshipInput] = useState("지인");
   const [contentInput, setContentInput] = useState();
-  const [fontInput, setFontInput] = useState();
+  const [fontInput, setFontInput] = useState("Noto Sans");
 
   return (
     <>
