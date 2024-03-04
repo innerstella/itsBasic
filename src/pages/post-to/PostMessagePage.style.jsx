@@ -6,8 +6,13 @@ export const Container = styled.div`
   justify-content: center;
   align-items: center;
   width: auto;
-  margin: 5.7rem auto 6.9rem auto;
+  height: 100%;
+  margin: 5.7rem auto 0 auto;
   gap: 5rem;
+
+  .requried {
+    color: var(--color-error);
+  }
 
   .section-container {
     width: 72rem;
@@ -67,7 +72,7 @@ export const Container = styled.div`
   }
 
   @media screen and (max-width: 1024px) {
-    margin: 4.9rem 2.4rem 34rem 2.4rem;
+    margin: 4.9rem 2.4rem 0rem 2.4rem;
 
     .background-container {
       margin-top: 5.4rem;
@@ -85,7 +90,7 @@ export const Container = styled.div`
 
   @media screen and (max-width: 768px) {
     width: auto;
-    margin: 5rem auto 8.2rem auto;
+    margin: 5rem auto 0rem auto;
 
     .section-container {
       width: 100%;
