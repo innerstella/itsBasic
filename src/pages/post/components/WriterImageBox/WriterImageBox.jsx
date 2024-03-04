@@ -1,7 +1,7 @@
 import * as S from "./WriterImageBox.style";
 
 const WriterImageBox = ({ data }) => {
-  console.log(data.recentMessages);
+  console.log(data);
   return (
     <S.Container>
       {data.recentMessages?.map(({ profileImageURL }) => {
@@ -9,9 +9,11 @@ const WriterImageBox = ({ data }) => {
         return <S.Box profileImageURL={profileImageURL}></S.Box>;
       })}
 
-      <S.NumberBox>
-        <p className='font-12-regular'>+6</p>
-      </S.NumberBox>
+      {data?.messageCount > 3 && (
+        <S.NumberBox>
+          <p className='font-12-regular'>+{data?.messageCount - 3}</p>
+        </S.NumberBox>
+      )}
     </S.Container>
   );
 };

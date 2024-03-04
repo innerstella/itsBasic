@@ -28,7 +28,6 @@ export const NumberBox = styled.div`
   p {
     font-weight: 500;
     color: #484848;
-    margin-left: 0.4rem;
     margin-top: 0.27rem;
   }
 `;
