@@ -1,4 +1,4 @@
-import { toastNotify } from "../../../../utils/callToastNotify";
+import { callToastNotify } from "../../../../utils/callToastNotify";
 
 const handleEmojiSelect = async (emoji, recipientId, emojiFunc) => {
 	try {
@@ -37,7 +37,7 @@ const handleEmojiSelect = async (emoji, recipientId, emojiFunc) => {
 			localStorage.getItem(emoji) === "increased"
 				? "리액션이 성공적으로 추가되었습니다."
 				: "리액션이 성공적으로 제거되었습니다.";
-		toastNotify(notifyMessage);
+		callToastNotify(notifyMessage);
 
 		emojiFunc(recipientId);
 	} finally {
