@@ -47,6 +47,10 @@ export const EmojiListContainer = styled.div`
 	}
 `;
 
+const userStateColors = {
+	increased: "rgba(0, 0, 0, 0.65)",
+};
+
 export const EmojiUsedWrapper = styled.div`
 	display: flex;
 	align-items: center;
@@ -54,13 +58,15 @@ export const EmojiUsedWrapper = styled.div`
 	border-radius: 3.2rem;
 	color: var(--color-white);
 	background: rgba(0, 0, 0, 0.54);
+	background: ${({ state }) => userStateColors[state]};
+
 	padding: 0.6rem 1.2rem;
 	gap: 0.2rem;
 	margin-right: 0.8rem;
 	cursor: pointer;
 
 	&:hover {
-		background: rgba(0, 0, 0, 0.65);
+		background: rgba(0, 0, 0, 0.75);
 	}
 
 	@media (max-width: 767.5px) {
@@ -78,8 +84,15 @@ export const EmojiMostUsedWrapper = styled.div`
 	justify-content: center;
 	border-radius: 3.2rem;
 	background: rgba(0, 0, 0, 0.54);
+	background: ${({ state }) => userStateColors[state]};
 	padding: 0.8rem 1.2rem;
 	gap: 0.4rem;
+	cursor: pointer;
+	z-index: 1;
+
+	&:hover {
+		background: rgba(0, 0, 0, 0.75);
+	}
 
 	@media (max-width: 767.5px) {
 		padding: 0.4rem 0.8rem;
