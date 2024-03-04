@@ -52,7 +52,7 @@ const Dropdown = ({ type }) => {
 export default Dropdown;
 
 const Reltaionships = ["친구", "지인", "동료", "가족"];
-const Fonts = ["Noto Sans"];
+const Fonts = ["Noto Sans", "Pretendard", "나눔명조", "나눔손글씨 손편지체"];
 
 const dropdownData = {
   "select-reltaionship": Reltaionships,
