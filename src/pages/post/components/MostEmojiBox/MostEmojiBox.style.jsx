@@ -5,6 +5,7 @@ export const DropdownFuncBtnContainer = styled.div`
 	display: flex;
 	align-items: center;
 	gap: 0.8rem;
+	z-index: 1;
 `;
 
 export const DropdownButton = styled.button`
