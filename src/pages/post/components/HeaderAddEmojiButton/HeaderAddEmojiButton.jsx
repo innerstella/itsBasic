@@ -10,19 +10,38 @@ function HeaderAddEmojiButton({ emojiFunc }) {
 
 	const handleEmojiSelect = async (s) => {
 		try {
-			await fetch(
-				`https://rolling-api.vercel.app/4-2/recipients/${recipientId}/reactions/`,
-				{
-					method: "POST",
-					headers: {
-						accept: "application/json",
-						"Content-Type": "application/json",
-						"X-CSRFToken":
-							"Bk3gqgI4mVP95yjXHakJ56YvHIICSlhOI4lQEztPAT734s9WjGvk04ga24gCLkb6",
-					},
-					body: JSON.stringify({ emoji: s.emoji, type: "increase" }),
-				}
-			);
+			if (localStorage.getItem(s.emoji) !== "increased") {
+				await fetch(
+					`https://rolling-api.vercel.app/4-2/recipients/${recipientId}/reactions/`,
+					{
+						method: "POST",
+						headers: {
+							accept: "application/json",
+							"Content-Type": "application/json",
+							"X-CSRFToken":
+								"Bk3gqgI4mVP95yjXHakJ56YvHIICSlhOI4lQEztPAT734s9WjGvk04ga24gCLkb6",
+						},
+						body: JSON.stringify({ emoji: s.emoji, type: "increase" }),
+					}
+				);
+				localStorage.setItem(s.emoji, "increased");
+			} else {
+				await fetch(
+					`https://rolling-api.vercel.app/4-2/recipients/${recipientId}/reactions/`,
+					{
+						method: "POST",
+						headers: {
+							accept: "application/json",
+							"Content-Type": "application/json",
+							"X-CSRFToken":
+								"Bk3gqgI4mVP95yjXHakJ56YvHIICSlhOI4lQEztPAT734s9WjGvk04ga24gCLkb6",
+						},
+						body: JSON.stringify({ emoji: s.emoji, type: "decrease" }),
+					}
+				);
+				localStorage.setItem(s.emoji, "decreased");
+			}
+
 			emojiFunc(recipientId);
 		} finally {
 		}
