@@ -84,7 +84,9 @@ const PostMessagePage = () => {
       <S.Container>
         <FromContext.Provider value={{ fromInput, setFromInput }}>
           <div className="section-container">
-            <p className="text-title font-24-bold">From.</p>
+            <p className="text-title font-24-bold">
+              From. <span className="requried">*</span>
+            </p>
             <TextInput />
           </div>
         </FromContext.Provider>
@@ -104,7 +106,9 @@ const PostMessagePage = () => {
         </RelationshipContext.Provider>
         <ContentContext.Provider value={{ contentInput, setContentInput }}>
           <div className="section-container">
-            <p className="text-title font-24-bold">내용을 입력해 주세요</p>
+            <p className="text-title font-24-bold">
+              내용을 입력해 주세요 <span className="requried">*</span>
+            </p>
             <TextEditor />
           </div>
         </ContentContext.Provider>

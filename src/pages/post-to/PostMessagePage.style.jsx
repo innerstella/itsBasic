@@ -10,6 +10,10 @@ export const Container = styled.div`
   margin: 5.7rem auto 0 auto;
   gap: 5rem;
 
+  .requried {
+    color: var(--color-error);
+  }
+
   .section-container {
     width: 72rem;
   }
