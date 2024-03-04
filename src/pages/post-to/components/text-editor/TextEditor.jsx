@@ -1,15 +1,31 @@
+import { useContext, useEffect, useState } from "react";
 import ReactQuill from "react-quill";
+import { ContentContext } from "../../PostMessagePage";
 
 /**
  *
  * @description TextEditor 컴포넌트는 글을 작성하는 에디터입니다.
- * @todo 글을 작성하고, 작성한 글을 저장하는 기능을 구현해야 합니다.
  * @ref [ReactQuill](https://www.npmjs.com/package/react-quill)
+ * @todo 에디터 기능 연결
  */
 const TextEditor = () => {
+  const TextContextData = useContext(ContentContext);
+  const [quillValue, setQuillValue] = useState("");
+
+  const handleQuillChange = (content, delta, source, editor) => {
+    setQuillValue(editor.getContents());
+  };
+
+  useEffect(() => {
+    if (quillValue) {
+      TextContextData.setContentInput(quillValue?.ops[0]?.insert);
+      console.log(quillValue?.ops[0]?.insert);
+    }
+  }, [quillValue]);
+
   return (
     <>
-      <ReactQuill />
+      <ReactQuill value={quillValue || ""} onChange={handleQuillChange} />
     </>
   );
 };
