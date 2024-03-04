@@ -58,11 +58,6 @@ const PostToPageStyle = styled.div`
     height: 16.8rem;
   }
 
-  .card {
-    width: 16.8rem;
-    height: 16.8rem;
-  }
-
   .error {
     border-color: var(--color-error);
   }
@@ -90,11 +85,6 @@ const PostToPageStyle = styled.div`
 
     .buttons {
       margin-bottom: 4rem;
-    }
-
-    .card {
-      width: 100%;
-      height: auto;
     }
   }
 
