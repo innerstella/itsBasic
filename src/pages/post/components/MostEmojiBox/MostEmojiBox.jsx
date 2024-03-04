@@ -1,16 +1,6 @@
 import { useEffect, useState } from "react";
-import { useParams } from "react-router";
 import DropdownClickCancel from "../DropdownClickCancel/DropdownClickCancel.jsx";
 import * as S from "./MostEmojiBox.style.jsx";
-
-const fetchEmojiData = async (recipientId) => {
-	const { results } = await (
-		await fetch(
-			`https://rolling-api.vercel.app/4-2/recipients/${recipientId}/reactions/`
-		)
-	).json();
-	return results;
-};
 
 const EmojiDropDown = (emojiList) => {
 	return (
@@ -35,21 +25,10 @@ const EmojiDropDown = (emojiList) => {
 	);
 };
 
-const MostEmojiBox = () => {
+const MostEmojiBox = ({ emojiData }) => {
 	const [isEmojiDropDownOpen, setIsEmojiDropDownOpen] = useState(false);
-	const [emojiData, setEmojiData] = useState([]);
 	const [favoriteEmoji, setFavoriteEmoji] = useState([]);
 	const [usedEmojiList, setUsedEmojiList] = useState([]);
-	const { recipientId } = useParams();
-
-	const handleSetEmojiData = async (recipientId) => {
-		const emojiRaw = await fetchEmojiData(recipientId);
-		setEmojiData(emojiRaw);
-	};
-
-	useEffect(() => {
-		handleSetEmojiData(recipientId);
-	}, [recipientId]);
 
 	useEffect(() => {
 		if (emojiData.length !== 0) {

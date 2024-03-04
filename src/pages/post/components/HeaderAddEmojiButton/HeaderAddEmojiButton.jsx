@@ -4,7 +4,7 @@ import { useState } from "react";
 import DropdownClickCancel from "../DropdownClickCancel/DropdownClickCancel";
 import { useParams } from "react-router";
 
-function HeaderAddEmojiButton() {
+function HeaderAddEmojiButton({ emojiFunc }) {
 	const [isEmojiOpen, setIsEmojiOpen] = useState(false);
 	const { recipientId } = useParams();
 
@@ -23,6 +23,7 @@ function HeaderAddEmojiButton() {
 					body: JSON.stringify({ emoji: s.emoji, type: "increase" }),
 				}
 			);
+			emojiFunc(recipientId);
 		} finally {
 		}
 	};
