@@ -18,7 +18,9 @@ export const Container = styled.div`
     border-radius: 1.2rem;
     background: var(--color-purple-200);
     background: ${({ isactive }) =>
-      isactive ? "var(--color-purple-600)" : "var(--color-grayscale-300)"};
+      isactive === "true"
+        ? "var(--color-purple-600)"
+        : "var(--color-grayscale-300)"};
 
     color: var(--color-white);
   }

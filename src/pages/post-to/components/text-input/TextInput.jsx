@@ -16,7 +16,7 @@ const TextInput = () => {
   };
 
   return (
-    <S.Container error={isError}>
+    <S.Container error={isError.toString()}>
       <div className="recipient-input-form">
         <input
           className="recipient-input font-16-regular"

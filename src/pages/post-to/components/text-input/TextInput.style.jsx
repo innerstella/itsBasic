@@ -8,7 +8,7 @@ export const Container = styled.div`
     border-radius: 0.8rem;
 
     border: ${({ error }) =>
-      error
+      error === "true"
         ? "0.1rem solid var(--color-error)"
         : "0.1rem solid var(--color-grayscale-300)"};
     background: var(--color-white);
@@ -17,6 +17,6 @@ export const Container = styled.div`
   .warning {
     padding-top: 0.5rem;
     color: var(--color-error);
-    display: ${({ error }) => (error ? "block" : "none")};
+    display: ${({ error }) => (error === "true" ? "block" : "none")};
   }
 `;
