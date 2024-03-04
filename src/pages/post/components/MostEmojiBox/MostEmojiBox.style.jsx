@@ -5,6 +5,7 @@ export const DropdownFuncBtnContainer = styled.div`
 	display: flex;
 	align-items: center;
 	gap: 0.8rem;
+	z-index: 1;
 `;
 
 export const DropdownButton = styled.button`
@@ -27,11 +28,13 @@ export const EmojiListContainer = styled.div`
 	top: 4.7rem;
 	row-gap: 1rem;
 	background-color: var(--color-white);
+	z-index: 1;
 	grid-template-columns: ${(prop) =>
 		prop.columns ? prop.columns : "repeat(4, 1fr)"};
 
 	& > span {
 		margin-right: 0.8rem;
+		margin-bottom: 0;
 	}
 
 	@media (max-width: 1024px) {
@@ -41,9 +44,12 @@ export const EmojiListContainer = styled.div`
 
 	@media (max-width: 768px) {
 		padding: 1.6rem;
-		padding-right: 0.8rem;
 	}
 `;
+
+const userStateColors = {
+	increased: "rgba(0, 0, 0, 0.65)",
+};
 
 export const EmojiUsedWrapper = styled.div`
 	display: flex;
@@ -52,9 +58,16 @@ export const EmojiUsedWrapper = styled.div`
 	border-radius: 3.2rem;
 	color: var(--color-white);
 	background: rgba(0, 0, 0, 0.54);
+	background: ${({ state }) => userStateColors[state]};
+
 	padding: 0.6rem 1.2rem;
 	gap: 0.2rem;
 	margin-right: 0.8rem;
+	cursor: pointer;
+
+	&:hover {
+		background: rgba(0, 0, 0, 0.75);
+	}
 
 	@media (max-width: 767.5px) {
 		padding: 0.4rem 0.8rem;
@@ -71,8 +84,15 @@ export const EmojiMostUsedWrapper = styled.div`
 	justify-content: center;
 	border-radius: 3.2rem;
 	background: rgba(0, 0, 0, 0.54);
+	background: ${({ state }) => userStateColors[state]};
 	padding: 0.8rem 1.2rem;
 	gap: 0.4rem;
+	cursor: pointer;
+	z-index: 1;
+
+	&:hover {
+		background: rgba(0, 0, 0, 0.75);
+	}
 
 	@media (max-width: 767.5px) {
 		padding: 0.4rem 0.8rem;
