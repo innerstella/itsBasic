@@ -6,7 +6,9 @@ import Button from "../../components/button/Button";
 import Profile from "./components/profile/Proifle";
 import Dropdown from "./components/dropdown/Dropdown";
 import TextEditor from "./components/text-editor/TextEditor";
+import TextInput from "./components/text-input/TextInput";
 
+export const FromContext = createContext();
 export const ProfileContext = createContext();
 export const RelationshipContext = createContext();
 export const ContentContext = createContext();
@@ -28,17 +30,12 @@ const PostMessagePage = () => {
     <>
       <NavigationBar />
       <S.Container>
-        <div className="section-container">
-          <p className="text-title font-24-bold">From.</p>
-          <div className="recipient-input-form">
-            <input
-              className="recipient-input font-16-regular"
-              placeholder="이름을 입력해 주세요."
-              value={fromInput}
-              onChange={(e) => setFromInput(e.target.value)}
-            />
+        <FromContext.Provider value={{ fromInput, setFromInput }}>
+          <div className="section-container">
+            <p className="text-title font-24-bold">From.</p>
+            <TextInput />
           </div>
-        </div>
+        </FromContext.Provider>
         <ProfileContext.Provider value={{ profileInput, setProfileInput }}>
           <div className="section-container">
             <p className="text-title font-24-bold">프로필 이미지</p>
