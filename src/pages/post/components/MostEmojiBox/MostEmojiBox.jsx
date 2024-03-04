@@ -2,54 +2,9 @@ import { useEffect, useState } from "react";
 import DropdownClickCancel from "../DropdownClickCancel/DropdownClickCancel.jsx";
 import * as S from "./MostEmojiBox.style.jsx";
 import { useParams } from "react-router";
-import { toastNotify } from "../../../../utils/callToastNotify.js";
+import handleEmojiSelect from "../Utils/handleEmojiSelect.js";
 
-const EmojiDropDown = ({ emojiList, emojiFunc }) => {
-	const { recipientId } = useParams();
-
-	const handleEmojiSelect = async (emoji) => {
-		try {
-			if (localStorage.getItem(emoji) !== "increased") {
-				await fetch(
-					`https://rolling-api.vercel.app/4-2/recipients/${recipientId}/reactions/`,
-					{
-						method: "POST",
-						headers: {
-							accept: "application/json",
-							"Content-Type": "application/json",
-							"X-CSRFToken":
-								"Bk3gqgI4mVP95yjXHakJ56YvHIICSlhOI4lQEztPAT734s9WjGvk04ga24gCLkb6",
-						},
-						body: JSON.stringify({ emoji: emoji, type: "increase" }),
-					}
-				);
-				localStorage.setItem(emoji, "increased");
-			} else {
-				await fetch(
-					`https://rolling-api.vercel.app/4-2/recipients/${recipientId}/reactions/`,
-					{
-						method: "POST",
-						headers: {
-							accept: "application/json",
-							"Content-Type": "application/json",
-							"X-CSRFToken":
-								"Bk3gqgI4mVP95yjXHakJ56YvHIICSlhOI4lQEztPAT734s9WjGvk04ga24gCLkb6",
-						},
-						body: JSON.stringify({ emoji: emoji, type: "decrease" }),
-					}
-				);
-				localStorage.setItem(emoji, "decreased");
-			}
-			const notifyMessage =
-				localStorage.getItem(emoji) === "increased"
-					? "리액션이 성공적으로 추가되었습니다."
-					: "리액션이 성공적으로 제거되었습니다.";
-			toastNotify(notifyMessage);
-			emojiFunc(recipientId);
-		} finally {
-		}
-	};
-
+const EmojiDropDown = ({ emojiList, emojiFunc, recipientId }) => {
 	return (
 		<>
 			{emojiList.length === 0 ? (
@@ -64,7 +19,9 @@ const EmojiDropDown = ({ emojiList, emojiFunc }) => {
 						<S.EmojiUsedWrapper
 							key={item.emoji}
 							className='font-16-regular'
-							onClick={() => handleEmojiSelect(item.emoji)}
+							onClick={() =>
+								handleEmojiSelect(item.emoji, recipientId, emojiFunc)
+							}
 						>
 							<span>{item.emoji}</span>
 							{item.count}
@@ -80,6 +37,7 @@ const MostEmojiBox = ({ emojiData, emojiFunc }) => {
 	const [isEmojiDropDownOpen, setIsEmojiDropDownOpen] = useState(false);
 	const [favoriteEmoji, setFavoriteEmoji] = useState([]);
 	const [usedEmojiList, setUsedEmojiList] = useState([]);
+	const { recipientId } = useParams();
 
 	useEffect(() => {
 		if (emojiData.length !== 0) {
@@ -116,7 +74,11 @@ const MostEmojiBox = ({ emojiData, emojiFunc }) => {
 					<img src='/assets/emoji_picker_dropdown_icon.svg' alt='' />
 				</S.DropdownButton>
 				{isEmojiDropDownOpen && (
-					<EmojiDropDown emojiList={usedEmojiList} emojiFunc={emojiFunc} />
+					<EmojiDropDown
+						emojiList={usedEmojiList}
+						emojiFunc={emojiFunc}
+						recipientId={recipientId}
+					/>
 				)}
 				<DropdownClickCancel
 					isOpen={isEmojiDropDownOpen}
