@@ -19,8 +19,14 @@ const HeaderServiceBox = () => {
 	const { recipientId } = useParams();
 
 	const handleSetEmojiData = async (recipientId) => {
-		const emojiRaw = await fetchEmojiData(recipientId);
-		setEmojiData(emojiRaw);
+		setEmojiData([]);
+		try {
+			const emojiRaw = await fetchEmojiData(recipientId);
+			if (!emojiRaw) {
+				throw new Error("정상적인 페이지 접근이 아닙니다.");
+			}
+			setEmojiData(emojiRaw);
+		} catch {}
 	};
 
 	useEffect(() => {
