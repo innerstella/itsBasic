@@ -32,7 +32,10 @@ const PostMessagePage = () => {
   const navigate = useNavigate();
 
   const moveTo = () => {
-    isActive && navigate("/post/1/preview");
+    if (isActive) {
+      createPaper();
+      navigate("/post/1/preview");
+    }
   };
 
   useEffect(() => {
@@ -40,6 +43,33 @@ const PostMessagePage = () => {
       setIsActive(true);
     }
   }, [fromInput, contentInput]);
+
+  // 롤링 페이퍼 생성
+  const createPaper = () => {
+    fetch("https://rolling-api.vercel.app/4-2/recipients/1024/messages", {
+      method: "POST",
+      headers: {
+        accept: "application/json",
+        "Content-Type": "application/json",
+        "X-CSRFToken":
+          "DKImggmgrFWzXm5BRnmvDHUwtXfwhuK5AFAzBXVVRCYvNt5NKtrHDuOL6I69w4nZ",
+      },
+      body: JSON.stringify({
+        team: "string",
+        recipientId: 1024,
+        sender: "string",
+        profileImageURL:
+          "https://fastly.picsum.photos/id/311/200/200.jpg?hmac=CHiYGYQ3Xpesshw5eYWH7U0Kyl9zMTZLQuRDU4OtyH8",
+        relationship: "친구",
+        content: "string",
+        font: "Noto Sans",
+      }),
+    })
+      .then((res) => {
+        console.log(res);
+      })
+      .catch((err) => console.error(err));
+  };
 
   return (
     <>
