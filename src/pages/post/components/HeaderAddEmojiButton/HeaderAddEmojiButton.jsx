@@ -3,6 +3,7 @@ import EmojiPicker from "emoji-picker-react";
 import { useState } from "react";
 import DropdownClickCancel from "../DropdownClickCancel/DropdownClickCancel";
 import { useParams } from "react-router";
+import { toastNotify } from "../../../../utils/callToastNotify";
 
 function HeaderAddEmojiButton({ emojiFunc }) {
 	const [isEmojiOpen, setIsEmojiOpen] = useState(false);
@@ -41,6 +42,11 @@ function HeaderAddEmojiButton({ emojiFunc }) {
 				);
 				localStorage.setItem(s.emoji, "decreased");
 			}
+			const notifyMessage =
+				localStorage.getItem(s.emoji) === "increased"
+					? "리액션이 성공적으로 추가되었습니다."
+					: "리액션이 성공적으로 제거되었습니다.";
+			toastNotify(notifyMessage);
 
 			emojiFunc(recipientId);
 		} finally {

@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import DropdownClickCancel from "../DropdownClickCancel/DropdownClickCancel.jsx";
 import * as S from "./MostEmojiBox.style.jsx";
 import { useParams } from "react-router";
+import { toastNotify } from "../../../../utils/callToastNotify.js";
 
 const EmojiDropDown = ({ emojiList, emojiFunc }) => {
 	const { recipientId } = useParams();
@@ -39,7 +40,11 @@ const EmojiDropDown = ({ emojiList, emojiFunc }) => {
 				);
 				localStorage.setItem(emoji, "decreased");
 			}
-
+			const notifyMessage =
+				localStorage.getItem(emoji) === "increased"
+					? "리액션이 성공적으로 추가되었습니다."
+					: "리액션이 성공적으로 제거되었습니다.";
+			toastNotify(notifyMessage);
 			emojiFunc(recipientId);
 		} finally {
 		}
