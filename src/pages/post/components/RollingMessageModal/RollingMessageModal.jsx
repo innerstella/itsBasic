@@ -1,27 +1,11 @@
 import * as S from "./RollingMessageModal.style.jsx";
 import { StyleSheetManager } from "styled-components";
 import { formatDate } from "../postCard/formatData.js";
-
-const convertRelationColor = (relation) => {
-	switch (relation) {
-		case "지인":
-			return "orange";
-		case "동료":
-			return "purple";
-		case "가족":
-			return "green";
-		case "친구":
-			return "blue";
-		default:
-			return "error";
-	}
-};
+import Relationship from "../postCard/CardRelationship.jsx";
 
 const RollingMessageModal = ({ rollingMessageData, setIsOpen }) => {
 	const { sender, profileImageURL, relationship, createdAt, content, font } =
 		rollingMessageData;
-
-	const relationColor = convertRelationColor(relationship);
 
 	return (
 		<S.RollingMessageModalBackground>
@@ -35,12 +19,7 @@ const RollingMessageModal = ({ rollingMessageData, setIsOpen }) => {
 							<S.RollingMessageSender className='font-20-regular'>
 								From.<span>{sender}</span>
 							</S.RollingMessageSender>
-							<S.RelationBadge
-								color={relationColor}
-								className='font-14-regular'
-							>
-								{relationship}
-							</S.RelationBadge>
+							<Relationship state={relationship}>{relationship}</Relationship>
 						</section>
 					</section>
 					<p>{formatDate(createdAt)}</p>
