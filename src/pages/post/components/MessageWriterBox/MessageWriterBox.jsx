@@ -21,10 +21,14 @@ const MessageWriterBox = ({ recipientId }) => {
   return (
     <S.Container>
       <WriterImageBox />
-      <p className='font-18-regular'>
-        <span className='font-18-bold'>{data.messageCount}</span>명이
-        작성했어요!
-      </p>
+      {data.messageCount === 0 ? (
+        <p className='font-18-regular'>아직 메세지가 없어요!</p>
+      ) : (
+        <p className='font-18-regular'>
+          <span className='font-18-bold'>{data.messageCount}</span>명이
+          작성했어요!
+        </p>
+      )}
     </S.Container>
   );
 };
