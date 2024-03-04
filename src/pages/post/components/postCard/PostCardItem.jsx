@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import * as S from "./PostCardStyle";
+import * as S from "./PostCardItem.Style";
 import Relationship from "./CardRelationship";
 import RollingMessageModal from "../RollingMessageModal/RollingMessageModal.jsx";
 import { formatDate } from "./formatData";
