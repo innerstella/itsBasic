@@ -36,7 +36,7 @@ const HeaderServiceBox = () => {
 	return (
 		<S.Container>
 			<MessageWriterBox />
-			<MostEmojiBox emojiData={emojiData} />
+			<MostEmojiBox emojiData={emojiData} emojiFunc={handleSetEmojiData} />
 			<HeaderButtonBox emojiFunc={handleSetEmojiData} />
 		</S.Container>
 	);
