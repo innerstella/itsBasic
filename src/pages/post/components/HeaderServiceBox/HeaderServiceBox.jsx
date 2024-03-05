@@ -1,9 +1,9 @@
+import { useParams } from "react-router-dom";
+import { useEffect, useState } from "react";
 import * as S from "./HeaderServiceBox.style";
 import MessageWriterBox from "../MessageWriterBox/MessageWriterBox";
 import MostEmojiBox from "../MostEmojiBox/MostEmojiBox";
 import HeaderButtonBox from "../HeaderButtonBox/HeaderButtonBox";
-import { useParams } from "react-router-dom";
-import { useEffect, useState } from "react";
 
 /**
  * @description 임시로 이모지 데이터를 받도록 처리한 함수
