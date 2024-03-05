@@ -6,29 +6,26 @@ export const Container = styled.div`
   gap: 3.2rem;
 
   .selected-profile {
-    display: flex;
-    padding: 2.4rem;
-    align-items: flex-start;
-    gap: 1rem;
     border-radius: 10rem;
-    background: var(--color-grayscale-300, #ccc);
-
     width: 8rem;
     height: 8rem;
-
-    .text {
-      color: var(--color-grayscale-500);
-    }
   }
 
   .select-profile {
     display: flex;
     flex-direction: column;
     gap: 1.2rem;
+    .text {
+      color: var(--color-grayscale-500);
+    }
     .profile {
       width: 5.6rem;
       height: 5.6rem;
       border-radius: 50%;
+    }
+    .profile-container {
+      display: flex;
+      gap: 0.4rem;
     }
   }
 `;
