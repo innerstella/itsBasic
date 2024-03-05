@@ -15,7 +15,7 @@ const NavContainer = styled.div`
     margin: 0 2.4rem;
   }
 
-  .logo-container {
+  .logo-container > a {
     display: flex;
     align-items: center;
     gap: 0.8rem;

@@ -7,7 +7,7 @@ const ButtonStyle = styled.div`
   width: 100%;
   height: 10.4rem;
 
-  .btn {
+  .button {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -27,7 +27,7 @@ const ButtonStyle = styled.div`
 
   @media screen and (max-width: 1024px) {
     padding: 0 2.4rem;
-    .btn {
+    .button {
       ${({ width }) => (width === "short" ? "width: 100%" : "max-width: 100%")};
     }
   }

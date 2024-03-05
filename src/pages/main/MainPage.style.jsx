@@ -5,7 +5,7 @@ const MainPageStyle = styled.div`
   flex-direction: column;
   align-items: center;
 
-  margin: 6rem 2.4rem 4.8rem 2.4rem;
+  margin: 6rem 2.4rem 2.4rem 2.4rem;
   gap: 3rem;
 
   .box-container {

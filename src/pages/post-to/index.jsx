@@ -1,20 +1,20 @@
+import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
+
 import NavigationBar from "../../components/navigationBar/NavigationBar";
 import PostToStyle from "./PostToPage.style";
 import Card from "./components/Card";
 import Button from "../../components/button/Button";
-import { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
 
 const CARDCOLOR = ["beige", "purple", "blue", "green"];
 
 const PostToPage = () => {
-  // input
   const [recipientName, setRecipientName] = useState("");
   const [inputError, setInputError] = useState(false);
-  const [type, setType] = useState("color");
   const [cardColorChecks, setCardColorChecks] = useState(0);
   const [cardImageChecks, setCardImageChecks] = useState(0);
   const [cardImage, setCardImage] = useState([]);
+  const [type, setType] = useState("color");
 
   const handleInputChange = (e) => {
     setRecipientName(e.target.value);
@@ -132,7 +132,7 @@ const PostToPage = () => {
         </div>
       </PostToStyle>
       <Button
-        className={`btn ${recipientName ? "" : "disabled"}`}
+        className={`button ${recipientName ? "" : "disabled"}`}
         onClick={onSubmit}
       >
         생성하기
