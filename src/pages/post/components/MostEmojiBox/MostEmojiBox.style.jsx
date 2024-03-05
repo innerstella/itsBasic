@@ -48,7 +48,7 @@ export const EmojiListContainer = styled.div`
 `;
 
 const userStateColors = {
-	increased: "rgba(0, 0, 0, 0.65)",
+	increase: "rgba(0, 0, 0, 0.65)",
 };
 
 export const EmojiUsedWrapper = styled.div`
