@@ -1,11 +1,11 @@
 import * as S from "./WriterImageBox.style";
 
 const WriterImageBox = ({ data }) => {
-  console.log(data);
+ 
   return (
     <S.Container>
       {data.recentMessages?.map(({ profileImageURL }) => {
-        console.log(profileImageURL);
+        
         return <S.Box profileImageURL={profileImageURL}></S.Box>;
       })}
 
