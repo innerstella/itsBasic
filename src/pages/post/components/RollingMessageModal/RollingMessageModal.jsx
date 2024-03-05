@@ -26,6 +26,7 @@ const RollingMessageModal = ({ rollingMessageData, setIsOpen }) => {
 				</header>
 				<S.RollingMessageModalSeparator />
 				<S.ModalMessageTextArea
+					disabled
 					className='font-18-regular'
 					fontFamily={font}
 					defaultValue={content}
