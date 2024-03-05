@@ -3,10 +3,12 @@ import HeaderServiceBox from "../HeaderServiceBox/HeaderServiceBox";
 import * as S from "./HeaderFeatureBox.style";
 const HeaderFeatureBox = () => {
   return (
-    <S.Contaner>
-      <MessageRecipient />
-      <HeaderServiceBox />
-    </S.Contaner>
+    <S.ContainerWrapper>
+      <S.Container>
+        <MessageRecipient />
+        <HeaderServiceBox />
+      </S.Container>
+    </S.ContainerWrapper>
   );
 };
 

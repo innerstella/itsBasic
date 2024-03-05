@@ -1,11 +1,33 @@
 import styled from "styled-components";
 
+const postBackgroundColor = {
+  beige: "var(--color-orange-200)",
+  purple: "var(--color-purple-200)",
+  blue: "var(--color-blue-200)",
+  green: "var(--color-green-200)",
+};
+
+export const PostBackground = styled.div`
+  position: fixed;
+  background: ${({ background }) =>
+    postBackgroundColor[background]
+      ? postBackgroundColor[background]
+      : `url(${background})`};
+  background-size: cover;
+  background-position: center;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  z-index: -1;
+`;
+
 export const Layout = styled.div`
   position: relative;
-  background-color: var(--color-orange-300);
+  background-color: transparent;
   padding-top: 11.4rem;
   padding-bottom: 24.6rem;
-  height: calc(100vh - 6.2rem - 6.8rem);
+  height: calc(100% - 6.2rem - 6.8rem);
   @media (max-width: 1247.5px) {
     padding: 0rem 2.4rem;
     padding-top: 11.4rem;

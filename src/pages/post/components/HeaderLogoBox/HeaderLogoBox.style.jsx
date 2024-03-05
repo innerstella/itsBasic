@@ -1,5 +1,10 @@
 import styled from "styled-components";
 
+export const ContainerWrapper = styled.div`
+  width: 100vw;
+  background-color: var(--color-white);
+`;
+
 export const Container = styled.div`
   padding: 1.1rem 0rem;
   width: 120rem;
