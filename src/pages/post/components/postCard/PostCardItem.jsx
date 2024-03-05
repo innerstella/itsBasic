@@ -37,6 +37,14 @@ export function PostCardItem() {
     setCardData([...cardData, ...paperData]);
   }
 
+  async function deleteFetchData() {
+    const jsonData = await getRecipientMessages(
+      `${BASE_URL}/recipients/${recipientId}/messages/?limit=${cardData.length}`
+    );
+
+    const paperData = jsonData.results;
+    setCardData(paperData);
+  }
   useEffect(() => {
     fetchFirstData();
   }, []);
@@ -65,7 +73,9 @@ export function PostCardItem() {
       fetch(deleteUrl, { method: "DELETE" });
 
       setTimeout(function () {
-        fetchFirstData();
+        deleteFetchData();
+        setPage(cardData.length);
+        setAmountDataCount((prev) => prev - 1);
         navigate(`/post/${recipientId}/edit`);
       }, 300);
     }
@@ -85,7 +95,7 @@ export function PostCardItem() {
             <S.CardHeader>
               <S.ProfileImage
                 src={el.profileImageURL}
-                alt="이미지"
+                alt='이미지'
               ></S.ProfileImage>
               <S.CardHeaderContainer>
                 <S.CardHeaderName>
