@@ -2,12 +2,19 @@ import NavigationBar from "../../components/navigationBar/NavigationBar";
 import PostToStyle from "./PostToPage.style";
 import Card from "./components/Card";
 import Button from "../../components/button/Button";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
+
+const CARDCOLOR = ["beige", "purple", "blue", "green"];
 
 const PostToPage = () => {
   // input
   const [recipientName, setRecipientName] = useState("");
   const [inputError, setInputError] = useState(false);
+  const [type, setType] = useState("color");
+  const [cardColorChecks, setCardColorChecks] = useState(0);
+  const [cardImageChecks, setCardImageChecks] = useState(0);
+  const [cardImage, setCardImage] = useState([]);
 
   const handleInputChange = (e) => {
     setRecipientName(e.target.value);
@@ -17,18 +24,49 @@ const PostToPage = () => {
     recipientName ? setInputError(false) : setInputError(true);
   };
 
-  // color & image
-  const [ColorButtonClick, setColorButtonClick] = useState(true);
-  const [ImageButtonClick, setImageButtonClick] = useState(false);
+  const navigate = useNavigate();
 
-  const handleColorButtonClick = () => {
-    setColorButtonClick(true);
-    setImageButtonClick(false);
+  useEffect(() => {
+    fetch("https://rolling-api.vercel.app/background-images/")
+      .then((res) => res.json())
+      .then((data) => {
+        setCardImage(data.imageUrls);
+      });
+  }, []);
+
+  //post
+  const onSubmit = (e) => {
+    e.preventDefault();
+    const body =
+      type === "color"
+        ? { name: recipientName, backgroundColor: CARDCOLOR[cardColorChecks] }
+        : {
+            name: recipientName,
+            backgroundColor: CARDCOLOR[cardColorChecks],
+            backgroundImageURL: cardImage[cardImageChecks],
+          };
+
+    fetch("https://rolling-api.vercel.app/4-2/recipients/", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(body),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        if (data && data.id) {
+          navigate(`/post/${data.id}`);
+        }
+      })
+      .catch((error) => console.error(error));
   };
 
-  const handleImageButtonClick = () => {
-    setColorButtonClick(false);
-    setImageButtonClick(true);
+  const handleCardColorCheck = (index) => {
+    setCardColorChecks(index);
+  };
+  const handleCardImageCheck = (index) => {
+    setCardImageChecks(index);
   };
 
   return (
@@ -65,24 +103,38 @@ const PostToPage = () => {
           </div>
           <div className="buttons">
             <button
-              className={`font-16-regular ${ColorButtonClick ? "select" : ""}`}
-              onClick={handleColorButtonClick}
+              className={`font-16-regular ${type === "color" && "select"}`}
+              onClick={() => {
+                setType("color");
+              }}
             >
               컬러
             </button>
             <button
-              className={`font-16-regular ${ImageButtonClick ? "select" : ""}`}
-              onClick={handleImageButtonClick}
+              className={`font-16-regular ${type === "image" && "select"}`}
+              onClick={() => {
+                setType("image");
+              }}
             >
               이미지
             </button>
           </div>
           <div className="card-container">
-            <Card colorState={ColorButtonClick} imageState={ImageButtonClick} />
+            <Card
+              type={type}
+              cardColorChecks={cardColorChecks}
+              cardImageChecks={cardImageChecks}
+              handleCardColorCheck={handleCardColorCheck}
+              handleCardImageCheck={handleCardImageCheck}
+              cardImage={cardImage}
+            />
           </div>
         </div>
       </PostToStyle>
-      <Button className={`btn ${recipientName ? "" : "disabled"}`}>
+      <Button
+        className={`btn ${recipientName ? "" : "disabled"}`}
+        onClick={onSubmit}
+      >
         생성하기
       </Button>
     </>

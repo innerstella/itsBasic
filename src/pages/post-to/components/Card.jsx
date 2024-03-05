@@ -1,5 +1,4 @@
 import CardStyle from "./Card.style";
-import { useEffect, useState } from "react";
 
 const CARDCOLOR = [
   "--color-orange-200",
@@ -8,49 +7,26 @@ const CARDCOLOR = [
   "--color-green-200",
 ];
 
-const Card = ({ colorState }) => {
-  const [cardColorChecks, setCardColorChecks] = useState(Array(4).fill(false));
-  const [cardImageChecks, setCardImageChecks] = useState(Array(4).fill(false));
-  const [cardImage, setCardImage] = useState([]);
-
-  if (!cardColorChecks.includes(true)) {
-    cardColorChecks[0] = true;
-  }
-  if (!cardImageChecks.includes(true)) {
-    cardImageChecks[0] = true;
-  }
-
-  const handleCardColorCheck = (index) => {
-    const newCardChecks = Array(4).fill(false);
-    newCardChecks[index] = !cardColorChecks[index];
-    setCardColorChecks(newCardChecks);
-  };
-  const handleCardImageCheck = (index) => {
-    const newCardChecks = Array(4).fill(false);
-    newCardChecks[index] = !cardImageChecks[index];
-    setCardImageChecks(newCardChecks);
-  };
-
-  useEffect(() => {
-    fetch("https://rolling-api.vercel.app/background-images/")
-      .then((res) => res.json())
-      .then((data) => {
-        setCardImage(data.imageUrls);
-        console.log();
-      });
-  }, []);
-
+const Card = ({
+  type,
+  cardColorChecks,
+  cardImageChecks,
+  handleCardColorCheck,
+  handleCardImageCheck,
+  cardImage,
+}) => {
   return (
     <>
-      {colorState === true
+      {type === "color"
         ? CARDCOLOR.map((color, index) => (
             <CardStyle
               className="card card-color"
               key={index}
+              value={color}
               color={color}
               onClick={() => handleCardColorCheck(index)}
             >
-              {cardColorChecks[index] && (
+              {cardColorChecks === index && (
                 <img
                   className="check-image"
                   src="/assets/post-to/Enabled.svg"
@@ -63,10 +39,11 @@ const Card = ({ colorState }) => {
             <CardStyle
               className="card card-image"
               key={index}
+              value={imageUrl}
               style={{ backgroundImage: `url(${imageUrl})` }}
               onClick={() => handleCardImageCheck(index)}
             >
-              {cardImageChecks[index] && (
+              {cardImageChecks === index && (
                 <>
                   <img
                     className="check-image"
