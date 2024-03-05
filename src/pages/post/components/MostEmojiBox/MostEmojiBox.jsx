@@ -57,7 +57,7 @@ const MostEmojiBox = ({ emojiData, emojiFunc }) => {
     if (emojiData.length !== 0) {
       const usedEmojiList = emojiData
         .sort((a, b) => b.count - a.count)
-        .filter((item) => item.count !== 0)
+        .filter((item) => item.count > 0)
         .filter((item, i) => i < 8);
       const mostFavorEmoji = usedEmojiList.filter((item, i) => i < 3);
       setFavoriteEmoji(mostFavorEmoji);
