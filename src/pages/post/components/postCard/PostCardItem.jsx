@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import * as S from "./PostCardStyle";
+import * as S from "./PostCardItem.style";
 import Relationship from "./CardRelationship";
 import RollingMessageModal from "../RollingMessageModal/RollingMessageModal.jsx";
 import { formatDate } from "./formatData";
@@ -55,6 +55,7 @@ export function PostCardItem() {
   }
   const currentURL = window.location.href;
   const navigate = useNavigate();
+
   //휴지통버튼 함수
   function onDeleteItem(e) {
     e.stopPropagation();
@@ -62,9 +63,10 @@ export function PostCardItem() {
     const deleteUrl = `https://rolling-api.vercel.app/4-2/messages/${e.target.id}/`;
     if (window.confirm("해당 항목을 정말 삭제하시겠습니까?")) {
       fetch(deleteUrl, { method: "DELETE" });
+
       setTimeout(function () {
-        navigate(`/post/${recipientId}`);
         fetchFirstData();
+        navigate(`/post/${recipientId}/edit`);
       }, 300);
     }
   }

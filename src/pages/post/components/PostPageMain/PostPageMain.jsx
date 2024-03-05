@@ -9,16 +9,17 @@ const PostPageMain = () => {
   const currentURL = window.location.href;
   return (
     <S.Layout>
-      <Link to="edit">
-        {currentURL.includes("edit") || (
-          <div className={styles["button-box"]}>
+      {currentURL.includes("edit") || (
+        <div className={styles["button-box"]}>
+          <Link to="edit">
             <button className={styles["btn"]}>삭제하기</button>
-          </div>
-        )}
-      </Link>
+          </Link>
+        </div>
+      )}
+
       <Outlet />
       <S.Container>
-        <PostCardAdd />
+        {currentURL.includes("edit") || <PostCardAdd />}
         <PostCardItem />
       </S.Container>
     </S.Layout>
