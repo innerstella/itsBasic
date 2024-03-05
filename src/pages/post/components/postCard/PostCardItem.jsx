@@ -21,11 +21,11 @@ export function PostCardItem() {
   const dataUrl = `${BASE_URL}/recipients/${recipientId}/messages/?limit=9&offset=${page}`;
 
   async function fetchFirstData() {
-    const fisrtData = await getRecipientMessages(
+    const firstData = await getRecipientMessages(
       `${BASE_URL}/recipients/${recipientId}/messages/`
     );
-    setAmountDataCount(fisrtData.count);
-    const paperData = fisrtData.results;
+    setAmountDataCount(firstData.count);
+    const paperData = firstData.results;
 
     setCardData(paperData);
   }
