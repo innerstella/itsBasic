@@ -1,27 +1,16 @@
 import * as S from "./RollingMessageModal.style.jsx";
 import { StyleSheetManager } from "styled-components";
 import { formatDate } from "../postCard/formatData.js";
+import Relationship from "../postCard/CardRelationship.jsx";
 
-const convertRelationColor = (relation) => {
-	switch (relation) {
-		case "지인":
-			return "orange";
-		case "동료":
-			return "purple";
-		case "가족":
-			return "green";
-		case "친구":
-			return "blue";
-		default:
-			return "error";
-	}
-};
-
+/**
+ * @description 메시지를 클릭했을 때, 데이터를 받아와 모달을 띄워주는 컴포넌트
+ * @param rollingMessageData - 선택한 메시지의 데이터 객체
+ * @param setIsOpen - 확인 버튼을 클릭하거나 닫는 행동 등이 발생했을 때, 설정할 state
+ */
 const RollingMessageModal = ({ rollingMessageData, setIsOpen }) => {
 	const { sender, profileImageURL, relationship, createdAt, content, font } =
 		rollingMessageData;
-
-	const relationColor = convertRelationColor(relationship);
 
 	return (
 		<S.RollingMessageModalBackground>
@@ -35,18 +24,14 @@ const RollingMessageModal = ({ rollingMessageData, setIsOpen }) => {
 							<S.RollingMessageSender className='font-20-regular'>
 								From.<span>{sender}</span>
 							</S.RollingMessageSender>
-							<S.RelationBadge
-								color={relationColor}
-								className='font-14-regular'
-							>
-								{relationship}
-							</S.RelationBadge>
+							<Relationship state={relationship}>{relationship}</Relationship>
 						</section>
 					</section>
 					<p>{formatDate(createdAt)}</p>
 				</header>
 				<S.RollingMessageModalSeparator />
 				<S.ModalMessageTextArea
+					disabled
 					className='font-18-regular'
 					fontFamily={font}
 					defaultValue={content}

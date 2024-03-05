@@ -81,6 +81,7 @@ export const ModalMessageTextArea = styled.textarea`
 	height: 24rem;
 	margin-bottom: 2rem;
 	color: #5a5a5a;
+	background: var(--color-white);
 
 	&:focus {
 		outline: none;

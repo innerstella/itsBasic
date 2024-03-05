@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import * as S from "./PostCardItem.Style";
+import * as S from "./PostCardItem.style";
 import Relationship from "./CardRelationship";
 import RollingMessageModal from "../RollingMessageModal/RollingMessageModal.jsx";
 import { formatDate } from "./formatData";
@@ -9,6 +9,7 @@ import TrashButton from "./TrashButton";
 import { useInView } from "react-intersection-observer";
 
 const BASE_URL = "https://rolling-api.vercel.app/4-2";
+
 export function PostCardItem() {
   const [ref, inView] = useInView();
   const [page, setPage] = useState(8);
@@ -20,11 +21,11 @@ export function PostCardItem() {
   const dataUrl = `${BASE_URL}/recipients/${recipientId}/messages/?limit=9&offset=${page}`;
 
   async function fetchFirstData() {
-    const fisrtData = await getRecipientMessages(
+    const firstData = await getRecipientMessages(
       `${BASE_URL}/recipients/${recipientId}/messages/`
     );
-    setAmountDataCount(fisrtData.count);
-    const paperData = fisrtData.results;
+    setAmountDataCount(firstData.count);
+    const paperData = firstData.results;
 
     setCardData(paperData);
   }
@@ -36,6 +37,14 @@ export function PostCardItem() {
     setCardData([...cardData, ...paperData]);
   }
 
+  async function deleteFetchData() {
+    const jsonData = await getRecipientMessages(
+      `${BASE_URL}/recipients/${recipientId}/messages/?limit=${cardData.length}`
+    );
+
+    const paperData = jsonData.results;
+    setCardData(paperData);
+  }
   useEffect(() => {
     fetchFirstData();
   }, []);
@@ -54,6 +63,7 @@ export function PostCardItem() {
   }
   const currentURL = window.location.href;
   const navigate = useNavigate();
+
   //휴지통버튼 함수
   function onDeleteItem(e) {
     e.stopPropagation();
@@ -61,9 +71,12 @@ export function PostCardItem() {
     const deleteUrl = `https://rolling-api.vercel.app/4-2/messages/${e.target.id}/`;
     if (window.confirm("해당 항목을 정말 삭제하시겠습니까?")) {
       fetch(deleteUrl, { method: "DELETE" });
+
       setTimeout(function () {
-        navigate(`/post/${recipientId}`);
-        fetchFirstData();
+        deleteFetchData();
+        setPage(cardData.length);
+        setAmountDataCount((prev) => prev - 1);
+        navigate(`/post/${recipientId}/edit`);
       }, 300);
     }
   }

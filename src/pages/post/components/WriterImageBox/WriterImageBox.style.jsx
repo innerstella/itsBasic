@@ -10,7 +10,7 @@ export const Box = styled.div`
   border-radius: 500rem;
   overflow: hidden;
   border: 0.2rem solid #fff;
-  background-image: url("assets/demo_people_image.jpg");
+  background-image: url(${({ profileImageURL }) => profileImageURL});
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -28,7 +28,6 @@ export const NumberBox = styled.div`
   p {
     font-weight: 500;
     color: #484848;
-    margin-left: 0.4rem;
     margin-top: 0.27rem;
   }
 `;

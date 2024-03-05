@@ -1,4 +1,4 @@
-import * as S from "./PostCardItem.Style";
+import * as S from "./PostCardItem.style";
 import { Link, useParams } from "react-router-dom";
 export function PostCardAdd() {
   const { recipientId } = useParams();

@@ -1,24 +1,40 @@
+import { useEffect, useState } from "react";
+import { Outlet, Link, useParams } from "react-router-dom";
 import * as S from "./PostPageMain.style";
+import styles from "../postCard/DeleButton.module.css";
 import { PostCardAdd } from "../postCard/PostCardAdd";
 import { PostCardItem } from "../postCard/PostCardItem";
-import { Outlet, Link, useParams } from "react-router-dom";
-import styles from "../postCard/DeleButton.module.css";
+import getRecipientMessages from "../postCard/api";
 
 const PostPageMain = () => {
   const { recipientId } = useParams();
   const currentURL = window.location.href;
+  const [currentBackground, setCurrentBackground] = useState("beige");
+  const handlePostBackgournd = async () => {
+    const { backgroundColor, backgroundImageURL } = await getRecipientMessages(
+      `https://rolling-api.vercel.app/4-2/recipients/${recipientId}/`
+    );
+    setCurrentBackground(backgroundImageURL || backgroundColor);
+  };
+
+  useEffect(() => {
+    handlePostBackgournd();
+  }, []);
+
   return (
     <S.Layout>
-      <Link to="edit">
-        {currentURL.includes("edit") || (
-          <div className={styles["button-box"]}>
+      <S.PostBackground background={currentBackground} />
+      {currentURL.includes("edit") || (
+        <div className={styles["button-box"]}>
+          <Link to="edit">
             <button className={styles["btn"]}>삭제하기</button>
-          </div>
-        )}
-      </Link>
+          </Link>
+        </div>
+      )}
+
       <Outlet />
       <S.Container>
-        <PostCardAdd />
+        {currentURL.includes("edit") || <PostCardAdd />}
         <PostCardItem />
       </S.Container>
     </S.Layout>
