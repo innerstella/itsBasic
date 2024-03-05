@@ -1,5 +1,5 @@
 import * as S from "./ShareDropdownModal.style";
-
+import { callToastNotify } from "../../../../utils/callToastNotify";
 const ShareDropDownModal = ({ setIsShowModal }) => {
   return (
     <S.Box>
@@ -13,6 +13,7 @@ const ShareDropDownModal = ({ setIsShowModal }) => {
       <S.Button
         onClick={() => {
           setIsShowModal((prev) => !prev);
+          callToastNotify("URL이 복사 되었습니다.");
           window.navigator.clipboard.writeText(window.location.href);
         }}
       >
