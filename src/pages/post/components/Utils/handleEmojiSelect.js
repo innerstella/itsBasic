@@ -7,32 +7,32 @@ import { callToastNotify } from "../../../../utils/callToastNotify";
  * @param {*} emojiFunc 이모지 리스트를 새로고침하는 함수
  */
 const handleEmojiSelect = async (emoji, recipientId, emojiFunc) => {
-	try {
-		const emojiPostType =
-			localStorage.getItem(emoji) !== "increase" ? "increase" : "decrease";
-		await fetch(
-			`https://rolling-api.vercel.app/4-2/recipients/${recipientId}/reactions/`,
-			{
-				method: "POST",
-				headers: {
-					accept: "application/json",
-					"Content-Type": "application/json",
-					"X-CSRFToken":
-						"Bk3gqgI4mVP95yjXHakJ56YvHIICSlhOI4lQEztPAT734s9WjGvk04ga24gCLkb6",
-				},
-				body: JSON.stringify({ emoji: emoji, type: emojiPostType }),
-			}
-		);
-		localStorage.setItem(emoji, `${emojiPostType}`);
-		const notifyMessage =
-			emojiPostType === "increase"
-				? "리액션이 성공적으로 추가되었습니다."
-				: "리액션이 성공적으로 제거되었습니다.";
-		callToastNotify(notifyMessage);
+  try {
+    const emojiPostType =
+      localStorage.getItem(emoji) !== "increase" ? "increase" : "decrease";
+    await fetch(
+      `https://rolling-api.vercel.app/4-2/recipients/${recipientId}/reactions/`,
+      {
+        method: "POST",
+        headers: {
+          accept: "application/json",
+          "Content-Type": "application/json",
+          "X-CSRFToken":
+            "Bk3gqgI4mVP95yjXHakJ56YvHIICSlhOI4lQEztPAT734s9WjGvk04ga24gCLkb6",
+        },
+        body: JSON.stringify({ emoji: emoji, type: emojiPostType }),
+      }
+    );
+    localStorage.setItem(emoji, `${emojiPostType}`);
+    const notifyMessage =
+      emojiPostType === "increase"
+        ? "리액션이 성공적으로 추가되었습니다."
+        : "리액션이 성공적으로 제거되었습니다.";
+    callToastNotify(notifyMessage);
 
-		emojiFunc(recipientId);
-	} finally {
-	}
+    emojiFunc(recipientId);
+  } finally {
+  }
 };
 
 export default handleEmojiSelect;
