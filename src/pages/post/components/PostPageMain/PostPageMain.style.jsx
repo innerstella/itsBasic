@@ -5,7 +5,7 @@ export const Layout = styled.div`
   background-color: var(--color-orange-300);
   padding-top: 11.4rem;
   padding-bottom: 24.6rem;
-  height: calc(100% - 6.2rem - 6.8rem);
+  height: calc(100vh - 6.2rem - 6.8rem);
   @media (max-width: 1247.5px) {
     padding: 0rem 2.4rem;
     padding-top: 11.4rem;
