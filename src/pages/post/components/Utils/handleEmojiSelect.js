@@ -31,7 +31,8 @@ const handleEmojiSelect = async (emoji, recipientId, emojiFunc) => {
     callToastNotify(notifyMessage);
 
     emojiFunc(recipientId);
-  } finally {
+  } catch {
+    callToastNotify("리액션이 정상적으로 등록되지 않았습니다.", "error");
   }
 };
 
