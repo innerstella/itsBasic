@@ -1,23 +1,60 @@
-import CardStyle from "./Card.styles";
+import CardStyle from "./Card.style";
 
-const Card = () => {
-  const cardColor = [
-    "--color-orange-200",
-    "--color-purple-200",
-    "--color-blue-200",
-    "--color-green-200",
-  ];
+const CARDCOLOR = [
+  "--color-orange-200",
+  "--color-purple-200",
+  "--color-blue-200",
+  "--color-green-200",
+];
 
+const Card = ({
+  type,
+  cardColorChecks,
+  cardImageChecks,
+  handleCardColorCheck,
+  handleCardImageCheck,
+  cardImage,
+}) => {
   return (
     <>
-      {/* <img
-        className="checkImg"
-        src="/assets/post/Enabled.svg"
-        alt="체크 표시"
-      /> */}
-      {cardColor.map((color, index) => (
-        <CardStyle className="card" key={index} color={color} />
-      ))}
+      {type === "color"
+        ? CARDCOLOR.map((color, index) => (
+            <CardStyle
+              className="card card-color"
+              key={index}
+              value={color}
+              color={color}
+              onClick={() => handleCardColorCheck(index)}
+            >
+              {cardColorChecks === index && (
+                <img
+                  className="check-image"
+                  src="/assets/post-to/Enabled.svg"
+                  alt="체크 표시"
+                />
+              )}
+            </CardStyle>
+          ))
+        : cardImage.map((imageUrl, index) => (
+            <CardStyle
+              className="card card-image"
+              key={index}
+              value={imageUrl}
+              style={{ backgroundImage: `url(${imageUrl})` }}
+              onClick={() => handleCardImageCheck(index)}
+            >
+              {cardImageChecks === index && (
+                <>
+                  <img
+                    className="check-image"
+                    src="/assets/post-to/Enabled.svg"
+                    alt="체크 표시"
+                  />
+                  <div className="select-opacity" />
+                </>
+              )}
+            </CardStyle>
+          ))}
     </>
   );
 };

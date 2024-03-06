@@ -57,11 +57,11 @@ const CardList = ({ data }) => {
   }, [currHeadIdx, data.length]);
 
   //  반응형 렌더링
-  const [isDesktop, setIsDesktop] = useState(window.innerWidth > 1024);
+  const [isDesktop, setIsDesktop] = useState(window.innerWidth > 1250);
 
   useEffect(() => {
     const handleResize = () => {
-      setIsDesktop(window.innerWidth > 1024);
+      setIsDesktop(window.innerWidth > 1250);
     };
 
     window.addEventListener("resize", handleResize);

@@ -6,7 +6,7 @@ import { PostCardAdd } from "../postCard/PostCardAdd";
 import { PostCardItem } from "../postCard/PostCardItem";
 import getRecipientMessages from "../postCard/api";
 
-const PostPageMain = () => {
+const PostPageMain = ({ amountDataCount, setAmountDataCount }) => {
   const { recipientId } = useParams();
   const currentURL = window.location.href;
   const [currentBackground, setCurrentBackground] = useState("beige");
@@ -26,7 +26,7 @@ const PostPageMain = () => {
       <S.PostBackground background={currentBackground} />
       {currentURL.includes("edit") || (
         <div className={styles["button-box"]}>
-          <Link to="edit">
+          <Link to='edit'>
             <button className={styles["btn"]}>삭제하기</button>
           </Link>
         </div>
@@ -35,7 +35,10 @@ const PostPageMain = () => {
       <Outlet />
       <S.Container>
         {currentURL.includes("edit") || <PostCardAdd />}
-        <PostCardItem />
+        <PostCardItem
+          amountDataCount={amountDataCount}
+          setAmountDataCount={setAmountDataCount}
+        />
       </S.Container>
     </S.Layout>
   );

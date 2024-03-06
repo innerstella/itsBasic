@@ -1,9 +1,17 @@
-import ButtonStyle from "./Button.styles";
+import { Link } from "react-router-dom";
+import ButtonStyle from "./Button.style";
 
-const Button = ({ link, children, width }) => {
+const Button = ({ link, children, width, className, onClick }) => {
   return (
-    <ButtonStyle to={link} className="font-18-bold" width={width}>
-      <div className="btn">{children}</div>
+    <ButtonStyle
+      to={link}
+      className="font-18-bold"
+      width={width}
+      onClick={onClick}
+    >
+      <Link to={link} className={`${className} font-18-bold`}>
+        {children}
+      </Link>
     </ButtonStyle>
   );
 };
