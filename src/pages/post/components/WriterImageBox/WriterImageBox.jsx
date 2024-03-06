@@ -1,12 +1,10 @@
 import * as S from "./WriterImageBox.style";
 
 const WriterImageBox = ({ data }) => {
- 
   return (
     <S.Container>
-      {data.recentMessages?.map(({ profileImageURL }) => {
-        
-        return <S.Box profileImageURL={profileImageURL}></S.Box>;
+      {data.recentMessages?.map(({ profileImageURL, sender }) => {
+        return <S.Box profileimageurl={profileImageURL} key={sender}></S.Box>;
       })}
 
       {data?.messageCount > 3 && (

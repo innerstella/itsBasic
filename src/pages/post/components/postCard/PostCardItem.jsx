@@ -10,14 +10,14 @@ import { useInView } from "react-intersection-observer";
 
 const BASE_URL = "https://rolling-api.vercel.app/4-2";
 
-export function PostCardItem() {
+export function PostCardItem({ amountDataCount, setAmountDataCount }) {
   const [ref, inView] = useInView();
   const [page, setPage] = useState(8);
   const [cardData, setCardData] = useState([]);
   const { recipientId } = useParams();
   const [modalCardData, setModalCardData] = useState({});
   const [isMessageOpen, setIsMessageOpen] = useState(false);
-  const [amountDataCount, setAmountDataCount] = useState();
+
   const dataUrl = `${BASE_URL}/recipients/${recipientId}/messages/?limit=9&offset=${page}`;
 
   async function fetchFirstData() {
