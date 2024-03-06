@@ -26,6 +26,7 @@ const CardStyle = styled.div`
     background-color: white;
     opacity: 0.5;
   }
+
   @media screen and (max-width: 768px) {
     .check-image {
       top: 5.5rem;

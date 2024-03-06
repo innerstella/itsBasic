@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 
 import NavigationBar from "../../components/navigationBar/NavigationBar";
 import PostToStyle from "./PostToPage.style";
-import Card from "./components/Card";
+import Card from "./components/post-to-card/Card";
 import Button from "../../components/button/Button";
 
 const CARDCOLOR = ["beige", "purple", "blue", "green"];
