@@ -29,6 +29,10 @@ export const TabletContainer = styled.div`
   overflow-x: scroll;
   padding: 0 2.4rem;
 
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
   .list-with-btn {
     display: flex;
     flex-direction: row;
