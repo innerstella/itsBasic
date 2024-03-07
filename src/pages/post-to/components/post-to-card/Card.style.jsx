@@ -9,6 +9,13 @@ const CardStyle = styled.div`
   background: var(${({ color }) => color});
   background-size: cover;
 
+  .img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 1.6rem;
+  }
+
   .check-image {
     position: absolute;
     width: 4.4rem;
@@ -20,7 +27,7 @@ const CardStyle = styled.div`
 
   .select-opacity {
     display: flex;
-    position: relative;
+    position: absolute;
     width: 100%;
     height: 100%;
     background-color: white;

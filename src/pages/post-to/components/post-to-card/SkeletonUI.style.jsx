@@ -1,6 +1,8 @@
 import styled from "styled-components";
 
 const SkeletonUIStyle = styled.div`
+  position: absolute;
+
   /* 이미지의 스켈레톤(뼈대) */
   .loading-img {
     width: 16.8rem;
