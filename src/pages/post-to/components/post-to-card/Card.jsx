@@ -1,7 +1,8 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import CardStyle from "./Card.style";
 import SkeletonUI from "./SkeletonUI";
 
+// 컬러카드 색
 const CARDCOLOR = [
   "--color-orange-200",
   "--color-purple-200",
@@ -9,6 +10,21 @@ const CARDCOLOR = [
   "--color-green-200",
 ];
 
+/**
+ * Card 컴포넌트에 전달될 props 객체
+ * @typedef {Object} CardProps
+ * @property {string} type - 카드의 유형을 나타내는 문자열입니다. "color" 또는 "image"
+ * @property {number} cardColorChecks - 체크이미지가 나타날 컬러카드 인덱스
+ * @property {number} cardImageChecks - 체크이미지가 나타날 이미지카드 인덱스
+ * @property {function} handleCardColorCheck - 카드 컬러를 변경할 때 호출되는 핸들러 함수
+ * @property {function} handleCardImageCheck - 카드 이미지를 변경할 때 호출되는 핸들러 함수
+ * @property {Array<string>} cardImage - 사용 가능한 카드 이미지 URL 목록
+ */
+
+/**
+ * Card 컴포넌트
+ * @param {CardProps} props - Card 컴포넌트에 전달되는 props
+ */
 const Card = ({
   type,
   cardColorChecks,
