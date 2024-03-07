@@ -7,7 +7,7 @@ import CardList from "./components/CardList/CardList";
 
 /**
  *
- * @description ListPage 컴포넌트는 인기 롤링페이퍼와 최근에 만든 롤링페이퍼를 보여주는 페이지입니다.
+ * @description ListPage 컴포넌트는 인기 롤링페이퍼와 최근에 만든 롤링페이퍼를 보여주는 페이지입니다!
  */
 const ListPage = () => {
   const [popularData, setPopularData] = useState();
