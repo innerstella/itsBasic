@@ -26,15 +26,7 @@ export const StyledLink = styled(Link)`
   border: none;
   border-radius: 2rem;
   cursor: pointer;
-
   color: #fff;
-  text-align: center;
-  font-family: Pretendard;
-  font-size: 16px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 26px; /* 162.5% */
-  letter-spacing: -0.16px;
 
   &:hover {
     background: gray;
@@ -53,14 +45,7 @@ export const Button = styled.button`
   border-radius: 2rem;
   cursor: pointer;
   color: #fff;
-
   text-align: center;
-  font-family: Pretendard;
-  font-size: 16px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 26px; /* 162.5% */
-  letter-spacing: -0.16px;
 
   &:hover {
     background: gray;

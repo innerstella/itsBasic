@@ -117,10 +117,13 @@ export function PostCardItem({ amountDataCount, setAmountDataCount }) {
               ></S.ProfileImage>
               <S.CardHeaderContainer>
                 <S.CardHeaderName>
-                  <S.From>From.</S.From>
+                  <S.From className="font-20-regular">From.</S.From>
                   <S.Name>{el.sender}</S.Name>
                 </S.CardHeaderName>
-                <Relationship $state={el.relationship}>
+                <Relationship
+                  $state={el.relationship}
+                  className="font-14-regular"
+                >
                   {el.relationship}
                 </Relationship>
               </S.CardHeaderContainer>
@@ -129,7 +132,9 @@ export function PostCardItem({ amountDataCount, setAmountDataCount }) {
               )}
             </S.CardHeader>
             <S.Content fontFamily={el.font}>{el.content}</S.Content>
-            <S.Date>{formatDate(el.createdAt)}</S.Date>
+            <S.Date className="font-12-regular">
+              {formatDate(el.createdAt)}
+            </S.Date>
           </S.CardItem>
         ))}
       <S.ContentEndPoint ref={ref}></S.ContentEndPoint>

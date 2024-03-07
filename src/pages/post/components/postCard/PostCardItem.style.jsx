@@ -91,20 +91,13 @@ export const Name = styled.p`
   font-style: normal;
   font-weight: 700;
   line-height: 24px; /* 120% */
+
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
 `;
 export const Date = styled.p`
   color: var(--gray-400, #999);
-
-  /* Font/12 Regular */
-  font-family: Pretendard;
-  font-size: 12px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 18px; /* 150% */
-  letter-spacing: -0.06px;
 `;
 export const PlusButton = styled.div`
   display: flex;

@@ -24,13 +24,5 @@ const Relationship = styled.div`
   border-radius: 4px;
   background: ${({ $state }) => userStateColors[$state].background};
   color: ${({ $state }) => userStateColors[$state].color};
-
-  /* Font/14 Regular */
-  font-family: Pretendard;
-  font-size: 1.4rem;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 2rem; /* 142.857% */
-  letter-spacing: -0.07px;
 `;
 export default Relationship;
