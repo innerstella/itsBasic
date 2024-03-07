@@ -1,6 +1,6 @@
 import * as S from "./ShareDropdownModal.style";
 import { callToastNotify } from "../../../../utils/callToastNotify";
-
+import { shareKakao } from "../../../../utils/shareKakao";
 const ShareDropDownModal = ({ setIsShowModal }) => {
   return (
     <S.Box>
@@ -8,6 +8,7 @@ const ShareDropDownModal = ({ setIsShowModal }) => {
         onClick={() => {
           setIsShowModal((prev) => !prev);
         }}
+        
       >
         카카오톡 공유
       </S.Button>
