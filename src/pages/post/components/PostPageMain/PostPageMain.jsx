@@ -24,9 +24,7 @@ const PostPageMain = ({
 
       {currentURL.includes("edit") || (
         <ST.Box>
-          <Link to="edit">
-            <ST.Button>삭제하기</ST.Button>
-          </Link>
+          <ST.StyledLink to="edit">삭제하기</ST.StyledLink>
         </ST.Box>
       )}
 
