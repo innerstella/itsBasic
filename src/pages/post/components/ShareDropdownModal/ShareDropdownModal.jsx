@@ -1,6 +1,6 @@
 import * as S from "./ShareDropdownModal.style";
 import { callToastNotify } from "../../../../utils/callToastNotify";
-import { shareKakao } from "../Utils/shareKakao";
+import { shareKakao } from "../../../../utils/shareKakao";
 const ShareDropDownModal = ({ setIsShowModal }) => {
   return (
     <S.Box>
