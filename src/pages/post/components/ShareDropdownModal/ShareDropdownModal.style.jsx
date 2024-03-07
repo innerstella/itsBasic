@@ -15,11 +15,11 @@ export const Box = styled.div`
 `;
 
 export const Button = styled.button`
-  padding: 12px 16px;
+  padding: 1.2rem 1.6rem;
   color: var(--gray-900, #181818);
   /* Font/16 Regular */
   font-family: Pretendard;
-  font-size: 16px;
+  font-size: 1.6rem;
   font-style: normal;
   font-weight: 400;
   line-height: 26px; /* 162.5% */
@@ -31,5 +31,8 @@ export const Button = styled.button`
 
   &:hover {
     background: var(--color-grayscale-100);
+  }
+  @media (max-width: 767.5px) {
+    font-size: 1.2rem;
   }
 `;

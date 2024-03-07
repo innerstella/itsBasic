@@ -1,7 +1,6 @@
 import { Link, useNavigate, useParams } from "react-router-dom";
-import styles from "./DeleButton.module.css";
+import * as S from "./DeleteButton.style";
 const BASE_URL = "https://rolling-api.vercel.app/4-2/recipients/";
-
 const DeleteButton = () => {
   const toId = useParams();
   const navigate = useNavigate();
@@ -19,14 +18,12 @@ const DeleteButton = () => {
   }
 
   return (
-    <div className={styles["button-box"]}>
-      <button onClick={onDelete} className={styles["btn"]}>
-        페이지 삭제하기
-      </button>
+    <S.Box>
+      <S.Button onClick={onDelete}>페이지 삭제하기</S.Button>
       <Link to={`/post/${recipientId}`}>
-        <button className={styles["btn"]}>저장하기</button>
+        <S.Button>저장하기</S.Button>
       </Link>
-    </div>
+    </S.Box>
   );
 };
 

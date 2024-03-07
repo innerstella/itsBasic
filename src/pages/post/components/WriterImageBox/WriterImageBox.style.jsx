@@ -29,5 +29,6 @@ export const NumberBox = styled.div`
     font-weight: 500;
     color: #484848;
     margin-top: 0.27rem;
+    margin-left: ${(props) => (props.dataCount < 13 ? "0.5rem" : "0.2rem")};
   }
 `;

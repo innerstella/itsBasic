@@ -7,12 +7,8 @@ const ShareDropDownModal = ({ setIsShowModal }) => {
       <S.Button
         onClick={() => {
           setIsShowModal((prev) => !prev);
-          shareKakao(
-            "롤링페이퍼",
-            "작성해 보세요!",
-            "https://cdn.rollingpaper.site/service/main/main.png"
-          );
         }}
+        
       >
         카카오톡 공유
       </S.Button>
