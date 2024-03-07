@@ -1,15 +1,18 @@
 {
   "files": {
-    "main.css": "/static/css/main.ddc79a2b.css",
-    "main.js": "/static/js/main.803c3e72.js",
+    "main.css": "/static/css/main.e3500b06.css",
+    "main.js": "/static/js/main.0f567909.js",
+    "static/media/NotoSansKR-Medium.ttf": "/static/media/NotoSansKR-Medium.b9d6e1b3e7a3d63546cc.ttf",
+    "static/media/NanumSonPyeonJiCe.ttf": "/static/media/NanumSonPyeonJiCe.75bfed62464db7203c71.ttf",
+    "static/media/NanumMyeongjo.ttf": "/static/media/NanumMyeongjo.7118f418c77c17301efd.ttf",
     "static/media/Pretendard-Bold.woff": "/static/media/Pretendard-Bold.1f1dbbbf311ffffcc770.woff",
     "static/media/Pretendard-Regular.woff": "/static/media/Pretendard-Regular.303253288b0ba99db532.woff",
     "index.html": "/index.html",
-    "main.ddc79a2b.css.map": "/static/css/main.ddc79a2b.css.map",
-    "main.803c3e72.js.map": "/static/js/main.803c3e72.js.map"
+    "main.e3500b06.css.map": "/static/css/main.e3500b06.css.map",
+    "main.0f567909.js.map": "/static/js/main.0f567909.js.map"
   },
   "entrypoints": [
-    "static/css/main.ddc79a2b.css",
-    "static/js/main.803c3e72.js"
+    "static/css/main.e3500b06.css",
+    "static/js/main.0f567909.js"
   ]
 }
