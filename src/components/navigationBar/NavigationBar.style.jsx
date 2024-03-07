@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-const NavContainer = styled.div`
+const NavContainer = styled.nav`
   display: flex;
   justify-content: center;
   width: 100vw;

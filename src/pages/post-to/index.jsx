@@ -3,29 +3,39 @@ import { useNavigate } from "react-router-dom";
 
 import NavigationBar from "../../components/navigationBar/NavigationBar";
 import PostToStyle from "./PostToPage.style";
-import Card from "./components/Card";
+import Card from "./components/post-to-card/Card";
 import Button from "../../components/button/Button";
 
 const CARDCOLOR = ["beige", "purple", "blue", "green"];
 
+/**
+ *
+ * @description 롤링 페이퍼 생성 (/post/{id})
+ */
 const PostToPage = () => {
+  // input 관련
   const [recipientName, setRecipientName] = useState("");
   const [inputError, setInputError] = useState(false);
+
+  // card 관련
   const [cardColorChecks, setCardColorChecks] = useState(0);
   const [cardImageChecks, setCardImageChecks] = useState(0);
   const [cardImage, setCardImage] = useState([]);
   const [type, setType] = useState("color");
 
+  const navigate = useNavigate();
+
+  // input 값 변경 이벤트 핸들러
   const handleInputChange = (e) => {
     setRecipientName(e.target.value);
   };
 
+  // input 값 변경 이벤트 핸들러
   const handleInputError = () => {
     recipientName ? setInputError(false) : setInputError(true);
   };
 
-  const navigate = useNavigate();
-
+  // 카드 이미지 가져옴
   useEffect(() => {
     fetch("https://rolling-api.vercel.app/background-images/")
       .then((res) => res.json())
@@ -34,7 +44,7 @@ const PostToPage = () => {
       });
   }, []);
 
-  //post
+  // 롤링페이퍼 생성
   const onSubmit = (e) => {
     e.preventDefault();
     const body =
@@ -62,9 +72,18 @@ const PostToPage = () => {
       .catch((error) => console.error(error));
   };
 
+  /**
+   * @description 컬러카드에 체크이미지를 표시하는 핸들러
+   * @param {number} index - 선택된 이미지의 인덱스
+   */
   const handleCardColorCheck = (index) => {
     setCardColorChecks(index);
   };
+
+  /**
+   * @description 이미지카드에 체크이미지를 표시하는 핸들러
+   * @param {number} index - 선택된 이미지의 인덱스
+   */
   const handleCardImageCheck = (index) => {
     setCardImageChecks(index);
   };
