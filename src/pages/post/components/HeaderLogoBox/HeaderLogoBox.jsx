@@ -4,12 +4,12 @@ const HeaderLogoBox = () => {
   return (
     <S.ContainerWrapper>
       <S.Container>
-        <Link to="/">
+        <Link to='/'>
           <S.Box>
             <img
-              src="/assets/rolling_logo_image.svg"
-              className="header-logo-image"
-              alt="rolling-logo"
+              src='/assets/post/rolling_logo_image.svg'
+              className='header-logo-image'
+              alt='rolling-logo'
             />
             <p>Rolling</p>
           </S.Box>

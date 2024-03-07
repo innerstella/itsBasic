@@ -16,7 +16,7 @@ const HeaderShareButton = () => {
         }}
       >
         <img
-          src='/assets/header_share_button_icon.svg'
+          src='/assets/post/header_share_button_icon.svg'
           className='share-button-image'
           alt='share-button'
         />
