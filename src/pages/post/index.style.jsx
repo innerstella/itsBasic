@@ -1,5 +1,13 @@
 import styled from "styled-components";
 
+export const OverScrollBox = styled.div`
+  position: absolute;
+  background: var(--color-white);
+  width: 100vw;
+  height: 10rem;
+  top: -10rem;
+`;
+
 export const Layout = styled.div`
   position: relative;
 
