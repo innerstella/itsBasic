@@ -35,6 +35,9 @@ const CardStyle = styled.div`
   }
 
   @media screen and (max-width: 768px) {
+    width: 15.4rem;
+    height: 15.4rem;
+
     .check-image {
       top: 5.5rem;
       left: 5.5rem;

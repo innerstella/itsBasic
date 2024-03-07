@@ -20,6 +20,13 @@ const SkeletonUIStyle = styled.div`
   .blink_me {
     animation: blinker 1s linear infinite;
   }
+
+  @media screen and (max-width: 768px) {
+    .loading-img {
+      width: 15.4rem;
+      height: 15.4rem;
+    }
+  }
 `;
 
 export default SkeletonUIStyle;
