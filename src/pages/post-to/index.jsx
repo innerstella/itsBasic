@@ -25,16 +25,12 @@ const PostToPage = () => {
 
   const navigate = useNavigate();
 
-  /**
-   * input 값 변경 이벤트 핸들러
-   */
+  // input 값 변경 이벤트 핸들러
   const handleInputChange = (e) => {
     setRecipientName(e.target.value);
   };
 
-  /**
-   * input 오류 상태 설정 핸들러
-   */
+  // input 값 변경 이벤트 핸들러
   const handleInputError = () => {
     recipientName ? setInputError(false) : setInputError(true);
   };
@@ -77,7 +73,7 @@ const PostToPage = () => {
   };
 
   /**
-   * 컬러카드에 체크이미지를 표시하는 핸들러
+   * @description 컬러카드에 체크이미지를 표시하는 핸들러
    * @param {number} index - 선택된 이미지의 인덱스
    */
   const handleCardColorCheck = (index) => {
@@ -85,7 +81,7 @@ const PostToPage = () => {
   };
 
   /**
-   * 이미지카드에 체크이미지를 표시하는 핸들러
+   * @description 이미지카드에 체크이미지를 표시하는 핸들러
    * @param {number} index - 선택된 이미지의 인덱스
    */
   const handleCardImageCheck = (index) => {
