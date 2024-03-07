@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
 import { Outlet, Link, useParams } from "react-router-dom";
 import * as S from "./PostPageMain.style";
-import styles from "../postCard/DeleButton.module.css";
 import { PostCardAdd } from "../postCard/PostCardAdd";
+import styles from "../postCard/DeleButton.module.css";
 import { PostCardItem } from "../postCard/PostCardItem";
 import getRecipientMessages from "../postCard/api";
 

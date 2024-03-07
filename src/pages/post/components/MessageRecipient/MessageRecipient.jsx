@@ -1,6 +1,6 @@
+import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import * as S from "./MessageRecipient.style";
-import { useState, useEffect } from "react";
 const MessageRecipient = () => {
   const [recipientName, setRecipientName] = useState("");
   const { recipientId } = useParams();
