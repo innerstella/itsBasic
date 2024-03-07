@@ -19,7 +19,7 @@ const fetchEmojiData = async (recipientId) => {
   return results;
 };
 
-const HeaderToolBar = ({ amountDataCount }) => {
+const HeaderToolBar = ({ recipientData }) => {
   const [emojiData, setEmojiData] = useState([]);
   const { recipientId } = useParams();
 
@@ -40,10 +40,7 @@ const HeaderToolBar = ({ amountDataCount }) => {
 
   return (
     <S.Container>
-      <MessageWriterBox
-        recipientId={recipientId}
-        amountDataCount={amountDataCount}
-      />
+      <MessageWriterBox recipientData={recipientData} />
       <MostEmojiBox emojiData={emojiData} emojiFunc={handleSetEmojiData} />
       <HeaderButtonBox emojiFunc={handleSetEmojiData} />
     </S.Container>

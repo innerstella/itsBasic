@@ -24,7 +24,7 @@ const RollingMessageModal = ({ rollingMessageData, setIsOpen }) => {
               <S.RollingMessageSender className="font-20-regular">
                 From.<span>{sender}</span>
               </S.RollingMessageSender>
-              <Relationship state={relationship}>{relationship}</Relationship>
+              <Relationship $state={relationship}>{relationship}</Relationship>
             </section>
           </section>
           <p>{formatDate(createdAt)}</p>

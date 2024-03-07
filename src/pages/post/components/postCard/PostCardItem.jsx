@@ -120,7 +120,7 @@ export function PostCardItem({ amountDataCount, setAmountDataCount }) {
                   <S.From>From.</S.From>
                   <S.Name>{el.sender}</S.Name>
                 </S.CardHeaderName>
-                <Relationship state={el.relationship}>
+                <Relationship $state={el.relationship}>
                   {el.relationship}
                 </Relationship>
               </S.CardHeaderContainer>

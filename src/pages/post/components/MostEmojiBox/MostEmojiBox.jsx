@@ -25,7 +25,7 @@ const EmojiDropDown = ({ emojiList, emojiFunc, recipientId }) => {
           {emojiList.map((item) => (
             <S.EmojiUsedWrapper
               key={item.emoji}
-              state={localStorage.getItem(item.emoji)}
+              $state={localStorage.getItem(item.emoji)}
               className="font-16-regular"
               onClick={() =>
                 handleEmojiSelect(item.emoji, recipientId, emojiFunc)
@@ -76,7 +76,7 @@ const MostEmojiBox = ({ emojiData, emojiFunc }) => {
           favoriteEmoji.map((item) => (
             <S.EmojiMostUsedWrapper
               key={item.emoji}
-              state={localStorage.getItem(item.emoji)}
+              $state={localStorage.getItem(item.emoji)}
               className="font-16-regular"
               onClick={() =>
                 handleEmojiSelect(item.emoji, recipientId, emojiFunc)

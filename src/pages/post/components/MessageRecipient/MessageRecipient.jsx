@@ -1,31 +1,15 @@
-import { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { useEffect, useState } from "react";
 import * as S from "./MessageRecipient.style";
-const MessageRecipient = () => {
+const MessageRecipient = ({ recipientData }) => {
   const [recipientName, setRecipientName] = useState("");
-  const { recipientId } = useParams();
-
-  /**
-   * @description 주소창에 id를 useParams로 받아 누구에게 롤링페이퍼를 썼는지 표시해주는 컴포넌트 입니다
-   * @returns
-   */
-  async function getData() {
-    const json = await (
-      await fetch(
-        `https://rolling-api.vercel.app/4-2/recipients/${recipientId}/`
-      )
-    ).json();
-    setRecipientName(json.name);
-    return json;
-  }
 
   useEffect(() => {
-    getData();
-  }, []);
+    setRecipientName(recipientData.name);
+  }, [recipientData.name]);
 
   return (
     <S.Container>
-      <p className='font-28-bold'>To. {recipientName}</p>
+      <p className="font-28-bold">To. {recipientName}</p>
     </S.Container>
   );
 };
