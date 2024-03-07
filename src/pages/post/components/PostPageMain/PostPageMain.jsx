@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { Outlet, Link, useParams } from "react-router-dom";
 import * as S from "./PostPageMain.style";
-import styles from "../postCard/DeleButton.module.css";
+import * as ST from "../postCard/DeleteButton.style";
 import { PostCardAdd } from "../postCard/PostCardAdd";
 import { PostCardItem } from "../postCard/PostCardItem";
 import getRecipientMessages from "../postCard/api";
@@ -26,11 +26,11 @@ const PostPageMain = ({ amountDataCount, setAmountDataCount }) => {
       <S.PostBackground $background={currentBackground} />
 
       {currentURL.includes("edit") || (
-        <div className={styles["button-box"]}>
+        <ST.Box>
           <Link to="edit">
-            <button className={styles["btn"]}>삭제하기</button>
+            <ST.Button>삭제하기</ST.Button>
           </Link>
-        </div>
+        </ST.Box>
       )}
 
       <Outlet />

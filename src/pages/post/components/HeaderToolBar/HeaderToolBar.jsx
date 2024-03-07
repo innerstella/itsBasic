@@ -1,13 +1,13 @@
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
-import * as S from "./HeaderServiceBox.style";
+import * as S from "./HeaderToolBar.style";
 import MessageWriterBox from "../MessageWriterBox/MessageWriterBox";
 import MostEmojiBox from "../MostEmojiBox/MostEmojiBox";
 import HeaderButtonBox from "../HeaderButtonBox/HeaderButtonBox";
 
 /**
  * @description 임시로 이모지 데이터를 받도록 처리한 함수
- * @param recipientId 현재 페이지의 id를 받는 함수
+ * @param recipientId 현재 페이지의 useParams
  * @returns
  */
 const fetchEmojiData = async (recipientId) => {
@@ -19,7 +19,7 @@ const fetchEmojiData = async (recipientId) => {
   return results;
 };
 
-const HeaderServiceBox = ({ amountDataCount }) => {
+const HeaderToolBar = ({ amountDataCount }) => {
   const [emojiData, setEmojiData] = useState([]);
   const { recipientId } = useParams();
 
@@ -50,4 +50,4 @@ const HeaderServiceBox = ({ amountDataCount }) => {
   );
 };
 
-export default HeaderServiceBox;
+export default HeaderToolBar;

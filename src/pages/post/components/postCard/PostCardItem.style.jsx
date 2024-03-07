@@ -89,7 +89,7 @@ export const Name = styled.p`
   font-family: Pretendard;
   font-size: 20px;
   font-style: normal;
-  font-weight: 70rem;
+  font-weight: 700;
   line-height: 24px; /* 120% */
   overflow: hidden;
   white-space: nowrap;

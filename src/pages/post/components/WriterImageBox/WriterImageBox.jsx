@@ -8,7 +8,7 @@ const WriterImageBox = ({ data }) => {
       })}
 
       {data?.messageCount > 3 && (
-        <S.NumberBox>
+        <S.NumberBox dataCount={data.messageCount}>
           <p className="font-12-regular">+{data?.messageCount - 3}</p>
         </S.NumberBox>
       )}
