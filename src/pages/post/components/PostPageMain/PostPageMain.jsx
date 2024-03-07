@@ -5,7 +5,6 @@ import styles from "../postCard/DeleButton.module.css";
 import { PostCardAdd } from "../postCard/PostCardAdd";
 import { PostCardItem } from "../postCard/PostCardItem";
 import getRecipientMessages from "../postCard/api";
-import { StyleSheetManager } from "styled-components";
 
 const PostPageMain = ({ amountDataCount, setAmountDataCount }) => {
   const { recipientId } = useParams();
