@@ -1,6 +1,6 @@
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
-import * as S from "./HeaderServiceBox.style";
+import * as S from "./HeaderToolBar.style";
 import MessageWriterBox from "../MessageWriterBox/MessageWriterBox";
 import MostEmojiBox from "../MostEmojiBox/MostEmojiBox";
 import HeaderButtonBox from "../HeaderButtonBox/HeaderButtonBox";
@@ -19,7 +19,7 @@ const fetchEmojiData = async (recipientId) => {
   return results;
 };
 
-const HeaderServiceBox = ({ amountDataCount }) => {
+const HeaderToolBar = ({ amountDataCount }) => {
   const [emojiData, setEmojiData] = useState([]);
   const { recipientId } = useParams();
 
@@ -50,4 +50,4 @@ const HeaderServiceBox = ({ amountDataCount }) => {
   );
 };
 
-export default HeaderServiceBox;
+export default HeaderToolBar;
