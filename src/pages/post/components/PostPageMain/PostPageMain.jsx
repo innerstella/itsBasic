@@ -26,8 +26,8 @@ const PostPageMain = ({ amountDataCount, setAmountDataCount }) => {
       <S.PostBackground background={currentBackground} />
       {currentURL.includes("edit") || (
         <div className={styles["button-box"]}>
-          <Link to="edit" className={styles["edit"]}>
-            <button className={styles["btn"]}>삭제하기</button>
+          <Link to="edit" className={styles["btn-delete"]}>
+            삭제하기
           </Link>
         </div>
       )}
