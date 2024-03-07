@@ -22,8 +22,7 @@ const PostPageMain = ({ amountDataCount, setAmountDataCount }) => {
   }, []);
 
   return (
-    <S.Layout>
-      <S.PostBackground background={currentBackground} />
+    <S.Layout background={currentBackground}>
       {currentURL.includes("edit") || (
         <ST.Box>
           <Link to="edit">

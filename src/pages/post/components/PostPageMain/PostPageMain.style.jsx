@@ -7,24 +7,12 @@ const postBackgroundColor = {
   green: "var(--color-green-200)",
 };
 
-export const PostBackground = styled.div`
-  position: fixed;
+export const Layout = styled.div`
+  position: relative;
   background: ${({ background }) =>
     postBackgroundColor[background]
       ? postBackgroundColor[background]
       : `url(${background})`};
-  background-size: cover;
-  background-position: center;
-  width: 100vw;
-  height: 100vh;
-  top: 0;
-  left: 0;
-  z-index: -1;
-`;
-
-export const Layout = styled.div`
-  position: relative;
-  background-color: transparent;
   padding-top: 11.4rem;
   padding-bottom: 24.6rem;
   height: calc(100% - 6.2rem - 6.8rem);
