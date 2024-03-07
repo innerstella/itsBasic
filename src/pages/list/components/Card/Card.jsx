@@ -66,13 +66,17 @@ const Card = ({ data }) => {
         {data?.topReactions.length > 0 ? (
           <S.BadgeContainer>
             {data?.topReactions.map((reaction) => {
-              return (
-                <S.Badge key={reaction.id}>
-                  <span className="number">
-                    {reaction.emoji} {reaction.count}
-                  </span>
-                </S.Badge>
-              );
+              if (reaction.count > 0) {
+                return (
+                  <S.Badge key={reaction.id}>
+                    <span className="number">
+                      {reaction.emoji} {reaction.count}
+                    </span>
+                  </S.Badge>
+                );
+              } else {
+                return null;
+              }
             })}
           </S.BadgeContainer>
         ) : (
