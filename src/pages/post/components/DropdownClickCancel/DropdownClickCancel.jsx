@@ -1,14 +1,14 @@
 import styled from "styled-components";
 
 const CancelButtonAction = styled.div`
-	position: fixed;
-	left: 0;
-	top: 0;
-	width: 100vw;
-	height: 100vh;
-	background-color: transparent;
-	border: none;
-	z-index: 0;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: transparent;
+  border: none;
+  z-index: 0;
 `;
 
 /**
@@ -19,9 +19,9 @@ const CancelButtonAction = styled.div`
  * @returns
  */
 const DropdownClickCancel = ({ isOpen, setIsOpen }) => {
-	return (
-		<>{isOpen && <CancelButtonAction onClick={() => setIsOpen(false)} />}</>
-	);
+  return (
+    <>{isOpen && <CancelButtonAction onClick={() => setIsOpen(false)} />}</>
+  );
 };
 
 export default DropdownClickCancel;
