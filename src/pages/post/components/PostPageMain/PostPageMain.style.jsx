@@ -9,10 +9,10 @@ const postBackgroundColor = {
 
 export const PostBackground = styled.div`
   position: fixed;
-  background: ${({ background }) =>
-    postBackgroundColor[background]
-      ? postBackgroundColor[background]
-      : `url(${background})`};
+  background: ${({ $background }) =>
+    postBackgroundColor[$background]
+      ? postBackgroundColor[$background]
+      : `url(${$background})`};
   background-size: cover;
   background-position: center;
   width: 100vw;

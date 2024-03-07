@@ -24,7 +24,7 @@ const PostPageMain = ({ amountDataCount, setAmountDataCount }) => {
 
   return (
     <S.Layout>
-      <S.PostBackground background={currentBackground} />
+      <S.PostBackground $background={currentBackground} />
 
       {currentURL.includes("edit") || (
         <div className={styles["button-box"]}>
