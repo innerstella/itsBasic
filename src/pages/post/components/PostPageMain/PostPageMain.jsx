@@ -1,29 +1,27 @@
 import { useEffect, useState } from "react";
-import { Outlet, Link, useParams } from "react-router-dom";
+import { Outlet, Link } from "react-router-dom";
 import * as S from "./PostPageMain.style";
 import * as ST from "../postCard/DeleteButton.style";
 import { PostCardAdd } from "../postCard/PostCardAdd";
 import { PostCardItem } from "../postCard/PostCardItem";
-import getRecipientMessages from "../postCard/api";
 
-const PostPageMain = ({ amountDataCount, setAmountDataCount }) => {
-  const { recipientId } = useParams();
-  const currentURL = window.location.href;
+const PostPageMain = ({
+  recipientData,
+  amountDataCount,
+  setAmountDataCount,
+}) => {
   const [currentBackground, setCurrentBackground] = useState("beige");
-  const handlePostBackgournd = async () => {
-    const { backgroundColor, backgroundImageURL } = await getRecipientMessages(
-      `https://rolling-api.vercel.app/4-2/recipients/${recipientId}/`
-    );
-    setCurrentBackground(backgroundImageURL || backgroundColor);
-  };
+  const currentURL = window.location.href;
 
   useEffect(() => {
-    handlePostBackgournd();
-  }, []);
+    const { backgroundColor, backgroundImageURL } = recipientData;
+    setCurrentBackground(backgroundImageURL || backgroundColor);
+  }, [recipientData]);
 
   return (
     <S.Layout>
-      <S.PostBackground background={currentBackground} />
+      <S.PostBackground $background={currentBackground} />
+
       {currentURL.includes("edit") || (
         <ST.Box>
           <Link to="edit">

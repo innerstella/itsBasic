@@ -22,8 +22,8 @@ const Relationship = styled.div`
   align-items: center;
   gap: 1rem;
   border-radius: 4px;
-  background: ${({ state }) => userStateColors[state].background};
-  color: ${({ state }) => userStateColors[state].color};
+  background: ${({ $state }) => userStateColors[$state].background};
+  color: ${({ $state }) => userStateColors[$state].color};
 
   /* Font/14 Regular */
   font-family: Pretendard;
