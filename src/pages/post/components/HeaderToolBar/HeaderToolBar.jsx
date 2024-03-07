@@ -7,7 +7,7 @@ import HeaderButtonBox from "../HeaderButtonBox/HeaderButtonBox";
 
 /**
  * @description 임시로 이모지 데이터를 받도록 처리한 함수
- * @param recipientId 현재 페이지의 id를 받는 함수
+ * @param recipientId 현재 페이지의 useParams
  * @returns
  */
 const fetchEmojiData = async (recipientId) => {

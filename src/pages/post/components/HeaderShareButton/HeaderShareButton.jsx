@@ -1,6 +1,9 @@
 import { useState } from "react";
 import * as S from "./HeaderShareButton.style";
 import ShareDropDownModal from "../ShareDropdownModal/ShareDropdownModal";
+/**
+ * @description 공유기능을 담당하는 버튼입니다
+ */
 const HeaderShareButton = () => {
   const [isShowModal, setIsShowModal] = useState(false);
 

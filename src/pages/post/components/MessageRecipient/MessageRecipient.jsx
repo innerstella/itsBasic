@@ -5,6 +5,10 @@ const MessageRecipient = () => {
   const [recipientName, setRecipientName] = useState("");
   const { recipientId } = useParams();
 
+  /**
+   * @description 주소창에 id를 useParams로 받아 누구에게 롤링페이퍼를 썼는지 표시해주는 컴포넌트 입니다
+   * @returns
+   */
   async function getData() {
     const json = await (
       await fetch(
