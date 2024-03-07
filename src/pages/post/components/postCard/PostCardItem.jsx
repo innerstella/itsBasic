@@ -95,14 +95,14 @@ export function PostCardItem({ amountDataCount, setAmountDataCount }) {
             <S.CardHeader>
               <S.ProfileImage
                 src={el.profileImageURL}
-                alt='이미지'
+                alt="이미지"
               ></S.ProfileImage>
               <S.CardHeaderContainer>
                 <S.CardHeaderName>
                   <S.From>From.</S.From>
                   <S.Name>{el.sender}</S.Name>
                 </S.CardHeaderName>
-                <Relationship state={el.relationship}>
+                <Relationship $state={el.relationship}>
                   {el.relationship}
                 </Relationship>
               </S.CardHeaderContainer>
