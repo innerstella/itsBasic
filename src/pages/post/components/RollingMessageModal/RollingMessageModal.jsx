@@ -1,6 +1,6 @@
 import * as S from "./RollingMessageModal.style.jsx";
 import { StyleSheetManager } from "styled-components";
-import { formatDate } from "../postCard/formatData.js";
+import { formatDate } from "../../../../utils/formatDate.js";
 import Relationship from "../postCard/CardRelationship.jsx";
 
 /**

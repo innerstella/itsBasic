@@ -3,7 +3,7 @@ import RollingMessageModal from "../RollingMessageModal/RollingMessageModal.jsx"
 import Relationship from "./CardRelationship";
 import getRecipientMessages from "./api";
 import TrashButton from "./TrashButton";
-import { formatDate } from "./formatData";
+import { formatDate } from "../../../../utils/formatDate.js";
 import { useParams, useNavigate } from "react-router-dom";
 import { useInView } from "react-intersection-observer";
 import * as S from "./PostCardItem.style";
