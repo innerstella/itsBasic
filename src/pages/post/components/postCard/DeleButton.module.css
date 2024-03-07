@@ -18,6 +18,11 @@
     color: #fff;
   }
 }
+.edit {
+  display: flex;
+  width: 100%;
+  justify-content: right;
+}
 @media (max-width: 1247.5px) {
   .button-box {
     width: 100%;
@@ -28,9 +33,12 @@
     width: 90%;
     z-index: 2;
     position: fixed;
-    bottom: 25px;
+    bottom: 0;
     right: 25px;
     left: 25px;
+    display: flex;
+    gap: 20px;
+    justify-content: center;
   }
 
   .btn {
