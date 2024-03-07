@@ -1,11 +1,17 @@
 import * as S from "./ShareDropdownModal.style";
 import { callToastNotify } from "../../../../utils/callToastNotify";
+import { shareKakao } from "../Utils/shareKakao";
 const ShareDropDownModal = ({ setIsShowModal }) => {
   return (
     <S.Box>
       <S.Button
         onClick={() => {
           setIsShowModal((prev) => !prev);
+          shareKakao(
+            "롤링페이퍼",
+            "작성해 보세요!",
+            "https://cdn.rollingpaper.site/service/main/main.png"
+          );
         }}
       >
         카카오톡 공유
