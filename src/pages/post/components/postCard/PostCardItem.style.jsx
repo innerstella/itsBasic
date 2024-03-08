@@ -49,7 +49,7 @@ export const Content = styled.p`
   word-break: break-all;
   color: var(--gray-600, #4a4a4a);
   display: -webkit-box;
-  -webkit-line-clamp: 3;
+  -webkit-line-clamp: 4;
   -webkit-box-orient: vertical;
   overflow: hidden;
   text-overflow: ellipsis;
