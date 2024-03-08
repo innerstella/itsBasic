@@ -9,6 +9,7 @@ import SkeletonUI from "./SkeletonUI";
  * @property {number} handleCardImageCheck - 카드 이미지를 변경할 때 호출되는 핸들러 함수
  * @property {number} cardImageChecks - 체크이미지가 나타날 이미지카드 인덱스
  * @property {function} index - 선택된 카드의 인덱스
+ * @property {function} index - 선택된 카드의 인덱스
  */
 const ImageCard = ({
   imageUrl,
@@ -27,7 +28,15 @@ const ImageCard = ({
         onLoad={() => setImageLoaded(true)}
         onError={() => setImageLoaded(true)}
       />
-      {!imageLoaded && <SkeletonUI />}
+      {!imageLoaded && (
+        <SkeletonUI
+          width="16.8rem"
+          height="16.8rem"
+          mobileWidth="15.4rem"
+          mobileWeight="15.4rem"
+          radius="1.6rem"
+        />
+      )}
       {cardImageChecks === index && imageLoaded && (
         <>
           <img
