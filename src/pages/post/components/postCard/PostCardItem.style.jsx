@@ -117,5 +117,5 @@ export const PlusButton = styled.div`
 
 export const ContentEndPoint = styled.div`
   position: absolute;
-  bottom: 0rem;
+  bottom: 1rem;
 `;

@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import RollingMessageModal from "../RollingMessageModal/RollingMessageModal.jsx";
 import Relationship from "./CardRelationship";
-import getRecipientMessages from "./api";
+import FetchData from "../Utils/API.js";
 import TrashButton from "./TrashButton";
 import { formatDate } from "../../../../utils/formatDate.js";
 import { useParams, useNavigate } from "react-router-dom";
@@ -24,7 +24,7 @@ export function PostCardItem({ amountDataCount, setAmountDataCount }) {
    * Post 페이지를 처음 렌더링했을때 보여줄 메세지를 fetching하는 함수입니다
    */
   async function fetchFirstData() {
-    const firstData = await getRecipientMessages(
+    const firstData = await FetchData(
       `${BASE_URL}/recipients/${recipientId}/messages/`
     );
     setAmountDataCount(firstData.count);
@@ -37,7 +37,7 @@ export function PostCardItem({ amountDataCount, setAmountDataCount }) {
    */
   async function fetchData() {
     setPage((prev) => prev + 9);
-    const jsonData = await getRecipientMessages(dataUrl);
+    const jsonData = await FetchData(dataUrl);
     const paperData = jsonData.results;
     setCardData([...cardData, ...paperData]);
   }
@@ -46,7 +46,7 @@ export function PostCardItem({ amountDataCount, setAmountDataCount }) {
    * 사용자가 데이터를 삭제할경우 현재 데이터의 개수만큼 그대로 다시 fetching하는 함수입니다
    */
   async function deleteFetchData() {
-    const jsonData = await getRecipientMessages(
+    const jsonData = await FetchData(
       `${BASE_URL}/recipients/${recipientId}/messages/?limit=${cardData.length}`
     );
 
