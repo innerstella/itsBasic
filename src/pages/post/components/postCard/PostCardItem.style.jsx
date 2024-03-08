@@ -42,10 +42,10 @@ export const CardHeaderContainer = styled.div`
 `;
 
 export const Content = styled.p`
-  margin: 1.6rem auto;
+  margin: 1.6rem auto 2.6rem;
   padding-top: 1.6rem;
   width: 100%;
-  height: 11.6rem;
+  height: 10.6rem;
   color: var(--gray-600, #4a4a4a);
   display: -webkit-box;
   -webkit-line-clamp: 3;
@@ -56,6 +56,7 @@ export const Content = styled.p`
   align-items: center;
   font-family: ${(props) => props.fontFamily};
   font-size: 1.8rem;
+  word-wrap: break-word;
   font-weight: 400;
   line-height: 2.8rem;
   letter-spacing: -0.018rem;

@@ -48,7 +48,8 @@ export const Container = styled.div`
   display: grid;
   width: 120rem;
   margin: 0 auto;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: repeat(3, minmax(auto, 350px));
+  justify-content: center;
   gap: 3rem;
 
   @media (max-width: 1247.5px) {
@@ -56,7 +57,7 @@ export const Container = styled.div`
   }
   @media (max-width: 1023.5px) {
     width: 100%;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(2, minmax(auto, 350px));
   }
 
   @media (max-width: 767.5px) {

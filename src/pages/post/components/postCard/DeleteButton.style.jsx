@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { Link } from "react-router-dom";
 export const Box = styled.div`
   margin: 0 auto 2.5rem;
-  width: 120rem;
+  width: 111rem;
   display: flex;
   gap: 20px;
   justify-content: right;
