@@ -1,9 +1,10 @@
 import * as S from "./index.style";
 import { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
 import PostPageMain from "./components/PostPageMain/PostPageMain";
 import HeaderLogoBox from "./components/HeaderLogoBox/HeaderLogoBox";
 import HeaderFeatureBox from "./components/HeaderFeatureBox/HeaderFeatureBox";
-import { useParams } from "react-router-dom";
+import fetchData from "./components/Utils/API";
 
 const PostPage = () => {
   const [amountDataCount, setAmountDataCount] = useState();
@@ -15,11 +16,7 @@ const PostPage = () => {
    * @returns
    */
   async function getRecipientData() {
-    const json = await (
-      await fetch(
-        `https://rolling-api.vercel.app/4-2/recipients/${recipientId}/`
-      )
-    ).json();
+    const json = await fetchData(`recipients/${recipientId}/`);
     setRecipientData(json);
   }
 

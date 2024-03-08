@@ -1,14 +1,12 @@
 import { useEffect, useState } from "react";
 import RollingMessageModal from "../RollingMessageModal/RollingMessageModal.jsx";
 import Relationship from "./CardRelationship";
-import FetchData from "../Utils/API.js";
+import fetchData from "../Utils/API.js";
 import TrashButton from "./TrashButton";
 import { formatDate } from "../../../../utils/formatDate.js";
 import { useParams, useNavigate } from "react-router-dom";
 import { useInView } from "react-intersection-observer";
 import * as S from "./PostCardItem.style";
-
-const BASE_URL = "https://rolling-api.vercel.app/4-2";
 
 export function PostCardItem({ amountDataCount, setAmountDataCount }) {
   const [ref, inView] = useInView();
@@ -18,15 +16,13 @@ export function PostCardItem({ amountDataCount, setAmountDataCount }) {
   const [modalCardData, setModalCardData] = useState({});
   const [isMessageOpen, setIsMessageOpen] = useState(false);
 
-  const dataUrl = `${BASE_URL}/recipients/${recipientId}/messages/?limit=9&offset=${page}`;
+  const dataUrl = `recipients/${recipientId}/messages/?limit=9&offset=${page}`;
 
   /**
    * Post 페이지를 처음 렌더링했을때 보여줄 메세지를 fetching하는 함수입니다
    */
   async function fetchFirstData() {
-    const firstData = await FetchData(
-      `${BASE_URL}/recipients/${recipientId}/messages/`
-    );
+    const firstData = await fetchData(`recipients/${recipientId}/messages/`);
     setAmountDataCount(firstData.count);
     const paperData = firstData.results;
     setCardData(paperData);
@@ -35,9 +31,9 @@ export function PostCardItem({ amountDataCount, setAmountDataCount }) {
   /**
    * 사용자가 스크롤을 모두 내렸을경우 offset값을 9씩 늘려서 cardData에 추가해 데이터를 더 불러오는 함수입니다
    */
-  async function fetchData() {
+  async function fetchOverscrollData() {
     setPage((prev) => prev + 9);
-    const jsonData = await FetchData(dataUrl);
+    const jsonData = await fetchData(dataUrl);
     const paperData = jsonData.results;
     setCardData([...cardData, ...paperData]);
   }
@@ -46,8 +42,8 @@ export function PostCardItem({ amountDataCount, setAmountDataCount }) {
    * 사용자가 데이터를 삭제할경우 현재 데이터의 개수만큼 그대로 다시 fetching하는 함수입니다
    */
   async function deleteFetchData() {
-    const jsonData = await FetchData(
-      `${BASE_URL}/recipients/${recipientId}/messages/?limit=${cardData.length}`
+    const jsonData = await fetchData(
+      `recipients/${recipientId}/messages/?limit=${cardData.length}`
     );
 
     const paperData = jsonData.results;
@@ -65,7 +61,7 @@ export function PostCardItem({ amountDataCount, setAmountDataCount }) {
   useEffect(() => {
     if (inView) {
       if (cardData.length > 5 && cardData.length < amountDataCount) {
-        fetchData();
+        fetchOverscrollData();
       }
     }
   }, [inView]);
@@ -86,9 +82,9 @@ export function PostCardItem({ amountDataCount, setAmountDataCount }) {
   function onDeleteItem(e) {
     e.stopPropagation();
 
-    const deleteUrl = `https://rolling-api.vercel.app/4-2/messages/${e.target.id}/`;
+    const deleteUrl = `messages/${e.target.id}/`;
     if (window.confirm("해당 항목을 정말 삭제하시겠습니까?")) {
-      fetch(deleteUrl, { method: "DELETE" });
+      fetchData(deleteUrl, { method: "DELETE" });
 
       setTimeout(function () {
         deleteFetchData();
