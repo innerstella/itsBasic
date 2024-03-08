@@ -10,7 +10,7 @@ export const Box = styled.div`
   border-radius: 500rem;
   overflow: hidden;
   border: 0.2rem solid #fff;
-  background-image: url(${({ $profileimageurl }) => $profileimageurl});
+  background-image: url(${({ $profileImageUrl }) => $profileImageUrl});
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
