@@ -2,6 +2,7 @@ import * as S from "./RollingMessageModal.style.jsx";
 import { StyleSheetManager } from "styled-components";
 import { formatDate } from "../../../../utils/formatDate.js";
 import Relationship from "../postCard/CardRelationship.jsx";
+import PrimaryButton from "../../../../components/PrimaryButton.jsx";
 
 /**
  * @description 메시지를 클릭했을 때, 데이터를 받아와 모달을 띄워주는 컴포넌트
@@ -36,7 +37,7 @@ const RollingMessageModal = ({ rollingMessageData, setIsOpen }) => {
           fontFamily={font}
           defaultValue={content}
         />
-        <S.RollingPrimaryButton onClick={() => setIsOpen(false)}>
+        <S.RollingPrimaryButton size={"small"} onClick={() => setIsOpen(false)}>
           확인
         </S.RollingPrimaryButton>
       </S.RollingMessageModalWrapper>
