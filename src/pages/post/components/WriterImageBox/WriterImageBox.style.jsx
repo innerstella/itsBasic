@@ -19,6 +19,7 @@ export const Box = styled.div`
 
 export const NumberBox = styled.div`
   display: flex;
+  align-items: center;
   justify-content: center;
   width: 2.8rem;
   height: 2.8rem;
@@ -30,6 +31,5 @@ export const NumberBox = styled.div`
   p {
     font-weight: 500;
     color: #484848;
-    margin-top: 0.51rem;
   }
 `;
