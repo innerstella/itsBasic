@@ -46,6 +46,7 @@ export const Content = styled.p`
   padding-top: 1.6rem;
   width: 100%;
   height: 11.6rem;
+  word-break: break-all;
   color: var(--gray-600, #4a4a4a);
   display: -webkit-box;
   -webkit-line-clamp: 3;
