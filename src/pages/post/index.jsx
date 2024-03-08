@@ -29,6 +29,7 @@ const PostPage = () => {
 
   return (
     <S.Layout>
+      <S.OverScrollBox />
       <HeaderLogoBox />
       <HeaderFeatureBox recipientData={recipientData} />
       <PostPageMain
