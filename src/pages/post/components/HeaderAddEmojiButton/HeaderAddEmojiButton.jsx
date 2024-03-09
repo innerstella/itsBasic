@@ -34,11 +34,7 @@ function HeaderAddEmojiButton({ emojiFunc }) {
           />
         )}
       </S.EmojiPickerPositioner>
-      <DropdownClickCancel
-        isOpen={isEmojiOpen}
-        recipientId={recipientId}
-        setIsOpen={setIsEmojiOpen}
-      />
+      {isEmojiOpen && <DropdownClickCancel setIsOpen={setIsEmojiOpen} />}
     </S.EmojiToggleBtnContainer>
   );
 }

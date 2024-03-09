@@ -18,12 +18,10 @@ const CancelButtonAction = styled.div`
  * 화면 전체를 덮는 투명한 버튼을 생성하여, 화면 아무 곳이나 클릭해도 동작을 취소할 수 있게 하는 컴포넌트
  * @returns
  */
-const DropdownClickCancel = ({ isOpen, setIsOpen }) => {
+const DropdownClickCancel = ({ setIsOpen }) => {
   return (
     <>
-      {isOpen && (
-        <CancelButtonAction type="button" onClick={() => setIsOpen(false)} />
-      )}
+      <CancelButtonAction type="button" onClick={() => setIsOpen(false)} />
     </>
   );
 };

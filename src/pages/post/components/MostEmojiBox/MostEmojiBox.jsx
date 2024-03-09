@@ -100,10 +100,9 @@ const MostEmojiBox = ({ emojiData, emojiFunc }) => {
             recipientId={recipientId}
           />
         )}
-        <DropdownClickCancel
-          isOpen={isEmojiDropDownOpen}
-          setIsOpen={setIsEmojiDropDownOpen}
-        />
+        {isEmojiDropDownOpen && (
+          <DropdownClickCancel setIsOpen={setIsEmojiDropDownOpen} />
+        )}
       </S.DropdownFuncBtnContainer>
     </>
   );
