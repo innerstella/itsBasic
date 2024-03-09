@@ -6,7 +6,7 @@ export function PostCardAdd() {
     <Link to={`/post/${recipientId}/message`}>
       <S.CardPlus>
         <S.PlusButton>
-          <img alt="플러스이미지" src={`/assets/post/plus.svg`}></img>
+          <img alt="" src={`/assets/post/plus.svg`}></img>
         </S.PlusButton>
       </S.CardPlus>
     </Link>
