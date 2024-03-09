@@ -6,7 +6,6 @@ export const DesktopContainer = styled.div`
   gap: 1.6rem;
 
   .list-with-btn {
-    overflow-x: scroll;
     display: flex;
     flex-direction: row;
     align-items: center;

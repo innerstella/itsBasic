@@ -2,6 +2,10 @@ import Button from "../../components/button/Button";
 import NavigationBar from "../../components/navigationBar/NavigationBar";
 import MainPageStyle from "./MainPage.style";
 
+/**
+ *
+ * @description 메인 소개 페이지
+ */
 const MainPage = () => {
   return (
     <>
