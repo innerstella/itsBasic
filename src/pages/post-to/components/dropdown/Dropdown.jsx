@@ -5,7 +5,7 @@ import { FontContext, RelationshipContext } from "../../PostMessagePage";
 /**
  *
  * @description 드롭다운 컴포넌트
- * @param {string} type 드롭다운 타입 - select-reltaionship, select-font
+ * @param {string} type 드롭다운 타입 - select-relationship, select-font
  * @todo 폰트 종류 논의해서 정하기
  */
 const Dropdown = ({ type }) => {
@@ -16,7 +16,7 @@ const Dropdown = ({ type }) => {
   const changeHandler = (e) => {
     setSelectedVal(e.target.value);
 
-    if (type === "select-reltaionship") {
+    if (type === "select-relationship") {
       relationshipContextData.setRelationshipInput(e.target.value);
     } else if (type === "select-font") {
       fontContextData.setFontInput(e.target.value);
@@ -25,7 +25,7 @@ const Dropdown = ({ type }) => {
 
   // 초기값 설정
   useEffect(() => {
-    if (type === "select-reltaionship") {
+    if (type === "select-relationship") {
       setSelectedVal(relationshipContextData.relationshipInput);
     } else if (type === "select-font") {
       setSelectedVal(fontContextData.fontInput);
@@ -51,10 +51,10 @@ const Dropdown = ({ type }) => {
 
 export default Dropdown;
 
-const Reltaionships = ["친구", "지인", "동료", "가족"];
+const Relationships = ["친구", "지인", "동료", "가족"];
 const Fonts = ["Noto Sans", "Pretendard", "나눔명조", "나눔손글씨 손편지체"];
 
 const dropdownData = {
-  "select-reltaionship": Reltaionships,
+  "select-relationship": Relationships,
   "select-font": Fonts,
 };
