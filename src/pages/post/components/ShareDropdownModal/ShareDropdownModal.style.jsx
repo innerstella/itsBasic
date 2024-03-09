@@ -16,7 +16,7 @@ export const Box = styled.div`
 
 export const Button = styled.button`
   padding: 1.2rem 1.6rem;
-  color: var(--gray-900, #181818);
+  color: var(--color-grayscale-900);
   background: var(--color-white);
   border: none;
   cursor: pointer;
