@@ -36,7 +36,7 @@ const Profile = () => {
       <div className='select-profile'>
         <p className='text font-16-regular'>프로필 이미지를 선택해주세요!</p>
         <button
-          style={{ cursor: "pointer" }}
+          className='pokemon-profile-button'
           onClick={() => {
             setIsShowPokemonModal((prev) => !prev);
           }}
