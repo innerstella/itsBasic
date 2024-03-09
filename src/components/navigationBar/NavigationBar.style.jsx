@@ -6,6 +6,11 @@ const NavContainer = styled.nav`
   width: 100vw;
   border-bottom: 0.1rem solid #ededed;
 
+  .logo-img {
+    width: 2.7818rem;
+    height: 2.7658rem;
+  }
+
   .nav-container {
     display: flex;
     justify-content: space-between;

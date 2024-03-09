@@ -76,13 +76,14 @@ const MainPageStyle = styled.div`
 
     .card-image {
       width: 100%;
-      height: auto;
-      margin-bottom: 4rem;
+      height: 100%;
+      display: block;
+      margin: 0 auto 4rem;
     }
 
     .emoji-image {
       width: 100%;
-      height: auto;
+      height: 100%;
       padding: 0 12.5rem;
       order: 1;
       margin-bottom: 2rem;
@@ -137,13 +138,14 @@ const MainPageStyle = styled.div`
 
     .card-image {
       min-width: 36rem;
+      height: 100%;
       margin-bottom: 6.2rem;
     }
 
     .emoji-image {
       width: 100%;
       max-width: 47rem;
-      min-width: 26rem;
+      min-height: 26rem;
       margin: 0 auto 5.1rem auto;
       padding: 0 2.98rem;
     }
