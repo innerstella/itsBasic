@@ -11,6 +11,10 @@ export const Button = styled.button`
   gap: 0.4rem;
   cursor: pointer;
 
+  &:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+  }
+
   @media (max-width: 767.5px) {
     padding: 0.6rem 0.8rem;
   }

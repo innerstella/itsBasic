@@ -6,6 +6,7 @@ export const Container = styled.div`
   width: 33rem;
 
   .dropdown-container {
+    cursor: pointer;
     display: flex;
     width: 32rem;
     padding: 1.2rem 1.6rem;
