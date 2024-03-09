@@ -7,7 +7,7 @@ export const Box = styled.div`
   border-radius: 0.8rem;
   border: 0.1rem solid var(--color-grayscale-300);
   background: var(--color-white);
-  box-shadow: 0px 0.2rem 1.2prem 0px rgba(0, 0, 0, 0.08);
+  box-shadow: 0px 0.2rem 1.2rem 0px rgba(0, 0, 0, 0.08);
   padding: 1rem 0.1rem;
   z-index: 1;
   display: inline-flex;
