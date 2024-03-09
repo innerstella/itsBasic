@@ -2,7 +2,6 @@ import * as S from "./index.style";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import PostPageMain from "./components/PostPageMain/PostPageMain";
-import HeaderLogoBox from "./components/HeaderLogoBox/HeaderLogoBox";
 import HeaderFeatureBox from "./components/HeaderFeatureBox/HeaderFeatureBox";
 import fetchData from "./components/Utils/API";
 
@@ -27,8 +26,11 @@ const PostPage = () => {
   return (
     <S.Layout>
       <S.OverScrollBox />
-      <HeaderLogoBox />
-      <HeaderFeatureBox recipientData={recipientData} />
+      <S.UpperHeaderWrapper>
+        <S.UpperHeaderBar show={"none"} />
+        <HeaderFeatureBox recipientData={recipientData} />
+      </S.UpperHeaderWrapper>
+
       <PostPageMain
         recipientData={recipientData}
         amountDataCount={amountDataCount}
