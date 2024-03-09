@@ -59,6 +59,11 @@ export const RollingMessageModalWrapper = styled.div`
       }
     }
   }
+
+  @media (max-width: 767.5px) {
+    width: 45rem;
+    height: 38rem;
+  }
 `;
 
 export const PostProfileImg = styled.div`
