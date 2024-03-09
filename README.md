@@ -23,10 +23,10 @@
 ## Developer
 
 - BackendAPI - CodeIt 제공(https://www.codeit.kr/)
-- 최민혁 (@ChoiMHMH)
-- 차수지 (@innerstella)
-- 강경미 (@gaem-gaem)
-- 홍재훈 (@hoj0806)
-- 김세동 (@Rhajiit)
+- 최민혁 ([@ChoiMHMH](https://github.com/ChoiMHMH))
+- 차수지 ([@innerstella](https://github.com/innerstella))
+- 강경미 ([@gaem-gaem](https://github.com/gaem-gaem))
+- 홍재훈 ([@hoj0806](https://github.com/hoj0806))
+- 김세동 ([@Rhajiit](https://github.com/Rhajiit))
 
 ![footer](https://capsule-render.vercel.app/api?type=waving&section=footer&height=160&color=9013FE&reversal=true&text=여러분도%20한마디,%20어떠실까요?&fontSize=45&&&fontColor=ffe&fontAlignY=75&rotate=1)
