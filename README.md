@@ -2,7 +2,7 @@
 
 <img src="https://velog.velcdn.com/images/luna7182/post/8dd53f65-9ed3-418a-94b6-38ebcba49ed9/image.png">
 
-![header](https://capsule-render.vercel.app/api?type=waving&&height=160&color=9013FE&text=너에게%20글%20한마디%20달아보기&fontSize=45&&&fontColor=eee&fontAlignY=30&rotate=-1&desc=오픈형%20롤링페이퍼%20'프로젝트%20제목'&descAlign=75&descAlignY=55)
+![header](https://capsule-render.vercel.app/api?type=waving&&height=160&color=9013FE&text=너에게%20글%20한마디%20달아보기&fontSize=45&&&fontColor=ffe&fontAlignY=30&rotate=-1&desc=오픈형%20롤링페이퍼%20'프로젝트%20제목'&descAlign=75&descAlignY=55)
 
 <p align="center">
 <img src="https://img.shields.io/badge/react-61DAFB?style=for-the-badge&logo=react&logoColor=61DAFB&labelColor=333">
@@ -29,4 +29,4 @@
 - 홍재훈 (@hoj0806)
 - 김세동 (@Rhajiit)
 
-![footer](https://capsule-render.vercel.app/api?type=waving&section=footer&height=160&color=9013FE&reversal=true&text=여러분도%20한마디,%20어떠실까요?&fontSize=45&&&fontColor=eee&fontAlignY=75&rotate=1)
+![footer](https://capsule-render.vercel.app/api?type=waving&section=footer&height=160&color=9013FE&reversal=true&text=여러분도%20한마디,%20어떠실까요?&fontSize=45&&&fontColor=ffe&fontAlignY=75&rotate=1)
