@@ -48,9 +48,11 @@ export const Container = styled.div`
 
     .pokemon-profile-button {
       cursor: pointer;
-      width: 20rem;
+      width: 18rem;
+      font-size: 1.4rem;
       background-color: #ff8fa3;
       margin-bottom: 1rem;
+
       &:hover {
         background-color: #ff758f;
         color: #fff;
