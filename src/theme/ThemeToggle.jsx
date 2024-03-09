@@ -1,6 +1,11 @@
 import React from "react";
 import styled from "styled-components";
-
+/**
+ *
+ * @param1  {콜백함수}toggle
+ * @param2  {String}mode
+ * @returns
+ */
 function ThemeToggle({ toggle, mode }) {
   return (
     <ToggleWrapper onClick={toggle} mode={mode}>

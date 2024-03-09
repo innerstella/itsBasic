@@ -19,7 +19,7 @@ const NavContainer = styled.nav`
     display: flex;
     align-items: center;
     gap: 0.8rem;
-    color: #4a494f;
+    color: ${(props) => props.theme.textColor};
   }
 
   .button,

@@ -4,7 +4,8 @@ export const lightTheme = {
 };
 export const darkTheme = {
   backgroundColor: "#000",
-  textColor: "#ccc",
+  textColor: "#ffffff",
+  whiteBgTextColor: "#000000",
 };
 export const theme = {
   lightTheme,
