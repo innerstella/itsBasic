@@ -12,8 +12,8 @@ const TrashButtonStyle = styled.button`
   align-items: center;
   gap: 10px;
   border-radius: 6px;
-  border: 1px solid var(--gray-300, #ccc);
-  background: var(--white, #fff);
+  border: 1px solid var(--color-grayscale-300);
+  background: var(--color-white);
 
   &:hover {
     border-color: #9935ff;

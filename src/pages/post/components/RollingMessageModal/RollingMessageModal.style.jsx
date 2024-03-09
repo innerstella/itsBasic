@@ -45,7 +45,7 @@ export const RollingMessageModalWrapper = styled.div`
     margin-bottom: 1.9rem;
     width: 100%;
 
-    color: var(--gray-400, #999);
+    color: var(--color-grayscale-400);
 
     & section {
       display: flex;

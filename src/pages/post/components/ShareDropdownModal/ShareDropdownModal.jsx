@@ -5,14 +5,15 @@ const ShareDropDownModal = ({ setIsShowModal }) => {
   return (
     <S.Box>
       <S.Button
+        className="font-16-regular"
         onClick={() => {
           setIsShowModal((prev) => !prev);
         }}
-        
       >
         카카오톡 공유
       </S.Button>
       <S.Button
+        className="font-16-regular"
         onClick={() => {
           setIsShowModal((prev) => !prev);
           callToastNotify("URL이 복사 되었습니다.");
