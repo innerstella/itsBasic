@@ -23,7 +23,7 @@ const MainPage = () => {
           </div>
           <div className="card-container">
             <img
-              src="/assets/main/service_card_image.png"
+              src="/assets/main/service_card_image.webp"
               className="card-image"
               alt="카드 예시 이미지"
             />
@@ -32,7 +32,7 @@ const MainPage = () => {
         <div className="box-container box-container-bottom">
           <img
             className="emoji-image"
-            src="/assets/main/service_image_emoji.png"
+            src="/assets/main/service_image_emoji.webp"
             alt="이모지 예시 이미지"
           ></img>
           <div className="text-container">
