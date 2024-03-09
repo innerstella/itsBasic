@@ -45,5 +45,18 @@ export const Container = styled.div`
         gap: 2rem;
       }
     }
+
+    .pokemon-profile-button {
+      cursor: pointer;
+      width: 18rem;
+      font-size: 1.4rem;
+      background-color: #ff8fa3;
+      margin-bottom: 1rem;
+
+      &:hover {
+        background-color: #ff758f;
+        color: #fff;
+      }
+    }
   }
 `;
