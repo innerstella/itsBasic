@@ -27,7 +27,10 @@ const Profile = () => {
   return (
     <S.Container>
       {isShowPokemonModal && (
-        <PokemonProfileModal setIsShowPokemonModal={setIsShowPokemonModal} />
+        <PokemonProfileModal
+          setIsShowPokemonModal={setIsShowPokemonModal}
+          setProfileInput={setProfileInput}
+        />
       )}
       <img className='selected-profile' src={profileInput} alt='프로필' />
       <div className='select-profile'>

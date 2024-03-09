@@ -1,6 +1,6 @@
 import * as S from "./PokemonProfileModal.style";
 import { useEffect, useState } from "react";
-const PokemonProfileModal = ({ setIsShowPokemonModal }) => {
+const PokemonProfileModal = ({ setIsShowPokemonModal, setProfileInput }) => {
   const [pokemonData, setPokemonData] = useState([]);
   const allPokemonData = [];
   const getData = async () => {
@@ -30,23 +30,19 @@ const PokemonProfileModal = ({ setIsShowPokemonModal }) => {
       });
     }
     setPokemonData(allPokemonData);
-    console.log(pokemonData);
   };
 
   useEffect(() => {
     getData();
   }, []);
 
-  const onClickPokemonData = () => {
-    setIsShowPokemonModal((prev) => !prev);
-  };
   return (
     <S.Wrapper>
       <S.Box>
         <div className='title-box'>
-          <img src='/assets/post-to/poke_ball_icon.png' />
+          <img src='/assets/post-to/poke_ball_icon.png' alt='pokeball-icon' />
           <p className='modal-title'>원하는 포켓몬을 선택하세요!!</p>
-          <img src='/assets/post-to/poke_ball_icon.png' />
+          <img src='/assets/post-to/poke_ball_icon.png' alt='pokeball-icon' />
         </div>
 
         <div className='pokemon-image-container'>
@@ -54,10 +50,13 @@ const PokemonProfileModal = ({ setIsShowPokemonModal }) => {
             return (
               <div
                 className='pokemon-detail-box'
-                onClick={onClickPokemonData}
+                onClick={() => {
+                  setProfileInput(imageUrl);
+                  setIsShowPokemonModal((prev) => !prev);
+                }}
                 key={index}
               >
-                <img src={imageUrl} />
+                <img src={imageUrl} alt={name} />
                 <p>{name}</p>
               </div>
             );
