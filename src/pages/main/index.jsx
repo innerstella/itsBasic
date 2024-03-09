@@ -13,13 +13,13 @@ const MainPage = () => {
       <MainPageStyle>
         <div className="box-container">
           <div className="text-container">
-            <p className="point font-14-bold">Point. 01</p>
-            <p className="text font-24-bold">
+            <h1 className="point font-14-bold">Point. 01</h1>
+            <h2 className="text font-24-bold">
               누구나 손쉽게, 온라인 <span>롤링 페이지를 만들 수 있어요</span>
-            </p>
-            <p className="sub-text font-18-regular">
+            </h2>
+            <h3 className="sub-text font-18-regular">
               로그인 없이 자유롭게 만들어요.
-            </p>
+            </h3>
           </div>
           <div className="card-container">
             <img
@@ -36,13 +36,13 @@ const MainPage = () => {
             alt="이모지 예시 이미지"
           ></img>
           <div className="text-container">
-            <p className="point font-14-bold">Point. 02</p>
-            <p className="text font-24-bold">
+            <h1 className="point font-14-bold">Point. 02</h1>
+            <h2 className="text font-24-bold">
               서로에게 이모지로 감정을 <span>표현해보세요</span>
-            </p>
-            <p className="sub-text font-18-regular">
+            </h2>
+            <h3 className="sub-text font-18-regular">
               롤링 페이퍼에 이모지를 추가할 수 있어요.
-            </p>
+            </h3>
           </div>
         </div>
       </MainPageStyle>
