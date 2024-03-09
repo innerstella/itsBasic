@@ -90,7 +90,7 @@ const MostEmojiBox = ({ emojiData, emojiFunc }) => {
         <S.DropdownButton
           onClick={() => setIsEmojiDropDownOpen(!isEmojiDropDownOpen)}
         >
-          <img src="/assets/emoji_picker_dropdown_icon.svg" alt="" />
+          <img src="/assets/post/emoji_picker_dropdown_icon.svg" alt="" />
         </S.DropdownButton>
         {isEmojiDropDownOpen && (
           <EmojiDropDown

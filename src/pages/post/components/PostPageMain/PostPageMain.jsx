@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Outlet, Link } from "react-router-dom";
+import { Outlet } from "react-router-dom";
 import * as S from "./PostPageMain.style";
 import * as ST from "../postCard/DeleteButton.style";
 import { PostCardAdd } from "../postCard/PostCardAdd";
