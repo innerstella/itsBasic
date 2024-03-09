@@ -19,7 +19,9 @@ const DeleteButton = () => {
 
   return (
     <S.Box>
-      <S.Button onClick={onDelete}>페이지 삭제하기</S.Button>
+      <S.Button type="button" onClick={onDelete}>
+        페이지 삭제하기
+      </S.Button>
       <Link to={`/post/${recipientId}`}>
         <S.Button>저장하기</S.Button>
       </Link>

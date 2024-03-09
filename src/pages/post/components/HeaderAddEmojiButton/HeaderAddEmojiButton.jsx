@@ -17,6 +17,7 @@ function HeaderAddEmojiButton({ emojiFunc }) {
   return (
     <S.EmojiToggleBtnContainer>
       <S.Button
+        type="button"
         className="font-16-regular"
         onClick={() => setIsEmojiOpen(!isEmojiOpen)}
       >

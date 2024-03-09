@@ -5,6 +5,7 @@ const ShareDropDownModal = ({ setIsShowModal }) => {
   return (
     <S.Box>
       <S.Button
+        type="button"
         className="font-16-regular"
         onClick={() => {
           setIsShowModal((prev) => !prev);
@@ -13,6 +14,7 @@ const ShareDropDownModal = ({ setIsShowModal }) => {
         카카오톡 공유
       </S.Button>
       <S.Button
+        type="button"
         className="font-16-regular"
         onClick={() => {
           setIsShowModal((prev) => !prev);

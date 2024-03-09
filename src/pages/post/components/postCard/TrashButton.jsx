@@ -22,7 +22,7 @@ const TrashButtonStyle = styled.button`
 
 function TrashButton({ onDeleteItem, id }) {
   return (
-    <TrashButtonStyle id={id} onClick={onDeleteItem}>
+    <TrashButtonStyle type="button" id={id} onClick={onDeleteItem}>
       <img id={id} src={`/assets/post/deleted.svg`} alt="삭제휴지통"></img>
     </TrashButtonStyle>
   );
