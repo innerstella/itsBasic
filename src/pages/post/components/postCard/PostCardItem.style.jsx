@@ -43,9 +43,10 @@ export const CardHeaderContainer = styled.div`
 
 export const Content = styled.p`
   margin: 1.6rem auto;
+  margin-top: 0.4rem;
   padding-top: 1.6rem;
   width: 100%;
-  height: 11.6rem;
+  height: 12.8rem;
   word-break: break-all;
   color: var(--color-grayscale-600);
   display: -webkit-box;

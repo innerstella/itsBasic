@@ -16,7 +16,7 @@ const TrashButtonStyle = styled.button`
   background: var(--color-white);
 
   &:hover {
-    border-color: #9935ff;
+    border-color: var(--color-purple-600);
   }
 `;
 

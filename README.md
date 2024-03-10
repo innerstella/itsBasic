@@ -1,4 +1,4 @@
-# '프로젝트 제목'
+# '프로젝트%20제목'
 
 <img src="https://velog.velcdn.com/images/luna7182/post/8dd53f65-9ed3-418a-94b6-38ebcba49ed9/image.png">
 
@@ -13,12 +13,16 @@
 <img src="https://img.shields.io/badge/styled--components-DB7093?style=for-the-badge&logo=styled-components&logoColor=DB7093&labelColor=333">
 </p>
 
-## '프로젝트 제목' 소개
+## '프로젝트%20제목' 소개
 
 - '프로젝트 제목'은 누구나 작성 가능하며, 자유롭게 공유가 가능한 롤링 페이퍼를 제공하는 서비스입니다.
 - 누군가에게 보내는 페이지를 작성하거나, 그 페이지에서 보내고 싶은 메시지를 작성할 수 있습니다.
 - 말로 못할 감정이 있다면, 이모지를 달아서 표현해보세요!
 - 이야기를 전하고 싶은 사람이 있다면, 또 그러한 사람이 많다면 적극 활용해보세요!
+
+## '프로젝트%20제목' 설명
+
+- '프로젝트%20제목'은 어떤 특정 사람에게 많은 사람에게서 메시지를 보내고자 할 때 유용한 웹 사이트입니다.
 
 ## Developer
 
