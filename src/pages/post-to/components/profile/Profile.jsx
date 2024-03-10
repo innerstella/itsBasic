@@ -7,8 +7,9 @@ import PokemonProfileModal from "./PokemonProfileModal";
  * @description Profile 컴포넌트는 프로필 이미지를 선택하는 컴포넌트입니다.
  */
 const Profile = () => {
-  const { profileInput, setProfileInput } = useContext(ProfileContext);
+  const { profileRef } = useContext(ProfileContext);
   const [imageList, setImageList] = useState();
+  const [profileInput, setProfileInput] = useState();
   const [isShowPokemonModal, setIsShowPokemonModal] = useState(false);
 
   const getProfileImageList = async () => {
@@ -32,7 +33,12 @@ const Profile = () => {
           setProfileInput={setProfileInput}
         />
       )}
-      <img className="selected-profile" src={profileInput} alt="프로필" />
+      <img
+        className="selected-profile"
+        src={profileInput}
+        alt="프로필"
+        ref={profileRef}
+      />
       <div className="select-profile">
         <span className="text font-16-regular">
           프로필 이미지를 선택해주세요!

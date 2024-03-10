@@ -4,11 +4,11 @@ import * as S from "./TextInput.style";
 import { FromContext } from "../../PostMessagePage";
 
 const TextInput = () => {
-  const { fromInput, setFromInput } = useContext(FromContext);
+  const { fromRef } = useContext(FromContext);
   const [isError, setIsError] = useState(false);
 
   const handleBlur = () => {
-    if (fromInput === "") {
+    if (fromRef.current.value === "") {
       setIsError(true);
     } else {
       setIsError(false);
@@ -21,9 +21,8 @@ const TextInput = () => {
         <input
           className="recipient-input font-16-regular"
           placeholder="이름을 입력해 주세요."
-          value={fromInput || ""}
           onBlur={handleBlur}
-          onChange={(e) => setFromInput(e.target.value)}
+          ref={fromRef}
         />
       </div>
       <p className="font-16-regular warning">* 값을 입력해 주세요.</p>
