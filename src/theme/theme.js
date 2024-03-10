@@ -3,7 +3,7 @@ export const lightTheme = {
   textColor: "#31302E",
 };
 export const darkTheme = {
-  backgroundColor: "#000",
+  backgroundColor: "#202030",
   textColor: "#ffffff",
   whiteBgTextColor: "#000000",
 };
