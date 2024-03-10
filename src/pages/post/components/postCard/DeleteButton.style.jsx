@@ -22,12 +22,12 @@ export const Box = styled.div`
 `;
 export const StyledLink = styled(Link)`
   padding: 1rem 2rem;
-  background: #9935ff;
+  background: var(--color-purple-600);
   border: none;
   border-radius: 2rem;
   cursor: pointer;
 
-  color: #fff;
+  color: var(--color-white);
   text-align: center;
   font-family: Pretendard;
   font-size: 16px;
@@ -37,8 +37,7 @@ export const StyledLink = styled(Link)`
   letter-spacing: -0.16px;
 
   &:hover {
-    background: gray;
-    color: #fff;
+    background: var(--color-purple-800);
   }
 
   @media (max-width: 767.5px) {
@@ -48,11 +47,11 @@ export const StyledLink = styled(Link)`
 
 export const Button = styled.button`
   padding: 1rem 2rem;
-  background: #9935ff;
+  background: var(--color-purple-600);
   border: none;
   border-radius: 2rem;
   cursor: pointer;
-  color: #fff;
+  color: var(--color-white);
 
   text-align: center;
   font-family: Pretendard;
@@ -63,8 +62,8 @@ export const Button = styled.button`
   letter-spacing: -0.16px;
 
   &:hover {
-    background: gray;
-    color: #fff;
+    background: var(--color-purple-800);
+    color: var(--color-white);
   }
 
   @media (max-width: 767.5px) {

@@ -6,12 +6,10 @@ import * as S from "./HeaderFeatureBox.style";
  */
 const HeaderFeatureBox = ({ recipientData }) => {
   return (
-    <S.ContainerWrapper>
-      <S.Container>
-        <MessageRecipient recipientData={recipientData} />
-        <HeaderToolBar recipientData={recipientData} />
-      </S.Container>
-    </S.ContainerWrapper>
+    <S.Container>
+      <MessageRecipient recipientData={recipientData} />
+      <HeaderToolBar recipientData={recipientData} />
+    </S.Container>
   );
 };
 

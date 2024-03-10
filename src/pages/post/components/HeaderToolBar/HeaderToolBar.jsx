@@ -6,29 +6,14 @@ import MostEmojiBox from "../MostEmojiBox/MostEmojiBox";
 import HeaderButtonBox from "../HeaderButtonBox/HeaderButtonBox";
 import fetchData from "../Utils/API";
 
-/**
- * @description 임시로 이모지 데이터를 받도록 처리한 함수
- * @param recipientId 현재 페이지의 useParams
- * @returns
- */
-const fetchEmojiData = async (recipientId) => {
-  const { results } = await fetchData(`recipients/${recipientId}/reactions/`);
-  return results;
-};
-
 const HeaderToolBar = ({ recipientData }) => {
   const [emojiData, setEmojiData] = useState([]);
   const { recipientId } = useParams();
 
   const handleSetEmojiData = async (recipientId) => {
     setEmojiData([]);
-    try {
-      const emojiRaw = await fetchEmojiData(recipientId);
-      if (!emojiRaw) {
-        throw new Error("정상적인 페이지 접근이 아닙니다.");
-      }
-      setEmojiData(emojiRaw);
-    } catch {}
+    const { results } = await fetchData(`recipients/${recipientId}/reactions/`);
+    setEmojiData(results);
   };
 
   useEffect(() => {

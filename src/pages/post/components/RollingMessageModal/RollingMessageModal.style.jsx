@@ -44,8 +44,8 @@ export const RollingMessageModalWrapper = styled.div`
     align-items: center;
     margin-bottom: 1.9rem;
     width: 100%;
-
     color: ${(props) => props.theme.textColor};
+
 
     & section {
       display: flex;
@@ -58,6 +58,11 @@ export const RollingMessageModalWrapper = styled.div`
         align-items: flex-start;
       }
     }
+  }
+
+  @media (max-width: 767.5px) {
+    width: 45rem;
+    height: 38rem;
   }
 `;
 
