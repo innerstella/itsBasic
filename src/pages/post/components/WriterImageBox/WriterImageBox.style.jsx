@@ -30,6 +30,6 @@ export const NumberBox = styled.div`
 
   p {
     font-weight: 500;
-    color: #484848;
+    color: #484848 !important;
   }
 `;
