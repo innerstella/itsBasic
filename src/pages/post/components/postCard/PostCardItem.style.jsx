@@ -46,9 +46,10 @@ export const Content = styled.p`
   padding-top: 1.6rem;
   width: 100%;
   height: 11.6rem;
+  word-break: break-all;
   color: var(--gray-600, #4a4a4a);
   display: -webkit-box;
-  -webkit-line-clamp: 3;
+  -webkit-line-clamp: 4;
   -webkit-box-orient: vertical;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -117,5 +118,5 @@ export const PlusButton = styled.div`
 
 export const ContentEndPoint = styled.div`
   position: absolute;
-  bottom: 0rem;
+  bottom: 1rem;
 `;

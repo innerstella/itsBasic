@@ -3,7 +3,7 @@ import { createContext, useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 
 import NavigationBar from "../../components/navigationBar/NavigationBar";
-import Profile from "./components/profile/Proifle";
+import Profile from "./components/profile/Profile";
 import Dropdown from "./components/dropdown/Dropdown";
 import TextEditor from "./components/text-editor/TextEditor";
 import TextInput from "./components/text-input/TextInput";
@@ -85,7 +85,7 @@ const PostMessagePage = () => {
         <FromContext.Provider value={{ fromInput, setFromInput }}>
           <div className="section-container">
             <p className="text-title font-24-bold">
-              From. <span className="requried">*</span>
+              From. <span className="required">*</span>
             </p>
             <TextInput />
           </div>
@@ -101,13 +101,13 @@ const PostMessagePage = () => {
         >
           <div className="section-container">
             <p className="text-title font-24-bold">상대와의 관계</p>
-            <Dropdown type="select-reltaionship" />
+            <Dropdown type="select-relationship" />
           </div>
         </RelationshipContext.Provider>
         <ContentContext.Provider value={{ contentInput, setContentInput }}>
           <div className="section-container">
             <p className="text-title font-24-bold">
-              내용을 입력해 주세요 <span className="requried">*</span>
+              내용을 입력해 주세요 <span className="required">*</span>
             </p>
             <TextEditor />
           </div>

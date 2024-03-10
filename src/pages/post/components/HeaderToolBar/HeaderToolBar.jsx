@@ -4,6 +4,7 @@ import * as S from "./HeaderToolBar.style";
 import MessageWriterBox from "../MessageWriterBox/MessageWriterBox";
 import MostEmojiBox from "../MostEmojiBox/MostEmojiBox";
 import HeaderButtonBox from "../HeaderButtonBox/HeaderButtonBox";
+import fetchData from "../Utils/API";
 
 /**
  * @description 임시로 이모지 데이터를 받도록 처리한 함수
@@ -11,11 +12,7 @@ import HeaderButtonBox from "../HeaderButtonBox/HeaderButtonBox";
  * @returns
  */
 const fetchEmojiData = async (recipientId) => {
-  const { results } = await (
-    await fetch(
-      `https://rolling-api.vercel.app/4-2/recipients/${recipientId}/reactions/`
-    )
-  ).json();
+  const { results } = await fetchData(`recipients/${recipientId}/reactions/`);
   return results;
 };
 

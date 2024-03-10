@@ -10,7 +10,7 @@ export const Box = styled.div`
   border-radius: 500rem;
   overflow: hidden;
   border: 0.2rem solid #fff;
-  background-image: url(${({ $profileimageurl }) => $profileimageurl});
+  background-image: url(${({ $profileImageUrl }) => $profileImageUrl});
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -18,6 +18,9 @@ export const Box = styled.div`
 `;
 
 export const NumberBox = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 2.8rem;
   height: 2.8rem;
   border-radius: 500rem;
@@ -28,7 +31,5 @@ export const NumberBox = styled.div`
   p {
     font-weight: 500;
     color: #484848;
-    margin-top: 0.27rem;
-    margin-left: ${(props) => (props.dataCount < 13 ? "0.5rem" : "0.2rem")};
   }
 `;

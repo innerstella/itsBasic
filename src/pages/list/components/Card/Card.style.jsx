@@ -1,6 +1,8 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
+  cursor: pointer;
+
   min-width: 27.5rem;
   height: 26rem;
 

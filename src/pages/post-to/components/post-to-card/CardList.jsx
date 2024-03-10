@@ -1,6 +1,6 @@
-import React, { useState } from "react";
+import React from "react";
 import CardStyle from "./Card.style";
-import SkeletonUI from "./SkeletonUI";
+import ImageCard from "./ImageCard";
 
 // 컬러카드 색
 const CARDCOLOR = [
@@ -20,7 +20,7 @@ const CARDCOLOR = [
  * @property {function} handleCardImageCheck - 카드 이미지를 변경할 때 호출되는 핸들러 함수
  * @property {Array<string>} cardImage - 사용 가능한 카드 이미지 URL 목록
  */
-const Card = ({
+const CardList = ({
   type,
   cardColorChecks,
   cardImageChecks,
@@ -28,16 +28,11 @@ const Card = ({
   handleCardImageCheck,
   cardImage,
 }) => {
-  const [imageLoaded, setImageLoaded] = useState(
-    Array(cardImage.length).fill(false)
-  );
-
   return (
     <>
       {type === "color"
         ? CARDCOLOR.map((color, index) => (
             <CardStyle
-              className="card card-color"
               key={index}
               value={color}
               color={color}
@@ -53,43 +48,15 @@ const Card = ({
             </CardStyle>
           ))
         : cardImage.map((imageUrl, index) => (
-            <>
-              <img
-                src={imageUrl}
-                style={{ display: "none" }}
-                onLoad={() => {
-                  const newImageLoaded = [...imageLoaded];
-                  newImageLoaded[index] = true;
-                  setImageLoaded(newImageLoaded);
-                }}
-                alt="카드 이미지"
-              />
-              {imageLoaded[index] ? (
-                <CardStyle
-                  className="card card-image"
-                  key={index}
-                  value={imageUrl}
-                  style={{ backgroundImage: `url(${imageUrl})` }}
-                  onClick={() => handleCardImageCheck(index)}
-                >
-                  {cardImageChecks === index && (
-                    <>
-                      <img
-                        className="check-image"
-                        src="/assets/post-to/Enabled.svg"
-                        alt="체크 표시"
-                      />
-                      <div className="select-opacity" />
-                    </>
-                  )}
-                </CardStyle>
-              ) : (
-                <SkeletonUI />
-              )}
-            </>
+            <ImageCard
+              imageUrl={imageUrl}
+              handleCardImageCheck={handleCardImageCheck}
+              cardImageChecks={cardImageChecks}
+              index={index}
+            />
           ))}
     </>
   );
 };
 
-export default Card;
+export default CardList;
