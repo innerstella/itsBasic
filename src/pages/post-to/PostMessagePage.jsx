@@ -84,15 +84,15 @@ const PostMessagePage = () => {
       <S.Container>
         <FromContext.Provider value={{ fromInput, setFromInput }}>
           <div className="section-container">
-            <p className="text-title font-24-bold">
+            <h1 className="text-title font-24-bold">
               From. <span className="required">*</span>
-            </p>
+            </h1>
             <TextInput />
           </div>
         </FromContext.Provider>
         <ProfileContext.Provider value={{ profileInput, setProfileInput }}>
           <div className="section-container">
-            <p className="text-title font-24-bold">프로필 이미지</p>
+            <h1 className="text-title font-24-bold">프로필 이미지</h1>
             <Profile />
           </div>
         </ProfileContext.Provider>
@@ -100,21 +100,21 @@ const PostMessagePage = () => {
           value={{ relationshipInput, setRelationshipInput }}
         >
           <div className="section-container">
-            <p className="text-title font-24-bold">상대와의 관계</p>
+            <h1 className="text-title font-24-bold">상대와의 관계</h1>
             <Dropdown type="select-relationship" />
           </div>
         </RelationshipContext.Provider>
         <ContentContext.Provider value={{ contentInput, setContentInput }}>
           <div className="section-container">
-            <p className="text-title font-24-bold">
+            <h1 className="text-title font-24-bold">
               내용을 입력해 주세요 <span className="required">*</span>
-            </p>
+            </h1>
             <TextEditor />
           </div>
         </ContentContext.Provider>
         <FontContext.Provider value={{ fontInput, setFontInput }}>
           <div className="section-container">
-            <p className="text-title font-24-bold">폰트 선택</p>
+            <h1 className="text-title font-24-bold">폰트 선택</h1>
             <Dropdown type="select-font" />
           </div>
         </FontContext.Provider>
