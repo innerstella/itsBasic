@@ -5,6 +5,7 @@ import PostPageMain from "./components/PostPageMain/PostPageMain";
 import HeaderLogoBox from "./components/HeaderLogoBox/HeaderLogoBox";
 import HeaderFeatureBox from "./components/HeaderFeatureBox/HeaderFeatureBox";
 import fetchData from "./components/Utils/API";
+import NavigationBar from "../../components/navigationBar/NavigationBar";
 
 const PostPage = () => {
   const [amountDataCount, setAmountDataCount] = useState();
@@ -26,8 +27,7 @@ const PostPage = () => {
 
   return (
     <S.Layout>
-      <S.OverScrollBox />
-      <HeaderLogoBox />
+      <NavigationBar show={"none"} />
       <HeaderFeatureBox recipientData={recipientData} />
       <PostPageMain
         recipientData={recipientData}
