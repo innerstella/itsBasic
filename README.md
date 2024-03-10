@@ -1,6 +1,7 @@
 # '프로젝트%20제목'
 
-<img src="https://velog.velcdn.com/images/luna7182/post/8dd53f65-9ed3-418a-94b6-38ebcba49ed9/image.png">
+![image](https://github.com/Rhajiit/itsBasic/assets/155033024/3aded448-91f9-4ebc-97e1-2be06ac6a425)
+
 
 ![header](https://capsule-render.vercel.app/api?type=waving&&height=160&color=9013FE&text=너에게%20글%20한마디%20달아보기&fontSize=45&&&fontColor=ffe&fontAlignY=30&rotate=-1&desc=오픈형%20롤링페이퍼%20'프로젝트%20제목'&descAlign=75&descAlignY=55)
 
@@ -22,22 +23,23 @@
 
 ## '프로젝트%20제목' 설명
 
-<img src="https://velog.velcdn.com/images/luna7182/post/8dd53f65-9ed3-418a-94b6-38ebcba49ed9/image.png">
-대충 작성하는 창
+![image](https://github.com/Rhajiit/itsBasic/assets/155033024/2ee2897d-f96f-421c-b3b8-41ac31a845d7)
 
-- '프로젝트%20제목'에서 번거로운 로그인 없이 누구나 쉽게 롤링 페이퍼를 작성하세요!
 
-<img src="https://velog.velcdn.com/images/luna7182/post/8dd53f65-9ed3-418a-94b6-38ebcba49ed9/image.png">
-대충 메시지 작성창
+- '프로젝트%20제목'은 어떤 특정 사람에게 많은 사람이 메시지를 보내고자 할 때 유용한 웹 사이트입니다. '프로젝트%20제목'에서 번거로운 로그인 없이 누구나 쉽게 롤링 페이퍼를 시작하세요!
 
-- '프로젝트%20제목'은 어떤 특정 사람에게 많은 사람이 메시지를 보내고자 할 때 유용한 웹 사이트입니다. 지인, 가족, 동료, 친구에게 모두가 모여 링크를 공유해 메시지를 써 보세요!
+![image](https://github.com/Rhajiit/itsBasic/assets/155033024/14509474-fb1c-429d-a3ff-da2502cc2b78)
+- 지인, 가족, 동료, 친구에게 모두가 모여 링크를 공유해 메시지를 써 보세요!
 
-<img src="https://velog.velcdn.com/images/luna7182/post/8dd53f65-9ed3-418a-94b6-38ebcba49ed9/image.png">
-대충 포켓몬창
+![image](https://github.com/Rhajiit/itsBasic/assets/155033024/7287de66-b430-4295-a4b3-1fe157285c9a)
+- 말로는 다 못할 감정을 전달하고 싶을 때는, 이모지로 감정을 표현해보세요!
+
+![image](https://github.com/Rhajiit/itsBasic/assets/155033024/1cc15ad6-fb64-4696-8642-6bd48286ad40)
+
 - 메시지를 보낼 때, 원하는 이미지가 없다면 포켓몬으로 이미지 변신을 해보세요! 새로운 자신을 표현해보세요!
 
-<img src="https://velog.velcdn.com/images/luna7182/post/8dd53f65-9ed3-418a-94b6-38ebcba49ed9/image.png">
-대충 공유하는 창
+![image](https://github.com/Rhajiit/itsBasic/assets/155033024/3642d272-fcd2-4949-b217-d1338270dbca)
+
 - 모두 메시지 작성이 끝났다면, 페이지를 링크로, 또는 카카오톡으로 공유해보세요! 받은 사람에게 따듯한 메시지를 보내주세요!
 
 ## Developer
