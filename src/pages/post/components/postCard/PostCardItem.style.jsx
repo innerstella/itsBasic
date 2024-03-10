@@ -8,7 +8,7 @@ export const CardPlus = styled.div`
   align-items: center;
   flex-shrink: 0;
   border-radius: 1.6rem;
-  background: var(--white, #fff);
+  background: ${(props) => props.theme.backgroundColor};
   box-shadow: 0px 2px 12px 0px rgba(0, 0, 0, 0.08);
   @media (max-width: 1023.5px) {
     width: 100%;
@@ -20,7 +20,7 @@ export const CardItem = styled.div`
   display: flex;
   flex-direction: column;
   border-radius: 1.6rem;
-  background: var(--white, #fff);
+  background: ${(props) => props.theme.backgroundColor};
   box-shadow: 0px 2px 12px 0px rgba(0, 0, 0, 0.08);
 
   &:hover {
@@ -47,7 +47,7 @@ export const Content = styled.p`
   width: 100%;
   height: 11.6rem;
   word-break: break-all;
-  color: var(--gray-600, #4a4a4a);
+  color: ${(props) => props.theme.textColor};
   display: -webkit-box;
   -webkit-line-clamp: 4;
   -webkit-box-orient: vertical;
@@ -77,7 +77,7 @@ export const ProfileImage = styled.img`
   background: var(--white, #fff);
 `;
 export const From = styled.p`
-  color: #000;
+  color: ${(props) => props.theme.textColor};
   font-family: Pretendard;
   font-size: 20px;
   font-style: normal;
@@ -86,7 +86,7 @@ export const From = styled.p`
 `;
 export const Name = styled.p`
   width: 14rem;
-  color: #000;
+  color: ${(props) => props.theme.textColor};
   font-family: Pretendard;
   font-size: 20px;
   font-style: normal;
