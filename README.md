@@ -22,7 +22,23 @@
 
 ## '프로젝트%20제목' 설명
 
-- '프로젝트%20제목'은 어떤 특정 사람에게 많은 사람에게서 메시지를 보내고자 할 때 유용한 웹 사이트입니다.
+<img src="https://velog.velcdn.com/images/luna7182/post/8dd53f65-9ed3-418a-94b6-38ebcba49ed9/image.png">
+대충 작성하는 창
+
+- '프로젝트%20제목'에서 번거로운 로그인 없이 누구나 쉽게 롤링 페이퍼를 작성하세요!
+
+<img src="https://velog.velcdn.com/images/luna7182/post/8dd53f65-9ed3-418a-94b6-38ebcba49ed9/image.png">
+대충 메시지 작성창
+
+- '프로젝트%20제목'은 어떤 특정 사람에게 많은 사람이 메시지를 보내고자 할 때 유용한 웹 사이트입니다. 지인, 가족, 동료, 친구에게 모두가 모여 링크를 공유해 메시지를 써 보세요!
+
+<img src="https://velog.velcdn.com/images/luna7182/post/8dd53f65-9ed3-418a-94b6-38ebcba49ed9/image.png">
+대충 포켓몬창
+- 메시지를 보낼 때, 원하는 이미지가 없다면 포켓몬으로 이미지 변신을 해보세요! 새로운 자신을 표현해보세요!
+
+<img src="https://velog.velcdn.com/images/luna7182/post/8dd53f65-9ed3-418a-94b6-38ebcba49ed9/image.png">
+대충 공유하는 창
+- 모두 메시지 작성이 끝났다면, 페이지를 링크로, 또는 카카오톡으로 공유해보세요! 받은 사람에게 따듯한 메시지를 보내주세요!
 
 ## Developer
 
