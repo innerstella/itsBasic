@@ -16,6 +16,7 @@ export const Container = styled.div`
   }
 
   .select-profile {
+    cursor: pointer;
     display: flex;
     flex-direction: column;
     gap: 1.2rem;
