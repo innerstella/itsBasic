@@ -86,6 +86,7 @@ export const EmptyCardList = styled.div`
     justify-content: flex-end;
     .svg {
       width: 10rem;
+      height: 10rem;
     }
   }
 
