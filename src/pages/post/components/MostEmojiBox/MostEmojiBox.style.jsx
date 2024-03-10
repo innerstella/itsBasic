@@ -13,6 +13,13 @@ export const DropdownButton = styled.button`
   background: none;
   border: none;
   cursor: pointer;
+
+  & img {
+    border-radius: 50%;
+    &:hover {
+      background-color: rgba(0, 0, 0, 0.2);
+    }
+  }
 `;
 
 export const EmojiListContainer = styled.div`

@@ -9,6 +9,13 @@ const CardStyle = styled.div`
   background: var(${({ color }) => color});
   background-size: cover;
 
+  .img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 1.6rem;
+  }
+
   .check-image {
     position: absolute;
     width: 4.4rem;
@@ -20,7 +27,7 @@ const CardStyle = styled.div`
 
   .select-opacity {
     display: flex;
-    position: relative;
+    position: absolute;
     width: 100%;
     height: 100%;
     background-color: white;
@@ -28,6 +35,9 @@ const CardStyle = styled.div`
   }
 
   @media screen and (max-width: 768px) {
+    width: 15.4rem;
+    height: 15.4rem;
+
     .check-image {
       top: 5.5rem;
       left: 5.5rem;

@@ -8,13 +8,12 @@ export function shareKakao(title, description, imageUrl) {
   const { Kakao } = window;
   const API_KEY = process.env.REACT_APP_KAKAO_KEY;
 
-  const realUrl =
-    "https://65e85a80d1619c0d99620100--kakaosharingtest.netlify.app";
+  const realUrl = "https://itsbasic-c93d6.web.app/";
   // 배포한 사이트로 수정(배포된 창에서 클릭시 이동될 페이지)
   const resultUrl = window.location.href;
 
-  Kakao.cleanup(API_KEY);
-  Kakao.init();
+  Kakao.cleanup();
+  Kakao.init(API_KEY);
 
   const showShare = () => {
     Kakao.Share.sendDefault({
