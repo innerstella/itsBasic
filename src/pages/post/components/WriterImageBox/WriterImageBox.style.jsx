@@ -5,7 +5,8 @@ export const Container = styled.div`
 `;
 
 export const Box = styled.div`
-  width: 2.8rem;
+  ${
+    "" /* width: 2.8rem;
   height: 2.8rem;
   border-radius: 500rem;
   overflow: hidden;
@@ -14,7 +15,21 @@ export const Box = styled.div`
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
-  margin-left: -1rem;
+  margin-left: -1rem; */
+  }
+
+  .profile-icon {
+    width: 2.8rem;
+    height: 2.8rem;
+    margin-right: -1rem;
+    display: flex;
+    padding: 0.2rem;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+    border-radius: 3rem;
+    background: #fff;
+  }
 `;
 
 export const NumberBox = styled.div`
@@ -26,7 +41,7 @@ export const NumberBox = styled.div`
   border-radius: 500rem;
   background-color: var(--color-white);
   border: 0.2rem solid #e3e3e3;
-  margin-left: -1rem;
+  margin-left: 0.1rem;
 
   p {
     font-weight: 500;
