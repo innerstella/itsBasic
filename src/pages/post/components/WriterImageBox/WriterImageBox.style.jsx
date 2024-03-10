@@ -5,19 +5,6 @@ export const Container = styled.div`
 `;
 
 export const Box = styled.div`
-  ${
-    "" /* width: 2.8rem;
-  height: 2.8rem;
-  border-radius: 500rem;
-  overflow: hidden;
-  border: 0.2rem solid #fff;
-  background-image: url(${({ $profileImageUrl }) => $profileImageUrl});
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-  margin-left: -1rem; */
-  }
-
   .profile-icon {
     width: 2.8rem;
     height: 2.8rem;

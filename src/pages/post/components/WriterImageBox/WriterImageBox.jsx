@@ -6,7 +6,7 @@ const WriterImageBox = ({ data }) => {
       {data.recentMessages?.map(({ profileImageURL, id }) => {
         return (
           <S.Box profileImageUrl={profileImageURL} key={id}>
-            <img src={profileImageURL} className='profile-icon' />
+            <img src={profileImageURL} className='profile-icon' alt='profile' />
           </S.Box>
         );
       })}

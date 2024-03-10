@@ -29,7 +29,7 @@ const PokemonProfileModal = ({
                 src='/assets/post-to/poke_ball_icon.png'
                 alt='pokeball-icon'
               />
-              <p className='modal-title'>원하는 포켓몬을 선택하세요!!</p>
+              <p className='modal-title'>원하는 포켓몬을 선택하세요!!!</p>
               <img
                 src='/assets/post-to/poke_ball_icon.png'
                 alt='pokeball-icon'
