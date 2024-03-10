@@ -2,37 +2,35 @@ import * as S from "./PokemonProfileModal.style";
 import { useEffect, useState } from "react";
 import PokemonModalLoading from "./PokemonModalLoading";
 const PokemonProfileModal = ({ setIsShowPokemonModal, setProfileInput }) => {
-  const [pokemonData, setPokemonData] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
-  const allPokemonData = [];
+  const [pokemonDataArr, setPokemonDataArr] = useState([]);
+
   const getData = async () => {
-    for (let i = 1; i <= 151; i++) {
-      const pokemonData = await (
-        await fetch(`https://pokeapi.co/api/v2/pokemon-species/${i}`)
-      ).json();
+    const speciesData = await (
+      await fetch(`https://pokeapi.co/api/v2/pokemon-species/?limit=151`)
+    ).json();
 
-      const detailData = await (
-        await fetch(`https://pokeapi.co/api/v2/pokemon/${i}/`)
-      ).json();
+    const speciesList = speciesData.results;
 
-      const koreanName = pokemonData.names.filter(
-        (item) => item.language.name === "ko"
-      )[0].name;
+    for (let poke in speciesList) {
+      if (Number(poke) === 30) {
+        setIsLoading((prev) => !prev);
+      }
+      const speciesUrl = await (await fetch(speciesList[poke].url)).json();
 
-      const pokemonImageUrl = detailData.sprites.front_default;
-
-      const index = detailData.game_indices.filter(
-        (item) => item.version.name === "gold"
-      )[0]["game_index"];
-
-      allPokemonData.push({
-        index: index,
-        name: koreanName,
-        imageUrl: pokemonImageUrl,
-      });
+      setPokemonDataArr((prev) => [
+        ...prev,
+        {
+          index: Number(poke) + 1,
+          name: speciesUrl.names.filter(
+            (item) => item.language.name === "ko"
+          )[0].name,
+          imageUrl: `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${
+            Number(poke) + 1
+          }.png`,
+        },
+      ]);
     }
-    setPokemonData(allPokemonData);
-    setIsLoading((prev) => !prev);
   };
 
   useEffect(() => {
@@ -57,7 +55,7 @@ const PokemonProfileModal = ({ setIsShowPokemonModal, setProfileInput }) => {
             </div>
 
             <div className='pokemon-image-container'>
-              {pokemonData.map(({ index, name, imageUrl }) => {
+              {pokemonDataArr.map(({ index, name, imageUrl }) => {
                 return (
                   <div
                     className='pokemon-detail-box'
