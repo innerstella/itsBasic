@@ -3,7 +3,6 @@ import styled from "styled-components";
 const NavContainer = styled.nav`
   display: flex;
   justify-content: center;
-  width: 100vw;
   border-bottom: 0.1rem solid #ededed;
   background: ${(props) => props.theme.backgroundColor};
   .nav-container {
