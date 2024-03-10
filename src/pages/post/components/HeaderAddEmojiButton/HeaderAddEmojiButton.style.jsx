@@ -21,7 +21,7 @@ export const Button = styled.button`
     }
   }
   &:hover {
-    background-color: rgba(0, 0, 0, 0.1);
+    background-color: #ededed;
   }
 `;
 
