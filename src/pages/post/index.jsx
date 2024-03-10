@@ -2,7 +2,6 @@ import * as S from "./index.style";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import PostPageMain from "./components/PostPageMain/PostPageMain";
-import HeaderLogoBox from "./components/HeaderLogoBox/HeaderLogoBox";
 import HeaderFeatureBox from "./components/HeaderFeatureBox/HeaderFeatureBox";
 import fetchData from "./components/Utils/API";
 import NavigationBar from "../../components/navigationBar/NavigationBar";
