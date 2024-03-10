@@ -2,8 +2,10 @@ import * as S from "./index.style";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import PostPageMain from "./components/PostPageMain/PostPageMain";
+
 import HeaderFeatureBox from "./components/HeaderFeatureBox/HeaderFeatureBox";
 import fetchData from "./components/Utils/API";
+import NavigationBar from "../../components/navigationBar/NavigationBar";
 
 const PostPage = () => {
   const [amountDataCount, setAmountDataCount] = useState();
@@ -25,12 +27,8 @@ const PostPage = () => {
 
   return (
     <S.Layout>
-      <S.OverScrollBox />
-      <S.UpperHeaderWrapper>
-        <S.UpperHeaderBar show={"none"} />
-        <HeaderFeatureBox recipientData={recipientData} />
-      </S.UpperHeaderWrapper>
-
+      <NavigationBar show={"none"} />
+      <HeaderFeatureBox recipientData={recipientData} />
       <PostPageMain
         recipientData={recipientData}
         amountDataCount={amountDataCount}

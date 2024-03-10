@@ -32,20 +32,20 @@ const AppRouter = () => {
             </Route>
           </Route>
         </Routes>
+        <ToastContainer
+          className="font-16-regular"
+          position="bottom-center"
+          autoClose={5000}
+          hideProgressBar={true}
+          newestOnTop={false}
+          closeOnClick
+          rtl={false}
+          pauseOnFocusLoss
+          draggable
+          pauseOnHover
+          theme="light"
+        />
       </ThemeProvider>
-      <ToastContainer
-        className="font-16-regular"
-        position="bottom-center"
-        autoClose={5000}
-        hideProgressBar={true}
-        newestOnTop={false}
-        closeOnClick
-        rtl={false}
-        pauseOnFocusLoss
-        draggable
-        pauseOnHover
-        theme="light"
-      />
     </BrowserRouter>
   );
 };

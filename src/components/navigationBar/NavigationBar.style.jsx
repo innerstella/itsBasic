@@ -5,7 +5,7 @@ const NavContainer = styled.nav`
   justify-content: center;
   width: 100vw;
   border-bottom: 0.1rem solid #ededed;
-
+  background: ${(props) => props.theme.backgroundColor};
   .nav-container {
     display: flex;
     justify-content: space-between;
@@ -19,7 +19,7 @@ const NavContainer = styled.nav`
     display: flex;
     align-items: center;
     gap: 0.8rem;
-    color: #4a494f;
+    color: ${(props) => props.theme.textColor};
   }
 
   .button,

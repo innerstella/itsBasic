@@ -6,7 +6,7 @@ export const Container = styled.div`
   }
 
   p {
-    color: var(--color-grayscale-800);
+    color: ${(props) => props.theme.textColor};
 
     @media (max-width: 767.5px) {
       font-size: 1.8rem;

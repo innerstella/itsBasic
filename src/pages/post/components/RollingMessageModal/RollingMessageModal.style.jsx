@@ -18,7 +18,7 @@ export const RollingMessageModalBackground = styled.div`
 
 export const RollingMessageSender = styled.p`
   margin-bottom: 0.6rem;
-  color: #000;
+  color: ${(props) => props.theme.textColor};
   & span {
     font-weight: 700;
   }
@@ -29,7 +29,7 @@ export const RollingMessageModalWrapper = styled.div`
   flex-direction: column;
   align-items: center;
   position: absolute;
-  background-color: var(--color-white);
+  background: ${(props) => props.theme.backgroundColor};
   transform: translateX(-50%) translateY(-50%);
   border-radius: 1.6rem;
   padding: 4rem;
@@ -44,8 +44,8 @@ export const RollingMessageModalWrapper = styled.div`
     align-items: center;
     margin-bottom: 1.9rem;
     width: 100%;
+    color: ${(props) => props.theme.textColor};
 
-    color: var(--color-grayscale-400);
 
     & section {
       display: flex;
@@ -85,8 +85,8 @@ export const ModalMessageTextArea = styled.textarea`
   width: 100%;
   height: 24rem;
   margin-bottom: 2rem;
-  color: #5a5a5a;
-  background: var(--color-white);
+  color: ${(props) => props.theme.textColor};
+  background: ${(props) => props.theme.backgroundColor};
 
   &:focus {
     outline: none;

@@ -21,7 +21,7 @@ export const Container = styled.div`
     flex-direction: column;
     gap: 1.2rem;
     .text {
-      color: var(--color-grayscale-500);
+      color: color: ${(props) => props.theme.textColor};;
 
       @media (max-width: 767.5px) {
         text-align: center;
