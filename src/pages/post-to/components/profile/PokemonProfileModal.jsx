@@ -1,42 +1,24 @@
 import * as S from "./PokemonProfileModal.style";
 import { useEffect, useState } from "react";
 import PokemonModalLoading from "./PokemonModalLoading";
-const PokemonProfileModal = ({ setIsShowPokemonModal, setProfileInput }) => {
-  const [isLoading, setIsLoading] = useState(true);
-  const [pokemonDataArr, setPokemonDataArr] = useState([]);
-
-  const getData = async () => {
-    const speciesData = await (
-      await fetch(`https://pokeapi.co/api/v2/pokemon-species/?limit=151`)
-    ).json();
-
-    const speciesList = speciesData.results;
-
-    for (let poke in speciesList) {
-      if (Number(poke) === 30) {
-        setIsLoading((prev) => !prev);
-      }
-      const speciesUrl = await (await fetch(speciesList[poke].url)).json();
-
-      setPokemonDataArr((prev) => [
-        ...prev,
-        {
-          index: Number(poke) + 1,
-          name: speciesUrl.names.filter(
-            (item) => item.language.name === "ko"
-          )[0].name,
-          imageUrl: `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${
-            Number(poke) + 1
-          }.png`,
-        },
-      ]);
-    }
-  };
-
+const PokemonProfileModal = ({
+  setIsShowPokemonModal,
+  setProfileInput,
+  isLoading,
+  pokemonDataArr,
+  setIsLoading,
+}) => {
+  const sortData = pokemonDataArr.sort((a, b) => a.index - b.index);
   useEffect(() => {
-    getData();
-  }, []);
+    const loadingTimer = setTimeout(() => {
+      setIsLoading((prev) => !prev);
+    }, 3000);
 
+    return () => {
+      clearTimeout(loadingTimer);
+      setIsLoading((prev) => !prev);
+    };
+  }, []);
   return (
     <S.Wrapper>
       <S.Box>
@@ -55,7 +37,7 @@ const PokemonProfileModal = ({ setIsShowPokemonModal, setProfileInput }) => {
             </div>
 
             <div className='pokemon-image-container'>
-              {pokemonDataArr.map(({ index, name, imageUrl }) => {
+              {sortData.map(({ index, name, imageUrl }) => {
                 return (
                   <div
                     className='pokemon-detail-box'
