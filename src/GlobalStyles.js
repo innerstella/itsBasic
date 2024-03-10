@@ -60,7 +60,11 @@ const GlobalStyles = createGlobalStyle`
     html { 
         font-size: 62.5%;
         font-family: Pretendard 
-         }
+    }
+    body{
+        background: ${({ theme }) => theme.backgroundColor};
+        color: ${({ theme }) => theme.textColor};
+    }     
     
     a {
         text-decoration: none;
