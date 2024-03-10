@@ -47,16 +47,16 @@ const ListPage = () => {
       </div>
       <div className="main-container">
         <div className="list-container">
-          <p className="font-24-bold title">인기 롤링 페이퍼 🔥</p>
+          <h1 className="font-24-bold title">인기 롤링 페이퍼 🔥</h1>
           {popularData ? (
             <CardList data={popularData} />
           ) : (
             <S.EmptyCardList>
-              <p className="font-24-bold">
+              <h3 className="font-24-bold">
                 아직 작성된
                 <br />
                 롤링페이퍼가 없어요
-              </p>
+              </h3>
               <div className="svg-container">
                 <img className="svg" src="/assets/link/empty.svg" alt="empty" />
               </div>
@@ -64,15 +64,17 @@ const ListPage = () => {
           )}
         </div>
         <div className="list-container">
-          <p className="font-24-bold title">최근에 만든 롤링 페이퍼 ⭐️</p>
+          <h1 className="font-24-bold title">최근에 만든 롤링 페이퍼 ⭐️</h1>
           {recentData && <CardList data={recentData} />}
         </div>
       </div>
-      <S.Button>
-        <Link className="btn" to="/post">
-          <p className="font-18-bold">나도 만들어보기</p>
-        </Link>
-      </S.Button>
+      <S.ButtonContainer>
+        <button className="btn">
+          <Link to="/post">
+            <span className="font-18-bold">나도 만들어보기</span>
+          </Link>
+        </button>
+      </S.ButtonContainer>
     </S.Container>
   );
 };

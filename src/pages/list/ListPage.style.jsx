@@ -40,18 +40,19 @@ export const Container = styled.div`
   }
 `;
 
-export const Button = styled.div`
+export const ButtonContainer = styled.div`
   display: flex;
   justify-content: center;
   .btn {
-    display: flex;
     width: 28rem;
+    display: flex;
     padding: 1.4rem 2.4rem;
     justify-content: center;
     align-items: center;
     gap: 1rem;
 
     border-radius: 1.2rem;
+    border: none;
     background: var(--Purple-600, #9935ff);
 
     color: var(--color-white, #fff);
