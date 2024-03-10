@@ -45,7 +45,7 @@ export const RollingMessageModalWrapper = styled.div`
     margin-bottom: 1.9rem;
     width: 100%;
 
-    color: var(--gray-400, #999);
+    color: var(--color-grayscale-400);
 
     & section {
       display: flex;
@@ -58,6 +58,11 @@ export const RollingMessageModalWrapper = styled.div`
         align-items: flex-start;
       }
     }
+  }
+
+  @media (max-width: 767.5px) {
+    width: 45rem;
+    height: 38rem;
   }
 `;
 
