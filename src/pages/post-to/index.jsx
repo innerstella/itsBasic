@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 
 import NavigationBar from "../../components/navigationBar/NavigationBar";
 import PostToStyle from "./PostToPage.style";
-import Card from "./components/post-to-card/Card";
+import CardList from "./components/post-to-card/CardList";
 import Button from "../../components/button/Button";
 
 const CARDCOLOR = ["beige", "purple", "blue", "green"];
@@ -139,7 +139,7 @@ const PostToPage = () => {
             </button>
           </div>
           <div className="card-container">
-            <Card
+            <CardList
               type={type}
               cardColorChecks={cardColorChecks}
               cardImageChecks={cardImageChecks}

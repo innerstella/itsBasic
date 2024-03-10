@@ -88,9 +88,10 @@ const MostEmojiBox = ({ emojiData, emojiFunc }) => {
           ))
         )}
         <S.DropdownButton
+          type="button"
           onClick={() => setIsEmojiDropDownOpen(!isEmojiDropDownOpen)}
         >
-          <img src="/assets/emoji_picker_dropdown_icon.svg" alt="" />
+          <img src="/assets/post/emoji_picker_dropdown_icon.svg" alt="" />
         </S.DropdownButton>
         {isEmojiDropDownOpen && (
           <EmojiDropDown
@@ -99,10 +100,9 @@ const MostEmojiBox = ({ emojiData, emojiFunc }) => {
             recipientId={recipientId}
           />
         )}
-        <DropdownClickCancel
-          isOpen={isEmojiDropDownOpen}
-          setIsOpen={setIsEmojiDropDownOpen}
-        />
+        {isEmojiDropDownOpen && (
+          <DropdownClickCancel setIsOpen={setIsEmojiDropDownOpen} />
+        )}
       </S.DropdownFuncBtnContainer>
     </>
   );
