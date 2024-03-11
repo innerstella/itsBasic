@@ -32,7 +32,7 @@ const NavContainer = styled.nav`
   }
 
   .button {
-    display: ${({ show }) => (show === "none" ? "none" : "flex")};
+    display: ${({ $show }) => ($show === "none" ? "none" : "flex")};
   }
 
   button {
