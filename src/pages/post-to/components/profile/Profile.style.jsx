@@ -33,6 +33,8 @@ export const Container = styled.div`
       height: 5.6rem;
       border-radius: 50%;
 
+      
+
       &:hover {
         transform: scale(1.3);
       }
