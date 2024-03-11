@@ -68,11 +68,12 @@ export const InfoContainer = styled.div`
 export const ProfileContainer = styled.div`
   display: flex;
   flex-direction: row;
-  align-items: flex-start;
+  align-items: center;
 
   .profile-icon {
     width: 2.8rem;
     height: 2.8rem;
+    margin: -0.5rem;
 
     display: flex;
     padding: 0.2rem;
