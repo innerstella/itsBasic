@@ -59,6 +59,10 @@ export const Container = styled.div`
         background-color: #ff758f;
         color: #fff;
       }
+      @media (max-width: 767.5px) {
+        margin: 0 auto;
+        margin-bottom: 1rem;
+      }
     }
   }
 `;
