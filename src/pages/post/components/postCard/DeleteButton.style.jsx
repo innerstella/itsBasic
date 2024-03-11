@@ -40,6 +40,9 @@ export const StyledLink = styled(Link)`
     background: var(--color-purple-700);
   }
 
+  &:focus {
+    background: var(--color-purple-800);
+  }
   &:active {
     background: var(--color-purple-800);
   }
@@ -67,7 +70,9 @@ export const Button = styled.button`
   &:hover {
     background: var(--color-purple-700);
   }
-
+  &:focus {
+    background: var(--color-purple-800);
+  }
   &:active {
     background: var(--color-purple-800);
   }
