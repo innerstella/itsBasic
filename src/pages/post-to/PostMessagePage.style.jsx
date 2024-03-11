@@ -91,7 +91,13 @@ export const Container = styled.div`
   @media screen and (max-width: 768px) {
     width: auto;
     margin: 5rem auto 0rem auto;
-
+    
+    .text-title {
+      text-align: center;
+    }
+    .message-form {
+      width: 40rem;
+    }
     .section-container {
       width: 100%;
       padding: 0 2.4rem;
