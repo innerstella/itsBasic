@@ -1,6 +1,6 @@
 import { useState } from "react";
 import CardStyle from "./Card.style";
-import SkeletonUI from "./SkeletonUI";
+import SkeletonUI from "../../../../components/skeleton-ui/SkeletonUI";
 
 /**
  *

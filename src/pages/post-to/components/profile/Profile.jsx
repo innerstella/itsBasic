@@ -2,7 +2,7 @@ import { useContext, useEffect, useState } from "react";
 import * as S from "./Profile.style";
 import { ProfileContext } from "../../PostMessagePage";
 import PokemonProfileModal from "./PokemonProfileModal";
-import SkeletonUI from "../post-to-card/SkeletonUI";
+import SkeletonUI from "../../../../components/skeleton-ui/SkeletonUI";
 
 /**
  *

@@ -27,6 +27,12 @@ export const Container = styled.div`
     flex-direction: column;
     gap: 1.6rem;
     width: 120rem;
+    position: relative;
+
+    .skeleton-container {
+      display: flex;
+      gap: 2rem;
+    }
   }
 
   @media screen and (min-width: 375px) and (max-width: 1250px) {
@@ -34,6 +40,8 @@ export const Container = styled.div`
       align-items: flex-start;
     }
     .list-container {
+      position: relative;
+
       .title {
         padding: 0 2.4rem;
       }

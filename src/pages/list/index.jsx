@@ -4,14 +4,16 @@ import { Link } from "react-router-dom";
 import * as S from "./ListPage.style";
 import NavigationBar from "../../components/navigationBar/NavigationBar";
 import CardList from "./components/CardList/CardList";
+import SkeletonUI from "../../components/skeleton-ui/SkeletonUI";
 
 /**
  *
  * @description ListPage 컴포넌트는 인기 롤링페이퍼와 최근에 만든 롤링페이퍼를 보여주는 페이지입니다!
  */
 const ListPage = () => {
-  const [popularData, setPopularData] = useState();
-  const [recentData, setRecentData] = useState();
+  const [popularData, setPopularData] = useState([]);
+  const [recentData, setRecentData] = useState([]);
+  const [cardLoaded, setCardLoaded] = useState(false);
 
   useEffect(() => {
     getRecipientList();
@@ -23,6 +25,7 @@ const ListPage = () => {
       .then((data) => {
         sortPopularData(data.results);
         sortRecentData(data.results);
+        setCardLoaded(true);
       });
   };
 
@@ -48,9 +51,25 @@ const ListPage = () => {
       <div className="main-container">
         <div className="list-container">
           <h1 className="font-24-bold title">인기 롤링 페이퍼 🔥</h1>
-          {popularData ? (
+          {!cardLoaded && (
+            <div className="skeleton-container">
+              {Array.from({ length: 4 }).map((_, i) => (
+                <SkeletonUI
+                  key={i}
+                  width="27.7rem"
+                  height="26rem"
+                  mobileWidth="100%"
+                  mobileWeight="100%"
+                  radius="1.6rem"
+                  position="relative"
+                />
+              ))}
+            </div>
+          )}
+          {popularData.length > 0 && cardLoaded && (
             <CardList data={popularData} />
-          ) : (
+          )}
+          {popularData.length === 0 && cardLoaded && (
             <S.EmptyCardList>
               <h3 className="font-24-bold">
                 아직 작성된
@@ -65,7 +84,23 @@ const ListPage = () => {
         </div>
         <div className="list-container">
           <h1 className="font-24-bold title">최근에 만든 롤링 페이퍼 ⭐️</h1>
-          {recentData && <CardList data={recentData} />}
+          {cardLoaded ? (
+            <CardList data={recentData} />
+          ) : (
+            <div className="skeleton-container">
+              {Array.from({ length: 4 }).map((_, i) => (
+                <SkeletonUI
+                  key={i}
+                  width="27.7rem"
+                  height="26rem"
+                  mobileWidth="100%"
+                  mobileWeight="100%"
+                  radius="1.6rem"
+                  position="relative"
+                />
+              ))}
+            </div>
+          )}
         </div>
       </div>
       <S.ButtonContainer>

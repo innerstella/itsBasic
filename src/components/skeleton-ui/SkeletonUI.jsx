@@ -9,7 +9,7 @@ import SkeletonUIStyle from "./SkeletonUI.style";
  * @property {string} mobileWeight - 스켈레톤 모바일 시 세로 길이
  * @property {string} radius - 모서리 둥글기
  */
-const SkeletonUI = ({ width, height, mWidth, mHeight, radius }) => {
+const SkeletonUI = ({ width, height, mWidth, mHeight, radius, position }) => {
   return (
     <SkeletonUIStyle
       width={width}
@@ -17,6 +17,7 @@ const SkeletonUI = ({ width, height, mWidth, mHeight, radius }) => {
       mWidth={mWidth}
       mHeight={mHeight}
       radius={radius}
+      position={position}
     >
       <div className="loading-img blink_me" />
     </SkeletonUIStyle>

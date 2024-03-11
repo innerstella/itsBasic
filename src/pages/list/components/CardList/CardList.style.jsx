@@ -16,6 +16,20 @@ export const DesktopContainer = styled.div`
     display: flex;
     flex-direction: row;
     gap: 2rem;
+    position: relative;
+
+    .paper-list-card {
+      position: relative;
+      .sample {
+        width: 27.7rem;
+        height: 26rem;
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-color: greenyellow;
+        z-index: -1;
+      }
+    }
   }
 `;
 

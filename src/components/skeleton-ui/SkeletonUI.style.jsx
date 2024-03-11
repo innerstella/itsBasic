@@ -1,7 +1,8 @@
 import styled from "styled-components";
 
 const SkeletonUIStyle = styled.div`
-  position: absolute;
+  position: ${(props) =>
+    props.position === "relative" ? "relative" : "absolute"};
   top: 0;
   left: 0;
 
