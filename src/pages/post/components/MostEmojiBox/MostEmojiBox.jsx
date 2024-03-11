@@ -3,6 +3,7 @@ import { useParams } from "react-router";
 import * as S from "./MostEmojiBox.style.jsx";
 import DropdownClickCancel from "../DropdownClickCancel/DropdownClickCancel.jsx";
 import handleEmojiSelect from "../Utils/handleEmojiSelect.js";
+import SkeletonUI from "../../../../components/skeleton-ui/SkeletonUI.jsx";
 
 /**
  * @description 필터링된 이모지 리스트를 전달받아 표시하는 컴포넌트
@@ -47,7 +48,7 @@ const EmojiDropDown = ({ emojiList, emojiFunc, recipientId }) => {
  * @param emojiFunc,이모지 변동이 일어났을 때 이모지 리스트를 새로고침하는 함수
  * @returns
  */
-const MostEmojiBox = ({ emojiData, emojiFunc }) => {
+const MostEmojiBox = ({ emojiData, emojiFunc, isLoaded }) => {
   const [isEmojiDropDownOpen, setIsEmojiDropDownOpen] = useState(false);
   const [favoriteEmoji, setFavoriteEmoji] = useState([]);
   const [usedEmojiList, setUsedEmojiList] = useState([]);
@@ -67,43 +68,74 @@ const MostEmojiBox = ({ emojiData, emojiFunc }) => {
 
   return (
     <>
-      <S.DropdownFuncBtnContainer>
-        {favoriteEmoji.length === 0 ? (
-          <S.EmojiMostUsedWrapper className="font-16-regular">
-            아직 글에 반응이 없어요.
-          </S.EmojiMostUsedWrapper>
-        ) : (
-          favoriteEmoji.map((item) => (
-            <S.EmojiMostUsedWrapper
-              key={item.emoji}
-              $state={localStorage.getItem(item.emoji)}
-              className="font-16-regular"
-              onClick={() =>
-                handleEmojiSelect(item.emoji, recipientId, emojiFunc)
-              }
-            >
-              <span>{item.emoji}</span>
-              {item.count}
+      {!isLoaded ? (
+        <SkeletonUI
+          className="emoji-skeleton"
+          width="20rem"
+          height="4.2rem"
+          mWidth="100%"
+          mWeight="100%"
+          radius="0.5rem"
+          position="relative"
+        />
+      ) : (
+        <S.DropdownFuncBtnContainer>
+          {favoriteEmoji.length === 0 ? (
+            <S.EmojiMostUsedWrapper className="font-16-regular">
+              아직 글에 반응이 없어요.
             </S.EmojiMostUsedWrapper>
-          ))
-        )}
-        <S.DropdownButton
-          type="button"
-          onClick={() => setIsEmojiDropDownOpen(!isEmojiDropDownOpen)}
-        >
-          <img src="/assets/post/emoji_picker_dropdown_icon.svg" alt="" />
-        </S.DropdownButton>
-        {isEmojiDropDownOpen && (
-          <EmojiDropDown
-            emojiList={usedEmojiList}
-            emojiFunc={emojiFunc}
-            recipientId={recipientId}
-          />
-        )}
-        {isEmojiDropDownOpen && (
-          <DropdownClickCancel setIsOpen={setIsEmojiDropDownOpen} />
-        )}
-      </S.DropdownFuncBtnContainer>
+          ) : (
+            favoriteEmoji.map((item) => (
+              <S.EmojiMostUsedWrapper
+                key={item.emoji}
+                $state={localStorage.getItem(item.emoji)}
+                className="font-16-regular"
+                onClick={() =>
+                  handleEmojiSelect(item.emoji, recipientId, emojiFunc)
+                }
+              >
+                <span>{item.emoji}</span>
+                {item.count}
+              </S.EmojiMostUsedWrapper>
+            ))
+          )}
+
+          <S.DropdownButton
+            type="button"
+            onClick={() => setIsEmojiDropDownOpen(!isEmojiDropDownOpen)}
+          >
+            <svg
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <g id="ic / arrow_down">
+                <path
+                  id="Polygon 1"
+                  d="M6.00024 8.76923L12.0002 15.2308L18.0002 8.76924"
+                  stroke="#101010"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  className="drop-down-icon"
+                />
+              </g>
+            </svg>
+          </S.DropdownButton>
+          {isEmojiDropDownOpen && (
+            <EmojiDropDown
+              emojiList={usedEmojiList}
+              emojiFunc={emojiFunc}
+              recipientId={recipientId}
+            />
+          )}
+          {isEmojiDropDownOpen && (
+            <DropdownClickCancel setIsOpen={setIsEmojiDropDownOpen} />
+          )}
+        </S.DropdownFuncBtnContainer>
+      )}
     </>
   );
 };

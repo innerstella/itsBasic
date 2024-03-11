@@ -13,6 +13,7 @@ export const Container = styled.div`
     border-radius: 10rem;
     width: 8rem;
     height: 8rem;
+    border: 0.12rem solid ${(props) => props.theme.textColor};
   }
 
   .select-profile {
@@ -57,6 +58,10 @@ export const Container = styled.div`
       &:hover {
         background-color: #ff758f;
         color: #fff;
+      }
+      @media (max-width: 767.5px) {
+        margin: 0 auto;
+        margin-bottom: 1rem;
       }
     }
     .profile-image-container {

@@ -15,7 +15,7 @@ const userStateColors = {
   },
   친구: { background: "var(--color-blue-100)", color: "var(--color-blue-500)" },
 };
-const Relationship = styled.div`
+const Relationship = styled.h3`
   display: flex;
   padding: 0px 0.8rem;
   justify-content: center;

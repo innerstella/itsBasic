@@ -17,13 +17,8 @@ function ThemeToggle({ toggle, mode }) {
 export default ThemeToggle;
 
 const ToggleWrapper = styled.button`
-  /* position: fixed;
-  z-index: 999;
-  bottom: 4%;
-  right: 3%; */
-
   background: ${(props) => props.theme.backgroundColor};
-  /* border: ${(props) => props.theme.borderColor}; */
+
   font-size: 20px;
 
   display: flex;

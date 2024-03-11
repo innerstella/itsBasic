@@ -4,15 +4,6 @@ export const Container = styled.div`
   width: 100vw;
   overflow: hidden;
 
-  .gnb-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    overflow-x: hidden;
-    padding: 0 2.4rem;
-    border-bottom: 0.1rem solid #ededed;
-  }
   .main-container {
     display: flex;
     flex-direction: column;
@@ -45,6 +36,9 @@ export const Container = styled.div`
       .title {
         padding: 0 2.4rem;
       }
+      .skeleton-container {
+        padding-left: 2.4rem;
+      }
     }
   }
 `;
@@ -65,6 +59,13 @@ export const ButtonContainer = styled.div`
     background: var(--Purple-600, #9935ff);
 
     color: var(--color-white, #fff);
+    &:hover {
+      background: var(--color-purple-700);
+    }
+
+    &:active {
+      background: var(--color-purple-800);
+    }
   }
 
   @media screen and (min-width: 375px) and (max-width: 1024px) {
@@ -73,33 +74,8 @@ export const ButtonContainer = styled.div`
       width: 100%;
     }
   }
-`;
 
-export const EmptyCardList = styled.div`
-  width: 27.5rem;
-  height: 26rem;
-
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  padding: 2.4rem;
-
-  border-radius: 1.6rem;
-  border: 1px solid rgba(0, 0, 0, 0.1);
-  background: var(--color-surface);
-  color: var(--color-black);
-  box-shadow: 0px 2px 12px 0px rgba(0, 0, 0, 0.08);
-
-  .svg-container {
-    display: flex;
-    justify-content: flex-end;
-    .svg {
-      width: 10rem;
-      height: 10rem;
-    }
-  }
-
-  @media screen and (min-width: 375px) and (max-width: 1024px) {
-    margin: 0 2.4rem;
+  & :hover {
+    cursor: pointer;
   }
 `;

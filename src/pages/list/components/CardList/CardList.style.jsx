@@ -9,7 +9,7 @@ export const DesktopContainer = styled.div`
     display: flex;
     flex-direction: row;
     align-items: center;
-    margin-left: ${({ isLeftOn }) => (isLeftOn ? "-2rem" : "0")};
+    margin-left: ${({ $isLeftOn }) => ($isLeftOn ? "-2rem" : "0")};
   }
 
   .paper-list {

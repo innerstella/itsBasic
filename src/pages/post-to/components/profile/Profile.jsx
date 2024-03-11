@@ -36,6 +36,7 @@ const Profile = () => {
         <PokemonProfileModal
           setIsShowPokemonModal={setIsShowPokemonModal}
           setProfileInput={setProfileInput}
+          isShowPokemonModal={isShowPokemonModal}
         />
       )}
       <img

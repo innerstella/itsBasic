@@ -1,11 +1,12 @@
 import * as S from "./PokemonProfileModal.style";
 import { useEffect, useState } from "react";
 import PokemonModalLoading from "./PokemonModalLoading";
+
 const PokemonProfileModal = ({ setIsShowPokemonModal, setProfileInput }) => {
   const [pokemonDataArr, setPokemonDataArr] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(null);
-  const [sortData, setSortData] = useState([]);
+
   const getData = async () => {
     setIsLoading(true);
     setError(null);
@@ -50,47 +51,49 @@ const PokemonProfileModal = ({ setIsShowPokemonModal, setProfileInput }) => {
   }, []);
 
   return (
-    <S.Wrapper>
-      <S.Box>
-        {isLoading && <PokemonModalLoading />}
-        {!isLoading && error && <p>{error}</p>}
-        {!isLoading && pokemonDataArr.length > 0 && (
-          <>
-            <div className='title-box'>
-              <img
-                src='/assets/post-to/poke_ball_icon.png'
-                alt='pokeball-icon'
-              />
-              <p className='modal-title'>원하는 포켓몬을 선택하세요!!!</p>
-              <img
-                src='/assets/post-to/poke_ball_icon.png'
-                alt='pokeball-icon'
-              />
-            </div>
+    <>
+      <S.Wrapper>
+        <S.Box>
+          {isLoading && <PokemonModalLoading />}
+          {!isLoading && error && <p>{error}</p>}
+          {!isLoading && pokemonDataArr.length > 0 && (
+            <>
+              <div className='title-box'>
+                <img
+                  src='/assets/post-to/poke_ball_icon.png'
+                  alt='pokeball-icon'
+                />
+                <p className='modal-title'>원하는 포켓몬을 선택하세요!!!</p>
+                <img
+                  src='/assets/post-to/poke_ball_icon.png'
+                  alt='pokeball-icon'
+                />
+              </div>
 
-            <div className='pokemon-image-container'>
-              {pokemonDataArr
-                .sort((a, b) => a.index - b.index)
-                .map(({ index, name, imageUrl }) => {
-                  return (
-                    <div
-                      className='pokemon-detail-box'
-                      onClick={() => {
-                        setProfileInput(imageUrl);
-                        setIsShowPokemonModal((prev) => !prev);
-                      }}
-                      key={index}
-                    >
-                      <img src={imageUrl} alt={name} />
-                      <p>{name}</p>
-                    </div>
-                  );
-                })}
-            </div>
-          </>
-        )}
-      </S.Box>
-    </S.Wrapper>
+              <div className='pokemon-image-container'>
+                {pokemonDataArr
+                  .sort((a, b) => a.index - b.index)
+                  .map(({ index, name, imageUrl }) => {
+                    return (
+                      <div className='pokemon-detail-box' key={index}>
+                        <img
+                          src={imageUrl}
+                          alt={name}
+                          onClick={() => {
+                            setProfileInput(imageUrl);
+                            setIsShowPokemonModal(false);
+                          }}
+                        />
+                        <p>{name}</p>
+                      </div>
+                    );
+                  })}
+              </div>
+            </>
+          )}
+        </S.Box>
+      </S.Wrapper>
+    </>
   );
 };
 

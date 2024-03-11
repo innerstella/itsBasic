@@ -3,9 +3,15 @@ import NavigationBar from "../../components/navigationBar/NavigationBar";
 
 export const UpperHeaderWrapper = styled.div`
   position: relative;
-  width: 100vw;
+
   background-color: var(--color-white);
   z-index: 1;
+
+  .main-nav-box {
+    @media (max-width: 767.5px) {
+      display: none;
+    }
+  }
 `;
 
 export const UpperHeaderBar = styled(NavigationBar)`
@@ -23,8 +29,6 @@ export const OverScrollBox = styled.div`
 `;
 
 export const Layout = styled.div`
-  position: relative;
-
   &::after {
     content: "";
     position: absolute;

@@ -25,6 +25,8 @@ const SkeletonUIStyle = styled.div`
   }
 
   @media screen and (max-width: 768px) {
+    top: 1.2rem;
+    left: 0.7rem;
     .loading-img {
       width: ${({ mWidth }) => mWidth};
       height: ${({ mHeight }) => mHeight};

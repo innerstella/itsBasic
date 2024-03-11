@@ -7,6 +7,7 @@ import { formatDate } from "../../../../utils/formatDate.js";
 import { useParams, useNavigate } from "react-router-dom";
 import { useInView } from "react-intersection-observer";
 import * as S from "./PostCardItem.style";
+import SkeletonUI from "../../../../components/skeleton-ui/SkeletonUI.jsx";
 
 export function PostCardItem({ amountDataCount, setAmountDataCount }) {
   const [ref, inView] = useInView();
@@ -15,8 +16,10 @@ export function PostCardItem({ amountDataCount, setAmountDataCount }) {
   const { recipientId } = useParams();
   const [modalCardData, setModalCardData] = useState({});
   const [isMessageOpen, setIsMessageOpen] = useState(false);
+  const [cardLoaded, setCardLoaded] = useState(false);
 
   const dataUrl = `recipients/${recipientId}/messages/?limit=9&offset=${page}`;
+  const isPageOwner = localStorage.getItem(`${recipientId}-Post`) === "Owner";
 
   /**
    * Post 페이지를 처음 렌더링했을때 보여줄 메세지를 fetching하는 함수입니다
@@ -26,6 +29,7 @@ export function PostCardItem({ amountDataCount, setAmountDataCount }) {
     setAmountDataCount(firstData.count);
     const paperData = firstData.results;
     setCardData(paperData);
+    setCardLoaded(true);
   }
 
   /**
@@ -90,6 +94,7 @@ export function PostCardItem({ amountDataCount, setAmountDataCount }) {
         deleteFetchData();
         setPage(cardData.length);
         setAmountDataCount((prev) => prev - 1);
+        localStorage.removeItem(`${e.target.id}-Message`);
         navigate(`/post/${recipientId}/edit`);
       }, 300);
     }
@@ -120,18 +125,37 @@ export function PostCardItem({ amountDataCount, setAmountDataCount }) {
                   {el.relationship}
                 </Relationship>
               </S.CardHeaderContainer>
-              {currentURL.includes("edit") && (
-                <TrashButton
-                  type="button"
-                  onDeleteItem={onDeleteItem}
-                  id={el.id}
-                />
-              )}
+              {currentURL.includes("edit") &&
+                (localStorage.getItem(`${el.id}-Message`) === "Owner" ||
+                  isPageOwner) && (
+                  <TrashButton
+                    type="button"
+                    onDeleteItem={onDeleteItem}
+                    id={el.id}
+                  />
+                )}
             </S.CardHeader>
             <S.Content fontFamily={el.font}>{el.content}</S.Content>
-            <S.Date>{formatDate(el.createdAt)}</S.Date>
+            <S.Date className="font-12-regular">
+              {formatDate(el.createdAt)}
+            </S.Date>
           </S.CardItem>
         ))}
+      {!cardLoaded && (
+        <>
+          {Array.from({ length: 8 }).map((_, i) => (
+            <SkeletonUI
+              key={i}
+              width="38rem"
+              height="28rem"
+              mWidth="100%"
+              mWeight="100%"
+              radius="1.6rem"
+              position="relative"
+            />
+          ))}
+        </>
+      )}
       <S.ContentEndPoint ref={ref}></S.ContentEndPoint>
     </>
   );

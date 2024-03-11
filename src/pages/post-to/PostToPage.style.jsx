@@ -41,6 +41,7 @@ const PostToPageStyle = styled.div`
     height: 4rem;
     border: none;
     border-radius: 0.6rem;
+    cursor: pointer;
   }
 
   .select {

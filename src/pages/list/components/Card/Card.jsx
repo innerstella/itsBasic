@@ -1,8 +1,7 @@
 import { useEffect, useState } from "react";
 import * as S from "./Card.style";
 import { useNavigate } from "react-router-dom";
-
-const COLORS = ["purple", "orange", "blue", "green"];
+import { COLOR_LIST } from "../../../../constant/list";
 
 /**
  *
@@ -12,15 +11,15 @@ const COLORS = ["purple", "orange", "blue", "green"];
 const Card = ({ data }) => {
   const navigate = useNavigate();
 
-  const [bgColor, setBgColor] = useState("purple");
-  const [svgLink, setSvgLink] = useState("purple");
+  const [bgColor, setBgColor] = useState("beige");
+  const [svgLink, setSvgLink] = useState("beige");
 
   // 카드 색상 설정
   useEffect(() => {
     const bgColor =
       data.backgroundColor === "beige" ? "orange" : data.backgroundColor;
 
-    if (COLORS.includes(bgColor)) {
+    if (COLOR_LIST.includes(data.backgroundColor)) {
       setBgColor(bgColor);
       setSvgLink(`/assets/link/${bgColor}.svg`);
     } else {
@@ -65,7 +64,7 @@ const Card = ({ data }) => {
             작성했어요!
           </p>
         </S.InfoContainer>
-        {data?.topReactions.length > 0 ? (
+        {data?.reactionCount > 0 ? (
           <S.BadgeContainer>
             {data?.topReactions.map((reaction) => {
               if (reaction.count > 0) {

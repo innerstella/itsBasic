@@ -32,8 +32,8 @@ const ImageCard = ({
         <SkeletonUI
           width="16.8rem"
           height="16.8rem"
-          mobileWidth="15.4rem"
-          mobileWeight="15.4rem"
+          mWidth="15.4rem"
+          mWeight="15.4rem"
           radius="1.6rem"
         />
       )}
