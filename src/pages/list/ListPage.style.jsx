@@ -11,6 +11,7 @@ export const Container = styled.div`
     align-items: center;
     overflow-x: hidden;
     padding: 0 2.4rem;
+    border-bottom: 0.1rem solid #ededed;
   }
   .main-container {
     display: flex;
@@ -40,18 +41,19 @@ export const Container = styled.div`
   }
 `;
 
-export const Button = styled.div`
+export const ButtonContainer = styled.div`
   display: flex;
   justify-content: center;
   .btn {
-    display: flex;
     width: 28rem;
+    display: flex;
     padding: 1.4rem 2.4rem;
     justify-content: center;
     align-items: center;
     gap: 1rem;
 
     border-radius: 1.2rem;
+    border: none;
     background: var(--Purple-600, #9935ff);
 
     color: var(--color-white, #fff);
@@ -85,6 +87,7 @@ export const EmptyCardList = styled.div`
     justify-content: flex-end;
     .svg {
       width: 10rem;
+      height: 10rem;
     }
   }
 

@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 
 import NavigationBar from "../../components/navigationBar/NavigationBar";
 import PostToStyle from "./PostToPage.style";
-import Card from "./components/post-to-card/Card";
+import CardList from "./components/post-to-card/CardList";
 import Button from "../../components/button/Button";
 
 const CARDCOLOR = ["beige", "purple", "blue", "green"];
@@ -90,37 +90,37 @@ const PostToPage = () => {
 
   return (
     <>
-      <NavigationBar show="none" />
+      <NavigationBar show='none' />
       <PostToStyle>
-        <div className="container">
+        <div className='container'>
           <div>
-            <p className="recipient-title font-24-bold">To.</p>
+            <h1 className="recipient-title font-24-bold">To.</h1>
             <form className="recipient-input-form">
               <input
                 className={`recipient-input font-16-regular ${
                   inputError ? "error" : ""
                 }`}
-                placeholder="받는 사람 이름을 입력해 주세요."
+                placeholder='받는 사람 이름을 입력해 주세요.'
                 value={recipientName}
                 onChange={handleInputChange}
                 onBlur={handleInputError}
               />
               {inputError && (
                 <div className="error-message-container">
-                  <p className="error-message font-12-regular">
+                  <span className="error-message font-12-regular">
                     값을 입력해주세요.
-                  </p>
+                  </span>
                 </div>
               )}
             </form>
           </div>
           <div className="background-container">
-            <p className="text font-24-bold">배경화면을 선택해 주세요</p>
-            <p className="sub-text font-16-regular">
+            <h1 className="text font-24-bold">배경화면을 선택해 주세요</h1>
+            <span className="sub-text font-16-regular">
               컬러를 선택하거나, 이미지를 선택할 수 있습니다.
-            </p>
+            </span>
           </div>
-          <div className="buttons">
+          <div className='buttons'>
             <button
               className={`font-16-regular ${type === "color" && "select"}`}
               onClick={() => {
@@ -138,8 +138,8 @@ const PostToPage = () => {
               이미지
             </button>
           </div>
-          <div className="card-container">
-            <Card
+          <div className='card-container'>
+            <CardList
               type={type}
               cardColorChecks={cardColorChecks}
               cardImageChecks={cardImageChecks}

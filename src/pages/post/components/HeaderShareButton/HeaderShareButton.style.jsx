@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const Button = styled.button`
-  position: relatvie;
+  position: relative;
   padding: 0.6rem 1.6rem;
   border-radius: 0.6rem;
   border: 1px solid var(--color-grayscale-300);
@@ -10,6 +10,10 @@ export const Button = styled.button`
   align-items: center;
   gap: 0.4rem;
   cursor: pointer;
+
+  &:hover {
+    background-color: #ededed;
+  }
 
   @media (max-width: 767.5px) {
     padding: 0.6rem 0.8rem;

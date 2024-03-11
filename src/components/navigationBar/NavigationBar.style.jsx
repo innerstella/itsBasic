@@ -3,8 +3,16 @@ import styled from "styled-components";
 const NavContainer = styled.nav`
   display: flex;
   justify-content: center;
-  width: 100vw;
   border-bottom: 0.1rem solid #ededed;
+
+
+  .logo-img {
+    width: 2.7818rem;
+    height: 2.7658rem;
+  }
+
+
+  background: ${(props) => props.theme.backgroundColor};
 
   .nav-container {
     display: flex;
@@ -19,7 +27,7 @@ const NavContainer = styled.nav`
     display: flex;
     align-items: center;
     gap: 0.8rem;
-    color: #4a494f;
+    color: ${(props) => props.theme.textColor};
   }
 
   .button,
@@ -55,5 +63,8 @@ const NavContainer = styled.nav`
     }
   }
 `;
-
+export const NavButtonContainer = styled.div`
+  display: flex;
+  gap: 1.5rem;
+`;
 export default NavContainer;

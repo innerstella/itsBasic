@@ -14,35 +14,38 @@ import PostPage from "./pages/post";
 import DeleteButton from "./pages/post/components/postCard/DeleteButton";
 import PostToPage from "./pages/post-to";
 import PostMessagePage from "./pages/post-to/PostMessagePage";
+import { ThemeProvider } from "./context/themeProvider";
 
 const AppRouter = () => {
   return (
     <BrowserRouter>
-      <GlobalStyles />
-      <Routes>
-        <Route path="/" element={<MainPage />} />
-        <Route path="/list" element={<ListPage />} />
-        <Route path="/post" element={<PostToPage />} />
-        <Route path="/post">
-          <Route path=":recipientId/message" element={<PostMessagePage />} />
-          <Route path=":recipientId" element={<PostPage />}>
-            <Route path="edit" element={<DeleteButton />} />
+      <ThemeProvider>
+        <GlobalStyles />
+        <Routes>
+          <Route path='/' element={<MainPage />} />
+          <Route path='/list' element={<ListPage />} />
+          <Route path='/post' element={<PostToPage />} />
+          <Route path='/post'>
+            <Route path=':recipientId/message' element={<PostMessagePage />} />
+            <Route path=':recipientId' element={<PostPage />}>
+              <Route path='edit' element={<DeleteButton />} />
+            </Route>
           </Route>
-        </Route>
-      </Routes>
-      <ToastContainer
-        className="font-16-regular"
-        position="bottom-center"
-        autoClose={5000}
-        hideProgressBar={true}
-        newestOnTop={false}
-        closeOnClick
-        rtl={false}
-        pauseOnFocusLoss
-        draggable
-        pauseOnHover
-        theme="light"
-      />
+        </Routes>
+        <ToastContainer
+          className='font-16-regular'
+          position='bottom-center'
+          autoClose={5000}
+          hideProgressBar={true}
+          newestOnTop={false}
+          closeOnClick
+          rtl={false}
+          pauseOnFocusLoss
+          draggable
+          pauseOnHover
+          theme='light'
+        />
+      </ThemeProvider>
     </BrowserRouter>
   );
 };

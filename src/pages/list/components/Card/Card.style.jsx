@@ -1,6 +1,8 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
+  cursor: pointer;
+
   min-width: 27.5rem;
   height: 26rem;
 
@@ -54,6 +56,13 @@ export const InfoContainer = styled.div`
   display: flex;
   flex-direction: column;
   gap: 1.2rem;
+
+  .recipient-name-box {
+    width: 22.7rem;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
 `;
 
 export const ProfileContainer = styled.div`

@@ -10,18 +10,12 @@ import { ContentContext } from "../../PostMessagePage";
  * @todo 에디터 기능 연결
  */
 const TextEditor = () => {
-  const { contentInput, setContentInput } = useContext(ContentContext);
+  const { contentRef } = useContext(ContentContext);
   const [quillValue, setQuillValue] = useState("");
 
   const handleQuillChange = (content, delta, source, editor) => {
     setQuillValue(editor.getContents());
   };
-
-  useEffect(() => {
-    if (quillValue) {
-      setContentInput(quillValue?.ops[0]?.insert);
-    }
-  }, [quillValue, setContentInput]);
 
   const modules = {
     toolbar: {
@@ -39,6 +33,7 @@ const TextEditor = () => {
         modules={modules}
         value={quillValue || ""}
         onChange={handleQuillChange}
+        ref={contentRef}
       />
     </>
   );
