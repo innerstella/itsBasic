@@ -16,7 +16,7 @@ export const RollingMessageModalBackground = styled.div`
   z-index: 99;
 `;
 
-export const RollingMessageSender = styled.p`
+export const RollingMessageSender = styled.h1`
   margin-bottom: 0.6rem;
   color: ${(props) => props.theme.textColor};
   & span {
@@ -24,7 +24,7 @@ export const RollingMessageSender = styled.p`
   }
 `;
 
-export const RollingMessageModalWrapper = styled.div`
+export const RollingMessageModalWrapper = styled.section`
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -45,7 +45,6 @@ export const RollingMessageModalWrapper = styled.div`
     margin-bottom: 1.9rem;
     width: 100%;
     color: ${(props) => props.theme.textColor};
-
 
     & section {
       display: flex;
@@ -104,7 +103,7 @@ export const ModalMessageTextArea = styled.textarea`
   }
 `;
 
-export const RelationBadge = styled.p`
+export const RelationBadge = styled.h3`
   background-color: var(
     --color-${(prop) => (prop.color === "error" ? prop.color : prop.color + "-100")}
   );

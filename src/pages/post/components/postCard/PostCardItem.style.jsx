@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const CardPlus = styled.div`
+export const CardPlus = styled.section`
   cursor: pointer;
   display: flex;
   height: 28rem;
@@ -15,7 +15,7 @@ export const CardPlus = styled.div`
     width: 100%;
   }
 `;
-export const CardItem = styled.div`
+export const CardItem = styled.section`
   position: relative;
   padding: 2.4rem;
   display: flex;
@@ -29,7 +29,7 @@ export const CardItem = styled.div`
     cursor: pointer;
   }
 `;
-export const CardHeader = styled.div`
+export const CardHeader = styled.header`
   display: flex;
   padding: 1rem 1rem 0 1rem;
   justify-content: flex-start;
@@ -80,7 +80,7 @@ export const ProfileImage = styled.img`
   border: 1px solid var(--color-grayscale-200);
   background: var(--color-white);
 `;
-export const From = styled.p`
+export const From = styled.h2`
   color: ${(props) => props.theme.textColor};
   font-family: Pretendard;
   font-size: 20px;
@@ -88,7 +88,7 @@ export const From = styled.p`
   font-weight: 400;
   line-height: 24px; /* 120% */
 `;
-export const Name = styled.p`
+export const Name = styled.h1`
   width: 14rem;
   color: ${(props) => props.theme.textColor};
   font-family: Pretendard;
@@ -102,14 +102,6 @@ export const Name = styled.p`
 `;
 export const Date = styled.p`
   color: var(--color-grayscale-400);
-
-  /* Font/12 Regular */
-  font-family: Pretendard;
-  font-size: 12px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 18px; /* 150% */
-  letter-spacing: -0.06px;
 `;
 export const PlusButton = styled.div`
   display: flex;

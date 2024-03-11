@@ -103,7 +103,7 @@ const CardList = ({ type }) => {
 
   if (isDesktop) {
     return (
-      <S.DesktopContainer isLeftOn={isLeftOn}>
+      <S.DesktopContainer $isLeftOn={isLeftOn}>
         <div className="list-with-btn">
           {isLeftOn && (
             <ArrowBtn type="left" onClick={() => changeRange("left")} />

@@ -11,9 +11,7 @@ import CardList from "./components/CardList/CardList";
 const ListPage = () => {
   return (
     <S.Container>
-      <div className="gnb-container">
-        <NavigationBar />
-      </div>
+      <NavigationBar />
       <div className="main-container">
         <div className="list-container">
           <h1 className="font-24-bold title">인기 롤링 페이퍼 🔥</h1>
@@ -25,11 +23,11 @@ const ListPage = () => {
         </div>
       </div>
       <S.ButtonContainer>
-        <button className="btn">
-          <Link to="/post">
+        <Link to="/post">
+          <button className="btn">
             <span className="font-18-bold">나도 만들어보기</span>
-          </Link>
-        </button>
+          </button>
+        </Link>
       </S.ButtonContainer>
     </S.Container>
   );
