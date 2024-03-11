@@ -40,7 +40,6 @@ export const Container = styled.div`
       display: flex;
       gap: 0.4rem;
 
-<<<<<<< HEAD
       @media (max-width: 767.5px) {
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
@@ -58,11 +57,10 @@ export const Container = styled.div`
       &:hover {
         background-color: #ff758f;
         color: #fff;
-=======
-      .profile-image-container {
-        position: relative;
->>>>>>> 068da0b (💄 message 작성 페이지 스켈레톤 적용)
       }
+    }
+    .profile-image-container {
+      position: relative;
     }
   }
 `;

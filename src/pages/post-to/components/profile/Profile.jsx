@@ -1,12 +1,9 @@
 import { useContext, useEffect, useState } from "react";
 import * as S from "./Profile.style";
 import { ProfileContext } from "../../PostMessagePage";
-<<<<<<< HEAD:src/pages/post-to/components/profile/Profile.jsx
 import PokemonProfileModal from "./PokemonProfileModal";
-=======
 import SkeletonUI from "../post-to-card/SkeletonUI";
 
->>>>>>> 068da0b (💄 message 작성 페이지 스켈레톤 적용):src/pages/post-to/components/profile/Proifle.jsx
 /**
  *
  * @description Profile 컴포넌트는 프로필 이미지를 선택하는 컴포넌트입니다.
@@ -62,15 +59,6 @@ const Profile = () => {
         <div className="profile-container">
           {imageList?.slice(1).map((imgUrl, idx) => {
             return (
-<<<<<<< HEAD:src/pages/post-to/components/profile/Profile.jsx
-              <img
-                key={idx}
-                className="profile"
-                src={imgUrl}
-                alt="프로필 이미지"
-                onClick={() => setProfileInput(imgUrl)}
-              />
-=======
               <div className="profile-image-container" key={idx}>
                 <img
                   className="profile"
@@ -98,7 +86,6 @@ const Profile = () => {
                   />
                 )}
               </div>
->>>>>>> 068da0b (💄 message 작성 페이지 스켈레톤 적용):src/pages/post-to/components/profile/Proifle.jsx
             );
           })}
         </div>
