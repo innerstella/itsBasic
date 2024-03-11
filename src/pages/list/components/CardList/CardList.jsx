@@ -127,7 +127,7 @@ const CardList = ({ type }) => {
     return (
       <S.TabletContainer>
         <div className="list-with-btn">
-          {!displayData?.length > 0 ? (
+          {displayData?.length > 0 ? (
             <div className="paper-list">
               {displayData?.map((data) => {
                 return <Card key={data.id} data={data} />;
