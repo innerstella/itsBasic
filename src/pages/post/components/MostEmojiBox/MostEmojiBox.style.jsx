@@ -13,7 +13,9 @@ export const DropdownButton = styled.button`
   background: none;
   border: none;
   cursor: pointer;
-
+  .drop-down-icon {
+    stroke: ${(props) => props.theme.textColor};
+  }
   & img {
     border-radius: 50%;
     &:hover {

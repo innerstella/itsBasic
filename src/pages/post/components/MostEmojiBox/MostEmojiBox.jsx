@@ -16,7 +16,7 @@ const EmojiDropDown = ({ emojiList, emojiFunc, recipientId }) => {
     <>
       {emojiList.length === 0 ? (
         <S.EmojiListContainer columns={"1fr"}>
-          <span className="font-16-regular">
+          <span className='font-16-regular'>
             이모지를 선택하여 이 글에 반응해보세요!
           </span>
         </S.EmojiListContainer>
@@ -26,7 +26,7 @@ const EmojiDropDown = ({ emojiList, emojiFunc, recipientId }) => {
             <S.EmojiUsedWrapper
               key={item.emoji}
               $state={localStorage.getItem(item.emoji)}
-              className="font-16-regular"
+              className='font-16-regular'
               onClick={() =>
                 handleEmojiSelect(item.emoji, recipientId, emojiFunc)
               }
@@ -69,7 +69,7 @@ const MostEmojiBox = ({ emojiData, emojiFunc }) => {
     <>
       <S.DropdownFuncBtnContainer>
         {favoriteEmoji.length === 0 ? (
-          <S.EmojiMostUsedWrapper className="font-16-regular">
+          <S.EmojiMostUsedWrapper className='font-16-regular'>
             아직 글에 반응이 없어요.
           </S.EmojiMostUsedWrapper>
         ) : (
@@ -77,7 +77,7 @@ const MostEmojiBox = ({ emojiData, emojiFunc }) => {
             <S.EmojiMostUsedWrapper
               key={item.emoji}
               $state={localStorage.getItem(item.emoji)}
-              className="font-16-regular"
+              className='font-16-regular'
               onClick={() =>
                 handleEmojiSelect(item.emoji, recipientId, emojiFunc)
               }
@@ -88,10 +88,28 @@ const MostEmojiBox = ({ emojiData, emojiFunc }) => {
           ))
         )}
         <S.DropdownButton
-          type="button"
+          type='button'
           onClick={() => setIsEmojiDropDownOpen(!isEmojiDropDownOpen)}
         >
-          <img src="/assets/post/emoji_picker_dropdown_icon.svg" alt="" />
+          <svg
+            width='24'
+            height='24'
+            viewBox='0 0 24 24'
+            fill='none'
+            xmlns='http://www.w3.org/2000/svg'
+          >
+            <g id='ic / arrow_down'>
+              <path
+                id='Polygon 1'
+                d='M6.00024 8.76923L12.0002 15.2308L18.0002 8.76924'
+                stroke='#101010'
+                stroke-width='1.5'
+                stroke-linecap='round'
+                stroke-linejoin='round'
+                className='drop-down-icon'
+              />
+            </g>
+          </svg>
         </S.DropdownButton>
         {isEmojiDropDownOpen && (
           <EmojiDropDown
