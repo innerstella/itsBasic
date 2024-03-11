@@ -19,6 +19,7 @@ const ButtonStyle = styled.div`
     background: var(--color-purple-600);
 
     color: var(--color-white);
+    cursor: pointer;
   }
 
   .disabled {
