@@ -24,7 +24,7 @@ export const StyledLink = styled(Link)`
   padding: 1rem 2rem;
   background: var(--color-purple-600);
   border: none;
-  border-radius: 2rem;
+  border-radius: 0.6rem;
   cursor: pointer;
 
   color: var(--color-white);
@@ -37,6 +37,10 @@ export const StyledLink = styled(Link)`
   letter-spacing: -0.16px;
 
   &:hover {
+    background: var(--color-purple-700);
+  }
+
+  &:active {
     background: var(--color-purple-800);
   }
 
@@ -49,7 +53,7 @@ export const Button = styled.button`
   padding: 1rem 2rem;
   background: var(--color-purple-600);
   border: none;
-  border-radius: 2rem;
+  border-radius: 0.6rem;
   cursor: pointer;
   color: var(--color-white);
 
@@ -60,10 +64,12 @@ export const Button = styled.button`
   font-weight: 400;
   line-height: 26px; /* 162.5% */
   letter-spacing: -0.16px;
-
   &:hover {
+    background: var(--color-purple-700);
+  }
+
+  &:active {
     background: var(--color-purple-800);
-    color: var(--color-white);
   }
 
   @media (max-width: 767.5px) {

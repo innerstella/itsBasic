@@ -57,6 +57,13 @@ export const ButtonContainer = styled.div`
     background: var(--Purple-600, #9935ff);
 
     color: var(--color-white, #fff);
+    &:hover {
+      background: var(--color-purple-700);
+    }
+
+    &:active {
+      background: var(--color-purple-800);
+    }
   }
 
   @media screen and (min-width: 375px) and (max-width: 1024px) {

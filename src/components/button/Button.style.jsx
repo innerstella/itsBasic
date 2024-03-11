@@ -20,6 +20,14 @@ const ButtonStyle = styled.div`
 
     color: var(--color-white);
     cursor: pointer;
+
+    &:hover {
+      background: var(--color-purple-700);
+    }
+
+    &:active {
+      background: var(--color-purple-800);
+    }
   }
 
   .disabled {
