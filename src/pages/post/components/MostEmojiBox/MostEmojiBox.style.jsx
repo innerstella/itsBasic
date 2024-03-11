@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const DropdownFuncBtnContainer = styled.div`
+export const DropdownFuncBtnContainer = styled.section`
   position: relative;
   display: flex;
   align-items: center;
@@ -22,7 +22,7 @@ export const DropdownButton = styled.button`
   }
 `;
 
-export const EmojiListContainer = styled.div`
+export const EmojiListContainer = styled.section`
   position: absolute;
   display: grid;
   text-align: center;
@@ -81,7 +81,7 @@ export const EmojiUsedWrapper = styled.div`
   }
 `;
 
-export const EmojiMostUsedWrapper = styled.div`
+export const EmojiMostUsedWrapper = styled.section`
   display: flex;
   color: var(--color-white);
   align-items: center;

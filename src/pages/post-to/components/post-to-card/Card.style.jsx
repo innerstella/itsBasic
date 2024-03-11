@@ -8,6 +8,7 @@ const CardStyle = styled.div`
   border-radius: 1.6rem;
   background: var(${({ color }) => color});
   background-size: cover;
+  cursor: pointer;
 
   .img {
     width: 100%;

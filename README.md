@@ -1,9 +1,8 @@
-# '프로젝트%20제목'
+# ✈너글닿기✈
 
 ![image](https://github.com/Rhajiit/itsBasic/assets/155033024/3aded448-91f9-4ebc-97e1-2be06ac6a425)
 
-
-![header](https://capsule-render.vercel.app/api?type=waving&&height=160&color=9013FE&text=너에게%20글%20한마디%20달아보기&fontSize=45&&&fontColor=ffe&fontAlignY=30&rotate=-1&desc=오픈형%20롤링페이퍼%20'프로젝트%20제목'&descAlign=75&descAlignY=55)
+![header](https://capsule-render.vercel.app/api?type=waving&&height=160&color=9013FE&text=너에게%20글%20한마디%20달아보기&fontSize=45&&&fontColor=ffe&fontAlignY=30&rotate=-1&desc=오픈형%20롤링페이퍼%20너글닿기&descAlign=75&descAlignY=55)
 
 <p align="center">
 <img src="https://img.shields.io/badge/react-61DAFB?style=for-the-badge&logo=react&logoColor=61DAFB&labelColor=333">
@@ -14,27 +13,28 @@
 <img src="https://img.shields.io/badge/styled--components-DB7093?style=for-the-badge&logo=styled-components&logoColor=DB7093&labelColor=333">
 </p>
 
-## '프로젝트%20제목' 소개
+## 너글닿기 소개
 
 - '프로젝트 제목'은 누구나 작성 가능하며, 자유롭게 공유가 가능한 롤링 페이퍼를 제공하는 서비스입니다.
 - 누군가에게 보내는 페이지를 작성하거나, 그 페이지에서 보내고 싶은 메시지를 작성할 수 있습니다.
 - 말로 못할 감정이 있다면, 이모지를 달아서 표현해보세요!
 - 이야기를 전하고 싶은 사람이 있다면, 또 그러한 사람이 많다면 적극 활용해보세요!
 
-## '프로젝트%20제목' 설명
+## 너글닿기 설명
 
 ![image](https://github.com/Rhajiit/itsBasic/assets/155033024/2ee2897d-f96f-421c-b3b8-41ac31a845d7)
 
-
-- '프로젝트%20제목'은 어떤 특정 사람에게 많은 사람이 메시지를 보내고자 할 때 유용한 웹 사이트입니다. '프로젝트%20제목'에서 번거로운 로그인 없이 누구나 쉽게 롤링 페이퍼를 시작하세요!
+- 너글닿기은 어떤 특정 사람에게 많은 사람이 메시지를 보내고자 할 때 유용한 웹 사이트입니다. 너글닿기에서 번거로운 로그인 없이 누구나 쉽게 롤링 페이퍼를 시작하세요!
 
 ![image](https://github.com/Rhajiit/itsBasic/assets/155033024/14509474-fb1c-429d-a3ff-da2502cc2b78)
+
 - 지인, 가족, 동료, 친구에게 모두가 모여 링크를 공유해 메시지를 써 보세요!
 
 ![image](https://github.com/Rhajiit/itsBasic/assets/155033024/7287de66-b430-4295-a4b3-1fe157285c9a)
+
 - 말로는 다 못할 감정을 전달하고 싶을 때는, 이모지로 감정을 표현해보세요!
 
-![image](https://github.com/Rhajiit/itsBasic/assets/155033024/1cc15ad6-fb64-4696-8642-6bd48286ad40)
+![image](https://github.com/Rhajiit/itsBasic/assets/155033024/4d9c9188-4e7f-406b-81df-98854d14e922)
 
 - 메시지를 보낼 때, 원하는 이미지가 없다면 포켓몬으로 이미지 변신을 해보세요! 새로운 자신을 표현해보세요!
 

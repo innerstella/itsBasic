@@ -13,7 +13,7 @@ import { useTheme } from "../../context/themeProvider";
 const NavigationBar = ({ show }) => {
   const [ThemeMode, toggleTheme] = useTheme();
   return (
-    <NavContainer show={show}>
+    <NavContainer $show={show}>
       <div className="nav-container">
         <div className="logo-container">
           <Link to="/">

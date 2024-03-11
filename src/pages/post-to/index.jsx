@@ -55,6 +55,7 @@ const PostToPage = () => {
     postRecipients(body)
       .then((data) => {
         if (data && data.id) {
+          localStorage.setItem(`${data.id}-Post`, "Owner");
           navigate(`/post/${data.id}`);
         }
       })
