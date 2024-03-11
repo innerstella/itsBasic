@@ -37,7 +37,7 @@ export const Container = styled.div`
 
     position: relative;
     left: 11rem;
-    top: -16rem;
+    top: -14rem;
   }
 `;
 

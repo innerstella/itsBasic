@@ -100,45 +100,45 @@ const PostMessagePage = () => {
     <>
       <NavigationBar />
       <S.Container>
-        <form onSubmit={(e) => moveTo(e)} className='message-form'>
+        <div className="message-form">
           <FromContext.Provider value={{ fromRef }}>
-            <div className='section-container' onBlur={checkActive}>
-              <h1 className='text-title font-24-bold'>
-                From. <span className='required'>*</span>
+            <div className="section-container" onBlur={checkActive}>
+              <h1 className="text-title font-24-bold">
+                From. <span className="required">*</span>
               </h1>
               <TextInput />
             </div>
           </FromContext.Provider>
           <ProfileContext.Provider value={{ profileRef }}>
-            <div className='section-container'>
-              <h1 className='text-title font-24-bold'>프로필 이미지</h1>
+            <div className="section-container">
+              <h1 className="text-title font-24-bold">프로필 이미지</h1>
               <Profile />
             </div>
           </ProfileContext.Provider>
           <RelationshipContext.Provider value={{ relationshipRef }}>
-            <div className='section-container'>
-              <h1 className='text-title font-24-bold'>상대와의 관계</h1>
-              <Dropdown type='select-relationship' />
+            <div className="section-container">
+              <h1 className="text-title font-24-bold">상대와의 관계</h1>
+              <Dropdown type="select-relationship" />
             </div>
           </RelationshipContext.Provider>
           <ContentContext.Provider value={{ contentRef }}>
-            <div className='section-container' onBlur={checkActive}>
-              <h1 className='text-title font-24-bold'>
-                내용을 입력해 주세요 <span className='required'>*</span>
+            <div className="section-container" onBlur={checkActive}>
+              <h1 className="text-title font-24-bold">
+                내용을 입력해 주세요 <span className="required">*</span>
               </h1>
               <TextEditor />
             </div>
           </ContentContext.Provider>
           <FontContext.Provider value={{ fontRef }}>
-            <div className='section-container'>
-              <h1 className='text-title font-24-bold'>폰트 선택</h1>
-              <Dropdown type='select-font' />
+            <div className="section-container">
+              <h1 className="text-title font-24-bold">폰트 선택</h1>
+              <Dropdown type="select-font" />
             </div>
           </FontContext.Provider>
           <WideButton isActive={isActive} onClick={moveTo}>
             생성하기
           </WideButton>
-        </form>
+        </div>
       </S.Container>
     </>
   );

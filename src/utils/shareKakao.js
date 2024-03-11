@@ -19,7 +19,8 @@ export function shareKakao() {
       content: {
         title: "너글닿기",
         description: "누구나 손쉽게, 온라인 롤링 페이퍼를 만들 수 있어요",
-        imageUrl: "/assets/common/kakao_share.png",
+        imageUrl:
+          "https://raw.githubusercontent.com/innerstella/itsBasic/188af8aa214f784250f20f079282e8ce54017632/public/assets/common/kakao_share.png",
         link: {
           mobileWebUrl: realUrl,
         },
@@ -28,7 +29,7 @@ export function shareKakao() {
         {
           title: "나도 작성하러 가기",
           link: {
-            mobileWebUrl: realUrl,
+            mobileWebUrl: resultUrl,
           },
         },
       ],
