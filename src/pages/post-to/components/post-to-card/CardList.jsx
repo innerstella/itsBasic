@@ -1,14 +1,7 @@
 import React from "react";
 import CardStyle from "./Card.style";
 import ImageCard from "./ImageCard";
-
-// 컬러카드 색
-const CARD_COLOR = [
-  "--color-orange-200",
-  "--color-purple-200",
-  "--color-blue-200",
-  "--color-green-200",
-];
+import { CARD_COLOR } from "../../../../constant/list";
 
 /**
  *

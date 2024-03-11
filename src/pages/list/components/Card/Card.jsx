@@ -11,15 +11,15 @@ import { COLOR_LIST } from "../../../../constant/list";
 const Card = ({ data }) => {
   const navigate = useNavigate();
 
-  const [bgColor, setBgColor] = useState("purple");
-  const [svgLink, setSvgLink] = useState("purple");
+  const [bgColor, setBgColor] = useState("beige");
+  const [svgLink, setSvgLink] = useState("beige");
 
   // 카드 색상 설정
   useEffect(() => {
     const bgColor =
       data.backgroundColor === "beige" ? "orange" : data.backgroundColor;
 
-    if (COLOR_LIST.includes(bgColor)) {
+    if (COLOR_LIST.includes(data.backgroundColor)) {
       setBgColor(bgColor);
       setSvgLink(`/assets/link/${bgColor}.svg`);
     } else {
