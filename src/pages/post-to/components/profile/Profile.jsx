@@ -10,8 +10,7 @@ const Profile = () => {
   const { profileInput, setProfileInput } = useContext(ProfileContext);
   const [imageList, setImageList] = useState();
   const [isShowPokemonModal, setIsShowPokemonModal] = useState(false);
-  const [isLoading, setIsLoading] = useState(true);
-  const [pokemonDataArr, setPokemonDataArr] = useState([]);
+
   const getProfileImageList = async () => {
     fetch("https://rolling-api.vercel.app/profile-images/")
       .then((res) => res.json())
@@ -21,32 +20,7 @@ const Profile = () => {
       });
   };
 
-  const getData = async () => {
-    const speciesData = await (
-      await fetch(`https://pokeapi.co/api/v2/pokemon-species/?limit=151`)
-    ).json();
-
-    const speciesList = speciesData.results;
-
-    speciesList.forEach(async (data, index) => {
-      const dataList = await (await fetch(data.url)).json();
-
-      setPokemonDataArr((prev) => [
-        ...prev,
-        {
-          index: Number(index) + 1,
-          name: dataList.names.filter((item) => item.language.name === "ko")[0]
-            .name,
-          imageUrl: `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${
-            Number(index) + 1
-          }.png`,
-        },
-      ]);
-    });
-  };
-
   useEffect(() => {
-    getData();
     getProfileImageList();
   }, []);
 
@@ -56,10 +30,6 @@ const Profile = () => {
         <PokemonProfileModal
           setIsShowPokemonModal={setIsShowPokemonModal}
           setProfileInput={setProfileInput}
-          getData={getData}
-          isLoading={isLoading}
-          pokemonDataArr={pokemonDataArr}
-          setIsLoading={setIsLoading}
         />
       )}
       <img className='selected-profile' src={profileInput} alt='프로필' />

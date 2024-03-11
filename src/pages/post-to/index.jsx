@@ -90,37 +90,37 @@ const PostToPage = () => {
 
   return (
     <>
-      <NavigationBar show="none" />
+      <NavigationBar show='none' />
       <PostToStyle>
-        <div className="container">
+        <div className='container'>
           <div>
-            <p className="recipient-title font-24-bold">To.</p>
-            <form className="recipient-input-form">
+            <p className='recipient-title font-24-bold'>To.</p>
+            <form className='recipient-input-form'>
               <input
                 className={`recipient-input font-16-regular ${
                   inputError ? "error" : ""
                 }`}
-                placeholder="받는 사람 이름을 입력해 주세요."
+                placeholder='받는 사람 이름을 입력해 주세요.'
                 value={recipientName}
                 onChange={handleInputChange}
                 onBlur={handleInputError}
               />
               {inputError && (
-                <div className="error-message-container">
-                  <p className="error-message font-12-regular">
+                <div className='error-message-container'>
+                  <p className='error-message font-12-regular'>
                     값을 입력해주세요.
                   </p>
                 </div>
               )}
             </form>
           </div>
-          <div className="background-container">
-            <p className="text font-24-bold">배경화면을 선택해 주세요</p>
-            <p className="sub-text font-16-regular">
+          <div className='background-container'>
+            <p className='text font-24-bold'>배경화면을 선택해 주세요</p>
+            <p className='sub-text font-16-regular'>
               컬러를 선택하거나, 이미지를 선택할 수 있습니다.
             </p>
           </div>
-          <div className="buttons">
+          <div className='buttons'>
             <button
               className={`font-16-regular ${type === "color" && "select"}`}
               onClick={() => {
@@ -138,7 +138,7 @@ const PostToPage = () => {
               이미지
             </button>
           </div>
-          <div className="card-container">
+          <div className='card-container'>
             <CardList
               type={type}
               cardColorChecks={cardColorChecks}

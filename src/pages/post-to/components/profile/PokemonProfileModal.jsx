@@ -1,28 +1,60 @@
 import * as S from "./PokemonProfileModal.style";
 import { useEffect, useState } from "react";
 import PokemonModalLoading from "./PokemonModalLoading";
-const PokemonProfileModal = ({
-  setIsShowPokemonModal,
-  setProfileInput,
-  isLoading,
-  pokemonDataArr,
-  setIsLoading,
-}) => {
-  const sortData = pokemonDataArr.sort((a, b) => a.index - b.index);
-  useEffect(() => {
-    const loadingTimer = setTimeout(() => {
-      setIsLoading((prev) => !prev);
-    }, 3000);
+const PokemonProfileModal = ({ setIsShowPokemonModal, setProfileInput }) => {
+  const [pokemonDataArr, setPokemonDataArr] = useState([]);
+  const [isLoading, setIsLoading] = useState(false);
+  const [error, setError] = useState(null);
+  const [sortData, setSortData] = useState([]);
+  const getData = async () => {
+    setIsLoading(true);
+    setError(null);
+    try {
+      const response = await fetch(
+        `https://pokeapi.co/api/v2/pokemon-species/?limit=151`
+      );
 
-    return () => {
-      clearTimeout(loadingTimer);
-      setIsLoading((prev) => !prev);
-    };
+      if (!response.ok) {
+        throw new Error("Something went wrong");
+      }
+
+      const jsonData = await response.json();
+      const pokemonData = await jsonData.results;
+
+      pokemonData.forEach(async (data, index) => {
+        const dataList = await (await fetch(data.url)).json();
+
+        setPokemonDataArr((prev) => [
+          ...prev,
+          {
+            index: Number(index) + 1,
+            name: dataList.names.filter(
+              (item) => item.language.name === "ko"
+            )[0].name,
+            imageUrl: `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${
+              Number(index) + 1
+            }.png`,
+          },
+        ]);
+      });
+
+      setIsLoading(false);
+    } catch (error) {
+      setError(error.message);
+    }
+    setIsLoading(false);
+  };
+
+  useEffect(() => {
+    getData();
   }, []);
+
   return (
     <S.Wrapper>
       <S.Box>
-        {isLoading === false ? (
+        {isLoading && <PokemonModalLoading />}
+        {!isLoading && error && <p>{error}</p>}
+        {!isLoading && pokemonDataArr.length > 0 && (
           <>
             <div className='title-box'>
               <img
@@ -37,25 +69,25 @@ const PokemonProfileModal = ({
             </div>
 
             <div className='pokemon-image-container'>
-              {sortData.map(({ index, name, imageUrl }) => {
-                return (
-                  <div
-                    className='pokemon-detail-box'
-                    onClick={() => {
-                      setProfileInput(imageUrl);
-                      setIsShowPokemonModal((prev) => !prev);
-                    }}
-                    key={index}
-                  >
-                    <img src={imageUrl} alt={name} />
-                    <p>{name}</p>
-                  </div>
-                );
-              })}
+              {pokemonDataArr
+                .sort((a, b) => a.index - b.index)
+                .map(({ index, name, imageUrl }) => {
+                  return (
+                    <div
+                      className='pokemon-detail-box'
+                      onClick={() => {
+                        setProfileInput(imageUrl);
+                        setIsShowPokemonModal((prev) => !prev);
+                      }}
+                      key={index}
+                    >
+                      <img src={imageUrl} alt={name} />
+                      <p>{name}</p>
+                    </div>
+                  );
+                })}
             </div>
           </>
-        ) : (
-          <PokemonModalLoading />
         )}
       </S.Box>
     </S.Wrapper>
