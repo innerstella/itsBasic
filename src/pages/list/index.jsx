@@ -10,36 +10,6 @@ import CardList from "./components/CardList/CardList";
  * @description ListPage 컴포넌트는 인기 롤링페이퍼와 최근에 만든 롤링페이퍼를 보여주는 페이지입니다!
  */
 const ListPage = () => {
-  const [popularData, setPopularData] = useState();
-  const [recentData, setRecentData] = useState();
-
-  useEffect(() => {
-    getRecipientList();
-  }, []);
-
-  const getRecipientList = async () => {
-    fetch("https://rolling-api.vercel.app/4-2/recipients/")
-      .then((res) => res.json())
-      .then((data) => {
-        sortPopularData(data.results);
-        sortRecentData(data.results);
-      });
-  };
-
-  const sortPopularData = (data) => {
-    const sortedData = [...data].sort(
-      (a, b) => b.messageCount - a.messageCount
-    );
-    setPopularData(sortedData);
-  };
-
-  const sortRecentData = (data) => {
-    const sortedData = [...data].sort((a, b) => {
-      return new Date(b.createdAt) - new Date(a.createdAt);
-    });
-    setRecentData(sortedData);
-  };
-
   return (
     <S.Container>
       <div className="gnb-container">
@@ -48,9 +18,9 @@ const ListPage = () => {
       <div className="main-container">
         <div className="list-container">
           <h1 className="font-24-bold title">인기 롤링 페이퍼 🔥</h1>
-          {popularData ? (
-            <CardList data={popularData} />
-          ) : (
+          {/* {popularData ? ( */}
+          <CardList type="popular" />
+          {/* ) : (
             <S.EmptyCardList>
               <h3 className="font-24-bold">
                 아직 작성된
@@ -61,11 +31,12 @@ const ListPage = () => {
                 <img className="svg" src="/assets/link/empty.svg" alt="empty" />
               </div>
             </S.EmptyCardList>
-          )}
+          )} */}
         </div>
         <div className="list-container">
           <h1 className="font-24-bold title">최근에 만든 롤링 페이퍼 ⭐️</h1>
-          {recentData && <CardList data={recentData} />}
+          {/* {recentData && <CardList type="recent" />} */}
+          <CardList type="recent" />
         </div>
       </div>
       <S.ButtonContainer>
