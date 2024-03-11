@@ -17,6 +17,7 @@ export function PostCardItem({ amountDataCount, setAmountDataCount }) {
   const [isMessageOpen, setIsMessageOpen] = useState(false);
 
   const dataUrl = `recipients/${recipientId}/messages/?limit=9&offset=${page}`;
+  const isPageOwner = localStorage.getItem(`${recipientId}-Post`) === "Owner";
 
   /**
    * Post 페이지를 처음 렌더링했을때 보여줄 메세지를 fetching하는 함수입니다
@@ -90,6 +91,7 @@ export function PostCardItem({ amountDataCount, setAmountDataCount }) {
         deleteFetchData();
         setPage(cardData.length);
         setAmountDataCount((prev) => prev - 1);
+        localStorage.removeItem(`${e.target.id}-Message`);
         navigate(`/post/${recipientId}/edit`);
       }, 300);
     }
@@ -120,13 +122,15 @@ export function PostCardItem({ amountDataCount, setAmountDataCount }) {
                   {el.relationship}
                 </Relationship>
               </S.CardHeaderContainer>
-              {currentURL.includes("edit") && (
-                <TrashButton
-                  type="button"
-                  onDeleteItem={onDeleteItem}
-                  id={el.id}
-                />
-              )}
+              {currentURL.includes("edit") &&
+                (localStorage.getItem(`${el.id}-Message`) === "Owner" ||
+                  isPageOwner) && (
+                  <TrashButton
+                    type="button"
+                    onDeleteItem={onDeleteItem}
+                    id={el.id}
+                  />
+                )}
             </S.CardHeader>
             <S.Content fontFamily={el.font}>{el.content}</S.Content>
             <S.Date className="font-12-regular">

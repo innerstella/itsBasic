@@ -98,7 +98,9 @@ const PostMessagePage = () => {
         body: JSON.stringify(data),
       }
     )
-      .then(() => {
+      .then((res) => res.json())
+      .then((data) => {
+        localStorage.setItem(`${data.id}-Message`, "Owner");
         navigate(`/post/${recipientId}`);
       })
       .catch((err) => console.error(err));
