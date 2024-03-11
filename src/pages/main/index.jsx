@@ -1,6 +1,6 @@
-import Button from "../../components/button/Button";
 import NavigationBar from "../../components/navigationBar/NavigationBar";
 import MainPageStyle from "./MainPage.style";
+import { Link } from "react-router-dom";
 
 /**
  *
@@ -45,12 +45,12 @@ const MainPage = () => {
             </h3>
           </div>
         </div>
+        <Link to='/list'>
+          <button className='btn'>
+            <span className='font-18-bold'>구경해보기</span>
+          </button>
+        </Link>
       </MainPageStyle>
-      <a href='/list'>
-        <Button width='short' show='none' className='button'>
-          구경해보기
-        </Button>
-      </a>
     </>
   );
 };
