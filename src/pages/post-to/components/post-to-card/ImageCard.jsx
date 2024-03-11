@@ -1,6 +1,6 @@
 import { useState } from "react";
 import CardStyle from "./Card.style";
-import SkeletonUI from "./SkeletonUI";
+import SkeletonUI from "../../../../components/skeleton-ui/SkeletonUI";
 
 /**
  *
@@ -8,6 +8,7 @@ import SkeletonUI from "./SkeletonUI";
  * @property {string} imageUrl - 이미지 url
  * @property {number} handleCardImageCheck - 카드 이미지를 변경할 때 호출되는 핸들러 함수
  * @property {number} cardImageChecks - 체크이미지가 나타날 이미지카드 인덱스
+ * @property {function} index - 선택된 카드의 인덱스
  * @property {function} index - 선택된 카드의 인덱스
  */
 const ImageCard = ({
@@ -27,7 +28,15 @@ const ImageCard = ({
         onLoad={() => setImageLoaded(true)}
         onError={() => setImageLoaded(true)}
       />
-      {!imageLoaded && <SkeletonUI />}
+      {!imageLoaded && (
+        <SkeletonUI
+          width="16.8rem"
+          height="16.8rem"
+          mWidth="15.4rem"
+          mWeight="15.4rem"
+          radius="1.6rem"
+        />
+      )}
       {cardImageChecks === index && imageLoaded && (
         <>
           <img

@@ -6,7 +6,7 @@ import MostEmojiBox from "../MostEmojiBox/MostEmojiBox";
 import HeaderButtonBox from "../HeaderButtonBox/HeaderButtonBox";
 import fetchData from "../Utils/API";
 
-const HeaderToolBar = ({ recipientData }) => {
+const HeaderToolBar = ({ recipientData, isLoaded }) => {
   const [emojiData, setEmojiData] = useState([]);
   const { recipientId } = useParams();
 
@@ -22,8 +22,12 @@ const HeaderToolBar = ({ recipientData }) => {
 
   return (
     <S.Container>
-      <MessageWriterBox recipientData={recipientData} />
-      <MostEmojiBox emojiData={emojiData} emojiFunc={handleSetEmojiData} />
+      <MessageWriterBox recipientData={recipientData} isLoaded={isLoaded} />
+      <MostEmojiBox
+        emojiData={emojiData}
+        emojiFunc={handleSetEmojiData}
+        isLoaded={isLoaded}
+      />
       <HeaderButtonBox emojiFunc={handleSetEmojiData} />
     </S.Container>
   );

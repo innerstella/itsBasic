@@ -4,12 +4,12 @@ import * as S from "./HeaderFeatureBox.style";
 /**
  * @description 헤더부분에 기능적인 역활을하는 컴포넌트들을 한곳에 담은 컴포넌트입니다.
  */
-const HeaderFeatureBox = ({ recipientData }) => {
+const HeaderFeatureBox = ({ recipientData, isLoaded }) => {
   return (
     <S.ContainerWrapper>
       <S.Container>
         <MessageRecipient recipientData={recipientData} />
-        <HeaderToolBar recipientData={recipientData} />
+        <HeaderToolBar recipientData={recipientData} isLoaded={isLoaded} />
       </S.Container>
     </S.ContainerWrapper>
   );

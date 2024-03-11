@@ -50,6 +50,7 @@ export const Container = styled.div`
   margin: 0 auto;
   grid-template-columns: 1fr 1fr 1fr;
   gap: 3rem;
+  position: relative;
 
   @media (max-width: 1247.5px) {
     width: 100%;
