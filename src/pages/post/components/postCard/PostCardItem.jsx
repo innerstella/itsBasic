@@ -129,7 +129,9 @@ export function PostCardItem({ amountDataCount, setAmountDataCount }) {
               )}
             </S.CardHeader>
             <S.Content fontFamily={el.font}>{el.content}</S.Content>
-            <S.Date>{formatDate(el.createdAt)}</S.Date>
+            <S.Date className="font-12-regular">
+              {formatDate(el.createdAt)}
+            </S.Date>
           </S.CardItem>
         ))}
       <S.ContentEndPoint ref={ref}></S.ContentEndPoint>
