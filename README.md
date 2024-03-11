@@ -1,6 +1,7 @@
 # ✈너글닿기✈
 
-![image](https://github.com/Rhajiit/itsBasic/assets/155033024/3aded448-91f9-4ebc-97e1-2be06ac6a425)
+![image](https://github.com/Rhajiit/itsBasic/assets/155033024/c1297455-505b-48ce-a5f4-a914ff0813bd)
+
 
 ![header](https://capsule-render.vercel.app/api?type=waving&&height=160&color=9013FE&text=너에게%20글%20한마디%20달아보기&fontSize=45&&&fontColor=ffe&fontAlignY=30&rotate=-1&desc=오픈형%20롤링페이퍼%20너글닿기&descAlign=75&descAlignY=55)
 
@@ -24,9 +25,9 @@
 
 ![image](https://github.com/Rhajiit/itsBasic/assets/155033024/2ee2897d-f96f-421c-b3b8-41ac31a845d7)
 
-- 너글닿기은 어떤 특정 사람에게 많은 사람이 메시지를 보내고자 할 때 유용한 웹 사이트입니다. 너글닿기에서 번거로운 로그인 없이 누구나 쉽게 롤링 페이퍼를 시작하세요!
+- 너글닿기는 어떤 특정 사람에게 많은 사람이 메시지를 보내고자 할 때 유용한 웹 사이트입니다. 너글닿기에서 번거로운 로그인 없이 누구나 쉽게 롤링 페이퍼를 시작하세요!
 
-![image](https://github.com/Rhajiit/itsBasic/assets/155033024/14509474-fb1c-429d-a3ff-da2502cc2b78)
+![image](https://github.com/Rhajiit/itsBasic/assets/155033024/bbe0c07b-2986-4055-b981-c9ea0ac4a5cb)
 
 - 지인, 가족, 동료, 친구에게 모두가 모여 링크를 공유해 메시지를 써 보세요!
 
@@ -38,7 +39,7 @@
 
 - 메시지를 보낼 때, 원하는 이미지가 없다면 포켓몬으로 이미지 변신을 해보세요! 새로운 자신을 표현해보세요!
 
-![image](https://github.com/Rhajiit/itsBasic/assets/155033024/3642d272-fcd2-4949-b217-d1338270dbca)
+![image](https://github.com/Rhajiit/itsBasic/assets/155033024/ae9991e4-2c9b-4ec1-9507-754b59a3bd5d)
 
 - 모두 메시지 작성이 끝났다면, 페이지를 링크로, 또는 카카오톡으로 공유해보세요! 받은 사람에게 따듯한 메시지를 보내주세요!
 

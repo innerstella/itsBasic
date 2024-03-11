@@ -11,6 +11,7 @@ const PostPage = () => {
   const [amountDataCount, setAmountDataCount] = useState();
   const [recipientData, setRecipientData] = useState({});
   const { recipientId } = useParams();
+  const [isLoaded, setIsLoaded] = useState(false);
 
   /**
    * @description 주소창에 id를 useParams로 받아 누구에게 롤링페이퍼를 썼는지 표시해주는 컴포넌트 입니다
@@ -19,6 +20,7 @@ const PostPage = () => {
   async function getRecipientData() {
     const json = await fetchData(`recipients/${recipientId}/`);
     setRecipientData(json);
+    setIsLoaded(true);
   }
 
   useEffect(() => {
@@ -29,10 +31,10 @@ const PostPage = () => {
     <S.Layout>
       <S.OverScrollBox />
       <S.UpperHeaderWrapper>
-        <div className='main-nav-box'>
+        <div className="main-nav-box">
           <NavigationBar show={"none"} />
         </div>
-        <HeaderFeatureBox recipientData={recipientData} />
+        <HeaderFeatureBox recipientData={recipientData} isLoaded={isLoaded} />
       </S.UpperHeaderWrapper>
       <PostPageMain
         recipientData={recipientData}
