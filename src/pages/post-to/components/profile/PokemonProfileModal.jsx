@@ -1,11 +1,15 @@
 import * as S from "./PokemonProfileModal.style";
 import { useEffect, useState } from "react";
 import PokemonModalLoading from "./PokemonModalLoading";
+import { useTheme } from "../../../../context/themeProvider";
 const PokemonProfileModal = ({ setIsShowPokemonModal, setProfileInput }) => {
   const [pokemonDataArr, setPokemonDataArr] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(null);
   const [sortData, setSortData] = useState([]);
+  const [ThemeMode, toggleTheme] = useTheme();
+
+  
   const getData = async () => {
     setIsLoading(true);
     setError(null);
