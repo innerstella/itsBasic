@@ -4,7 +4,7 @@ import * as S from "./CardList.style";
 import ArrowBtn from "../ArrowBtn/ArrowBtn";
 import Card from "../Card/Card";
 import EmptyCard from "../EmptyCard/EmptyCard";
-import { Skeleton } from "@chakra-ui/react";
+import SkeletonNew from "../../../../components/skeleton/SkeletonNew";
 
 /**
  *
@@ -104,9 +104,11 @@ const CardList = ({ type }) => {
     }
   }, [currHeadIdx, displayData?.length]);
 
-  if (isDesktop) {
-    return (
-      <Skeleton isLoaded={isLoaded} height="26rem">
+  if (!isLoaded) {
+    return <SkeletonNew isLoaded={isLoaded} height="26rem"></SkeletonNew>;
+  } else {
+    if (isDesktop) {
+      return (
         <S.DesktopContainer $isLeftOn={isLeftOn}>
           <div className="list-with-btn">
             {isLeftOn && (
@@ -128,11 +130,9 @@ const CardList = ({ type }) => {
             )}
           </div>
         </S.DesktopContainer>
-      </Skeleton>
-    );
-  } else {
-    return (
-      <Skeleton isLoaded={isLoaded} height="26rem">
+      );
+    } else {
+      return (
         <S.TabletContainer>
           <div className="list-with-btn">
             {displayData?.length > 0 ? (
@@ -146,8 +146,8 @@ const CardList = ({ type }) => {
             )}
           </div>
         </S.TabletContainer>
-      </Skeleton>
-    );
+      );
+    }
   }
 };
 
