@@ -5,9 +5,9 @@ export const Box = styled.div`
   top: 5rem;
   right: -0.2rem;
   border-radius: 0.8rem;
-  border: 0.1rem solid var(--gray-300, #ccc);
-  background: var(--white, #fff);
-  box-shadow: 0px 0.2rem 1.2prem 0px rgba(0, 0, 0, 0.08);
+  border: 0.1rem solid var(--color-grayscale-300);
+  background: var(--color-white);
+  box-shadow: 0px 0.2rem 1.2rem 0px rgba(0, 0, 0, 0.08);
   padding: 1rem 0.1rem;
   z-index: 1;
   display: inline-flex;
@@ -16,14 +16,7 @@ export const Box = styled.div`
 
 export const Button = styled.button`
   padding: 1.2rem 1.6rem;
-  color: var(--gray-900, #181818);
-  /* Font/16 Regular */
-  font-family: Pretendard;
-  font-size: 1.6rem;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 26px; /* 162.5% */
-  letter-spacing: -0.16px;
+  color: var(--color-grayscale-900);
   background: var(--color-white);
   border: none;
   cursor: pointer;

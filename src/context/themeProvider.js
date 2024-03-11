@@ -1,10 +1,12 @@
 import { lightTheme, darkTheme } from "../theme/theme";
 import { createContext, useState, useContext, useCallback } from "react";
 import { ThemeProvider as StyledProvider } from "styled-components";
-// context 기본 형태
+
 const ThemeContext = createContext({});
+
 const ThemeProvider = ({ children }) => {
-  const [ThemeMode, setThemeMode] = useState("light");
+  const LocalTheme = window.localStorage.getItem("theme") || "light";
+  const [ThemeMode, setThemeMode] = useState(LocalTheme);
   const themeObject = ThemeMode === "light" ? lightTheme : darkTheme;
 
   return (
@@ -13,10 +15,7 @@ const ThemeProvider = ({ children }) => {
     </ThemeContext.Provider>
   );
 };
-/**
- *
- * @returns 테마모드("light", "dark")와 토글함수(toggleTheme) 배열로 반환
- */
+
 function useTheme() {
   const context = useContext(ThemeContext);
   const { ThemeMode, setThemeMode } = context;
@@ -24,8 +23,10 @@ function useTheme() {
   const toggleTheme = useCallback(() => {
     if (ThemeMode === "light") {
       setThemeMode("dark");
+      window.localStorage.setItem("theme", "dark");
     } else {
       setThemeMode("light");
+      window.localStorage.setItem("theme", "light");
     }
   }, [ThemeMode]);
 

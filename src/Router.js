@@ -22,30 +22,30 @@ const AppRouter = () => {
       <ThemeProvider>
         <GlobalStyles />
         <Routes>
-          <Route path="/" element={<MainPage />} />
-          <Route path="/list" element={<ListPage />} />
-          <Route path="/post" element={<PostToPage />} />
-          <Route path="/post">
-            <Route path=":recipientId/message" element={<PostMessagePage />} />
-            <Route path=":recipientId" element={<PostPage />}>
-              <Route path="edit" element={<DeleteButton />} />
+          <Route path='/' element={<MainPage />} />
+          <Route path='/list' element={<ListPage />} />
+          <Route path='/post' element={<PostToPage />} />
+          <Route path='/post'>
+            <Route path=':recipientId/message' element={<PostMessagePage />} />
+            <Route path=':recipientId' element={<PostPage />}>
+              <Route path='edit' element={<DeleteButton />} />
             </Route>
           </Route>
         </Routes>
+        <ToastContainer
+          className='font-16-regular'
+          position='bottom-center'
+          autoClose={5000}
+          hideProgressBar={true}
+          newestOnTop={false}
+          closeOnClick
+          rtl={false}
+          pauseOnFocusLoss
+          draggable
+          pauseOnHover
+          theme='light'
+        />
       </ThemeProvider>
-      <ToastContainer
-        className="font-16-regular"
-        position="bottom-center"
-        autoClose={5000}
-        hideProgressBar={true}
-        newestOnTop={false}
-        closeOnClick
-        rtl={false}
-        pauseOnFocusLoss
-        draggable
-        pauseOnHover
-        theme="light"
-      />
     </BrowserRouter>
   );
 };

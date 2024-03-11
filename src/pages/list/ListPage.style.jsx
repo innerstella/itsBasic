@@ -11,6 +11,7 @@ export const Container = styled.div`
     align-items: center;
     overflow-x: hidden;
     padding: 0 2.4rem;
+    border-bottom: 0.1rem solid #ededed;
   }
   .main-container {
     display: flex;
