@@ -6,7 +6,6 @@ import Card from "../Card/Card";
 import EmptyCard from "../EmptyCard/EmptyCard";
 import SkeletonNew from "../../../../components/skeleton/SkeletonNew";
 
-
 /**
  *
  * @description CardList 컴포넌트는 Card 컴포넌트를 리스트로 보여주는 컴포넌트입니다.
@@ -21,7 +20,6 @@ const CardList = ({ type }) => {
 
   //  반응형 렌더링
   const [isDesktop, setIsDesktop] = useState(window.innerWidth > 1250);
-
 
   useEffect(() => {
     const handleResize = () => {
@@ -150,7 +148,7 @@ const CardList = ({ type }) => {
         </S.TabletContainer>
       );
     }
-
+  }
 };
 
 export default CardList;
