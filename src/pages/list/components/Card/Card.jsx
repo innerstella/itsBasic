@@ -29,8 +29,6 @@ const Card = ({ data }) => {
     }
   }, [data.backgroundColor]);
 
-  console.log(data?.topReactions);
-
   return (
     <S.Container
       color={bgColor.length > 0 ? bgColor : data.backgroundImageURL}
