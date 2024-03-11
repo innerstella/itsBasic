@@ -12,6 +12,6 @@ export const Container = styled.div`
   }
 
   p {
-    color: var(--color-grayscale-900);
+    color: ${(props) => props.theme.textColor};
   }
 `;

@@ -1,5 +1,5 @@
 import * as S from "./PostMessagePage.style";
-import { createContext, useEffect, useState } from "react";
+import { createContext, useEffect, useRef, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 
 import NavigationBar from "../../components/navigationBar/NavigationBar";
@@ -25,17 +25,23 @@ const defaultProfileImage =
  */
 
 const PostMessagePage = () => {
+  const navigate = useNavigate();
   const { recipientId } = useParams();
 
-  const [fromInput, setFromInput] = useState("");
-  const [profileInput, setProfileInput] = useState(defaultProfileImage);
-  const [relationshipInput, setRelationshipInput] = useState("지인");
-  const [contentInput, setContentInput] = useState("");
-  const [fontInput, setFontInput] = useState("Noto Sans");
+  const fromRef = useRef("");
+  const profileRef = useRef(defaultProfileImage);
+  const relationshipRef = useRef("지인");
+  const contentRef = useRef("");
+  const fontRef = useRef("Noto Sans");
+
+  const sender = fromRef?.current?.value || "";
+  const profileImageURL = profileRef?.current?.src || "";
+  const relationship = relationshipRef?.current?.value || "";
+  const content = contentRef?.current?.value?.ops?.[0]?.insert || "";
+  const font = fontRef?.current?.value || "";
 
   // '생성하기' 버튼은 비활성화 상태에 있다가 받는 사람 이름과 카드 내용이 있는 경우 활성화 됩니다.
   const [isActive, setIsActive] = useState(false);
-  const navigate = useNavigate();
 
   const moveTo = () => {
     if (isActive) {
@@ -43,14 +49,42 @@ const PostMessagePage = () => {
     }
   };
 
-  useEffect(() => {
-    if (fromInput.length > 0 && contentInput.length > 0) {
+  const checkActive = () => {
+    if (
+      fromRef?.current?.value?.length > 0 &&
+      contentRef?.current?.value?.ops?.[0]?.insert?.length > 0
+    ) {
       setIsActive(true);
     }
-  }, [fromInput, contentInput]);
+  };
+
+  // 엔터 키를 눌렀을 때 생성하기 함수 호출
+  useEffect(() => {
+    const handleKeyPress = (e) => {
+      if (e.key === "Enter" && isActive) {
+        createPaper();
+      }
+    };
+
+    document.addEventListener("keydown", handleKeyPress);
+
+    return () => {
+      document.removeEventListener("keydown", handleKeyPress); // 컴포넌트가 언마운트될 때 이벤트 핸들러 제거
+    };
+  }, [isActive]);
 
   // 롤링 페이퍼 생성
   const createPaper = () => {
+    const data = {
+      team: "4-2",
+      recipientId: recipientId,
+      sender: sender,
+      profileImageURL: profileImageURL,
+      relationship: relationship,
+      content: content,
+      font: font,
+    };
+
     fetch(
       `https://rolling-api.vercel.app/4-2/recipients/${recipientId}/messages/`,
       {
@@ -61,15 +95,7 @@ const PostMessagePage = () => {
           "X-CSRFToken":
             "DKImggmgrFWzXm5BRnmvDHUwtXfwhuK5AFAzBXVVRCYvNt5NKtrHDuOL6I69w4nZ",
         },
-        body: JSON.stringify({
-          team: "4-2",
-          recipientId: recipientId,
-          sender: fromInput,
-          profileImageURL: profileInput,
-          relationship: relationshipInput,
-          content: contentInput,
-          font: fontInput,
-        }),
+        body: JSON.stringify(data),
       }
     )
       .then(() => {
@@ -82,39 +108,37 @@ const PostMessagePage = () => {
     <>
       <NavigationBar />
       <S.Container>
-        <FromContext.Provider value={{ fromInput, setFromInput }}>
-          <div className="section-container">
-            <p className="text-title font-24-bold">
+        <FromContext.Provider value={{ fromRef }}>
+          <div className="section-container" onBlur={checkActive}>
+            <h1 className="text-title font-24-bold">
               From. <span className="required">*</span>
-            </p>
+            </h1>
             <TextInput />
           </div>
         </FromContext.Provider>
-        <ProfileContext.Provider value={{ profileInput, setProfileInput }}>
+        <ProfileContext.Provider value={{ profileRef }}>
           <div className="section-container">
-            <p className="text-title font-24-bold">프로필 이미지</p>
+            <h1 className="text-title font-24-bold">프로필 이미지</h1>
             <Profile />
           </div>
         </ProfileContext.Provider>
-        <RelationshipContext.Provider
-          value={{ relationshipInput, setRelationshipInput }}
-        >
+        <RelationshipContext.Provider value={{ relationshipRef }}>
           <div className="section-container">
-            <p className="text-title font-24-bold">상대와의 관계</p>
+            <h1 className="text-title font-24-bold">상대와의 관계</h1>
             <Dropdown type="select-relationship" />
           </div>
         </RelationshipContext.Provider>
-        <ContentContext.Provider value={{ contentInput, setContentInput }}>
-          <div className="section-container">
-            <p className="text-title font-24-bold">
+        <ContentContext.Provider value={{ contentRef }}>
+          <div className="section-container" onBlur={checkActive}>
+            <h1 className="text-title font-24-bold">
               내용을 입력해 주세요 <span className="required">*</span>
-            </p>
+            </h1>
             <TextEditor />
           </div>
         </ContentContext.Provider>
-        <FontContext.Provider value={{ fontInput, setFontInput }}>
+        <FontContext.Provider value={{ fontRef }}>
           <div className="section-container">
-            <p className="text-title font-24-bold">폰트 선택</p>
+            <h1 className="text-title font-24-bold">폰트 선택</h1>
             <Dropdown type="select-font" />
           </div>
         </FontContext.Provider>

@@ -15,6 +15,7 @@ const ButtonStyle = styled.div`
     height: 5.6rem;
 
     border-radius: 1.2rem;
+    border: none;
     background: var(--color-purple-600);
 
     color: var(--color-white);

@@ -121,7 +121,11 @@ export function PostCardItem({ amountDataCount, setAmountDataCount }) {
                 </Relationship>
               </S.CardHeaderContainer>
               {currentURL.includes("edit") && (
-                <TrashButton onDeleteItem={onDeleteItem} id={el.id} />
+                <TrashButton
+                  type="button"
+                  onDeleteItem={onDeleteItem}
+                  id={el.id}
+                />
               )}
             </S.CardHeader>
             <S.Content fontFamily={el.font}>{el.content}</S.Content>

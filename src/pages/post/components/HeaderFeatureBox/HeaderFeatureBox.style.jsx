@@ -1,8 +1,7 @@
 import styled from "styled-components";
 
 export const ContainerWrapper = styled.div`
-  width: 100vw;
-  background-color: var(--color-white);
+  background-color: ${(props) => props.theme.backgroundColor};
 `;
 
 export const Container = styled.div`

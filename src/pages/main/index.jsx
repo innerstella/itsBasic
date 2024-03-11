@@ -9,7 +9,7 @@ import MainPageStyle from "./MainPage.style";
 const MainPage = () => {
   return (
     <>
-      <NavigationBar show="show" />
+      <NavigationBar show={"show"} />
       <MainPageStyle>
         <div className="box-container">
           <div className="text-container">

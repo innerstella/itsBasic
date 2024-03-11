@@ -9,6 +9,7 @@ import { useTheme } from "../../context/themeProvider";
  * @description NavigationBar 컴포넌트에 전달될 props 객체
  * @property {string} show - 네비게이션바 우측에 롤링 페이퍼 만들기 버튼. "show"(보이게) 또는 "hide"(안보이게)
  */
+
 const NavigationBar = ({ show }) => {
   const [ThemeMode, toggleTheme] = useTheme();
   return (

@@ -18,9 +18,9 @@ const Button = ({ link, children, width, className, onClick }) => {
       width={width}
       onClick={onClick}
     >
-      <Link to={link} className={`${className} font-18-bold`}>
-        {children}
-      </Link>
+      <button className={`${className} font-18-bold`}>
+        <Link to={link}>{children}</Link>
+      </button>
     </ButtonStyle>
   );
 };

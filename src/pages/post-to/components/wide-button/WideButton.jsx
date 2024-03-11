@@ -8,7 +8,9 @@ import * as S from "./WideButton.style";
 const WideButton = ({ children, onClick, isActive }) => {
   return (
     <S.Container onClick={onClick} isactive={isActive.toString()}>
-      <button className="btn font-18-bold">{children}</button>
+      <button className="btn font-18-bold" type="button">
+        {children}
+      </button>
     </S.Container>
   );
 };

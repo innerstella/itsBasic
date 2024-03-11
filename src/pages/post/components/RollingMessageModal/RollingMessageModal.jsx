@@ -36,7 +36,11 @@ const RollingMessageModal = ({ rollingMessageData, setIsOpen }) => {
           fontFamily={font}
           defaultValue={content}
         />
-        <S.RollingPrimaryButton size={"small"} onClick={() => setIsOpen(false)}>
+        <S.RollingPrimaryButton
+          type="button"
+          size={"small"}
+          onClick={() => setIsOpen(false)}
+        >
           확인
         </S.RollingPrimaryButton>
       </S.RollingMessageModalWrapper>

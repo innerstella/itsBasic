@@ -15,7 +15,7 @@ const MainPageStyle = styled.div`
     width: 100%;
     height: 32.4rem;
     padding: 6rem 0 6rem 6rem;
-
+    color: ${(props) => props.theme.whiteBgTextColor};
     border-radius: 1.6rem;
     background: var(--color-surface);
   }

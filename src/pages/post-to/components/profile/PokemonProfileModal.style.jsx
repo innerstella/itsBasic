@@ -12,8 +12,8 @@ export const Wrapper = styled.div`
 
 export const Box = styled.div`
   width: 70rem;
-  height: 80rem;
-  background: #fff;
+  height: 75rem;
+  background-color: ${(props) => props.theme.backgroundColor};
   position: absolute;
   top: 50%;
   left: 50%;
