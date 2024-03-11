@@ -13,6 +13,7 @@ export const Container = styled.div`
     border-radius: 10rem;
     width: 8rem;
     height: 8rem;
+    border: 0.12rem solid ${(props) => props.theme.textColor};
   }
 
   .select-profile {
