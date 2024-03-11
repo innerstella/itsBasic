@@ -7,6 +7,7 @@ import { formatDate } from "../../../../utils/formatDate.js";
 import { useParams, useNavigate } from "react-router-dom";
 import { useInView } from "react-intersection-observer";
 import * as S from "./PostCardItem.style";
+import SkeletonUI from "../../../../components/skeleton-ui/SkeletonUI.jsx";
 
 export function PostCardItem({ amountDataCount, setAmountDataCount }) {
   const [ref, inView] = useInView();
@@ -15,6 +16,7 @@ export function PostCardItem({ amountDataCount, setAmountDataCount }) {
   const { recipientId } = useParams();
   const [modalCardData, setModalCardData] = useState({});
   const [isMessageOpen, setIsMessageOpen] = useState(false);
+  const [cardLoaded, setCardLoaded] = useState(false);
 
   const dataUrl = `recipients/${recipientId}/messages/?limit=9&offset=${page}`;
   const isPageOwner = localStorage.getItem(`${recipientId}-Post`) === "Owner";
@@ -27,6 +29,7 @@ export function PostCardItem({ amountDataCount, setAmountDataCount }) {
     setAmountDataCount(firstData.count);
     const paperData = firstData.results;
     setCardData(paperData);
+    setCardLoaded(true);
   }
 
   /**
@@ -138,6 +141,21 @@ export function PostCardItem({ amountDataCount, setAmountDataCount }) {
             </S.Date>
           </S.CardItem>
         ))}
+      {!cardLoaded && (
+        <>
+          {Array.from({ length: 8 }).map((_, i) => (
+            <SkeletonUI
+              key={i}
+              width="38rem"
+              height="28rem"
+              mWidth="100%"
+              mWeight="100%"
+              radius="1.6rem"
+              position="relative"
+            />
+          ))}
+        </>
+      )}
       <S.ContentEndPoint ref={ref}></S.ContentEndPoint>
     </>
   );

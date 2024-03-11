@@ -1,6 +1,12 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
+  position: relative;
+
+  .skeleton-name {
+    margin-left: 4rem;
+  }
+
   @media (max-width: 767.5px) {
     padding: 1.2rem 2rem;
   }

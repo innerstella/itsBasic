@@ -1,13 +1,16 @@
 import styled from "styled-components";
 
 const SkeletonUIStyle = styled.div`
-  position: absolute;
+  position: ${(props) =>
+    props.position === "relative" ? "relative" : "absolute"};
+  top: 0;
+  left: 0;
 
   /* 이미지의 스켈레톤(뼈대) */
   .loading-img {
-    width: 16.8rem;
-    height: 16.8rem;
-    border-radius: 1.6rem;
+    width: ${({ width }) => width};
+    height: ${({ height }) => height};
+    border-radius: ${({ radius }) => radius};
     background: #ffffff;
     background-color: #e0e0e0;
   }
@@ -22,9 +25,11 @@ const SkeletonUIStyle = styled.div`
   }
 
   @media screen and (max-width: 768px) {
+    top: 1.2rem;
+    left: 0.7rem;
     .loading-img {
-      width: 15.4rem;
-      height: 15.4rem;
+      width: ${({ mWidth }) => mWidth};
+      height: ${({ mHeight }) => mHeight};
     }
   }
 `;
