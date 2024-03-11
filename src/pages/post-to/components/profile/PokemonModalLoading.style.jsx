@@ -42,7 +42,7 @@ export const Wrapper = styled.div`
 
   p {
     font-size: 5rem;
-    margin-top: 2rem;
+
     text-align: center;
   }
 `;

@@ -14,15 +14,15 @@ const HeaderShareButton = () => {
   return (
     <>
       <S.Button
-        type="button"
+        type='button'
         onClick={(e) => {
           handleModalClick();
         }}
       >
         <img
-          src="/assets/post/header_share_button_icon.svg"
-          className="share-button-image"
-          alt="share-button"
+          src='/assets/post/header_share_button_icon.svg'
+          className='share-button-image'
+          alt='share-button'
         />
       </S.Button>
 

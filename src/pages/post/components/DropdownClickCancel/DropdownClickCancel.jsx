@@ -21,7 +21,7 @@ const CancelButtonAction = styled.div`
 const DropdownClickCancel = ({ setIsOpen }) => {
   return (
     <>
-      <CancelButtonAction type="button" onClick={() => setIsOpen(false)} />
+      <CancelButtonAction type='button' onClick={() => setIsOpen(false)} />
     </>
   );
 };
