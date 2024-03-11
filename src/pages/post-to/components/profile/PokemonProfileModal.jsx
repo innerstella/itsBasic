@@ -52,7 +52,7 @@ const PokemonProfileModal = ({ setIsShowPokemonModal, setProfileInput }) => {
 
   return (
     <>
-      <S.Wrapper onClick={() => setIsShowPokemonModal((prev) => !prev)}>
+      <S.Wrapper onClick={() => setIsShowPokemonModal(false)}>
         <S.Box>
           {isLoading && <PokemonModalLoading />}
           {!isLoading && error && <p>{error}</p>}
@@ -79,7 +79,7 @@ const PokemonProfileModal = ({ setIsShowPokemonModal, setProfileInput }) => {
                         className='pokemon-detail-box'
                         onClick={() => {
                           setProfileInput(imageUrl);
-                          setIsShowPokemonModal((prev) => !prev);
+                          setIsShowPokemonModal(false);
                         }}
                         key={index}
                       >
