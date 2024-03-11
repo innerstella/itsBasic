@@ -94,8 +94,8 @@ const PostToPage = () => {
       <PostToStyle>
         <div className='container'>
           <div>
-            <p className='recipient-title font-24-bold'>To.</p>
-            <form className='recipient-input-form'>
+            <h1 className="recipient-title font-24-bold">To.</h1>
+            <form className="recipient-input-form">
               <input
                 className={`recipient-input font-16-regular ${
                   inputError ? "error" : ""
@@ -106,19 +106,19 @@ const PostToPage = () => {
                 onBlur={handleInputError}
               />
               {inputError && (
-                <div className='error-message-container'>
-                  <p className='error-message font-12-regular'>
+                <div className="error-message-container">
+                  <span className="error-message font-12-regular">
                     값을 입력해주세요.
-                  </p>
+                  </span>
                 </div>
               )}
             </form>
           </div>
-          <div className='background-container'>
-            <p className='text font-24-bold'>배경화면을 선택해 주세요</p>
-            <p className='sub-text font-16-regular'>
+          <div className="background-container">
+            <h1 className="text font-24-bold">배경화면을 선택해 주세요</h1>
+            <span className="sub-text font-16-regular">
               컬러를 선택하거나, 이미지를 선택할 수 있습니다.
-            </p>
+            </span>
           </div>
           <div className='buttons'>
             <button
