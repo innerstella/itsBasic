@@ -34,7 +34,7 @@
 
 - 말로는 다 못할 감정을 전달하고 싶을 때는, 이모지로 감정을 표현해보세요!
 
-![image](https://github.com/Rhajiit/itsBasic/assets/155033024/1cc15ad6-fb64-4696-8642-6bd48286ad40)
+![image](https://github.com/Rhajiit/itsBasic/assets/155033024/4d9c9188-4e7f-406b-81df-98854d14e922)
 
 - 메시지를 보낼 때, 원하는 이미지가 없다면 포켓몬으로 이미지 변신을 해보세요! 새로운 자신을 표현해보세요!
 
