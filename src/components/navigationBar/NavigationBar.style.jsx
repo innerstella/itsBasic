@@ -5,12 +5,10 @@ const NavContainer = styled.nav`
   justify-content: center;
   border-bottom: 0.1rem solid #ededed;
 
-
   .logo-img {
     width: 2.7818rem;
     height: 2.7658rem;
   }
-
 
   background: ${(props) => props.theme.backgroundColor};
 
@@ -51,6 +49,10 @@ const NavContainer = styled.nav`
     border-radius: 0.6rem;
     border: 0.1rem solid var(--color-grayscale-300);
     background: var(--color-white);
+
+    &:hover {
+      background-color: #ededed;
+    }
   }
 
   @media screen and (max-width: 768px) {
