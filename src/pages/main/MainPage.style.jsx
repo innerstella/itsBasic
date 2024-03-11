@@ -146,7 +146,6 @@ const MainPageStyle = styled.div`
     .emoji-image {
       width: 100%;
       max-width: 47rem;
-      min-height: 26rem;
       margin: 0 auto 5.1rem auto;
       padding: 0 2.98rem;
     }
