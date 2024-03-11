@@ -66,6 +66,7 @@ const PostToPage = () => {
       .then((res) => res.json())
       .then((data) => {
         if (data && data.id) {
+          localStorage.setItem(`${data.id}-Post`, "Owner");
           navigate(`/post/${data.id}`);
         }
       })
@@ -90,9 +91,9 @@ const PostToPage = () => {
 
   return (
     <>
-      <NavigationBar show='none' />
+      <NavigationBar show="none" />
       <PostToStyle>
-        <div className='container'>
+        <div className="container">
           <div>
             <h1 className="recipient-title font-24-bold">To.</h1>
             <form className="recipient-input-form">
@@ -100,7 +101,7 @@ const PostToPage = () => {
                 className={`recipient-input font-16-regular ${
                   inputError ? "error" : ""
                 }`}
-                placeholder='받는 사람 이름을 입력해 주세요.'
+                placeholder="받는 사람 이름을 입력해 주세요."
                 value={recipientName}
                 onChange={handleInputChange}
                 onBlur={handleInputError}
@@ -120,7 +121,7 @@ const PostToPage = () => {
               컬러를 선택하거나, 이미지를 선택할 수 있습니다.
             </span>
           </div>
-          <div className='buttons'>
+          <div className="buttons">
             <button
               className={`font-16-regular ${type === "color" && "select"}`}
               onClick={() => {
@@ -138,7 +139,7 @@ const PostToPage = () => {
               이미지
             </button>
           </div>
-          <div className='card-container'>
+          <div className="card-container">
             <CardList
               type={type}
               cardColorChecks={cardColorChecks}

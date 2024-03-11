@@ -41,7 +41,9 @@ const NavContainer = styled.nav`
   }
 
   .button {
-    display: ${({ show }) => (show === "none" ? "none" : "flex")};
+    display: ${({ $show }) => ($show === "none" ? "none" : "flex")};
+    box-shadow: 0 5px 10px rgba(100, 100, 100, 0.15),
+      0 2px 4px rgba(100, 100, 100, 0.15);
   }
 
   button {

@@ -65,6 +65,10 @@ export const ButtonContainer = styled.div`
       width: 100%;
     }
   }
+
+  & :hover {
+    cursor: pointer;
+  }
 `;
 
 export const EmptyCardList = styled.div`

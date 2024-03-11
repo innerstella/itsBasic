@@ -69,11 +69,11 @@ const ListPage = () => {
         </div>
       </div>
       <S.ButtonContainer>
-        <button className="btn">
-          <Link to="/post">
+        <Link to="/post">
+          <button className="btn">
             <span className="font-18-bold">나도 만들어보기</span>
-          </Link>
-        </button>
+          </button>
+        </Link>
       </S.ButtonContainer>
     </S.Container>
   );
