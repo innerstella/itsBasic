@@ -77,6 +77,21 @@ const PostToPage = () => {
     setCardImageChecks(index);
   };
 
+  // 엔터 키를 눌렀을 때 생성하기 함수 호출
+  useEffect(() => {
+    const handleKeyPress = (e) => {
+      if (e.key === "Enter") {
+        onSubmit(e);
+      }
+    };
+
+    document.addEventListener("keydown", handleKeyPress);
+
+    return () => {
+      document.removeEventListener("keydown", handleKeyPress); // 컴포넌트가 언마운트될 때 이벤트 핸들러 제거
+    };
+  }, []);
+
   return (
     <>
       <NavigationBar show="none" />
