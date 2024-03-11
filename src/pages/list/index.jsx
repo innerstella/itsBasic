@@ -4,8 +4,7 @@ import { Link } from "react-router-dom";
 import * as S from "./ListPage.style";
 import NavigationBar from "../../components/navigationBar/NavigationBar";
 import CardList from "./components/CardList/CardList";
-import { getRecipientList } from "../../api/getRecipientList";
-
+import { getRecipients } from "../../api/recipients/getRecipients";
 /**
  *
  * @description ListPage 컴포넌트는 인기 롤링페이퍼와 최근에 만든 롤링페이퍼를 보여주는 페이지입니다!
@@ -29,7 +28,7 @@ const ListPage = () => {
   };
 
   useEffect(() => {
-    getRecipientList().then((data) => {
+    getRecipients().then((data) => {
       sortPopularData(data.results);
       sortRecentData(data.results);
     });
