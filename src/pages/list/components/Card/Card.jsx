@@ -1,8 +1,7 @@
 import { useEffect, useState } from "react";
 import * as S from "./Card.style";
 import { useNavigate } from "react-router-dom";
-
-const COLORS = ["purple", "orange", "blue", "green"];
+import { COLOR_LIST } from "../../../../constant/list";
 
 /**
  *
@@ -12,15 +11,15 @@ const COLORS = ["purple", "orange", "blue", "green"];
 const Card = ({ data }) => {
   const navigate = useNavigate();
 
-  const [bgColor, setBgColor] = useState("purple");
-  const [svgLink, setSvgLink] = useState("purple");
+  const [bgColor, setBgColor] = useState("beige");
+  const [svgLink, setSvgLink] = useState("beige");
 
   // 카드 색상 설정
   useEffect(() => {
     const bgColor =
       data.backgroundColor === "beige" ? "orange" : data.backgroundColor;
 
-    if (COLORS.includes(bgColor)) {
+    if (COLOR_LIST.includes(data.backgroundColor)) {
       setBgColor(bgColor);
       setSvgLink(`/assets/link/${bgColor}.svg`);
     } else {
@@ -36,32 +35,32 @@ const Card = ({ data }) => {
     >
       <S.ContentContainer>
         <S.InfoContainer>
-          <div className='recipient-name-box'>
-            <p className='font-24-bold'>To. {data.name}</p>
+          <div className="recipient-name-box">
+            <p className="font-24-bold">To. {data.name}</p>
           </div>
           <S.ProfileContainer>
             {data?.recentMessages?.map((writer) => {
               return (
                 <div key={writer.id}>
                   <img
-                    className='profile-icon'
+                    className="profile-icon"
                     src={writer.profileImageURL}
-                    alt='프로필 이미지'
+                    alt="프로필 이미지"
                   />
                 </div>
               );
             })}
             {data?.messageCount > 3 && (
-              <div className='nums font-12-regular'>
+              <div className="nums font-12-regular">
                 + {data.messageCount - 3}
               </div>
             )}
             {data?.messageCount === 0 && (
-              <div className='nums font-12-regular'>+ 0</div>
+              <div className="nums font-12-regular">+ 0</div>
             )}
           </S.ProfileContainer>
-          <p className='font-16-regular'>
-            <span className='font-16-bold'>{data.messageCount}</span>명이
+          <p className="font-16-regular">
+            <span className="font-16-bold">{data.messageCount}</span>명이
             작성했어요!
           </p>
         </S.InfoContainer>
@@ -71,7 +70,7 @@ const Card = ({ data }) => {
               if (reaction.count > 0) {
                 return (
                   <S.Badge key={reaction.id}>
-                    <span className='number'>
+                    <span className="number">
                       {reaction.emoji} {reaction.count}
                     </span>
                   </S.Badge>
@@ -84,7 +83,7 @@ const Card = ({ data }) => {
         ) : (
           <S.EmptyBadgeContainer />
         )}
-        {svgLink && <img className='svg' src={svgLink} alt='svg' />}
+        {svgLink && <img className="svg" src={svgLink} alt="svg" />}
       </S.ContentContainer>
     </S.Container>
   );

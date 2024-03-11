@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import * as S from "./ListPage.style";
 import NavigationBar from "../../components/navigationBar/NavigationBar";
 import CardList from "./components/CardList/CardList";
-
+import { getRecipients } from "../../api/recipients/getRecipients";
 /**
  *
  * @description ListPage 컴포넌트는 인기 롤링페이퍼와 최근에 만든 롤링페이퍼를 보여주는 페이지입니다!
@@ -12,19 +12,6 @@ import CardList from "./components/CardList/CardList";
 const ListPage = () => {
   const [popularData, setPopularData] = useState();
   const [recentData, setRecentData] = useState();
-
-  useEffect(() => {
-    getRecipientList();
-  }, []);
-
-  const getRecipientList = async () => {
-    fetch("https://rolling-api.vercel.app/4-2/recipients/")
-      .then((res) => res.json())
-      .then((data) => {
-        sortPopularData(data.results);
-        sortRecentData(data.results);
-      });
-  };
 
   const sortPopularData = (data) => {
     const sortedData = [...data].sort(
@@ -39,6 +26,13 @@ const ListPage = () => {
     });
     setRecentData(sortedData);
   };
+
+  useEffect(() => {
+    getRecipients().then((data) => {
+      sortPopularData(data.results);
+      sortRecentData(data.results);
+    });
+  }, []);
 
   return (
     <S.Container>

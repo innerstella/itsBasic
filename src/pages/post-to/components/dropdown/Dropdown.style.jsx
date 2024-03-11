@@ -21,7 +21,7 @@ export const Container = styled.div`
     }
   }
 
-  /* 포커스 제거 */
+  // 포커스 제거
   select:focus {
     outline: none;
     box-shadow: none;
