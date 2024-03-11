@@ -9,7 +9,9 @@ import { callToastNotify } from "../../../../utils/callToastNotify";
 const handleEmojiSelect = async (emoji, recipientId, emojiFunc) => {
   try {
     const emojiPostType =
-      localStorage.getItem(emoji) !== "increase" ? "increase" : "decrease";
+      localStorage.getItem(`${recipientId}-${emoji}`) !== "increase"
+        ? "increase"
+        : "decrease";
     await fetch(
       `https://rolling-api.vercel.app/4-2/recipients/${recipientId}/reactions/`,
       {
@@ -23,7 +25,7 @@ const handleEmojiSelect = async (emoji, recipientId, emojiFunc) => {
         body: JSON.stringify({ emoji: emoji, type: emojiPostType }),
       }
     );
-    localStorage.setItem(emoji, `${emojiPostType}`);
+    localStorage.setItem(`${recipientId}-${emoji}`, `${emojiPostType}`);
     const notifyMessage =
       emojiPostType === "increase"
         ? "리액션이 성공적으로 추가되었습니다."
