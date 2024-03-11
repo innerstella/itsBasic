@@ -39,6 +39,7 @@ const MainPageStyle = styled.div`
 
   .text {
     margin: 1.6rem 0 0.8rem;
+    font-family: "YClover-Bold";
   }
 
   .text > span {
@@ -148,6 +149,27 @@ const MainPageStyle = styled.div`
       min-height: 26rem;
       margin: 0 auto 5.1rem auto;
       padding: 0 2.98rem;
+    }
+  }
+  .btn {
+    width: 28rem;
+    display: flex;
+    padding: 1.4rem 2.4rem;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    cursor: pointer;
+    border-radius: 1.2rem;
+    border: none;
+    background: var(--Purple-600, #9935ff);
+
+    color: var(--color-white, #fff);
+    &:hover {
+      background: var(--color-purple-700);
+    }
+
+    &:active {
+      background: var(--color-purple-800);
     }
   }
 `;

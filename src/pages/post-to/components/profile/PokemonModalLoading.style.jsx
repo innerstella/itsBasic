@@ -42,7 +42,9 @@ export const Wrapper = styled.div`
 
   p {
     font-size: 5rem;
-
+    @media (max-width: 767.5px) {
+      font-size: 3rem;
+    }
     text-align: center;
   }
 `;

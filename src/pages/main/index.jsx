@@ -1,6 +1,7 @@
-import Button from "../../components/button/Button";
 import NavigationBar from "../../components/navigationBar/NavigationBar";
 import MainPageStyle from "./MainPage.style";
+import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
 
 /**
  *
@@ -45,10 +46,16 @@ const MainPage = () => {
             </h3>
           </div>
         </div>
+        <Link to="/list">
+          <motion.button
+            className="btn"
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.9 }}
+          >
+            <span className="font-18-bold">구경해보기</span>
+          </motion.button>
+        </Link>
       </MainPageStyle>
-      <Button link="/list" width="short" show="none" className="button">
-        구경해보기
-      </Button>
     </>
   );
 };

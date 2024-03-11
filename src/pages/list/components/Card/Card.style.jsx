@@ -73,7 +73,6 @@ export const ProfileContainer = styled.div`
   .profile-icon {
     width: 2.8rem;
     height: 2.8rem;
-    margin-right: -1.2rem;
 
     display: flex;
     padding: 0.2rem;
@@ -84,6 +83,7 @@ export const ProfileContainer = styled.div`
     border-radius: 3rem;
     background: #fff;
   }
+
   .nums {
     display: flex;
     padding: 0.5rem 0.6rem;

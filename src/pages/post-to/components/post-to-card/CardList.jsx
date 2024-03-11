@@ -1,14 +1,7 @@
 import React from "react";
 import CardStyle from "./Card.style";
 import ImageCard from "./ImageCard";
-
-// 컬러카드 색
-const CARDCOLOR = [
-  "--color-orange-200",
-  "--color-purple-200",
-  "--color-blue-200",
-  "--color-green-200",
-];
+import { CARD_COLOR } from "../../../../constant/list";
 
 /**
  *
@@ -31,7 +24,7 @@ const CardList = ({
   return (
     <>
       {type === "color"
-        ? CARDCOLOR.map((color, index) => (
+        ? CARD_COLOR.map((color, index) => (
             <CardStyle
               key={index}
               value={color}
@@ -49,6 +42,7 @@ const CardList = ({
           ))
         : cardImage.map((imageUrl, index) => (
             <ImageCard
+              key={index}
               imageUrl={imageUrl}
               handleCardImageCheck={handleCardImageCheck}
               cardImageChecks={cardImageChecks}

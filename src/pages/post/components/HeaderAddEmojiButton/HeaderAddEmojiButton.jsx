@@ -17,17 +17,17 @@ function HeaderAddEmojiButton({ emojiFunc }) {
   return (
     <S.EmojiToggleBtnContainer>
       <S.Button
-        type="button"
-        className="font-16-regular"
+        type='button'
+        className='font-16-regular'
         onClick={() => setIsEmojiOpen(!isEmojiOpen)}
       >
-        <img src="/assets/post/icons/add-24.svg" alt="" />
+        <img src='/assets/post/icons/add-24.svg' alt='' />
         추가
       </S.Button>
       <S.EmojiPickerPositioner>
         {isEmojiOpen && (
           <EmojiPicker
-            emojiStyle="twitter"
+            emojiStyle='twitter'
             onEmojiClick={(sel) =>
               handleEmojiSelect(sel.emoji, recipientId, emojiFunc)
             }

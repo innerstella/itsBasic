@@ -13,16 +13,17 @@ import { useTheme } from "../../context/themeProvider";
 const NavigationBar = ({ show }) => {
   const [ThemeMode, toggleTheme] = useTheme();
   return (
-    <NavContainer show={show}>
+    <NavContainer $show={show}>
       <div className="nav-container">
         <div className="logo-container">
           <Link to="/">
-            <img
+            {/* <img
               className="logo-img"
               src="/assets/common/logo_icon.svg"
               alt="로고"
-            />
-            <span className="logo-text font-20-bold">Rolling</span>
+            /> */}
+            <span className="clover">ㅇ</span>
+            <span className="logo-text font-20-bold">너글닿기</span>
           </Link>
         </div>
         <NavButtonContainer>

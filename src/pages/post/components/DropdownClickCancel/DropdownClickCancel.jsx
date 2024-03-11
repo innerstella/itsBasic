@@ -12,7 +12,6 @@ const CancelButtonAction = styled.div`
 `;
 
 /**
- * @param isOpen - 무언가가 열린 상태
  * @param setIsOpen - 그 상태를 set 해줄 useState 훅
  * @description
  * 화면 전체를 덮는 투명한 버튼을 생성하여, 화면 아무 곳이나 클릭해도 동작을 취소할 수 있게 하는 컴포넌트
@@ -21,7 +20,7 @@ const CancelButtonAction = styled.div`
 const DropdownClickCancel = ({ setIsOpen }) => {
   return (
     <>
-      <CancelButtonAction type='button' onClick={() => setIsOpen(false)} />
+      <CancelButtonAction type="button" onClick={() => setIsOpen(false)} />
     </>
   );
 };

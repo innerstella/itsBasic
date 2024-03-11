@@ -27,8 +27,13 @@ const PostPage = () => {
 
   return (
     <S.Layout>
-      <NavigationBar show={"none"} />
-      <HeaderFeatureBox recipientData={recipientData} />
+      <S.OverScrollBox />
+      <S.UpperHeaderWrapper>
+        <div className='main-nav-box'>
+          <NavigationBar show={"none"} />
+        </div>
+        <HeaderFeatureBox recipientData={recipientData} />
+      </S.UpperHeaderWrapper>
       <PostPageMain
         recipientData={recipientData}
         amountDataCount={amountDataCount}
