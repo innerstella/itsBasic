@@ -4,6 +4,8 @@ import * as S from "./CardList.style";
 import ArrowBtn from "../ArrowBtn/ArrowBtn";
 import Card from "../Card/Card";
 import EmptyCard from "../EmptyCard/EmptyCard";
+import SkeletonNew from "../../../../components/skeleton/SkeletonNew";
+
 
 /**
  *
@@ -15,9 +17,11 @@ const CardList = ({ type }) => {
   const [isRightOn, setIsRightOn] = useState(false);
   const [displayData, setDisplayData] = useState();
   const [currHeadIdx, setCurrHeadIdx] = useState(0);
+  const [isLoaded, setIsLoaded] = useState(false);
 
   //  반응형 렌더링
   const [isDesktop, setIsDesktop] = useState(window.innerWidth > 1250);
+
 
   useEffect(() => {
     const handleResize = () => {
@@ -52,6 +56,7 @@ const CardList = ({ type }) => {
     } else if (type === "recent") {
       setDisplayData(sortRecentData(data.results));
     }
+    setIsLoaded(true);
   };
 
   // 처음 렌더링 시 데이터 개수만 먼저 가져오기
@@ -101,46 +106,51 @@ const CardList = ({ type }) => {
     }
   }, [currHeadIdx, displayData?.length]);
 
-  if (isDesktop) {
-    return (
-      <S.DesktopContainer $isLeftOn={isLeftOn}>
-        <div className="list-with-btn">
-          {isLeftOn && (
-            <ArrowBtn type="left" onClick={() => changeRange("left")} />
-          )}
-          {displayData?.length > 0 ? (
-            <div className="paper-list">
-              {displayData?.slice(currHeadIdx, currHeadIdx + 4).map((data) => {
-                return <Card key={data.id} data={data} />;
-              })}
-            </div>
-          ) : (
-            <EmptyCard />
-          )}
-          {isRightOn && (
-            <ArrowBtn type="right" onClick={() => changeRange("right")} />
-          )}
-        </div>
-      </S.DesktopContainer>
-    );
+  if (!isLoaded) {
+    return <SkeletonNew isLoaded={isLoaded} height="26rem"></SkeletonNew>;
   } else {
-    return (
-      <S.TabletContainer>
-        <div className="list-with-btn">
-          {displayData?.length > 0 ? (
-            <div className="paper-list">
-              {displayData?.map((data) => {
-                return <Card key={data.id} data={data} />;
-              })}
-            </div>
-          ) : (
-            <EmptyCard />
-          )}
-        </div>
-        <div></div>
-      </S.TabletContainer>
-    );
-  }
+    if (isDesktop) {
+      return (
+        <S.DesktopContainer $isLeftOn={isLeftOn}>
+          <div className="list-with-btn">
+            {isLeftOn && (
+              <ArrowBtn type="left" onClick={() => changeRange("left")} />
+            )}
+            {displayData?.length > 0 ? (
+              <div className="paper-list">
+                {displayData
+                  ?.slice(currHeadIdx, currHeadIdx + 4)
+                  .map((data) => {
+                    return <Card key={data.id} data={data} />;
+                  })}
+              </div>
+            ) : (
+              <EmptyCard />
+            )}
+            {isRightOn && (
+              <ArrowBtn type="right" onClick={() => changeRange("right")} />
+            )}
+          </div>
+        </S.DesktopContainer>
+      );
+    } else {
+      return (
+        <S.TabletContainer>
+          <div className="list-with-btn">
+            {displayData?.length > 0 ? (
+              <div className="paper-list">
+                {displayData?.map((data) => {
+                  return <Card key={data.id} data={data} />;
+                })}
+              </div>
+            ) : (
+              <EmptyCard />
+            )}
+          </div>
+        </S.TabletContainer>
+      );
+    }
+
 };
 
 export default CardList;

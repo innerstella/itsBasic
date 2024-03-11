@@ -8,7 +8,7 @@ export const Box = styled.div`
   .profile-icon {
     width: 2.8rem;
     height: 2.8rem;
-    margin-right: -1rem;
+    /* margin-right: -1rem; */
     display: flex;
     padding: 0.2rem;
     flex-direction: column;
