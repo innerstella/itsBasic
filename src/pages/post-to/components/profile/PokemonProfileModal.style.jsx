@@ -21,7 +21,8 @@ export const Box = styled.div`
   border-radius: 2rem;
   padding: 2rem;
   @media (max-width: 767.5px) {
-    width: 60rem;
+    width: 50rem;
+    height: 65rem;
   }
   .title-box {
     display: flex;
@@ -32,8 +33,8 @@ export const Box = styled.div`
       width: 8rem;
       height: 8rem;
       @media (max-width: 767.5px) {
-        width: 6rem;
-        height: 6rem;
+        width: 5rem;
+        height: 5rem;
       }
     }
   }
@@ -41,7 +42,7 @@ export const Box = styled.div`
   .modal-title {
     font-size: 4rem;
     @media (max-width: 767.5px) {
-      font-size: 3.3rem;
+      font-size: 2.8rem;
     }
   }
   .pokemon-image-container::-webkit-scrollbar {
@@ -62,26 +63,28 @@ export const Box = styled.div`
     gap: 2rem;
     border: 2px solid #c9184a;
     padding: 2rem;
-
+    @media (max-width: 767.5px) {
+      height: 53rem;
+    }
     .pokemon-detail-box {
       width: 10rem;
       height: 10rem;
       border: 0.12rem solid ${(props) => props.theme.textColor};
       border-radius: 500rem;
       padding: 0.5rem;
-      cursor: pointer;
+
       @media (max-width: 767.5px) {
-        width: 8rem;
-        height: 8rem;
-      }
-      &:hover {
-        img {
-          transform: scale(1.3);
-        }
+        width: 6rem;
+        height: 6rem;
       }
 
       img {
         width: 100%;
+        cursor: pointer;
+
+        &:hover {
+          transform: scale(1.3);
+        }
       }
 
       p {
@@ -89,7 +92,7 @@ export const Box = styled.div`
         position: relative;
         top: 9px;
         @media (max-width: 767.5px) {
-          font-size: 0.9rem;
+          font-size: 0.8rem;
         }
       }
     }
