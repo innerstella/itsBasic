@@ -1,12 +1,13 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 import NavigationBar from "../../components/navigationBar/NavigationBar";
 import PostToStyle from "./PostToPage.style";
 import CardList from "./components/post-to-card/CardList";
 import Button from "../../components/button/Button";
-
-const CARDCOLOR = ["beige", "purple", "blue", "green"];
+import { COLOR_LIST } from "../../constant/list";
+import { getBackgroundImages } from "../../api/background-images/getBackgroundImages";
+import { postRecipients } from "../../api/recipients/postRecipients";
 
 /**
  *
@@ -14,7 +15,7 @@ const CARDCOLOR = ["beige", "purple", "blue", "green"];
  */
 const PostToPage = () => {
   // input 관련
-  const [recipientName, setRecipientName] = useState("");
+  const recipientName = useRef("");
   const [inputError, setInputError] = useState(false);
 
   // card 관련
@@ -26,44 +27,32 @@ const PostToPage = () => {
   const navigate = useNavigate();
 
   // input 값 변경 이벤트 핸들러
-  const handleInputChange = (e) => {
-    setRecipientName(e.target.value);
-  };
-
-  // input 값 변경 이벤트 핸들러
   const handleInputError = () => {
     recipientName ? setInputError(false) : setInputError(true);
   };
 
   // 카드 이미지 가져옴
   useEffect(() => {
-    fetch("https://rolling-api.vercel.app/background-images/")
-      .then((res) => res.json())
-      .then((data) => {
-        setCardImage(data.imageUrls);
-      });
+    getBackgroundImages().then((data) => setCardImage(data.imageUrls));
   }, []);
 
   // 롤링페이퍼 생성
   const onSubmit = (e) => {
     e.preventDefault();
+
     const body =
       type === "color"
-        ? { name: recipientName, backgroundColor: CARDCOLOR[cardColorChecks] }
+        ? {
+            name: recipientName.current?.value,
+            backgroundColor: COLOR_LIST[cardColorChecks],
+          }
         : {
-            name: recipientName,
-            backgroundColor: CARDCOLOR[cardColorChecks],
+            name: recipientName.current?.value,
+            backgroundColor: COLOR_LIST[cardColorChecks],
             backgroundImageURL: cardImage[cardImageChecks],
           };
 
-    fetch("https://rolling-api.vercel.app/4-2/recipients/", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(body),
-    })
-      .then((res) => res.json())
+    postRecipients(body)
       .then((data) => {
         if (data && data.id) {
           localStorage.setItem(`${data.id}-Post`, "Owner");
@@ -89,6 +78,21 @@ const PostToPage = () => {
     setCardImageChecks(index);
   };
 
+  // 엔터 키를 눌렀을 때 생성하기 함수 호출
+  useEffect(() => {
+    const handleKeyPress = (e) => {
+      if (e.key === "Enter") {
+        onSubmit(e);
+      }
+    };
+
+    document.addEventListener("keydown", handleKeyPress);
+
+    return () => {
+      document.removeEventListener("keydown", handleKeyPress); // 컴포넌트가 언마운트될 때 이벤트 핸들러 제거
+    };
+  }, []);
+
   return (
     <>
       <NavigationBar show="none" />
@@ -102,9 +106,8 @@ const PostToPage = () => {
                   inputError ? "error" : ""
                 }`}
                 placeholder="받는 사람 이름을 입력해 주세요."
-                value={recipientName}
-                onChange={handleInputChange}
                 onBlur={handleInputError}
+                ref={recipientName}
               />
               {inputError && (
                 <div className="error-message-container">
@@ -124,17 +127,13 @@ const PostToPage = () => {
           <div className="buttons">
             <button
               className={`font-16-regular ${type === "color" && "select"}`}
-              onClick={() => {
-                setType("color");
-              }}
+              onClick={() => setType("color")}
             >
               컬러
             </button>
             <button
               className={`font-16-regular ${type === "image" && "select"}`}
-              onClick={() => {
-                setType("image");
-              }}
+              onClick={() => setType("image")}
             >
               이미지
             </button>

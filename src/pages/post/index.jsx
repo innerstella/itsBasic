@@ -29,7 +29,9 @@ const PostPage = () => {
     <S.Layout>
       <S.OverScrollBox />
       <S.UpperHeaderWrapper>
-        <NavigationBar show={"none"} />
+        <div className='main-nav-box'>
+          <NavigationBar show={"none"} />
+        </div>
         <HeaderFeatureBox recipientData={recipientData} />
       </S.UpperHeaderWrapper>
       <PostPageMain
