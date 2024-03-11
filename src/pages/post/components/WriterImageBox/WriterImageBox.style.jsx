@@ -15,7 +15,7 @@ export const Box = styled.div`
     align-items: flex-start;
     gap: 1rem;
     border-radius: 3rem;
-    background: #fff;
+    background: ${(props) => props.theme.textColor};
   }
 `;
 
