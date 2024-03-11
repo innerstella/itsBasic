@@ -39,6 +39,7 @@ const MainPageStyle = styled.div`
 
   .text {
     margin: 1.6rem 0 0.8rem;
+    font-family: "YClover-Bold";
   }
 
   .text > span {

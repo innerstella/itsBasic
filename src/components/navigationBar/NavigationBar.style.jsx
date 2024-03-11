@@ -5,8 +5,15 @@ const NavContainer = styled.nav`
   justify-content: center;
   border-bottom: 0.1rem solid #ededed;
 
+  .clover {
+    font-family: "YClover-Bold";
+    color: var(--color-purple-600);
+    font-size: 3rem;
+  }
+
   .logo-text {
     font-family: "YClover-Bold";
+    font-weight: 700;
   }
 
   .logo-img {
