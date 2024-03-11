@@ -1,6 +1,7 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "./fonts.css";
 import GlobalStyles from "./GlobalStyles";
+import { ChakraProvider } from "@chakra-ui/react";
 
 // react-toastify
 import "./components/RollingToastCustom.css";
@@ -20,31 +21,36 @@ const AppRouter = () => {
   return (
     <BrowserRouter>
       <ThemeProvider>
-        <GlobalStyles />
-        <Routes>
-          <Route path='/' element={<MainPage />} />
-          <Route path='/list' element={<ListPage />} />
-          <Route path='/post' element={<PostToPage />} />
-          <Route path='/post'>
-            <Route path=':recipientId/message' element={<PostMessagePage />} />
-            <Route path=':recipientId' element={<PostPage />}>
-              <Route path='edit' element={<DeleteButton />} />
+        <ChakraProvider>
+          <GlobalStyles />
+          <Routes>
+            <Route path="/" element={<MainPage />} />
+            <Route path="/list" element={<ListPage />} />
+            <Route path="/post" element={<PostToPage />} />
+            <Route path="/post">
+              <Route
+                path=":recipientId/message"
+                element={<PostMessagePage />}
+              />
+              <Route path=":recipientId" element={<PostPage />}>
+                <Route path="edit" element={<DeleteButton />} />
+              </Route>
             </Route>
-          </Route>
-        </Routes>
-        <ToastContainer
-          className='font-16-regular'
-          position='bottom-center'
-          autoClose={5000}
-          hideProgressBar={true}
-          newestOnTop={false}
-          closeOnClick
-          rtl={false}
-          pauseOnFocusLoss
-          draggable
-          pauseOnHover
-          theme='light'
-        />
+          </Routes>
+          <ToastContainer
+            className="font-16-regular"
+            position="bottom-center"
+            autoClose={5000}
+            hideProgressBar={true}
+            newestOnTop={false}
+            closeOnClick
+            rtl={false}
+            pauseOnFocusLoss
+            draggable
+            pauseOnHover
+            theme="light"
+          />
+        </ChakraProvider>
       </ThemeProvider>
     </BrowserRouter>
   );
