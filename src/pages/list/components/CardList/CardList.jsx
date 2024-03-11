@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import * as S from "./CardList.style";
 import ArrowBtn from "../ArrowBtn/ArrowBtn";
 import Card from "../Card/Card";
+import EmptyCard from "../EmptyCard/EmptyCard";
 
 /**
  *
@@ -107,11 +108,15 @@ const CardList = ({ type }) => {
           {isLeftOn && (
             <ArrowBtn type="left" onClick={() => changeRange("left")} />
           )}
-          <div className="paper-list">
-            {displayData?.slice(currHeadIdx, currHeadIdx + 4).map((data) => {
-              return <Card key={data.id} data={data} />;
-            })}
-          </div>
+          {displayData?.length > 0 ? (
+            <div className="paper-list">
+              {displayData?.slice(currHeadIdx, currHeadIdx + 4).map((data) => {
+                return <Card key={data.id} data={data} />;
+              })}
+            </div>
+          ) : (
+            <EmptyCard />
+          )}
           {isRightOn && (
             <ArrowBtn type="right" onClick={() => changeRange("right")} />
           )}
@@ -122,11 +127,15 @@ const CardList = ({ type }) => {
     return (
       <S.TabletContainer>
         <div className="list-with-btn">
-          <div className="paper-list">
-            {displayData?.map((data) => {
-              return <Card key={data.id} data={data} />;
-            })}
-          </div>
+          {!displayData?.length > 0 ? (
+            <div className="paper-list">
+              {displayData?.map((data) => {
+                return <Card key={data.id} data={data} />;
+              })}
+            </div>
+          ) : (
+            <EmptyCard />
+          )}
         </div>
         <div></div>
       </S.TabletContainer>
