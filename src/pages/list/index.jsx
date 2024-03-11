@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import * as S from "./ListPage.style";
 import NavigationBar from "../../components/navigationBar/NavigationBar";
 import CardList from "./components/CardList/CardList";
+import { getRecipientList } from "../../api/getRecipientList";
 
 /**
  *
@@ -12,19 +13,6 @@ import CardList from "./components/CardList/CardList";
 const ListPage = () => {
   const [popularData, setPopularData] = useState();
   const [recentData, setRecentData] = useState();
-
-  useEffect(() => {
-    getRecipientList();
-  }, []);
-
-  const getRecipientList = async () => {
-    fetch("https://rolling-api.vercel.app/4-2/recipients/")
-      .then((res) => res.json())
-      .then((data) => {
-        sortPopularData(data.results);
-        sortRecentData(data.results);
-      });
-  };
 
   const sortPopularData = (data) => {
     const sortedData = [...data].sort(
@@ -39,6 +27,13 @@ const ListPage = () => {
     });
     setRecentData(sortedData);
   };
+
+  useEffect(() => {
+    getRecipientList().then((data) => {
+      sortPopularData(data.results);
+      sortRecentData(data.results);
+    });
+  }, []);
 
   return (
     <S.Container>
