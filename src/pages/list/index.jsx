@@ -36,9 +36,7 @@ const ListPage = () => {
 
   return (
     <S.Container>
-      <div className="gnb-container">
-        <NavigationBar />
-      </div>
+      <NavigationBar />
       <div className="main-container">
         <div className="list-container">
           <h1 className="font-24-bold title">인기 롤링 페이퍼 🔥</h1>

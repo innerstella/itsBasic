@@ -4,15 +4,6 @@ export const Container = styled.div`
   width: 100vw;
   overflow: hidden;
 
-  .gnb-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    overflow-x: hidden;
-    padding: 0 2.4rem;
-    border-bottom: 0.1rem solid #ededed;
-  }
   .main-container {
     display: flex;
     flex-direction: column;
