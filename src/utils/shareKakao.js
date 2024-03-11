@@ -7,8 +7,7 @@
 export function shareKakao() {
   const API_KEY = process.env.REACT_APP_KAKAO_KEY;
   const { Kakao } = window;
-  const realUrl = //현재 배포된 url로 수정
-    "https://65e85a80d1619c0d99620100--kakaosharingtest.netlify.app";
+  const realUrl = "https://itsbasic-c93d6.web.app/"; //현재 배포된 url로 수정
   const resultUrl = window.location.href;
 
   Kakao.cleanup();
@@ -18,9 +17,9 @@ export function shareKakao() {
     Kakao.Share.sendDefault({
       objectType: "feed",
       content: {
-        title: "롤링페이퍼",
-        description: "작성해 보세요!",
-        imageUrl: "https://cdn.rollingpaper.site/service/main/main.png",
+        title: "너글닿기",
+        description: "누구나 손쉽게, 온라인 롤링 페이퍼를 만들 수 있어요",
+        imageUrl: "/assets/common/kakao_share.png",
         link: {
           mobileWebUrl: realUrl,
         },
