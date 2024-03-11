@@ -22,6 +22,10 @@ export const RollingMessageSender = styled.h1`
   & span {
     font-weight: 700;
   }
+
+  @media (max-width: 470.5px) {
+    font-size: 1rem;
+  }
 `;
 
 export const RollingMessageModalWrapper = styled.section`
@@ -63,6 +67,10 @@ export const RollingMessageModalWrapper = styled.section`
     width: 45rem;
     height: 38rem;
   }
+
+  @media (max-width: 470.5px) {
+    width: 95%;
+  }
 `;
 
 export const PostProfileImg = styled.div`
@@ -86,7 +94,9 @@ export const ModalMessageTextArea = styled.textarea`
   margin-bottom: 2rem;
   color: ${(props) => props.theme.textColor};
   background: ${(props) => props.theme.backgroundColor};
-
+  @media (max-width: 470.5px) {
+    font-size: 1.5rem;
+  }
   &:focus {
     outline: none;
   }

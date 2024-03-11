@@ -21,8 +21,8 @@ export const Box = styled.div`
   border-radius: 2rem;
   padding: 2rem;
   @media (max-width: 767.5px) {
-    width: 50rem;
-    height: 65rem;
+    width: 100%;
+    height: 78%;
   }
   .title-box {
     display: flex;
@@ -43,6 +43,10 @@ export const Box = styled.div`
     font-size: 4rem;
     @media (max-width: 767.5px) {
       font-size: 2.8rem;
+    }
+
+    @media (max-width: 490px) {
+      font-size: 2.2rem;
     }
   }
   .pokemon-image-container::-webkit-scrollbar {
@@ -70,12 +74,12 @@ export const Box = styled.div`
       width: 10rem;
       height: 10rem;
       border: 0.12rem solid ${(props) => props.theme.textColor};
-      border-radius: 500rem;
+      border-radius: 5000rem;
       padding: 0.5rem;
 
       @media (max-width: 767.5px) {
-        width: 6rem;
-        height: 6rem;
+        width: 100%;
+        height: 85.5%;
       }
 
       img {
