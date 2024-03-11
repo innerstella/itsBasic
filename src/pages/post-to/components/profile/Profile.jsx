@@ -31,34 +31,35 @@ const Profile = () => {
         <PokemonProfileModal
           setIsShowPokemonModal={setIsShowPokemonModal}
           setProfileInput={setProfileInput}
+          isShowPokemonModal={isShowPokemonModal}
         />
       )}
       <img
-        className="selected-profile"
+        className='selected-profile'
         src={profileInput}
-        alt="프로필"
+        alt='프로필'
         ref={profileRef}
       />
-      <div className="select-profile">
-        <span className="text font-16-regular">
+      <div className='select-profile'>
+        <span className='text font-16-regular'>
           프로필 이미지를 선택해주세요!
         </span>
         <button
-          className="pokemon-profile-button"
+          className='pokemon-profile-button'
           onClick={() => {
             setIsShowPokemonModal((prev) => !prev);
           }}
         >
           포켓몬 이미지 선택하기
         </button>
-        <div className="profile-container">
+        <div className='profile-container'>
           {imageList?.slice(1).map((imgUrl, idx) => {
             return (
               <img
                 key={idx}
-                className="profile"
+                className='profile'
                 src={imgUrl}
-                alt="프로필 이미지"
+                alt='프로필 이미지'
                 onClick={() => setProfileInput(imgUrl)}
               />
             );
