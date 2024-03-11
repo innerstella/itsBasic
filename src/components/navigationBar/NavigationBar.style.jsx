@@ -4,7 +4,16 @@ const NavContainer = styled.nav`
   display: flex;
   justify-content: center;
   border-bottom: 0.1rem solid #ededed;
+
+
+  .logo-img {
+    width: 2.7818rem;
+    height: 2.7658rem;
+  }
+
+
   background: ${(props) => props.theme.backgroundColor};
+
   .nav-container {
     display: flex;
     justify-content: space-between;

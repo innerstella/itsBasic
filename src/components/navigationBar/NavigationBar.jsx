@@ -22,7 +22,7 @@ const NavigationBar = ({ show }) => {
               src="/assets/common/logo_icon.svg"
               alt="로고"
             />
-            <p className="logo-text font-20-bold">Rolling</p>
+            <span className="logo-text font-20-bold">Rolling</span>
           </Link>
         </div>
         <NavButtonContainer>
