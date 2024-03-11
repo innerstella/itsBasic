@@ -52,7 +52,7 @@ const PokemonProfileModal = ({ setIsShowPokemonModal, setProfileInput }) => {
 
   return (
     <>
-      <S.Wrapper onClick={() => setIsShowPokemonModal(false)}>
+      <S.Wrapper>
         <S.Box>
           {isLoading && <PokemonModalLoading />}
           {!isLoading && error && <p>{error}</p>}
@@ -75,15 +75,15 @@ const PokemonProfileModal = ({ setIsShowPokemonModal, setProfileInput }) => {
                   .sort((a, b) => a.index - b.index)
                   .map(({ index, name, imageUrl }) => {
                     return (
-                      <div
-                        className='pokemon-detail-box'
-                        onClick={() => {
-                          setProfileInput(imageUrl);
-                          setIsShowPokemonModal(false);
-                        }}
-                        key={index}
-                      >
-                        <img src={imageUrl} alt={name} />
+                      <div className='pokemon-detail-box' key={index}>
+                        <img
+                          src={imageUrl}
+                          alt={name}
+                          onClick={() => {
+                            setProfileInput(imageUrl);
+                            setIsShowPokemonModal(false);
+                          }}
+                        />
                         <p>{name}</p>
                       </div>
                     );
