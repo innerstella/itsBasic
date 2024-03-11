@@ -8,6 +8,7 @@ import Dropdown from "./components/dropdown/Dropdown";
 import TextEditor from "./components/text-editor/TextEditor";
 import TextInput from "./components/text-input/TextInput";
 import WideButton from "./components/wide-button/WideButton";
+import { postMessages } from "../../api/recipients/postMessages";
 
 export const FromContext = createContext();
 export const ProfileContext = createContext();
@@ -43,18 +44,39 @@ const PostMessagePage = () => {
   // '생성하기' 버튼은 비활성화 상태에 있다가 받는 사람 이름과 카드 내용이 있는 경우 활성화 됩니다.
   const [isActive, setIsActive] = useState(false);
 
-  const moveTo = () => {
-    if (isActive) {
-      createPaper();
-    }
-  };
-
   const checkActive = () => {
     if (
       fromRef?.current?.value?.length > 0 &&
       contentRef?.current?.value?.ops?.[0]?.insert?.length > 0
     ) {
       setIsActive(true);
+    }
+  };
+
+  // 롤링 페이퍼 생성
+  const createPaper = () => {
+    const data = {
+      team: "4-2",
+      recipientId: recipientId,
+      sender: sender,
+      profileImageURL: profileImageURL,
+      relationship: relationship,
+      content: content,
+      font: font,
+    };
+
+    postMessages(recipientId, data)
+      .then(() => {
+        navigate(`/post/${recipientId}`);
+      })
+      .catch((err) => console.error(err));
+  };
+
+  const moveTo = (e) => {
+    e.preventDefault();
+
+    if (isActive) {
+      createPaper();
     }
   };
 
@@ -73,78 +95,49 @@ const PostMessagePage = () => {
     };
   }, [isActive]);
 
-  // 롤링 페이퍼 생성
-  const createPaper = () => {
-    const data = {
-      team: "4-2",
-      recipientId: recipientId,
-      sender: sender,
-      profileImageURL: profileImageURL,
-      relationship: relationship,
-      content: content,
-      font: font,
-    };
-
-    fetch(
-      `https://rolling-api.vercel.app/4-2/recipients/${recipientId}/messages/`,
-      {
-        method: "POST",
-        headers: {
-          accept: "application/json",
-          "Content-Type": "application/json",
-          "X-CSRFToken":
-            "DKImggmgrFWzXm5BRnmvDHUwtXfwhuK5AFAzBXVVRCYvNt5NKtrHDuOL6I69w4nZ",
-        },
-        body: JSON.stringify(data),
-      }
-    )
-      .then(() => {
-        navigate(`/post/${recipientId}`);
-      })
-      .catch((err) => console.error(err));
-  };
-
   return (
     <>
       <NavigationBar />
       <S.Container>
-        <FromContext.Provider value={{ fromRef }}>
-          <div className="section-container" onBlur={checkActive}>
-            <h1 className="text-title font-24-bold">
-              From. <span className="required">*</span>
-            </h1>
-            <TextInput />
-          </div>
-        </FromContext.Provider>
-        <ProfileContext.Provider value={{ profileRef }}>
-          <div className="section-container">
-            <h1 className="text-title font-24-bold">프로필 이미지</h1>
-            <Profile />
-          </div>
-        </ProfileContext.Provider>
-        <RelationshipContext.Provider value={{ relationshipRef }}>
-          <div className="section-container">
-            <h1 className="text-title font-24-bold">상대와의 관계</h1>
-            <Dropdown type="select-relationship" />
-          </div>
-        </RelationshipContext.Provider>
-        <ContentContext.Provider value={{ contentRef }}>
-          <div className="section-container" onBlur={checkActive}>
-            <h1 className="text-title font-24-bold">
-              내용을 입력해 주세요 <span className="required">*</span>
-            </h1>
-            <TextEditor />
-          </div>
-        </ContentContext.Provider>
-        <FontContext.Provider value={{ fontRef }}>
-          <div className="section-container">
-            <h1 className="text-title font-24-bold">폰트 선택</h1>
-            <Dropdown type="select-font" />
-          </div>
-        </FontContext.Provider>
-        <WideButton isActive={isActive} onClick={moveTo}>
-          생성하기
-        </WideButton>
+        <form onSubmit={(e) => moveTo(e)}>
+          <FromContext.Provider value={{ fromRef }}>
+            <div className="section-container" onBlur={checkActive}>
+              <h1 className="text-title font-24-bold">
+                From. <span className="required">*</span>
+              </h1>
+              <TextInput />
+            </div>
+          </FromContext.Provider>
+          <ProfileContext.Provider value={{ profileRef }}>
+            <div className="section-container">
+              <h1 className="text-title font-24-bold">프로필 이미지</h1>
+              <Profile />
+            </div>
+          </ProfileContext.Provider>
+          <RelationshipContext.Provider value={{ relationshipRef }}>
+            <div className="section-container">
+              <h1 className="text-title font-24-bold">상대와의 관계</h1>
+              <Dropdown type="select-relationship" />
+            </div>
+          </RelationshipContext.Provider>
+          <ContentContext.Provider value={{ contentRef }}>
+            <div className="section-container" onBlur={checkActive}>
+              <h1 className="text-title font-24-bold">
+                내용을 입력해 주세요 <span className="required">*</span>
+              </h1>
+              <TextEditor />
+            </div>
+          </ContentContext.Provider>
+          <FontContext.Provider value={{ fontRef }}>
+            <div className="section-container">
+              <h1 className="text-title font-24-bold">폰트 선택</h1>
+              <Dropdown type="select-font" />
+            </div>
+          </FontContext.Provider>
+          <WideButton isActive={isActive} onClick={moveTo}>
+            생성하기
+          </WideButton>
+        </form>
       </S.Container>
     </>
   );

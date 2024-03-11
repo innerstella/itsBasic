@@ -10,7 +10,7 @@ export const Container = styled.div`
   margin: 5.7rem auto 0 auto;
   gap: 5rem;
 
-  .requried {
+  .required {
     color: var(--color-error);
   }
 
